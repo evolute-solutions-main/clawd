@@ -80,7 +80,7 @@ function parseZapierContent(content) {
       guildId: '1164939432722440282'
     })
 
-    // Keep only Zapier auth; detect markers
+    // Keep only Zapier author
     const zapier = rows.filter(r => r.author.toLowerCase() === 'zapier')
 
     // Write raw file (human-audit)
@@ -90,14 +90,12 @@ function parseZapierContent(content) {
     rawLines.push('')
     rawLines.push('Columns: [time_local] [channel] [setter] [name] [phone] [message_id]')
 
-    // Build structured rows
+    // Build structured rows — classify by channelId (robust to content formatting)
     const structured = []
     for (const r of zapier) {
-      const isUnconfirmed = /unconfirmed appointment/i.test(r.content)
-      const isConfirmed = /confirmed appointment/i.test(r.content)
-      if (!isUnconfirmed && !isConfirmed) continue
+      const channelType = (r.channelId === CHANNELS.confirmed) ? 'confirmed' : (r.channelId === CHANNELS.unconfirmed ? 'unconfirmed' : undefined)
+      if (!channelType) continue
       const parsed = parseZapierContent(r.content)
-      const channelType = isConfirmed ? 'confirmed' : 'unconfirmed'
       structured.push({
         id: r.id,
         addedTsUtc: r.tsUtc,
