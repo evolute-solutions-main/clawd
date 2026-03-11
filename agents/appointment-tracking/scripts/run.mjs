@@ -48,13 +48,24 @@ function ensureDir(p){ fs.mkdirSync(p, { recursive: true }) }
 
 function parseZapierContent(content) {
   const out = {}
-  // Name
+  // Name (tolerant to emojis/bullets)
   let m = content.match(/\*\*Name:\*\*\s*([^\n\r]+)/i)
   if (!m) m = content.match(/👤\s*\*\*Name:\*\*\s*([^\n\r]+)/i)
   out.name = m ? m[1].trim().replace(/\s+/g,' ') : undefined
-  // Phone
-  m = content.match(/\*\*Phone:\*\*\s*([+\d][\d\s()-]+)/i)
-  out.phone = m ? m[1].trim().replace(/\s+/g,'') : undefined
+  if (out.name) out.name = out.name.replace(/\s*-\s*$/,'') // drop trailing dash-only artifacts
+  // Phone (strip spaces/dashes/parentheses, keep leading +)
+  m = content.match(/\*\*Phone:\*\*\s*([+\d][\d\s()\-]+)/i)
+  if (m) {
+    const raw = m[1].trim()
+    const norm = raw.replace(/[^\d+]/g,'')
+    out.phone = norm
+  } else {
+    // Fallback: only accept explicit + followed by 10–15 digits to avoid picking up years/times
+    const pm = content.match(/(\+\d{10,15})\b/)
+    if (pm) {
+      out.phone = pm[1]
+    }
+  }
   // Calendar (confirmed only)
   m = content.match(/\*\*Calendar:\*\*\s*([^\n\r]+)/i)
   out.calendar = m ? m[1].trim() : undefined
@@ -111,21 +122,49 @@ function parseZapierContent(content) {
     }
     fs.writeFileSync(path.join(outDir, 'appointments.raw.md'), rawLines.join('\n'))
 
-    // Collapse per SOP with Cold SMS filter
-    function normName(n){ return (n||'MISSING_NAME').replace(/\s+/g,' ').toLowerCase() }
-    const byKey = new Map()
-    for (const row of structured) {
-      const key = `${row.setter||'Unknown'}||${row.phone ? row.phone : 'name:'+normName(row.name)}`
-      const prev = byKey.get(key)
+    // Cold-SMS lens first: include Unconfirmed always; include Confirmed only if calendar matches Cold SMS
+    const isColdCalendar = (cal, content) => {
+      const allow = [
+        'cold sms evolute solutions - ai growth game plan call',
+        'cold sms evolute solutions',
+        'cold sms'
+      ]
+      const c = (cal||'').toLowerCase()
+      if (allow.some(a => c.includes(a))) return true
+      if (c.includes('cold') && c.includes('sms')) return true
+      const body = (content||'').toLowerCase()
+      if (body.includes('cold sms')) return true
+      return false
+    }
+    const coldCandidates = structured.filter(r => r.channelType === 'unconfirmed' || (r.channelType === 'confirmed' && isColdCalendar(r.calendar, rows.find(x=>x.id===r.id)?.content)))
+
+    // Collapse by phone only within Cold-SMS lens (latest per phone on the day)
+    const byPhone = new Map()
+    for (const row of coldCandidates) {
+      if (!row.phone) continue // require phone per new rule
+      const prev = byPhone.get(row.phone)
       if (!prev || new Date(row.addedTsUtc) > new Date(prev.addedTsUtc)) {
-        byKey.set(key, row)
+        byPhone.set(row.phone, row)
       }
     }
-    const collapsedAll = Array.from(byKey.values())
-    // Cold SMS filter
-    const cold = collapsedAll.filter(r => r.channelType === 'unconfirmed' || (r.channelType === 'confirmed' && /cold\s*sms/i.test(r.calendar||'')))
+    const collapsedAll = Array.from(byPhone.values())
+    // Cold SMS filter (already applied in lens; collapsedAll is Cold SMS only)
+    // Build any-time Cold SMS confirmed map by phone
+    const byPhoneAll = new Map()
+    for (const row of structured) {
+      if (!row.phone) continue
+      const arr = byPhoneAll.get(row.phone) || []
+      arr.push(row)
+      byPhoneAll.set(row.phone, arr)
+    }
+    function anyTimeColdConfirmed(phone) {
+      const arr = byPhoneAll.get(phone) || []
+      return arr.some(r => r.channelType === 'confirmed' && isColdCalendar(r.calendar, rows.find(x=>x.id===r.id)?.content))
+    }
 
-    // Aggregate
+    const cold = collapsedAll.filter(r => r.channelType === 'unconfirmed' || (r.channelType === 'confirmed' && isColdCalendar(r.calendar, rows.find(x=>x.id===r.id)?.content)))
+
+    // Aggregate (EOD view)
     const totals = { confirmed: 0, unconfirmed: 0 }
     const perSetter = new Map()
     for (const r of cold) {
@@ -137,6 +176,16 @@ function parseZapierContent(content) {
       perSetter.set(s, rec)
     }
     const perSetterArr = Array.from(perSetter.values()).sort((a,b)=> a.setter.localeCompare(b.setter))
+
+    // Any-time confirmed list (unique phones)
+    const anyTimePhones = Array.from(byPhoneAll.keys()).filter(p => anyTimeColdConfirmed(p))
+    const anyTimeRows = anyTimePhones.map(p => {
+      // pick the earliest confirmed cold row for display
+      const arr = byPhoneAll.get(p) || []
+      const cands = arr.filter(r => r.channelType==='confirmed' && isColdCalendar(r.calendar, rows.find(x=>x.id===r.id)?.content))
+      const pick = cands.sort((a,b)=> new Date(a.addedTsUtc)-new Date(b.addedTsUtc))[0]
+      return pick
+    }).filter(Boolean).sort((a,b)=> new Date(a.addedTsUtc)-new Date(b.addedTsUtc))
 
     // Write collapsed table
     function timeCol(r){ return fmtTimeLocal(r.addedTsUtc, tz) }
