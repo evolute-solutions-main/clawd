@@ -1,8 +1,8 @@
 # CONNECTIONS.md — Source of Truth for Integrations
 
-Purpose: eliminate “forgetting connections.” Every specialist preflights against this file before running. Keep it accurate.
+Purpose: eliminate "forgetting connections." Every specialist preflights against this file before running. Keep it accurate.
 
-Last updated: 2026-03-10
+Last updated: 2026-03-17
 
 ## Messaging / Channels
 
@@ -75,13 +75,22 @@ Last updated: 2026-03-10
 - Quick probe: fetch a known page or DB properties. If probe fails → Blocker: Notion auth.
 
 ## Webhooks / External APIs
-- None explicitly listed here yet. Add as they appear.
+
+### Fathom
+- Enabled: true
+- Base URL: https://api.fathom.ai/external/v1
+- Auth: X-Api-Key header — secret stored in .secrets.env as FATHOM_API_KEY (or FATHOM_API_TOKEN)
+- Shared client: agents/_shared/fathom/index.mjs
+- Agent scripts: agents/fathom/scripts/probe.mjs, run.mjs
+- Rate limit: 60 req/min
+- Quick probe: node agents/fathom/scripts/probe.mjs
+- Note: fathom.video domain no longer resolves; all calls must go to fathom.ai
 
 ## Discord Fetch (Shared Standard)
 - Standalone bot token for agent fetchers lives in .secrets.env → DISCORD_BOT_TOKEN
 - All agents that read Discord history should use agents/_shared/discord-fetcher
-- Preflight rule for specialists: ALWAYS check .secrets.env for DISCORD_BOT_TOKEN before claiming Discord isn’t configured.
-- Clawdbot’s own Discord token (channels.discord.token) is separate and used for message routing; do not rely on it for fetcher scripts.
+- Preflight rule for specialists: ALWAYS check .secrets.env for DISCORD_BOT_TOKEN before claiming Discord isn't configured.
+- Clawdbot's own Discord token (channels.discord.token) is separate and used for message routing; do not rely on it for fetcher scripts.
 
 ## Preflight Policy (applies to all specialists)
 - Read this file.
