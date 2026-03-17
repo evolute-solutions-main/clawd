@@ -42,11 +42,12 @@ const tz = (()=>{
 })()
 
 const dateArg = process.argv.find(a => a.startsWith('--date='))
-const date = dateArg ? dateArg.split('=')[1] : null
-if (!date) {
-  console.error('Usage: node agents/appointment-tracking/scripts/run.mjs --date=YYYY-MM-DD')
-  process.exit(1)
-}
+const date = dateArg ? dateArg.split('=')[1] : (() => {
+  // Default to yesterday in the repo timezone
+  const now = new Date()
+  const yesterday = new Date(now.getTime() - 24 * 60 * 60 * 1000)
+  return yesterday.toISOString().slice(0, 10)
+})()
 
 function ensureDir(p){ fs.mkdirSync(p, { recursive: true }) }
 
