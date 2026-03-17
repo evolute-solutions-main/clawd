@@ -1,0 +1,149 @@
+{
+  "date": "2026-03-09",
+  "timezone": "America/Sao_Paulo",
+  "generatedAt": "2026-03-17T16:31:45.426Z",
+  "totals": {
+    "confirmed": 6,
+    "unconfirmed": 6
+  },
+  "byOwner": [
+    {
+      "name": "Daniel Franco",
+      "confirmed": 4,
+      "unconfirmed": 0,
+      "notes": [
+        "+14807096442",
+        "+17039287319",
+        "+14803435038",
+        "+14804309978"
+      ]
+    },
+    {
+      "name": "Eddie Murillo",
+      "confirmed": 1,
+      "unconfirmed": 1,
+      "notes": [
+        "oscar",
+        "+16029084660"
+      ]
+    },
+    {
+      "name": "Randy Nadera",
+      "confirmed": 1,
+      "unconfirmed": 2,
+      "notes": [
+        "Gordon",
+        "Scott",
+        "+19529564077"
+      ]
+    },
+    {
+      "name": "Richard Ramilo",
+      "confirmed": 0,
+      "unconfirmed": 3,
+      "notes": [
+        "+15743027577",
+        "+15743120531",
+        "Rick"
+      ]
+    }
+  ],
+  "appointments": [
+    {
+      "time": "19:24:21",
+      "setter": "Randy Nadera",
+      "name": "Gordon",
+      "phone": "+14802870995",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1480692751547760775"
+    },
+    {
+      "time": "19:18:05",
+      "setter": "Randy Nadera",
+      "name": "Scott",
+      "phone": "+16236878221",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1480691173818368286"
+    },
+    {
+      "time": "18:52:43",
+      "setter": "Richard Ramilo",
+      "name": "",
+      "phone": "+15743027577",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1480684789525905601"
+    },
+    {
+      "time": "18:18:16",
+      "setter": "Eddie Murillo",
+      "name": "oscar",
+      "phone": "+13174800407",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1480676118150516837"
+    },
+    {
+      "time": "13:54:10",
+      "setter": "Richard Ramilo",
+      "name": "",
+      "phone": "+15743120531",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1480609655880421470"
+    },
+    {
+      "time": "12:50:53",
+      "setter": "Richard Ramilo",
+      "name": "Rick",
+      "phone": "+19524513792",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1480593731928199280"
+    },
+    {
+      "time": "14:34:36",
+      "setter": "Randy Nadera",
+      "name": "",
+      "phone": "+19529564077",
+      "status": "confirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1332578941407334430/1480619833694490795"
+    },
+    {
+      "time": "18:31:44",
+      "setter": "Daniel Franco",
+      "name": "",
+      "phone": "+14807096442",
+      "status": "confirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1332578941407334430/1480679509521993862"
+    },
+    {
+      "time": "13:46:07",
+      "setter": "Daniel Franco",
+      "name": "",
+      "phone": "+17039287319",
+      "status": "confirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1332578941407334430/1480607629079216249"
+    },
+    {
+      "time": "12:13:04",
+      "setter": "Daniel Franco",
+      "name": "",
+      "phone": "+14803435038",
+      "status": "confirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1332578941407334430/1480584213173375240"
+    },
+    {
+      "time": "10:33:02",
+      "setter": "Daniel Franco",
+      "name": "",
+      "phone": "+14804309978",
+      "status": "confirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1332578941407334430/1480559039053299762"
+    },
+    {
+      "time": "09:55:15",
+      "setter": "Eddie Murillo",
+      "name": "",
+      "phone": "+16029084660",
+      "status": "confirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1332578941407334430/1480549529886396508"
+    }
+  ]
+}

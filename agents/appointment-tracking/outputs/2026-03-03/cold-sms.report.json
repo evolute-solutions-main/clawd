@@ -1,0 +1,97 @@
+{
+  "date": "2026-03-03",
+  "timezone": "America/Sao_Paulo",
+  "generatedAt": "2026-03-17T16:31:33.735Z",
+  "totals": {
+    "confirmed": 0,
+    "unconfirmed": 7
+  },
+  "byOwner": [
+    {
+      "name": "Daniel Franco",
+      "confirmed": 0,
+      "unconfirmed": 1,
+      "notes": [
+        "Joel"
+      ]
+    },
+    {
+      "name": "Eddie Murillo",
+      "confirmed": 0,
+      "unconfirmed": 1,
+      "notes": [
+        "+15206476068"
+      ]
+    },
+    {
+      "name": "Randy Nadera",
+      "confirmed": 0,
+      "unconfirmed": 5,
+      "notes": [
+        "Steve",
+        "Eric",
+        "Rick",
+        "Scott",
+        "Andrew"
+      ]
+    }
+  ],
+  "appointments": [
+    {
+      "time": "19:24:14",
+      "setter": "Randy Nadera",
+      "name": "Steve",
+      "phone": "+16023482858",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1478518391869276251"
+    },
+    {
+      "time": "19:11:44",
+      "setter": "Randy Nadera",
+      "name": "Eric",
+      "phone": "+16025251941",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1478515248716714176"
+    },
+    {
+      "time": "18:50:25",
+      "setter": "Randy Nadera",
+      "name": "Rick",
+      "phone": "+16025700752",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1478509884269138144"
+    },
+    {
+      "time": "15:35:39",
+      "setter": "Daniel Franco",
+      "name": "Joel",
+      "phone": "+14809309710",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1478460869745704980"
+    },
+    {
+      "time": "12:10:21",
+      "setter": "Randy Nadera",
+      "name": "Scott",
+      "phone": "+16236878221",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1478409202480447572"
+    },
+    {
+      "time": "11:45:21",
+      "setter": "Randy Nadera",
+      "name": "Andrew",
+      "phone": "+18044269312",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1478402910147707093"
+    },
+    {
+      "time": "11:33:07",
+      "setter": "Eddie Murillo",
+      "name": "",
+      "phone": "+15206476068",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1478399833114017814"
+    }
+  ]
+}

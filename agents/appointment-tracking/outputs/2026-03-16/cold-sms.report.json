@@ -1,0 +1,97 @@
+{
+  "date": "2026-03-16",
+  "timezone": "America/Sao_Paulo",
+  "generatedAt": "2026-03-17T16:31:57.832Z",
+  "totals": {
+    "confirmed": 2,
+    "unconfirmed": 5
+  },
+  "byOwner": [
+    {
+      "name": "Daniel Franco",
+      "confirmed": 2,
+      "unconfirmed": 0,
+      "notes": [
+        "+12485718828",
+        "+13136224502"
+      ]
+    },
+    {
+      "name": "Eddie Murillo",
+      "confirmed": 0,
+      "unconfirmed": 2,
+      "notes": [
+        "RAMONE",
+        "+15864800495"
+      ]
+    },
+    {
+      "name": "Richard Ramilo",
+      "confirmed": 0,
+      "unconfirmed": 3,
+      "notes": [
+        "+12604176746",
+        "josh",
+        "sam"
+      ]
+    }
+  ],
+  "appointments": [
+    {
+      "time": "18:26:02",
+      "setter": "Daniel Franco",
+      "name": "",
+      "phone": "+12485718828",
+      "status": "confirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1332578941407334430/1483214788422144083"
+    },
+    {
+      "time": "16:08:37",
+      "setter": "Eddie Murillo",
+      "name": "RAMONE",
+      "phone": "+13136740910",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1483180205622165634"
+    },
+    {
+      "time": "14:33:43",
+      "setter": "Richard Ramilo",
+      "name": "",
+      "phone": "+12604176746",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1483156326556111051"
+    },
+    {
+      "time": "13:01:33",
+      "setter": "Eddie Murillo",
+      "name": "",
+      "phone": "+15864800495",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1483133131098689557"
+    },
+    {
+      "time": "11:58:40",
+      "setter": "Daniel Franco",
+      "name": "",
+      "phone": "+13136224502",
+      "status": "confirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1332578941407334430/1483117304899305512"
+    },
+    {
+      "time": "10:14:49",
+      "setter": "Richard Ramilo",
+      "name": "josh",
+      "phone": "+12488072106",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1483091170283356336"
+    },
+    {
+      "time": "09:58:32",
+      "setter": "Richard Ramilo",
+      "name": "sam",
+      "phone": "+15866651344",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1483087072746012795"
+    }
+  ]
+}

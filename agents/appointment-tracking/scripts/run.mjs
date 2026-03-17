@@ -77,10 +77,22 @@ function parseZapierContent(content) {
   m = content.match(/(?:🕒\s*)?(?:\*{0,2})Time:(?:\*{0,2})\s*([^\n\r]+)/i)
   out.apptTimeText = m ? m[1].trim() : undefined
   // Setter: parse "Created by" / "Created By" field; default Unknown if missing
-  m = content.match(/(?:\*{0,2})created\s+by(?:\*{0,2})[:\s]+([^\n\r]+)/i)
+  // Handle formats like:
+  //   "Created by: Randy Nadera"
+  //   "**Created By:** Randy Nadera"
+  //   "🙋♂️ **Created By** Randy Nadera" (value on same line)
+  //   "🙋♂️ **Created By**\n🟨🟨🟨" (no value - next line is emoji border)
+  m = content.match(/(?:🙋[‍♂️]*\s*)?(?:\*{0,2})created\s+by(?:\*{0,2})[:\s]*([^\n\r]*)/i)
   if (m) {
-    const raw = m[1].trim().replace(/\.*$/, '').trim() // strip trailing period(s)
-    out.setter = raw || 'Unknown'
+    let raw = m[1].trim().replace(/\.*$/, '').trim() // strip trailing period(s)
+    // If the captured value is just emojis (borders) or empty, treat as Unknown
+    // Check if it's mostly emoji/special chars (more than 50% non-alphanumeric)
+    const alphanumeric = raw.replace(/[^a-zA-Z0-9\s]/g, '').trim()
+    if (!alphanumeric || alphanumeric.length < raw.length * 0.3) {
+      out.setter = 'Unknown'
+    } else {
+      out.setter = raw || 'Unknown'
+    }
   } else {
     out.setter = 'Unknown'
   }

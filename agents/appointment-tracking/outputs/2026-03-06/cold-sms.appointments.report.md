@@ -9,16 +9,16 @@
 ## Setter report
 | Setter | Confirmed | Unconfirmed | Total |
 |--------|-----------|-------------|-------|
-| Unknown | 0 | 3 | 3 |
+| Randy Nadera | 0 | 3 | 3 |
 
 ## Collapsed appointments
 
 ### Unconfirmed (chronological)
 | Time | Setter | Name | Phone | Permalink |
 |------|--------|------|-------|-----------|
-| 17:38:23 | Unknown | Tony | +16512081768 | <https://discord.com/channels/1164939432722440282/1387098677646196887/1479578916820746330> |
-| 17:41:17 | Unknown | Andrew | +18044269312 | <https://discord.com/channels/1164939432722440282/1387098677646196887/1479579650295468194> |
-| 19:31:00 | Unknown | Marcus | +19529564077 | <https://discord.com/channels/1164939432722440282/1387098677646196887/1479607258630459525> |
+| 17:38:23 | Randy Nadera | Tony | +16512081768 | <https://discord.com/channels/1164939432722440282/1387098677646196887/1479578916820746330> |
+| 17:41:17 | Randy Nadera | Andrew | +18044269312 | <https://discord.com/channels/1164939432722440282/1387098677646196887/1479579650295468194> |
+| 19:31:00 | Randy Nadera | Marcus | +19529564077 | <https://discord.com/channels/1164939432722440282/1387098677646196887/1479607258630459525> |
 
 ### Confirmed (chronological)
 | Time | Setter | Name | Phone | Permalink |

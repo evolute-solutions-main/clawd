@@ -1,0 +1,29 @@
+{
+  "date": "2026-03-14",
+  "timezone": "America/Sao_Paulo",
+  "generatedAt": "2026-03-17T16:31:54.522Z",
+  "totals": {
+    "confirmed": 0,
+    "unconfirmed": 1
+  },
+  "byOwner": [
+    {
+      "name": "Randy Nadera",
+      "confirmed": 0,
+      "unconfirmed": 1,
+      "notes": [
+        "Sean"
+      ]
+    }
+  ],
+  "appointments": [
+    {
+      "time": "09:49:47",
+      "setter": "Randy Nadera",
+      "name": "Sean",
+      "phone": "+16162569156",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1482360095743676538"
+    }
+  ]
+}

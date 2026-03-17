@@ -1,0 +1,47 @@
+{
+  "date": "2026-03-06",
+  "timezone": "America/Sao_Paulo",
+  "generatedAt": "2026-03-17T16:31:40.434Z",
+  "totals": {
+    "confirmed": 0,
+    "unconfirmed": 3
+  },
+  "byOwner": [
+    {
+      "name": "Randy Nadera",
+      "confirmed": 0,
+      "unconfirmed": 3,
+      "notes": [
+        "Marcus",
+        "Andrew",
+        "Tony"
+      ]
+    }
+  ],
+  "appointments": [
+    {
+      "time": "19:31:00",
+      "setter": "Randy Nadera",
+      "name": "Marcus",
+      "phone": "+19529564077",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1479607258630459525"
+    },
+    {
+      "time": "17:41:17",
+      "setter": "Randy Nadera",
+      "name": "Andrew",
+      "phone": "+18044269312",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1479579650295468194"
+    },
+    {
+      "time": "17:38:23",
+      "setter": "Randy Nadera",
+      "name": "Tony",
+      "phone": "+16512081768",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1479578916820746330"
+    }
+  ]
+}

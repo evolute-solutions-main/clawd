@@ -1,0 +1,56 @@
+{
+  "date": "2026-03-02",
+  "timezone": "America/Sao_Paulo",
+  "generatedAt": "2026-03-17T16:31:26.818Z",
+  "totals": {
+    "confirmed": 0,
+    "unconfirmed": 4
+  },
+  "byOwner": [
+    {
+      "name": "Randy Nadera",
+      "confirmed": 0,
+      "unconfirmed": 4,
+      "notes": [
+        "Hector",
+        "Martin",
+        "Ozvaldo",
+        "Alex"
+      ]
+    }
+  ],
+  "appointments": [
+    {
+      "time": "21:18:36",
+      "setter": "Randy Nadera",
+      "name": "Hector",
+      "phone": "+17035979698",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1478184786228023458"
+    },
+    {
+      "time": "21:10:44",
+      "setter": "Randy Nadera",
+      "name": "Martin",
+      "phone": "+16023917965",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1478182808144056341"
+    },
+    {
+      "time": "16:23:57",
+      "setter": "Randy Nadera",
+      "name": "Ozvaldo",
+      "phone": "+17747894340",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1478110634188214303"
+    },
+    {
+      "time": "13:05:13",
+      "setter": "Randy Nadera",
+      "name": "Alex",
+      "phone": "+14802176017",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1478060622095716594"
+    }
+  ]
+}
