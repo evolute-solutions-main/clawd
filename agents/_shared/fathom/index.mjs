@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 /**
- * Fathom (fathom.video) API client
- * - Loads FATHOM_API_TOKEN and FATHOM_API_BASE from .secrets.env
+ * Fathom (fathom.ai) API client
+ * - Loads FATHOM_API_TOKEN or FATHOM_API_KEY from .secrets.env
  * - Provides helpers for common operations
  */
 
 import fs from 'node:fs'
 import path from 'node:path'
 
-const DEFAULT_BASE = 'https://api.fathom.video/v1'
+const DEFAULT_BASE = 'https://api.fathom.ai/external/v1'
 
 function loadSecrets(repoRoot = process.cwd()) {
   try {
@@ -58,7 +58,7 @@ export async function listMeetings({ limit = 50, cursor, repoRoot } = {}) {
   if (cursor) u.searchParams.set('cursor', cursor)
 
   const { json, headers } = await fetchJson(u.toString(), {
-    headers: { Authorization: `Bearer ${token}` }
+    headers: { 'X-Api-Key': token }
   })
   return { ...json, rate: extractRate(headers) }
 }
@@ -71,7 +71,7 @@ export async function getMeeting(id, { repoRoot } = {}) {
   const { token, base } = getConfig(repoRoot)
   const url = base.replace(/\/$/, '') + `/meetings/${id}`
   const { json, headers } = await fetchJson(url, {
-    headers: { Authorization: `Bearer ${token}` }
+    headers: { 'X-Api-Key': token }
   })
   return { ...json, rate: extractRate(headers) }
 }
