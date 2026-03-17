@@ -1,11 +1,11 @@
 {
   "clientName": "🍂-four-seasons-design-build",
   "context": [
-    "Kenneth had issues logging into the CRM and had a bank issue with a test charge from Facebook.",
-    "The campaign is now live, and Kenneth has received several leads."
+    "Kenneth had login issues with the CRM, which were resolved after resetting the password.",
+    "Kenneth resolved a credit card issue that was blocking the ad campaign."
   ],
-  "status": "Kenneth has resolved the bank issue, and the campaign is running with leads coming in. However, he needs to discuss some important matters with Max over a call.",
-  "next": "Max → Call Kenneth to discuss his important questions and ensure he understands the lead process.",
+  "status": "Kenneth has received several leads and needs to discuss important matters with Max Hastings over a call. The ad campaign is now live after resolving the credit card issue.",
+  "next": "Max → Call Kenneth to discuss his important questions and ensure he understands the lead handling process.",
   "teamChatter": null,
   "risk": null,
   "urgencyScore": 2,

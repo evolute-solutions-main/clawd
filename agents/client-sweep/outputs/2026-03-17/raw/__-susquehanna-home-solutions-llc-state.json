@@ -1,14 +1,14 @@
 {
   "clientName": "🪶-susquehanna-home-solutions-llc",
   "context": [
-    "Client confirmed readiness to restart ad campaigns on Monday.",
-    "No current issues or complaints from the client."
+    "Ernie confirmed the ads were restarted on March 17 and has already received two appointments.",
+    "There is a potential security issue with Ernie's account, as he cannot reset his password and suspects a phishing attempt."
   ],
-  "status": "The client is ready to resume ad campaigns on Monday, and there are no outstanding issues or complaints.",
-  "next": "Davi → Ensure ad campaigns are activated on Monday as per the client's request.",
+  "status": "Ernie is experiencing a security issue with his account, potentially due to a phishing attempt, and is unable to reset his password. This is causing concern and needs immediate attention.",
+  "next": "Max → Assist Ernie with securing his account and resetting his password as soon as possible, potentially guiding him through the process over a call or remote session.",
   "teamChatter": null,
-  "risk": null,
-  "urgencyScore": 2,
+  "risk": "Potential risk of account compromise due to phishing attempt.",
+  "urgencyScore": 0,
   "needsManualReview": false,
   "reviewNote": null
 }

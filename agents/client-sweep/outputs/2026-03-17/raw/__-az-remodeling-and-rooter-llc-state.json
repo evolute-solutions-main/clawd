@@ -3,8 +3,8 @@
   "context": [
     "Phil confirmed they are ready after checking with Alex about the license."
   ],
-  "status": "Phil has confirmed that they are ready to proceed after checking on the license status with Alex.",
-  "next": "Davi → Confirm next steps with Phil and ensure all necessary documents or approvals are in place to proceed.",
+  "status": "Phil has confirmed that they are ready to proceed after resolving the license issue.",
+  "next": "Davi → Confirm next steps with Phil and ensure campaign setup is aligned with their readiness.",
   "teamChatter": null,
   "risk": null,
   "urgencyScore": 2,

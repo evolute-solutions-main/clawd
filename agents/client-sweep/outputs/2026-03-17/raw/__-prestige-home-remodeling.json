@@ -6,14 +6,6 @@
   },
   "clientMessages": [
     {
-      "id": "1480933115236192398",
-      "channelId": "1471221296330178802",
-      "author": "max.hastings",
-      "content": "<@1471187036064059586> hope you had a nice weekend, can you please provide those pics? Also have you gotten a chance to check this out ^ ?",
-      "tsUtc": "2026-03-10T14:19:29.079000+00:00",
-      "permalink": "https://discord.com/channels/1164939432722440282/1471221296330178802/1480933115236192398"
-    },
-    {
       "id": "1480971592262746195",
       "channelId": "1471221296330178802",
       "author": "mike_318564",
@@ -38,5 +30,5 @@
       "permalink": "https://discord.com/channels/1164939432722440282/1471221296330178802/1483181347643064534"
     }
   ],
-  "fetchedAt": "2026-03-17T13:44:58.209Z"
+  "fetchedAt": "2026-03-17T15:27:48.616Z"
 }

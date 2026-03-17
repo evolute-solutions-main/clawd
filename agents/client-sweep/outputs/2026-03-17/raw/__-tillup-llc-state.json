@@ -1,14 +1,14 @@
 {
   "clientName": "🪑-tillup-llc",
   "context": [
-    "Client asked about sending an estimate to a customer.",
-    "Forms were updated to include customer addresses for future leads."
+    "Tillup LLC is preparing to send an estimate to a customer but needs the customer's address.",
+    "Forms have been updated to include addresses for future leads."
   ],
-  "status": "Tillup LLC is preparing to send an estimate to a customer after a meeting, and they have been informed that future leads will include addresses.",
-  "next": "Max → Follow up with Tillup LLC to ensure they have successfully sent the estimate and address any further questions.",
+  "status": "Tillup LLC is in the process of sending an estimate to a customer and has been advised on how to proceed after meetings. They are currently missing the customer's address but have been informed that future leads will include this information.",
+  "next": "Max → Follow up with Tillup LLC to ensure they have obtained the customer's address and successfully sent the estimate.",
   "teamChatter": null,
   "risk": null,
-  "urgencyScore": 2,
+  "urgencyScore": 1,
   "needsManualReview": false,
   "reviewNote": null
 }

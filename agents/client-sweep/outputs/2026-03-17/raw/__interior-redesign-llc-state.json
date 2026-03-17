@@ -2,12 +2,12 @@
   "clientName": "🥐interior-redesign-llc",
   "context": [
     "Client expressed dissatisfaction with the results of the ad campaigns and mentioned financial constraints.",
-    "Client has decided not to fund the ad account further and is questioning the agency's performance."
+    "Client has decided not to fund the ad account further and is questioning the value received from the service."
   ],
-  "status": "The client is dissatisfied with the ad campaign results, citing financial losses and lack of return on investment. They have decided not to provide further funding for ads and are questioning the agency's performance and guarantees.",
+  "status": "The client is dissatisfied with the results of the ad campaigns, citing financial losses and lack of return on investment. They have decided not to provide further funding for ads and are questioning the agency's performance and value.",
   "next": "Davi → Schedule a call with the client to discuss their concerns, clarify the scope of work, and explore potential solutions or adjustments to the strategy.",
   "teamChatter": null,
-  "risk": "High risk of churn due to dissatisfaction and financial constraints.",
+  "risk": "High risk of churn due to client dissatisfaction and decision to stop funding the ad account.",
   "urgencyScore": 0,
   "needsManualReview": false,
   "reviewNote": null

@@ -1,13 +1,13 @@
 {
   "clientName": "🛠️-american-designer-homes-llc",
   "context": [
-    "George Meyer expressed dissatisfaction with the quality of leads and requested to cease receiving new leads as of 3/13/26.",
-    "Max Hastings confirmed the leads have been paused and will assist with converting existing leads."
+    "George Meyer expressed dissatisfaction with the quality of leads and requested to cease receiving leads as of 3/13/26.",
+    "Max Hastings confirmed the leads have been paused and is looking into converting existing leads."
   ],
-  "status": "George Meyer is dissatisfied with the current lead quality and has requested a pause on new leads. The team is working on converting existing leads to improve outcomes.",
-  "next": "Max → Follow up with George to discuss strategies for converting existing leads and address concerns about lead quality.",
+  "status": "George Meyer is dissatisfied with the current lead quality and has requested a pause on receiving new leads. The team has paused the campaign and is working on converting existing leads.",
+  "next": "Max → Follow up with George Meyer to discuss potential strategies for improving lead quality and address his concerns.",
   "teamChatter": null,
-  "risk": "Potential risk of churn due to dissatisfaction with lead quality and campaign performance.",
+  "risk": "Potential churn risk due to dissatisfaction with lead quality and campaign pause request.",
   "urgencyScore": 0,
   "needsManualReview": false,
   "reviewNote": null

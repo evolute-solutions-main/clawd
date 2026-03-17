@@ -1,10 +1,11 @@
 {
   "clientName": "🍕-velento-electric-company",
   "context": [
-    "Client is receiving a high volume of inquiries related to hiring from the new Facebook ad."
+    "Nick requested to see the new Facebook ad.",
+    "Client is receiving a high volume of hiring inquiries."
   ],
-  "status": "Nick has requested to see the new Facebook ad that is generating a lot of hiring inquiries.",
-  "next": "Davi → Share the new Facebook ad details with Nick and discuss the hiring inquiries.",
+  "status": "Nick has requested to see the new Facebook ad due to a high volume of hiring inquiries, indicating the ad's effectiveness.",
+  "next": "Davi → Share the new Facebook ad with Nick and discuss the hiring inquiries to ensure alignment with campaign goals.",
   "teamChatter": null,
   "risk": null,
   "urgencyScore": 1,

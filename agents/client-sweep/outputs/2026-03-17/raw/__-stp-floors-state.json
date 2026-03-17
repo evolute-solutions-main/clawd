@@ -1,14 +1,14 @@
 {
   "clientName": "🪵-stp-floors",
   "context": [
-    "Stephen requested a resend of CRM access email for a team member.",
-    "Davi confirmed the email was resent."
+    "Stephen requested CRM access for a team member.",
+    "Davi resent the CRM access email."
   ],
-  "status": "The CRM access email has been resent to the specified team member, resolving the access issue.",
-  "next": "Davi \u00192 Confirm with Stephen that the team member has successfully accessed the CRM.",
+  "status": "Stephen requested CRM access for a team member, and Davi has already resent the access email. There are no further actions needed from the client side at this moment.",
+  "next": "Davi → Confirm with Stephen that the team member has successfully accessed the CRM.",
   "teamChatter": null,
   "risk": null,
-  "urgencyScore": 3,
+  "urgencyScore": 2,
   "needsManualReview": false,
   "reviewNote": null
 }
