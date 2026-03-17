@@ -1,4 +1,4 @@
-# Cold SMS Appointments — Collapsed (Sat Mar 14 2026, Global timezone)
+# Cold SMS Appointments — Collapsed (Sun Mar 15 2026, Global timezone)
 
 Rule: person_key = (setter, phone or normalized name). Keep only the latest post per person_key; EOD status is the channel of that latest post.
 Filter: Unconfirmed → include; Confirmed → include only if Calendar contains "cold sms" (case-insensitive).

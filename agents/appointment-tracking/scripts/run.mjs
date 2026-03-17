@@ -257,9 +257,36 @@ function parseZapierContent(content) {
 
     fs.writeFileSync(path.join(outDir, 'cold-sms.appointments.report.md'), reportMd.join('\n'))
 
+    // Write structured JSON for formatters
+    const reportJson = {
+      date,
+      timezone: tz,
+      generatedAt: new Date().toISOString(),
+      totals: {
+        confirmed: totals.confirmed,
+        unconfirmed: totals.unconfirmed
+      },
+      byOwner: perSetterArr.map(s => ({
+        name: s.setter,
+        confirmed: s.confirmed,
+        unconfirmed: s.unconfirmed,
+        notes: cold.filter(r => r.setter === s.setter).map(r => r.name || r.phone).filter(Boolean)
+      })),
+      appointments: cold.map(r => ({
+        time: fmtTimeLocal(r.addedTsUtc, tz),
+        setter: r.setter || 'Unknown',
+        name: r.name || '',
+        phone: r.phone || '',
+        status: r.channelType,
+        permalink: r.permalink || ''
+      }))
+    }
+    fs.writeFileSync(path.join(outDir, 'cold-sms.report.json'), JSON.stringify(reportJson, null, 2))
+
     console.log('WROTE', path.join(outDir, 'appointments.raw.md'))
     console.log('WROTE', path.join(outDir, 'cold-sms.appointments.collapsed.md'))
     console.log('WROTE', path.join(outDir, 'cold-sms.appointments.report.md'))
+    console.log('WROTE', path.join(outDir, 'cold-sms.report.json'))
   } catch (e) {
     const outDir = path.join(repoRoot, 'agents/appointment-tracking/outputs', date)
     ensureDir(outDir)

@@ -1,0 +1,194 @@
+{
+  "date": "2026-03-12",
+  "timezone": "America/Sao_Paulo",
+  "generatedAt": "2026-03-17T16:18:37.141Z",
+  "totals": {
+    "confirmed": 8,
+    "unconfirmed": 9
+  },
+  "byOwner": [
+    {
+      "name": "Daniel Franco",
+      "confirmed": 1,
+      "unconfirmed": 2,
+      "notes": [
+        "John",
+        "Joel",
+        "+14807096442"
+      ]
+    },
+    {
+      "name": "Eddie Murillo",
+      "confirmed": 1,
+      "unconfirmed": 3,
+      "notes": [
+        "France",
+        "shawn",
+        "firodel",
+        "+15866156955"
+      ]
+    },
+    {
+      "name": "Randy Nadera",
+      "confirmed": 4,
+      "unconfirmed": 1,
+      "notes": [
+        "+13137735889",
+        "+17349680885",
+        "Sean",
+        "+18044269312",
+        "+19378776189"
+      ]
+    },
+    {
+      "name": "Richard Ramilo",
+      "confirmed": 2,
+      "unconfirmed": 3,
+      "notes": [
+        "rah",
+        "+13133341392",
+        "tom",
+        "joe",
+        "+15869434896"
+      ]
+    }
+  ],
+  "appointments": [
+    {
+      "time": "19:48:56",
+      "setter": "Richard Ramilo",
+      "name": "rah",
+      "phone": "+12482782050",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1481786098714939422"
+    },
+    {
+      "time": "19:32:26",
+      "setter": "Eddie Murillo",
+      "name": "France",
+      "phone": "+12487707672",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1481781948253995069"
+    },
+    {
+      "time": "18:10:01",
+      "setter": "Richard Ramilo",
+      "name": "",
+      "phone": "+13133341392",
+      "status": "confirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1332578941407334430/1481761205461979249"
+    },
+    {
+      "time": "17:58:17",
+      "setter": "Richard Ramilo",
+      "name": "tom",
+      "phone": "+12485007550",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1481758255737868338"
+    },
+    {
+      "time": "17:53:10",
+      "setter": "Randy Nadera",
+      "name": "",
+      "phone": "+13137735889",
+      "status": "confirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1332578941407334430/1481756967101005875"
+    },
+    {
+      "time": "17:43:35",
+      "setter": "Randy Nadera",
+      "name": "",
+      "phone": "+17349680885",
+      "status": "confirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1332578941407334430/1481754553257824449"
+    },
+    {
+      "time": "17:14:09",
+      "setter": "Eddie Murillo",
+      "name": "shawn",
+      "phone": "+16163237461",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1481747147241295983"
+    },
+    {
+      "time": "14:32:24",
+      "setter": "Daniel Franco",
+      "name": "John",
+      "phone": "+13137408393",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1481706440245641246"
+    },
+    {
+      "time": "13:59:01",
+      "setter": "Eddie Murillo",
+      "name": "firodel",
+      "phone": "+13136732009",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1481698040875192352"
+    },
+    {
+      "time": "13:22:54",
+      "setter": "Richard Ramilo",
+      "name": "joe",
+      "phone": "+12488183428",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1481688950589358101"
+    },
+    {
+      "time": "12:07:00",
+      "setter": "Richard Ramilo",
+      "name": "",
+      "phone": "+15869434896",
+      "status": "confirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1332578941407334430/1481669852153385012"
+    },
+    {
+      "time": "11:56:32",
+      "setter": "Daniel Franco",
+      "name": "Joel",
+      "phone": "+13136102120",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1481667218629591153"
+    },
+    {
+      "time": "11:03:12",
+      "setter": "Randy Nadera",
+      "name": "Sean",
+      "phone": "+16162569156",
+      "status": "unconfirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1387098677646196887/1481653795367948500"
+    },
+    {
+      "time": "18:49:14",
+      "setter": "Eddie Murillo",
+      "name": "",
+      "phone": "+15866156955",
+      "status": "confirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1332578941407334430/1481771077867671776"
+    },
+    {
+      "time": "15:19:27",
+      "setter": "Randy Nadera",
+      "name": "",
+      "phone": "+18044269312",
+      "status": "confirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1332578941407334430/1481718283378888960"
+    },
+    {
+      "time": "14:39:08",
+      "setter": "Daniel Franco",
+      "name": "",
+      "phone": "+14807096442",
+      "status": "confirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1332578941407334430/1481708137118568454"
+    },
+    {
+      "time": "12:17:47",
+      "setter": "Randy Nadera",
+      "name": "",
+      "phone": "+19378776189",
+      "status": "confirmed",
+      "permalink": "https://discord.com/channels/1164939432722440282/1332578941407334430/1481672563787825153"
+    }
+  ]
+}
