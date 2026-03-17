@@ -9,6 +9,27 @@
 - **Notes:** 
 - **Signature emoji:** 👁️
 
+## Response Mode
+
+Max can switch between two modes:
+
+**Text mode** (default):
+- Standard text replies only
+
+**Voice mode**:
+- Text reply + TTS audio together
+- Max can read or listen (or both)
+
+**Trigger phrases:**
+- → Voice: "voice mode", "respond in voice", "speak to me", "audio mode", "talk to me"
+- → Text: "text mode", "respond in text", "type to me", "no voice", "stop talking"
+
+**Voice settings** (Edge TTS, free):
+- Voice: en-US-GuyNeural
+- Rate: +60%
+- Pitch: +5%
+- Vibe: Fast, sharp, confident, high-energy
+
 ## Context
 
 - Primary focus: **Evolute Solutions** (grow revenue significantly; build cool, cutting-edge AI products; incorporate AI into sales/marketing).
