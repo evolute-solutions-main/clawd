@@ -41,11 +41,24 @@ function loadSecrets() {
   }
 
   // Validate critical tokens
+  // NOTE: Two Discord bots exist:
+  //   DISCORD_BOT_TOKEN = fetcher bot (READ only)
+  //   DISCORD_CHAT_BOT_TOKEN = chat bot (READ + WRITE)
+  // See CONNECTIONS.md for details
+  
   const discordToken = process.env.DISCORD_BOT_TOKEN
   if (!discordToken || discordToken.length < 50 || discordToken.includes('PASTE') || discordToken.includes('YOUR')) {
     console.error(`FATAL: DISCORD_BOT_TOKEN is invalid or placeholder`)
     console.error(`  Length: ${discordToken?.length || 0}`)
     console.error(`  Value preview: ${discordToken?.slice(0, 20)}...`)
+    process.exit(1)
+  }
+  
+  const chatToken = process.env.DISCORD_CHAT_BOT_TOKEN
+  if (!chatToken || chatToken.length < 50 || chatToken.includes('PASTE') || chatToken.includes('YOUR')) {
+    console.error(`FATAL: DISCORD_CHAT_BOT_TOKEN is invalid or placeholder`)
+    console.error(`  Length: ${chatToken?.length || 0}`)
+    console.error(`  Value preview: ${chatToken?.slice(0, 20)}...`)
     process.exit(1)
   }
 

@@ -86,11 +86,21 @@ Last updated: 2026-03-17
 - Quick probe: node agents/fathom/scripts/probe.mjs
 - Note: fathom.video domain no longer resolves; all calls must go to fathom.ai
 
-## Discord Fetch (Shared Standard)
-- Standalone bot token for agent fetchers lives in .secrets.env → DISCORD_BOT_TOKEN
-- All agents that read Discord history should use agents/_shared/discord-fetcher
-- Preflight rule for specialists: ALWAYS check .secrets.env for DISCORD_BOT_TOKEN before claiming Discord isn't configured.
-- Clawdbot's own Discord token (channels.discord.token) is separate and used for message routing; do not rely on it for fetcher scripts.
+## Discord Tokens (IMPORTANT — TWO BOTS)
+
+**There are TWO Discord bots with different permissions:**
+
+| Token | Bot | Permissions | Use For |
+|-------|-----|-------------|---------|
+| `DISCORD_BOT_TOKEN` | Fetcher bot | READ only | Fetching channel history, listing channels |
+| `DISCORD_CHAT_BOT_TOKEN` | Chat bot (Evan) | READ + WRITE | Posting messages to Discord |
+
+**Rules:**
+- For READING (fetchers, sweeps): use `DISCORD_BOT_TOKEN`
+- For POSTING (cron notifications, alerts): use `DISCORD_CHAT_BOT_TOKEN`
+- Clawdbot gateway uses its own token in config (`channels.discord.token`) for message routing
+
+**If you get 403 Missing Access when posting:** You're using the wrong token. Switch to `DISCORD_CHAT_BOT_TOKEN`.
 
 ## Preflight Policy (applies to all specialists)
 - Read this file.
