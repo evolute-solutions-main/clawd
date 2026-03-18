@@ -74,6 +74,14 @@ Last updated: 2026-03-18
 - Auth: configured previously (per your note). Action: enforce preflight hard-fail if missing.
 - Quick probe: fetch a known page or DB properties. If probe fails → Blocker: Notion auth.
 
+### Google Calendar (ICS Feed)
+- Enabled: true
+- Auth type: Secret iCal URL (read-only, no OAuth needed)
+- Secret in `.secrets.env`: `GOOGLE_CALENDAR_ICS_URL`
+- Capabilities: Read calendar events (no write access)
+- Quick probe: `curl -s "$GOOGLE_CALENDAR_ICS_URL" | head -20`
+- NOTE: This integration EXISTS and is CONFIGURED. Never claim otherwise.
+
 ### Google Sheets
 - Enabled: true
 - Auth type: OAuth 2.0 with refresh token
