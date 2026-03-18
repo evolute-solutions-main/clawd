@@ -5,11 +5,12 @@ Work tasks for Evolute Solutions. Updated 2026-03-18.
 ## Active
 
 ### High Priority
-- [ ] **Fix Google OAuth** — refresh token expired/revoked; re-auth needed for Sheets integration
+- [x] **Fix Google OAuth** — ✅ Fixed 2026-03-18 (re-authorized, new refresh token)
 - [ ] **Fathom → Sales Tracking pipeline** — detect sales calls from Fathom, log to Google Sheet
 - [ ] **Data dashboard** — unified view of appointments, sales calls, client metrics
 
 ### Medium Priority
+- [ ] **Appointment tracking via GHL webhooks** — replace Discord channel scraping with GHL API webhooks (more reliable, real-time)
 - [ ] **GHL Calendar appointments** — pull scheduled appointments by date (source of truth for *who should show*)
 - [ ] **Show rate calculation** — match GHL scheduled appointments against Fathom recordings (Fathom = source of truth for *who actually showed*)
 - [ ] **Meta integration** — pull CPL data, check for payment issues, verify campaigns are live
