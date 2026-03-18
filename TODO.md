@@ -19,6 +19,7 @@ Work tasks for Evolute Solutions. Updated 2026-03-18.
 - [ ] Calendar proactive alerts — flag upcoming meetings, prep reminders
 - [ ] Payment tracker and reminder
 - [ ] Service term tracker and reminder
+- [ ] Fathom call knowledge base — store all call transcripts/summaries for searchable reference
 
 ## Completed
 
