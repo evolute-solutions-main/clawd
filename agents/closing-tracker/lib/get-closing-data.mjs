@@ -133,8 +133,15 @@ export async function getClosingData(date) {
   const fathomCalls = []
   
   for await (const call of iterateMeetings({ pageSize: 50, maxPages: 10 })) {
-    // Get the call date from start_time or created_at
-    const callDate = (call.start_time || call.created_at || '').slice(0, 10)
+    // Get the call date - prefer scheduled/recording time over created_at
+    // (created_at can be after midnight for late-night calls)
+    const callDate = (
+      call.scheduled_start_time || 
+      call.recording_start_time || 
+      call.start_time || 
+      call.created_at || 
+      ''
+    ).slice(0, 10)
     if (callDate === dateStr) {
       fathomCalls.push(call)
     }
