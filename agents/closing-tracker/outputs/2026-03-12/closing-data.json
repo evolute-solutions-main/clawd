@@ -1,0 +1,124 @@
+{
+  "date": "2026-03-12",
+  "appointments": [
+    {
+      "id": "vMP153xG4DLBB8s33Fyi",
+      "calendarId": "8OhPnPLb8e6czA50rozN",
+      "calendarName": "Meta Inbound",
+      "contactName": "Craigo Quacko",
+      "contactId": "K61WYh1rKPrA7FvjpajZ",
+      "startTime": "2026-03-12T12:00:00-04:00",
+      "endTime": "2026-03-12T12:45:00-04:00",
+      "ghlStatus": "confirmed",
+      "showStatus": "no-show",
+      "notes": "<p>Hi Craigo</p><p><br></p><p>Your consultation with Evolute Solutions is scheduled for 12 Mar 2026 at 12:00 (America/New_York) .</p><p><br></p><p>We’ll be meeting here: Google Meet</p><p><br></p><p>Please click the “YES” button in this email to confirm your attendance and add it into your calendar.</p><p><br></p><p>Before the call, it’s *very* important that you review the information in this link:</p><p><br></p><p>https://evolutesolutions.io/important-prepare-for-your-ai-consultation</p><p><br></p><p>This will show you exactly how the system works so you can confirm it makes sense for your business and is worth your time to come on the call.</p><p><br></p><p>This allows us to use the call to focus entirely on your specific situation instead of explaining the basics.</p><p>Inside, you will see:</p><p>• Real client results</p><p>• How we deliver exclusive branded leads plus AI that automatically follows up and books estimates</p><p>• Why this is different (no shared leads like Angi or Thumbtack, no bidding wars)</p><p>• What happens on the call (learn your business, show the system, map your growth plan, and decide fit)</p><p><br></p><p>It takes less than 10 minutes.</p><p><br></p><p>Please watch this before your call, and reply “done” via text once you’ve watched it.</p>\n\nNeed to make changes to this event?\nCancel Event: https://app.iclosed.io/cancellations/call_9bTWCHJlVJC_\nReschedule Event: https://app.iclosed.io/reschedulings/call_9bTWCHJlVJC_",
+      "matchedFathomCall": null
+    },
+    {
+      "id": "ABENBYYU0sLndY4EmoSx",
+      "calendarId": "8OhPnPLb8e6czA50rozN",
+      "calendarName": "Meta Inbound",
+      "contactName": "Canceled: Gerry Howatt",
+      "contactId": "XgERQORWfigR4ZqHcSq7",
+      "startTime": "2026-03-12T13:00:00-04:00",
+      "endTime": "2026-03-12T13:45:00-04:00",
+      "ghlStatus": "confirmed",
+      "showStatus": "no-show",
+      "notes": "<p>Hi Gerry</p><p><br></p><p>Your consultation with Evolute Solutions is scheduled for 12 Mar 2026 at 13:00 (America/New_York) .</p><p><br></p><p>We’ll be meeting here: Google Meet</p><p><br></p><p>Please click the “YES” button in this email to confirm your attendance and add it into your calendar.</p><p><br></p><p>Before the call, it’s *very* important that you review the information in this link:</p><p><br></p><p>https://evolutesolutions.io/important-prepare-for-your-ai-consultation</p><p><br></p><p>This will show you exactly how the system works so you can confirm it makes sense for your business and is worth your time to come on the call.</p><p><br></p><p>This allows us to use the call to focus entirely on your specific situation instead of explaining the basics.</p><p>Inside, you will see:</p><p>• Real client results</p><p>• How we deliver exclusive branded leads plus AI that automatically follows up and books estimates</p><p>• Why this is different (no shared leads like Angi or Thumbtack, no bidding wars)</p><p>• What happens on the call (learn your business, show the system, map your growth plan, and decide fit)</p><p><br></p><p>It takes less than 10 minutes.</p><p><br></p><p>Please watch this before your call, and reply “done” via text once you’ve watched it.</p>\n\nNeed to make changes to this event?\nCancel Event: https://app.iclosed.io/cancellations/call_RCO2L4ZImd6P\nReschedule Event: https://app.iclosed.io/reschedulings/call_RCO2L4ZImd6P",
+      "matchedFathomCall": null
+    },
+    {
+      "id": "pr1kPEJygt24BeVb3QLb",
+      "calendarId": "FITm7fIlhVTworbpJArx",
+      "calendarName": "Cold SMS",
+      "contactName": "Keith",
+      "contactId": "0ZHlmah3jTalEcZaW8tZ",
+      "startTime": "2026-03-12T14:00:00-04:00",
+      "endTime": "2026-03-12T14:45:00-04:00",
+      "ghlStatus": "confirmed",
+      "showStatus": "showed",
+      "notes": "",
+      "matchedFathomCall": {
+        "title": "Keith  x  Maxwell - AI Growth Game Plan Call"
+      }
+    },
+    {
+      "id": "UP7Nr3Q7X1nzUgOvtV3j",
+      "calendarId": "FITm7fIlhVTworbpJArx",
+      "calendarName": "Cold SMS",
+      "contactName": "Andrew",
+      "contactId": "ZMlanLrUQiqI4unHMdcA",
+      "startTime": "2026-03-12T16:00:00-04:00",
+      "endTime": "2026-03-12T16:45:00-04:00",
+      "ghlStatus": "confirmed",
+      "showStatus": "no-show",
+      "notes": "",
+      "matchedFathomCall": null
+    },
+    {
+      "id": "WmrAXoel4Yk9BjXtJV6F",
+      "calendarId": "FITm7fIlhVTworbpJArx",
+      "calendarName": "Cold SMS",
+      "contactName": "Jim",
+      "contactId": "raGPrZuCGveYcxjFP2qL",
+      "startTime": "2026-03-12T17:00:00-04:00",
+      "endTime": "2026-03-12T17:45:00-04:00",
+      "ghlStatus": "cancelled",
+      "showStatus": "no-show",
+      "notes": "",
+      "matchedFathomCall": null
+    },
+    {
+      "id": "GVpjNgLuDf99wO5VD94K",
+      "calendarId": "8OhPnPLb8e6czA50rozN",
+      "calendarName": "Meta Inbound",
+      "contactName": "Charles  Niesen",
+      "contactId": "NMSGtM9WTxyTr4UCbGI0",
+      "startTime": "2026-03-12T17:00:00-04:00",
+      "endTime": "2026-03-12T17:45:00-04:00",
+      "ghlStatus": "confirmed",
+      "showStatus": "no-show",
+      "notes": "<p>Hi Charles </p><p><br></p><p>Your consultation with Evolute Solutions is scheduled for 12 Mar 2026 at 14:00 (America/Chicago) .</p><p><br></p><p>We’ll be meeting here: Google Meet</p><p><br></p><p>Please click the “YES” button in this email to confirm your attendance and add it into your calendar.</p><p><br></p><p>Before the call, it’s *very* important that you review the information in this link:</p><p><br></p><p>https://evolutesolutions.io/important-prepare-for-your-ai-consultation</p><p><br></p><p>This will show you exactly how the system works so you can confirm it makes sense for your business and is worth your time to come on the call.</p><p><br></p><p>This allows us to use the call to focus entirely on your specific situation instead of explaining the basics.</p><p>Inside, you will see:</p><p>• Real client results</p><p>• How we deliver exclusive branded leads plus AI that automatically follows up and books estimates</p><p>• Why this is different (no shared leads like Angi or Thumbtack, no bidding wars)</p><p>• What happens on the call (learn your business, show the system, map your growth plan, and decide fit)</p><p><br></p><p>It takes less than 10 minutes.</p><p><br></p><p>Please watch this before your call, and reply “done” via text once you’ve watched it.</p>\n\nNeed to make changes to this event?\nCancel Event: https://app.iclosed.io/cancellations/call_ZmXRYdF3keYm\nReschedule Event: https://app.iclosed.io/reschedulings/call_ZmXRYdF3keYm",
+      "matchedFathomCall": null
+    },
+    {
+      "id": "4VZYc4Bzq1Fxxo7frz1g",
+      "calendarId": "FITm7fIlhVTworbpJArx",
+      "calendarName": "Cold SMS",
+      "contactName": "Jim",
+      "contactId": "raGPrZuCGveYcxjFP2qL",
+      "startTime": "2026-03-12T18:00:00-04:00",
+      "endTime": "2026-03-12T18:45:00-04:00",
+      "ghlStatus": "confirmed",
+      "showStatus": "no-show",
+      "notes": "",
+      "matchedFathomCall": null
+    },
+    {
+      "id": "TEdVESfAHsKhQG4TIvZM",
+      "calendarId": "FITm7fIlhVTworbpJArx",
+      "calendarName": "Cold SMS",
+      "contactName": "Jay",
+      "contactId": "k8JmGg41PgNJHjaVZcbJ",
+      "startTime": "2026-03-12T19:00:00-04:00",
+      "endTime": "2026-03-12T19:45:00-04:00",
+      "ghlStatus": "confirmed",
+      "showStatus": "no-show",
+      "notes": "",
+      "matchedFathomCall": null
+    }
+  ],
+  "fathomCalls": [
+    {
+      "title": "Keith  x  Maxwell - AI Growth Game Plan Call"
+    },
+    {
+      "title": "Rick  x  Maxwell - AI Growth Game Plan Call"
+    }
+  ],
+  "summary": {
+    "totalScheduled": 8,
+    "showed": 1,
+    "noShow": 7
+  }
+}

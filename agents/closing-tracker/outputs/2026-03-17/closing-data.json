@@ -1,0 +1,76 @@
+{
+  "date": "2026-03-17",
+  "appointments": [
+    {
+      "id": "NfmhCW8cfMYZMPYF2wZ5",
+      "calendarId": "FITm7fIlhVTworbpJArx",
+      "calendarName": "Cold SMS",
+      "contactName": "Bob",
+      "contactId": "gj5DdWojehZTot2c5pcx",
+      "startTime": "2026-03-17T13:00:00-04:00",
+      "endTime": "2026-03-17T13:45:00-04:00",
+      "ghlStatus": "confirmed",
+      "showStatus": "no-show",
+      "notes": "",
+      "matchedFathomCall": null
+    },
+    {
+      "id": "KerOOFU2tcAdElYKPMqq",
+      "calendarId": "8OhPnPLb8e6czA50rozN",
+      "calendarName": "Meta Inbound",
+      "contactName": "Kenneth Schwartz",
+      "contactId": "YKRTeBKpttuwVHAHFtzb",
+      "startTime": "2026-03-17T14:00:00-04:00",
+      "endTime": "2026-03-17T14:45:00-04:00",
+      "ghlStatus": "confirmed",
+      "showStatus": "no-show",
+      "notes": "<p>Hi Kenneth</p><p><br></p><p>Your consultation with Evolute Solutions is scheduled for 17 Mar 2026 at 14:00 (America/New_York) .</p><p><br></p><p>We’ll be meeting here: Google Meet</p><p><br></p><p>Please click the “YES” button in this email to confirm your attendance and add it into your calendar.</p><p><br></p><p>Before the call, it’s *very* important that you review the information in this link:</p><p><br></p><p>https://evolutesolutions.io/important-prepare-for-your-ai-consultation</p><p><br></p><p>This will show you exactly how the system works so you can confirm it makes sense for your business and is worth your time to come on the call.</p><p><br></p><p>This allows us to use the call to focus entirely on your specific situation instead of explaining the basics.</p><p>Inside, you will see:</p><p>• Real client results</p><p>• How we deliver exclusive branded leads plus AI that automatically follows up and books estimates</p><p>• Why this is different (no shared leads like Angi or Thumbtack, no bidding wars)</p><p>• What happens on the call (learn your business, show the system, map your growth plan, and decide fit)</p><p><br></p><p>It takes less than 10 minutes.</p><p><br></p><p>Please watch this before your call, and reply “done” via text once you’ve watched it.</p>\n\nNeed to make changes to this event?\nCancel Event: https://app.iclosed.io/cancellations/call_qMlSpG3FyzO4\nReschedule Event: https://app.iclosed.io/reschedulings/call_qMlSpG3FyzO4",
+      "matchedFathomCall": null
+    },
+    {
+      "id": "yVNTj50xunhrZi3kgp8o",
+      "calendarId": "FITm7fIlhVTworbpJArx",
+      "calendarName": "Cold SMS",
+      "contactName": "Jesse Morton",
+      "contactId": "IL5kNqXEDWsLg08sZhsc",
+      "startTime": "2026-03-17T16:00:00-04:00",
+      "endTime": "2026-03-17T16:45:00-04:00",
+      "ghlStatus": "cancelled",
+      "showStatus": "no-show",
+      "notes": "",
+      "matchedFathomCall": null
+    },
+    {
+      "id": "AkJzwcWxznpNCC16THA8",
+      "calendarId": "FITm7fIlhVTworbpJArx",
+      "calendarName": "Cold SMS",
+      "contactName": "Brad",
+      "contactId": "VG8u9AJPtKzC9PUigQ1V",
+      "startTime": "2026-03-17T17:00:00-04:00",
+      "endTime": "2026-03-17T17:45:00-04:00",
+      "ghlStatus": "cancelled",
+      "showStatus": "no-show",
+      "notes": "THE GUY ES S SUCESSFUL WANTS TO KNOW HOW HE CAN CUT THE NUMBER OF PROJECTS AND KEEP THE REVENUE . I BELEIVE IN YOU MAX .",
+      "matchedFathomCall": null
+    },
+    {
+      "id": "y7273AnpYEntm0RFtOC2",
+      "calendarId": "FITm7fIlhVTworbpJArx",
+      "calendarName": "Cold SMS",
+      "contactName": "Tracy",
+      "contactId": "WN7x2ozNYYiP7QLA5hRM",
+      "startTime": "2026-03-17T17:00:00-04:00",
+      "endTime": "2026-03-17T17:45:00-04:00",
+      "ghlStatus": "confirmed",
+      "showStatus": "no-show",
+      "notes": "",
+      "matchedFathomCall": null
+    }
+  ],
+  "fathomCalls": [],
+  "summary": {
+    "totalScheduled": 5,
+    "showed": 0,
+    "noShow": 5
+  }
+}
