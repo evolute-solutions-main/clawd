@@ -78,7 +78,15 @@ Last updated: 2026-03-18
 - Enabled: true
 - Auth type: Secret iCal URL (read-only, no OAuth needed)
 - Secret in `.secrets.env`: `GOOGLE_CALENDAR_ICS_URL`
+- Google account: evolutesolutionsllc@gmail.com
 - Capabilities: Read calendar events (no write access)
+- Format: iCal/ICS (text/calendar) — parse with standard ICS libraries or regex
+- Expiration: **Never** (unlike OAuth, this URL is permanent unless manually regenerated)
+- What would break it:
+  - User regenerates the secret calendar address in Google Calendar settings
+  - Google account is deleted
+  - Calendar is deleted
+- If broken: Go to Google Calendar → Settings → [calendar name] → Integrate calendar → "Secret address in iCal format" → copy new URL → update `.secrets.env`
 - Quick probe: `curl -s "$GOOGLE_CALENDAR_ICS_URL" | head -20`
 - NOTE: This integration EXISTS and is CONFIGURED. Never claim otherwise.
 
