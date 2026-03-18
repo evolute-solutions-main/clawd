@@ -76,6 +76,24 @@ Last updated: 2026-03-17
 
 ## Webhooks / External APIs
 
+### GoHighLevel (GHL)
+- Enabled: true
+- Base URL: https://services.leadconnectorhq.com
+- Location ID: Fv38qyVITGwToy2uDZgc
+- Auth: Bearer token — `GHL_PRIVATE_INTEGRATION_TOKEN` in .secrets.env
+- API Version header: `Version: 2021-04-15`
+- Shared client: `agents/_shared/ghl/index.mjs`
+- Key calendars:
+  - Cold SMS: `FITm7fIlhVTworbpJArx`
+  - Inbound Strategy: `zw9NEaBUY5kYCTkGjuS7`
+  - Meta Inbound: `8OhPnPLb8e6czA50rozN`
+- Key endpoints:
+  - `GET /calendars/?locationId=...` — list all calendars
+  - `GET /calendars/events?locationId=...&calendarId=...&startTime={epochMs}&endTime={epochMs}` — get appointments
+- Appointment statuses: new, confirmed, showed, noshow, cancelled
+- Quick probe: `node -e "import {listCalendars} from './agents/_shared/ghl/index.mjs'; console.log(await listCalendars())"`
+- NOTE: This integration EXISTS and is CONFIGURED. Never claim otherwise.
+
 ### Fathom
 - Enabled: true
 - Base URL: https://api.fathom.ai/external/v1
