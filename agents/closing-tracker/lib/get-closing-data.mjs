@@ -49,9 +49,36 @@ function extractName(title) {
  * Check if a GHL appointment matches a Fathom call
  * Match by: normalized title similarity or extracted contact name
  */
+// Heuristic: determine if a call/title likely represents a sales call
+function isLikelySalesTitle(title) {
+  const t = normalizeTitle(title)
+  if (!t) return false
+  // Denylist obvious non-sales/internal items
+  const deny = ['promotion', 'reveal', 'highlevel', 'internal', 'standup']
+  if (deny.some(w => t.includes(w))) return false
+  // Allowlist common sales patterns
+  const allow = [
+    'x maxwell - ai growth game plan call',
+    'ai growth game plan call',
+    'ai strategy session',
+    'strategy session',
+    'growth game plan',
+    'discovery call',
+    'intro call',
+    'maxwell -',
+    ' x maxwell '
+  ]
+  return allow.some(w => t.includes(w))
+}
+
 function isMatch(appointment, fathomCall) {
   const apptTitle = normalizeTitle(appointment.title || '')
   const fathomTitle = normalizeTitle(fathomCall.title || fathomCall.meeting_title || '')
+  
+  // Quick filter: only consider fathom calls that look like sales calls
+  if (!isLikelySalesTitle(fathomTitle)) {
+    return false
+  }
   
   // Exact title match
   if (apptTitle && fathomTitle && apptTitle === fathomTitle) {
