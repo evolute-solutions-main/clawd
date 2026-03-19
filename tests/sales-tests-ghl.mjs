@@ -161,15 +161,22 @@ async function t_showed_fathom_link(sheet){
 }
 
 async function t_calendar_source_mapping(sheet, ghl){
+  // GHL calendar names written to sheet are 'Cold SMS' (cold) and 'Meta Inbound' (meta),
+  // but some rows were manually entered with 'Ads' for meta. Check by key term presence:
+  // cold family → source must contain 'cold'; meta family → source must NOT contain 'cold'.
   const issues=[]
   for(const a of ghl){
     if(!inWindowUS(a.dayUS, FROM, TO)) continue
     const hit = findSheetRow(sheet, a)
     if(hit){
-      const fam = mapFamilyToSource(a.family)
       const have = (hit.r[3]||'').toString()
-      if(have && norm(have)!==norm(fam)){
-        issues.push({ row: hit.idx, date: hit.r[0], name: hit.r[2], have, want: fam })
+      if(!have) continue
+      const n = norm(have)
+      const isColdSource = n.includes('cold')
+      if(a.family === 'cold' && !isColdSource){
+        issues.push({ row: hit.idx, date: hit.r[0], name: hit.r[2], have, want: 'Cold SMS', family: a.family })
+      } else if(a.family === 'meta' && isColdSource){
+        issues.push({ row: hit.idx, date: hit.r[0], name: hit.r[2], have, want: 'Meta Inbound', family: a.family })
       }
     }
   }
