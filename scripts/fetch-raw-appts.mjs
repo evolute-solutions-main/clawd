@@ -36,7 +36,7 @@ const CALENDAR_NAMES = {
 
 // Fields set manually (outcome data) — never overwrite these from GHL
 const OUTCOME_FIELDS = [
-  'status', 'closer', 'cashCollected', 'cashCollectedAfterFirstCall',
+  'status', 'source', 'excluded', 'closer', 'cashCollected', 'cashCollectedAfterFirstCall',
   'contractRevenue', 'followUpBooked', 'fathomLink', 'offerMade',
 ]
 

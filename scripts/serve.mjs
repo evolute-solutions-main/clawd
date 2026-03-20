@@ -75,7 +75,7 @@ const server = http.createServer(async (req, res) => {
       const idx    = data.appointments.findIndex(a => a.id === id)
       if (idx === -1) return json(res, 404, { error: 'appointment not found' })
 
-      const allowed = ['status','closer','cashCollected','cashCollectedAfterFirstCall','contractRevenue','followUpBooked','fathomLink','offerMade']
+      const allowed = ['status','source','closer','cashCollected','cashCollectedAfterFirstCall','contractRevenue','followUpBooked','fathomLink','offerMade','excluded']
       for (const [k, v] of Object.entries(fields)) {
         if (allowed.includes(k)) data.appointments[idx][k] = v
       }
