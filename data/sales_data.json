@@ -4004,6 +4004,23 @@
       "status": "new"
     },
     {
+      "id": "uk6dTZIaRkuctpQ9wKn7",
+      "contactName": "",
+      "calendarName": "Cold SMS",
+      "startTime": "2026-03-13T15:00:00-04:00",
+      "timeCreated": "2026-03-13T16:48:49.341Z",
+      "appointmentStatus": "confirmed",
+      "createdBy": "Daniel",
+      "phone": "+13013188438",
+      "email": "pabakcontractors@yahoo.com",
+      "statusHistory": [
+        {
+          "status": "confirmed",
+          "at": "2026-03-20T09:41:20.655Z"
+        }
+      ]
+    },
+    {
       "id": "9PuESupWlyveftgwDWoj",
       "contactName": "Joe",
       "calendarName": "Cold SMS",
@@ -4045,9 +4062,9 @@
       "cashCollected": null,
       "cashCollectedAfterFirstCall": null,
       "contractRevenue": null,
-      "offerMade": null,
       "followUpBooked": false,
-      "fathomLink": null
+      "fathomLink": null,
+      "offerMade": null
     },
     {
       "id": "mmaHO98xYd6Dtt2CAJ8Z",
@@ -4065,9 +4082,9 @@
       "cashCollected": null,
       "cashCollectedAfterFirstCall": null,
       "contractRevenue": null,
-      "offerMade": null,
       "followUpBooked": false,
-      "fathomLink": null
+      "fathomLink": null,
+      "offerMade": null
     },
     {
       "id": "AwYb1O7eAQU57CeRdeNz",
@@ -4148,6 +4165,23 @@
       "status": "new"
     },
     {
+      "id": "p2zG50reiRKDJZTtZpbY",
+      "contactName": "",
+      "calendarName": "Cold SMS",
+      "startTime": "2026-03-14T13:00:00-04:00",
+      "timeCreated": "2026-03-13T17:55:52.264Z",
+      "appointmentStatus": "confirmed",
+      "createdBy": "Eddie",
+      "phone": "+12263509676",
+      "email": "dadshandymanservices2022@gmail.com",
+      "statusHistory": [
+        {
+          "status": "confirmed",
+          "at": "2026-03-20T09:41:20.655Z"
+        }
+      ]
+    },
+    {
       "id": "uE53cV6EJVuYAV6sVLAK",
       "contactName": "Ben Huso",
       "calendarName": "AI Strategy Session (Meta Inbound)",
@@ -4163,9 +4197,9 @@
       "cashCollected": null,
       "cashCollectedAfterFirstCall": null,
       "contractRevenue": null,
-      "offerMade": null,
       "followUpBooked": false,
-      "fathomLink": null
+      "fathomLink": null,
+      "offerMade": null
     },
     {
       "id": "DQ75oUqhQfLol4oq1Ul1",
@@ -4313,9 +4347,9 @@
       "cashCollected": null,
       "cashCollectedAfterFirstCall": null,
       "contractRevenue": null,
-      "offerMade": null,
       "followUpBooked": false,
-      "fathomLink": null
+      "fathomLink": null,
+      "offerMade": null
     },
     {
       "id": "XtX8UkNG8abLVlF3gSTE",
@@ -4385,9 +4419,9 @@
       "cashCollected": null,
       "cashCollectedAfterFirstCall": null,
       "contractRevenue": null,
-      "offerMade": null,
       "followUpBooked": false,
-      "fathomLink": null
+      "fathomLink": null,
+      "offerMade": null
     },
     {
       "id": "Goeca9PteeM7daxdyQ73",
@@ -4483,9 +4517,9 @@
       "cashCollected": null,
       "cashCollectedAfterFirstCall": null,
       "contractRevenue": null,
-      "offerMade": null,
       "followUpBooked": false,
-      "fathomLink": null
+      "fathomLink": null,
+      "offerMade": null
     },
     {
       "id": "AkJzwcWxznpNCC16THA8",
@@ -4503,9 +4537,9 @@
       "cashCollected": null,
       "cashCollectedAfterFirstCall": null,
       "contractRevenue": null,
-      "offerMade": null,
       "followUpBooked": false,
-      "fathomLink": null
+      "fathomLink": null,
+      "offerMade": null
     },
     {
       "id": "y7273AnpYEntm0RFtOC2",
@@ -4638,6 +4672,227 @@
       "email": "ben.beever@comcast.net",
       "statusHistory": [],
       "status": "new"
+    },
+    {
+      "id": "ER2LXeVhe0AVnrN2FOSK",
+      "contactName": "Scot",
+      "calendarName": "Cold SMS",
+      "startTime": "2026-03-19T09:00:00-04:00",
+      "timeCreated": "2026-03-17T23:41:57.925Z",
+      "appointmentStatus": "new",
+      "createdBy": "Eddie",
+      "phone": "+18595337976",
+      "email": "sbrowning859@gmail.com",
+      "statusHistory": [
+        {
+          "status": "new",
+          "at": "2026-03-20T09:41:20.655Z"
+        }
+      ]
+    },
+    {
+      "id": "NgOqttM5XBMEySHMPzKh",
+      "contactName": "Sean",
+      "calendarName": "Cold SMS",
+      "startTime": "2026-03-19T10:00:00-04:00",
+      "timeCreated": "2026-03-12T14:03:06.370Z",
+      "appointmentStatus": "confirmed",
+      "createdBy": "Randy",
+      "phone": "+16162569156",
+      "email": "contact@santonisiding.com",
+      "statusHistory": [
+        {
+          "status": "confirmed",
+          "at": "2026-03-20T09:41:20.655Z"
+        }
+      ]
+    },
+    {
+      "id": "WsywVYnNFericwpMR5k9",
+      "contactName": "Alexander",
+      "calendarName": "Cold SMS",
+      "startTime": "2026-03-19T12:00:00-04:00",
+      "timeCreated": "2026-03-17T20:46:57.631Z",
+      "appointmentStatus": "new",
+      "createdBy": "Richard Ramilo",
+      "phone": "+14803316633",
+      "email": "electricarttech@gmail.com",
+      "statusHistory": [
+        {
+          "status": "new",
+          "at": "2026-03-20T09:41:20.655Z"
+        }
+      ]
+    },
+    {
+      "id": "pFvbzfiSedLQCtgQTXra",
+      "contactName": "Marcus Construction",
+      "calendarName": "Cold SMS",
+      "startTime": "2026-03-19T12:00:00-04:00",
+      "timeCreated": "2026-03-18T17:36:32.873Z",
+      "appointmentStatus": "new",
+      "createdBy": "Randy",
+      "phone": "+15085793080",
+      "email": "contact@mfconstructionfinish.com",
+      "statusHistory": [
+        {
+          "status": "new",
+          "at": "2026-03-20T09:41:20.655Z"
+        }
+      ]
+    },
+    {
+      "id": "qKh97vtoW0gk701YXnSE",
+      "contactName": "Jim",
+      "calendarName": "Cold SMS",
+      "startTime": "2026-03-19T14:00:00-04:00",
+      "timeCreated": "2026-03-13T18:23:12.980Z",
+      "appointmentStatus": "confirmed",
+      "createdBy": "Eddie",
+      "phone": "+18127603870",
+      "email": "trustedcraftsman@gmail.com",
+      "statusHistory": [
+        {
+          "status": "confirmed",
+          "at": "2026-03-20T09:41:20.655Z"
+        }
+      ]
+    },
+    {
+      "id": "8tHKhcFQNv24jZXP8oZB",
+      "contactName": "",
+      "calendarName": "Cold SMS",
+      "startTime": "2026-03-19T16:30:00-04:00",
+      "timeCreated": "2026-03-18T13:07:38.821Z",
+      "appointmentStatus": "confirmed",
+      "createdBy": "Richard Ramilo",
+      "phone": "+12604176746",
+      "email": "matthewgraber102@gmail.com",
+      "statusHistory": [
+        {
+          "status": "confirmed",
+          "at": "2026-03-20T09:41:20.655Z"
+        }
+      ]
+    },
+    {
+      "id": "va4p6vWCO4QrXveFSk7l",
+      "contactName": "KEVIN BATROOMS",
+      "calendarName": "Cold SMS",
+      "startTime": "2026-03-19T18:00:00-04:00",
+      "timeCreated": "2026-03-18T17:38:04.170Z",
+      "appointmentStatus": "confirmed",
+      "createdBy": "Eddie",
+      "phone": "+15868831377",
+      "email": "elitebathroomremodeling@gmail.com",
+      "statusHistory": [
+        {
+          "status": "confirmed",
+          "at": "2026-03-20T09:41:20.655Z"
+        }
+      ]
+    },
+    {
+      "id": "XsVemtNqlky43qfzH6hA",
+      "contactName": "James",
+      "calendarName": "Cold SMS",
+      "startTime": "2026-03-20T15:00:00-04:00",
+      "timeCreated": "2026-03-10T14:09:54.196Z",
+      "appointmentStatus": "new",
+      "createdBy": "Randy",
+      "phone": "+18122784045",
+      "email": "mavericksubcontracting@gmail.com",
+      "statusHistory": [
+        {
+          "status": "new",
+          "at": "2026-03-20T09:41:20.655Z"
+        }
+      ]
+    },
+    {
+      "id": "qbQsgspjiapUx7tKCqM7",
+      "contactName": "Jose Construction Corp",
+      "calendarName": "Cold SMS",
+      "startTime": "2026-03-20T15:00:00-04:00",
+      "timeCreated": "2026-03-18T14:45:54.977Z",
+      "appointmentStatus": "new",
+      "createdBy": "Randy",
+      "phone": "+19789877286",
+      "email": "tyeeconstruction1@gmail.com",
+      "statusHistory": [
+        {
+          "status": "new",
+          "at": "2026-03-20T09:41:20.655Z"
+        }
+      ]
+    },
+    {
+      "id": "oIPr5v9FZq102I5fitDw",
+      "contactName": "Keith Hall",
+      "calendarName": "AI Strategy Session (Meta Inbound)",
+      "startTime": "2026-03-20T15:00:00-04:00",
+      "timeCreated": "2026-03-17T16:41:11.185Z",
+      "appointmentStatus": "confirmed",
+      "createdBy": "Daniel",
+      "phone": "+15303542667",
+      "email": "primetym01@gmail.com",
+      "statusHistory": [
+        {
+          "status": "confirmed",
+          "at": "2026-03-20T09:41:20.655Z"
+        }
+      ]
+    },
+    {
+      "id": "tH5Tf4bxnCKKn7miRlKq",
+      "contactName": "Rick Utley",
+      "calendarName": "AI Strategy Session (Meta Inbound)",
+      "startTime": "2026-03-20T16:00:00-04:00",
+      "timeCreated": "2026-03-18T14:59:31.150Z",
+      "appointmentStatus": "confirmed",
+      "createdBy": "Daniel",
+      "phone": "+14086650615",
+      "email": "rick_utley@yahoo.com",
+      "statusHistory": [
+        {
+          "status": "confirmed",
+          "at": "2026-03-20T09:41:20.655Z"
+        }
+      ]
+    },
+    {
+      "id": "XZzSLLIgKL0o5NkqcTJP",
+      "contactName": "Dani Naor",
+      "calendarName": "AI Strategy Session (Meta Inbound)",
+      "startTime": "2026-03-20T17:00:00-04:00",
+      "timeCreated": "2026-03-19T17:13:44.229Z",
+      "appointmentStatus": "confirmed",
+      "createdBy": "Daniel",
+      "phone": "+13107746828",
+      "email": "dannyprostar@gmail.com",
+      "statusHistory": [
+        {
+          "status": "confirmed",
+          "at": "2026-03-20T09:41:20.655Z"
+        }
+      ]
+    },
+    {
+      "id": "oSEmCcu6bj1R5uNUzkfj",
+      "contactName": "Dru",
+      "calendarName": "Cold SMS",
+      "startTime": "2026-03-20T18:00:00-04:00",
+      "timeCreated": "2026-03-19T14:14:58.496Z",
+      "appointmentStatus": "new",
+      "createdBy": "Richard Ramilo",
+      "phone": "+12016008741",
+      "email": "ruimoreira1983@gmail.com",
+      "statusHistory": [
+        {
+          "status": "new",
+          "at": "2026-03-20T09:41:20.655Z"
+        }
+      ]
     }
   ],
   "dials": [
