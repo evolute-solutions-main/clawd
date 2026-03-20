@@ -4780,24 +4780,6 @@
       "status": "new"
     },
     {
-      "id": "uk6dTZIaRkuctpQ9wKn7",
-      "contactName": "",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-03-13T15:00:00-04:00",
-      "timeCreated": "2026-03-13T16:48:49.341Z",
-      "appointmentStatus": "confirmed",
-      "createdBy": "Daniel",
-      "phone": "+13013188438",
-      "email": "pabakcontractors@yahoo.com",
-      "statusHistory": [
-        {
-          "status": "confirmed",
-          "at": "2026-03-20T09:41:20.655Z"
-        }
-      ],
-      "status": "confirmed"
-    },
-    {
       "id": "9PuESupWlyveftgwDWoj",
       "contactName": "Joe",
       "calendarName": "Cold SMS",
@@ -4940,24 +4922,6 @@
       "email": "franceabbo1@icloud.com",
       "statusHistory": [],
       "status": "new"
-    },
-    {
-      "id": "p2zG50reiRKDJZTtZpbY",
-      "contactName": "",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-03-14T13:00:00-04:00",
-      "timeCreated": "2026-03-13T17:55:52.264Z",
-      "appointmentStatus": "confirmed",
-      "createdBy": "Eddie",
-      "phone": "+12263509676",
-      "email": "dadshandymanservices2022@gmail.com",
-      "statusHistory": [
-        {
-          "status": "confirmed",
-          "at": "2026-03-20T09:41:20.655Z"
-        }
-      ],
-      "status": "confirmed"
     },
     {
       "id": "uE53cV6EJVuYAV6sVLAK",
@@ -5542,24 +5506,6 @@
         }
       ],
       "status": "no_show"
-    },
-    {
-      "id": "8tHKhcFQNv24jZXP8oZB",
-      "contactName": "",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-03-19T16:30:00-04:00",
-      "timeCreated": "2026-03-18T13:07:38.821Z",
-      "appointmentStatus": "confirmed",
-      "createdBy": "Richard Ramilo",
-      "phone": "+12604176746",
-      "email": "matthewgraber102@gmail.com",
-      "statusHistory": [
-        {
-          "status": "confirmed",
-          "at": "2026-03-20T09:41:20.655Z"
-        }
-      ],
-      "status": "confirmed"
     },
     {
       "id": "va4p6vWCO4QrXveFSk7l",
