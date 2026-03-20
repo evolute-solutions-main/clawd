@@ -464,7 +464,7 @@ a:hover { color: #fff; }
     </div>
   </div>
   <div class="card mb">
-    <h2>Unresolved Shows (no outcome recorded) <span class="cnt" id="urCnt">0</span></h2>
+    <h2>No Close <span class="cnt" id="urCnt">0</span></h2>
     <div class="pipe" id="urList"></div>
   </div>
 </div>
@@ -29335,7 +29335,7 @@ function renderReview(){
       </div>
       ${serverNote}
     </div>
-    ${section('Showed — outcome unknown','#f59e0b', needsOutcome, 'GHL says showed but not marked closed or not_closed', 'outcome')}
+    ${section('No close','#f59e0b', needsOutcome, 'showed but no outcome recorded', 'outcome')}
     ${section('Closed — no cash or revenue recorded','#ef4444', closedNoCash, '', 'nocash')}
     ${section('No closer recorded','#8b5cf6', noCloser, '', 'nocloser')}
     ${section('Confirmed calls that need update','#64748b', staleStatus, 'likely no-show, cancel, or reschedule', 'stale')}
