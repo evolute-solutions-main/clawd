@@ -94,7 +94,6 @@
         }
       ],
       "status": "cancelled",
-      "fathomLink": "https://fathom.video/share/dHdDgJMcWz9My2L-kDTUrmdDUM9dhi_t",
       "closer": "Max"
     },
     {
@@ -132,8 +131,10 @@
           "at": "2026-03-20T10:56:55.013Z"
         }
       ],
-      "status": "confirmed",
-      "closer": "Max"
+      "status": "closed",
+      "closer": "Max",
+      "cashCollected": 6000,
+      "fathomLink": "https://fathom.video/share/dHdDgJMcWz9My2L-kDTUrmdDUM9dhi_t"
     },
     {
       "id": "tMUZd9UKg8RewEfU2zhC",
@@ -151,8 +152,10 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "confirmed",
-      "closer": "Max"
+      "status": "closed",
+      "closer": "Max",
+      "cashCollected": 375,
+      "fathomLink": "https://fathom.video/share/r9MRubiTBSuBEKv5scejPaoowiUpnEgP"
     },
     {
       "id": "WCga7JrmcD8XICxJrX2g",
@@ -631,7 +634,7 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "confirmed",
+      "status": "cancelled",
       "closer": "Max"
     },
     {
@@ -670,7 +673,7 @@
         }
       ],
       "fathomLink": "https://fathom.video/share/jQcihtxGLh4b1nNSLkLpMAxYHFgJvqLZ",
-      "status": "showed",
+      "status": "not_closed",
       "closer": "Max"
     },
     {
@@ -1545,7 +1548,8 @@
         }
       ],
       "status": "not_closed",
-      "fathomLink": "https://fathom.video/share/ACs_roxvMN67xC2bZgRxM1ENeWWhEQxs"
+      "fathomLink": "https://fathom.video/share/ACs_roxvMN67xC2bZgRxM1ENeWWhEQxs",
+      "closer": "Max"
     },
     {
       "id": "yrrbq78Yiy6Mf5OEiCOe",
@@ -1930,7 +1934,8 @@
         }
       ],
       "status": "not_closed",
-      "fathomLink": "https://fathom.video/share/tSHkxrc8FVhDFWbr6fStNwuW8QywjbfE"
+      "fathomLink": "https://fathom.video/share/tSHkxrc8FVhDFWbr6fStNwuW8QywjbfE",
+      "closer": "Max"
     },
     {
       "id": "9ogDKi1gUBAiGHP1dK0D",
@@ -1985,7 +1990,8 @@
         }
       ],
       "status": "not_closed",
-      "fathomLink": "https://fathom.video/share/iMihk-wTkJLHyd_9xrh79gKC-fugoM54"
+      "fathomLink": "https://fathom.video/share/iMihk-wTkJLHyd_9xrh79gKC-fugoM54",
+      "closer": "Max"
     },
     {
       "id": "kdgaPMcKvaIBdubehNrY",
@@ -3486,8 +3492,9 @@
       "phone": "+17039394268",
       "email": "ljp26@hotmail.com",
       "statusHistory": [],
-      "status": "showed",
-      "fathomLink": "https://fathom.video/share/witjQ3uNRtJGHuc-dy7W3x1C9Siexa2g"
+      "status": "not_closed",
+      "fathomLink": "https://fathom.video/share/witjQ3uNRtJGHuc-dy7W3x1C9Siexa2g",
+      "closer": "Max"
     },
     {
       "id": "XQ1lEbaXB4uzlpCHW3wH",
@@ -3729,7 +3736,8 @@
       "phone": "+17343558663",
       "email": "brkrajeshkumar@gmail.com",
       "statusHistory": [],
-      "status": "showed"
+      "status": "not_closed",
+      "closer": "Max"
     },
     {
       "id": "bKLPobNkCRjbJggm5NPa",
@@ -4391,7 +4399,7 @@
       "email": "trinitylandscaping7@gmail.com",
       "statusHistory": [],
       "status": "not_closed",
-      "closer": null,
+      "closer": "Max",
       "cashCollected": null,
       "cashCollectedAfterFirstCall": null,
       "contractRevenue": null,
@@ -4536,7 +4544,7 @@
       "email": "stonemane1960@yahoo.com",
       "statusHistory": [],
       "status": "not_closed",
-      "closer": null,
+      "closer": "Max",
       "cashCollected": null,
       "cashCollectedAfterFirstCall": null,
       "contractRevenue": null,
@@ -4622,7 +4630,7 @@
       "email": "keith@diamondbackflooring.com",
       "statusHistory": [],
       "status": "not_closed",
-      "closer": null,
+      "closer": "Max",
       "cashCollected": null,
       "cashCollectedAfterFirstCall": null,
       "contractRevenue": null,
