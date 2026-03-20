@@ -1,0 +1,22 @@
+[
+  { "setter": "Randy Ray Nadera",             "date": "2026-01-01", "dials": 1831 },
+  { "setter": "Daniel Franco",               "date": "2026-01-01", "dials": 423  },
+  { "setter": "Eddie Stiwar Murillo Becerra", "date": "2026-01-01", "dials": 264  },
+  { "setter": "Maxwell Hastings",            "date": "2026-01-01", "dials": 100  },
+  { "setter": "Juan Melo",                   "date": "2026-01-01", "dials": 3    },
+
+  { "setter": "Daniel Franco",               "date": "2026-02-01", "dials": 1841 },
+  { "setter": "Randy Ray Nadera",             "date": "2026-02-01", "dials": 1822 },
+  { "setter": "Eddie Stiwar Murillo Becerra", "date": "2026-02-01", "dials": 1734 },
+  { "setter": "Maxwell Hastings",            "date": "2026-02-01", "dials": 85   },
+  { "setter": "Alan Corona",                 "date": "2026-02-01", "dials": 38   },
+  { "setter": "Desiree Mae Unana",           "date": "2026-02-01", "dials": 11   },
+  { "setter": "Davi Dela Marta",             "date": "2026-02-01", "dials": 3    },
+
+  { "setter": "Eddie Stiwar Murillo Becerra", "date": "2026-03-01", "dials": 1452 },
+  { "setter": "Daniel Franco",               "date": "2026-03-01", "dials": 1421 },
+  { "setter": "Richard Ramilo",              "date": "2026-03-01", "dials": 1258 },
+  { "setter": "Randy Ray Nadera",             "date": "2026-03-01", "dials": 1234 },
+  { "setter": "Maxwell Hastings",            "date": "2026-03-01", "dials": 89   },
+  { "setter": "Davi Dela Marta",             "date": "2026-03-01", "dials": 1    }
+]

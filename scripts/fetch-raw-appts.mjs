@@ -16,7 +16,7 @@ const CALENDAR_NAMES = {
   [CALENDARS.META_INBOUND]: 'AI Strategy Session (Meta Inbound)',
 }
 
-const DATA_FILE = new URL('../raw_appts_march.json', import.meta.url).pathname
+const DATA_FILE = new URL('../sales_data.json', import.meta.url).pathname
 
 const args = process.argv.slice(2)
 const fromIso = args[args.indexOf('--from') + 1]
@@ -77,10 +77,16 @@ async function main() {
     })
   }
 
-  fresh.sort((a, b) => new Date(a.startTime) - new Date(b.startTime))
-  fs.writeFileSync(DATA_FILE, JSON.stringify(fresh, null, 2))
+  // Merge: keep existing records outside this date range, upsert fetched ones
+  const freshById = Object.fromEntries(fresh.map(a => [a.id, a]))
+  const merged = [
+    ...existing.filter(a => !freshById[a.id]),
+    ...fresh
+  ]
+  merged.sort((a, b) => new Date(a.startTime) - new Date(b.startTime))
+  fs.writeFileSync(DATA_FILE, JSON.stringify(merged, null, 2))
 
-  console.log(`\nDone. ${fresh.length} appointments saved.`)
+  console.log(`\nDone. ${fresh.length} fetched, ${merged.length} total in file.`)
 }
 
 main().catch(err => { console.error(err); process.exit(1) })
