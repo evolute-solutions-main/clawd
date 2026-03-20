@@ -7,7 +7,7 @@
       "startTime": "2025-12-01T09:00:00-05:00",
       "timeCreated": "2025-11-26T19:00:11.537Z",
       "appointmentStatus": "confirmed",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+19086707338",
       "email": "john@ironbearprojects.com",
       "statusHistory": [
@@ -16,7 +16,9 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "confirmed"
+      "status": "showed",
+      "fathomLink": "https://fathom.video/share/zwD2b-6N8xdPMgfmpzfiVwvuaQUS3-Us",
+      "closer": "Max"
     },
     {
       "id": "P4i8t7592RfjMcmlzjtU",
@@ -34,7 +36,8 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "confirmed"
+      "status": "confirmed",
+      "closer": "Max"
     },
     {
       "id": "xbibOTTSEfcwznbb1KJS",
@@ -43,7 +46,7 @@
       "startTime": "2025-12-02T10:00:00-05:00",
       "timeCreated": "2025-11-30T11:20:46.747Z",
       "appointmentStatus": "cancelled",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+19739084884",
       "email": "mdisousa@disousacontracting.com",
       "statusHistory": [
@@ -52,7 +55,8 @@
           "at": "2026-03-20T10:56:55.013Z"
         }
       ],
-      "status": "cancelled"
+      "status": "cancelled",
+      "closer": "Max"
     },
     {
       "id": "zqy0U5PTq4Aelrf5tnFw",
@@ -70,7 +74,8 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "new"
+      "status": "new",
+      "closer": "Max"
     },
     {
       "id": "lS9lhuZyou4LmBQYQM6I",
@@ -79,7 +84,7 @@
       "startTime": "2025-12-02T12:00:00-05:00",
       "timeCreated": "2025-11-29T20:33:53.619Z",
       "appointmentStatus": "cancelled",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+15857031419",
       "email": "ross@concept-ii.com",
       "statusHistory": [
@@ -88,7 +93,9 @@
           "at": "2026-03-20T10:56:55.013Z"
         }
       ],
-      "status": "cancelled"
+      "status": "cancelled",
+      "fathomLink": "https://fathom.video/share/dHdDgJMcWz9My2L-kDTUrmdDUM9dhi_t",
+      "closer": "Max"
     },
     {
       "id": "mM1HNsX0Fctf4PjB6G8u",
@@ -97,7 +104,7 @@
       "startTime": "2025-12-02T15:00:00-05:00",
       "timeCreated": "2025-12-02T18:20:16.897Z",
       "appointmentStatus": "confirmed",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+19105232682",
       "email": "phillipy1984@gmail.com",
       "statusHistory": [
@@ -106,7 +113,8 @@
           "at": "2026-03-20T10:56:55.013Z"
         }
       ],
-      "status": "confirmed"
+      "status": "confirmed",
+      "closer": "Max"
     },
     {
       "id": "XWbprsKAdYHwzJSumfGA",
@@ -115,7 +123,7 @@
       "startTime": "2025-12-02T16:00:00-05:00",
       "timeCreated": "2025-12-01T20:02:56.190Z",
       "appointmentStatus": "confirmed",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+15857031419",
       "email": "ross@concept-ii.com",
       "statusHistory": [
@@ -124,7 +132,8 @@
           "at": "2026-03-20T10:56:55.013Z"
         }
       ],
-      "status": "confirmed"
+      "status": "confirmed",
+      "closer": "Max"
     },
     {
       "id": "tMUZd9UKg8RewEfU2zhC",
@@ -133,7 +142,7 @@
       "startTime": "2025-12-02T17:00:00-05:00",
       "timeCreated": "2025-12-02T20:09:24.142Z",
       "appointmentStatus": "confirmed",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+16036747973",
       "email": "cjhomeproject@aol.com",
       "statusHistory": [
@@ -142,7 +151,8 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "confirmed"
+      "status": "confirmed",
+      "closer": "Max"
     },
     {
       "id": "WCga7JrmcD8XICxJrX2g",
@@ -151,7 +161,7 @@
       "startTime": "2025-12-03T09:00:00-05:00",
       "timeCreated": "2025-12-02T12:48:01.673Z",
       "appointmentStatus": "cancelled",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+16143139596",
       "email": "choicereno2@gmail.com",
       "statusHistory": [
@@ -160,7 +170,8 @@
           "at": "2026-03-20T10:56:55.013Z"
         }
       ],
-      "status": "cancelled"
+      "status": "cancelled",
+      "closer": "Max"
     },
     {
       "id": "2jdmug50xJ1DRnG89pcS",
@@ -169,7 +180,7 @@
       "startTime": "2025-12-03T13:00:00-05:00",
       "timeCreated": "2025-12-02T20:34:12.710Z",
       "appointmentStatus": "confirmed",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+18023388432",
       "email": "ethan.gargano55@gmail.com",
       "statusHistory": [
@@ -178,7 +189,8 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "confirmed"
+      "status": "confirmed",
+      "closer": "Max"
     },
     {
       "id": "7n7xdcz22S1C6bXTcNkW",
@@ -187,7 +199,7 @@
       "startTime": "2025-12-03T13:00:00-05:00",
       "timeCreated": "2025-11-24T15:46:03.177Z",
       "appointmentStatus": "new",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+18482030610",
       "email": "enaelr84@icloud.com",
       "statusHistory": [
@@ -196,7 +208,8 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "new"
+      "status": "new",
+      "closer": "Max"
     },
     {
       "id": "3Fa5MVXwei2Wp1iD4Ywo",
@@ -205,7 +218,7 @@
       "startTime": "2025-12-03T18:00:00-05:00",
       "timeCreated": "2025-12-02T20:08:47.210Z",
       "appointmentStatus": "cancelled",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+17244070228",
       "email": "e.cerneskia@360customremodeling.com",
       "statusHistory": [
@@ -214,7 +227,8 @@
           "at": "2026-03-20T10:56:55.013Z"
         }
       ],
-      "status": "cancelled"
+      "status": "cancelled",
+      "closer": "Max"
     },
     {
       "id": "JM9qa0AOh0iT4uKD4Eo7",
@@ -223,7 +237,7 @@
       "startTime": "2025-12-04T11:00:00-05:00",
       "timeCreated": "2025-12-01T16:51:42.468Z",
       "appointmentStatus": "new",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+19789856517",
       "email": "smmstone77@gmail.com",
       "statusHistory": [
@@ -232,7 +246,8 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "new"
+      "status": "new",
+      "closer": "Max"
     },
     {
       "id": "0lluMvS2kP5HXlzZrwDs",
@@ -241,7 +256,7 @@
       "startTime": "2025-12-04T14:00:00-05:00",
       "timeCreated": "2025-12-02T21:02:29.039Z",
       "appointmentStatus": "confirmed",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+12062517377",
       "email": "marc@ghr.design",
       "statusHistory": [
@@ -250,7 +265,9 @@
           "at": "2026-03-20T10:56:55.013Z"
         }
       ],
-      "status": "confirmed"
+      "status": "showed",
+      "fathomLink": "https://fathom.video/share/2BGhmcpkjDQC4B1fJECE9GXxv4ciKo2D",
+      "closer": "Max"
     },
     {
       "id": "7YBo9boIX0aUV6nE651M",
@@ -259,7 +276,7 @@
       "startTime": "2025-12-04T16:00:00-05:00",
       "timeCreated": "2025-12-03T15:01:29.760Z",
       "appointmentStatus": "new",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+16039035600",
       "email": "brothersealcoating@gmail.com",
       "statusHistory": [
@@ -268,7 +285,8 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "new"
+      "status": "new",
+      "closer": "Max"
     },
     {
       "id": "EprIBc7kiV6Lb9O0YWpv",
@@ -277,7 +295,7 @@
       "startTime": "2025-12-04T16:00:00-05:00",
       "timeCreated": "2025-12-04T16:18:16.171Z",
       "appointmentStatus": "confirmed",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+12532311337",
       "email": "jessemilkovic@gmail.com",
       "statusHistory": [
@@ -286,7 +304,8 @@
           "at": "2026-03-20T10:56:55.013Z"
         }
       ],
-      "status": "confirmed"
+      "status": "confirmed",
+      "closer": "Max"
     },
     {
       "id": "Ppf2YivnJ4q8tlZvFi24",
@@ -295,7 +314,7 @@
       "startTime": "2025-12-04T18:00:00-05:00",
       "timeCreated": "2025-12-03T16:06:43.003Z",
       "appointmentStatus": "confirmed",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+19416236430",
       "email": "robertmilanesediva@gmail.com",
       "statusHistory": [
@@ -304,7 +323,8 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "confirmed"
+      "status": "confirmed",
+      "closer": "Max"
     },
     {
       "id": "rjoKUiwO3SrzBuigaAPz",
@@ -313,7 +333,7 @@
       "startTime": "2025-12-05T10:00:00-05:00",
       "timeCreated": "2025-12-04T15:02:19.882Z",
       "appointmentStatus": "confirmed",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+17179757293",
       "email": "cchappell@leadgenadv.com",
       "statusHistory": [
@@ -322,7 +342,9 @@
           "at": "2026-03-20T10:56:55.013Z"
         }
       ],
-      "status": "confirmed"
+      "status": "showed",
+      "fathomLink": "https://fathom.video/share/zgftVVTncBZqCtzoGx12Udx-87iy1X7y",
+      "closer": "Max"
     },
     {
       "id": "R9KUFk622UevQcWMIKfz",
@@ -331,7 +353,7 @@
       "startTime": "2025-12-05T11:00:00-05:00",
       "timeCreated": "2025-12-04T16:43:49.649Z",
       "appointmentStatus": "cancelled",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+16034109093",
       "email": "progcnh@gmail.com",
       "statusHistory": [
@@ -340,7 +362,8 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "cancelled"
+      "status": "cancelled",
+      "closer": "Max"
     },
     {
       "id": "4OkS0eK4VJ1pb28R8HN4",
@@ -349,7 +372,7 @@
       "startTime": "2025-12-05T15:00:00-05:00",
       "timeCreated": "2025-12-05T14:11:04.003Z",
       "appointmentStatus": "cancelled",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+19406319579",
       "email": "rwilsonj@icloud.com",
       "statusHistory": [
@@ -358,7 +381,8 @@
           "at": "2026-03-20T10:56:55.013Z"
         }
       ],
-      "status": "cancelled"
+      "status": "cancelled",
+      "closer": "Max"
     },
     {
       "id": "7iFHJrj1rFz64nWwq2R3",
@@ -376,7 +400,8 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "confirmed"
+      "status": "confirmed",
+      "closer": "Max"
     },
     {
       "id": "xhJWUKAjOnlbYE7CljvP",
@@ -385,7 +410,7 @@
       "startTime": "2025-12-09T11:00:00-05:00",
       "timeCreated": "2025-12-03T15:17:30.812Z",
       "appointmentStatus": "new",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+18028553348",
       "email": "raichereno@aol.com",
       "statusHistory": [
@@ -394,7 +419,8 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "new"
+      "status": "new",
+      "closer": "Max"
     },
     {
       "id": "LkiXb65sGVbLkZC226sn",
@@ -403,7 +429,7 @@
       "startTime": "2025-12-09T12:00:00-05:00",
       "timeCreated": "2025-12-08T21:55:41.614Z",
       "appointmentStatus": "confirmed",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+19786543199",
       "email": "pacella.brothers.excavation@gmail.com",
       "statusHistory": [
@@ -412,7 +438,9 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "confirmed"
+      "status": "showed",
+      "fathomLink": "https://fathom.video/share/KfjNx4NqU_JpV_Dnc6TDxZLNxgyK39Ha",
+      "closer": "Max"
     },
     {
       "id": "UvFJyeKa6kfnghwSkg5z",
@@ -421,7 +449,7 @@
       "startTime": "2025-12-09T18:00:00-05:00",
       "timeCreated": "2025-12-08T20:56:24.408Z",
       "appointmentStatus": "new",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+16038031547",
       "email": "jktcontructing603@gmail.com",
       "statusHistory": [
@@ -430,7 +458,8 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "new"
+      "status": "new",
+      "closer": "Max"
     },
     {
       "id": "k1lBeW0VgSSkRHoUCrpn",
@@ -439,7 +468,7 @@
       "startTime": "2025-12-11T11:00:00-05:00",
       "timeCreated": "2025-12-10T17:01:21.404Z",
       "appointmentStatus": "new",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+16032357293",
       "email": "mancusibuilders@gmail.com",
       "statusHistory": [
@@ -448,7 +477,8 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "new"
+      "status": "new",
+      "closer": "Max"
     },
     {
       "id": "tp9BVvjzW7jyutGVXsYx",
@@ -457,7 +487,7 @@
       "startTime": "2025-12-12T13:30:00-05:00",
       "timeCreated": "2025-12-11T19:44:31.282Z",
       "appointmentStatus": "new",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+18024519872",
       "email": "vtliving247@gmail.com",
       "statusHistory": [
@@ -466,7 +496,8 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "new"
+      "status": "new",
+      "closer": "Max"
     },
     {
       "id": "6QoXWSeGXxrlNx735Smd",
@@ -475,7 +506,7 @@
       "startTime": "2025-12-12T15:00:00-05:00",
       "timeCreated": "2025-12-11T17:41:39.156Z",
       "appointmentStatus": "new",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+18029171612",
       "email": "nexgenbuildersvt@gmail.com",
       "statusHistory": [
@@ -484,7 +515,8 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "new"
+      "status": "new",
+      "closer": "Max"
     },
     {
       "id": "JDTaDOYVP0KRKmW01XuX",
@@ -493,7 +525,7 @@
       "startTime": "2025-12-12T16:00:00-05:00",
       "timeCreated": "2025-12-11T18:02:31.403Z",
       "appointmentStatus": "new",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+18023807280",
       "email": "frrproperties2025@gmail.com",
       "statusHistory": [
@@ -502,7 +534,8 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "new"
+      "status": "new",
+      "closer": "Max"
     },
     {
       "id": "cn6vfoDkgrB6Jz8TbsPH",
@@ -511,7 +544,7 @@
       "startTime": "2025-12-13T12:00:00-05:00",
       "timeCreated": "2025-12-12T22:02:47.469Z",
       "appointmentStatus": "new",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+18023550314",
       "email": "bandhmechanicalvt@gmail.com",
       "statusHistory": [
@@ -520,7 +553,8 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "new"
+      "status": "new",
+      "closer": "Max"
     },
     {
       "id": "wYieRiF6qWF0a8zLPhCK",
@@ -529,7 +563,7 @@
       "startTime": "2025-12-13T15:00:00-05:00",
       "timeCreated": "2025-12-10T17:26:23.732Z",
       "appointmentStatus": "new",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+12076532630",
       "email": "jcovey21@gmail.com",
       "statusHistory": [
@@ -538,7 +572,8 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "new"
+      "status": "new",
+      "closer": "Max"
     },
     {
       "id": "nqg29VLDLtV1YITJtXe1",
@@ -547,7 +582,7 @@
       "startTime": "2025-12-13T16:00:00-05:00",
       "timeCreated": "2025-12-11T22:12:58.346Z",
       "appointmentStatus": "confirmed",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+18024302008",
       "email": "info@benningtoncraftsmen.com",
       "statusHistory": [
@@ -556,7 +591,9 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "confirmed"
+      "status": "showed",
+      "fathomLink": "https://fathom.video/share/-NR7xuyxs59DHy37rnWk2KV3y_UwyyCi",
+      "closer": "Max"
     },
     {
       "id": "3rmPtbY0dgyqwEd6gCjo",
@@ -565,7 +602,7 @@
       "startTime": "2025-12-16T17:00:00-05:00",
       "timeCreated": "2025-12-09T20:07:00.642Z",
       "appointmentStatus": "new",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+17816358663",
       "email": "odonnellcarpentry603@gmail.com",
       "statusHistory": [
@@ -574,7 +611,9 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "new"
+      "status": "showed",
+      "fathomLink": "https://fathom.video/share/sMzurysmzqRAy7cJ64vmy7ec6sWe1Pdv",
+      "closer": "Max"
     },
     {
       "id": "hn1MX0sYIUkTrXZ1iIeo",
@@ -583,7 +622,7 @@
       "startTime": "2025-12-16T17:00:00-05:00",
       "timeCreated": "2025-12-16T00:08:15.633Z",
       "appointmentStatus": "confirmed",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+17816358663",
       "email": "odonnellcarpentry603@gmail.com",
       "statusHistory": [
@@ -592,7 +631,8 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "confirmed"
+      "status": "confirmed",
+      "closer": "Max"
     },
     {
       "id": "gxpGMsCAlD1qD6jrG6cI",
@@ -601,7 +641,7 @@
       "startTime": "2025-12-18T18:00:00-05:00",
       "timeCreated": "2025-12-16T19:50:12.006Z",
       "appointmentStatus": "new",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+18025910890",
       "email": "liamxeh381994@icloud.com",
       "statusHistory": [
@@ -610,7 +650,8 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "new"
+      "status": "new",
+      "closer": "Max"
     },
     {
       "id": "7WcJKeDHtZA1jrfHYw00",
@@ -619,7 +660,7 @@
       "startTime": "2025-12-19T13:30:00-05:00",
       "timeCreated": "2025-12-09T22:08:50.272Z",
       "appointmentStatus": "showed",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+16036677969",
       "email": "valleyroofingnhvt@gmail.com",
       "statusHistory": [
@@ -627,7 +668,10 @@
           "status": "showed",
           "at": "2026-03-20T10:51:35.953Z"
         }
-      ]
+      ],
+      "fathomLink": "https://fathom.video/share/jQcihtxGLh4b1nNSLkLpMAxYHFgJvqLZ",
+      "status": "showed",
+      "closer": "Max"
     },
     {
       "id": "VZk1cq8GiA8xXi5wBcn8",
@@ -636,7 +680,7 @@
       "startTime": "2025-12-19T13:30:00-05:00",
       "timeCreated": "2025-12-08T22:27:00.345Z",
       "appointmentStatus": "cancelled",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+16037212470",
       "email": "coleandsonexcavating@yahoo.com",
       "statusHistory": [
@@ -645,7 +689,8 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "cancelled"
+      "status": "cancelled",
+      "closer": "Max"
     },
     {
       "id": "qXLQANBtPMsmtJyCT0PY",
@@ -654,7 +699,7 @@
       "startTime": "2025-12-20T10:00:00-05:00",
       "timeCreated": "2025-12-16T23:55:42.564Z",
       "appointmentStatus": "noshow",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+15147995304",
       "email": "danial.cast@gmail.com",
       "statusHistory": [
@@ -663,7 +708,8 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "no_show"
+      "status": "no_show",
+      "closer": "Max"
     },
     {
       "id": "k17OWuGaUPs26oJiXWok",
@@ -672,7 +718,7 @@
       "startTime": "2025-12-20T14:00:00-05:00",
       "timeCreated": "2025-12-19T22:21:26.003Z",
       "appointmentStatus": "noshow",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+19364992735",
       "email": "stevenhowk6052@gmail.com",
       "statusHistory": [
@@ -681,7 +727,8 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "no_show"
+      "status": "no_show",
+      "closer": "Max"
     },
     {
       "id": "lv5dLOHV5zNRRvvJDYfR",
@@ -690,7 +737,7 @@
       "startTime": "2025-12-22T12:00:00-05:00",
       "timeCreated": "2025-12-17T21:24:51.048Z",
       "appointmentStatus": "new",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+15086461467",
       "email": "elitecontracting2000@gmail.com",
       "statusHistory": [
@@ -699,7 +746,8 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "new"
+      "status": "new",
+      "closer": "Max"
     },
     {
       "id": "YacH56gRisiNZAM6alOY",
@@ -708,7 +756,7 @@
       "startTime": "2025-12-22T14:00:00-05:00",
       "timeCreated": "2025-12-18T20:54:33.487Z",
       "appointmentStatus": "cancelled",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+17745187269",
       "email": "llcorpconstruction@gmail.com",
       "statusHistory": [
@@ -717,7 +765,8 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "cancelled"
+      "status": "cancelled",
+      "closer": "Max"
     },
     {
       "id": "Ot3IttkwYZkuYoNsuDIq",
@@ -773,7 +822,8 @@
       ],
       "status": "not_closed",
       "closer": "Max",
-      "followUpBooked": false
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/jBbQeeNeXGECxGuCC7FYx6i1h-qvPV9j"
     },
     {
       "id": "v0Vf1mn7prD1cosKofkB",
@@ -791,7 +841,10 @@
           "at": "2026-03-20T02:08:12.734Z"
         }
       ],
-      "status": "no_show"
+      "status": "no_show",
+      "closer": "Max",
+      "cashCollected": 0,
+      "contractRevenue": 0
     },
     {
       "id": "Ck18SozVjErxayXzC6Ee",
@@ -1067,7 +1120,8 @@
       ],
       "status": "not_closed",
       "closer": "Max",
-      "followUpBooked": false
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/_y4G5p-KpsyzVmg4N8aoC2BDDpoY5zxt"
     },
     {
       "id": "j5H3ZQbq5Ko2Hh2T06vu",
@@ -1177,7 +1231,8 @@
       ],
       "status": "not_closed",
       "closer": "Max",
-      "followUpBooked": false
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/vGdr9zYbwfhRNgPR9JrxYasB6PmF_JQL"
     },
     {
       "id": "yeZSmidTlfLSFxLq1h8Z",
@@ -1215,7 +1270,8 @@
       ],
       "status": "not_closed",
       "closer": "Max",
-      "followUpBooked": false
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/RVsSsXeidLbvcFCC8sojPuqsDNzQRNZM"
     },
     {
       "id": "YndEKwd4vnEVP7QFLQi9",
@@ -1235,7 +1291,8 @@
       ],
       "status": "not_closed",
       "closer": "Max",
-      "followUpBooked": false
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/WuYP4bEwg9vxa9eWnmD9jGc1gkwX5WjK"
     },
     {
       "id": "BktOBpKIqn9eIsjuHSGI",
@@ -1487,7 +1544,8 @@
           "at": "2026-03-20T02:08:12.734Z"
         }
       ],
-      "status": "not_closed"
+      "status": "not_closed",
+      "fathomLink": "https://fathom.video/share/ACs_roxvMN67xC2bZgRxM1ENeWWhEQxs"
     },
     {
       "id": "yrrbq78Yiy6Mf5OEiCOe",
@@ -1705,7 +1763,8 @@
       ],
       "status": "not_closed",
       "closer": "Max",
-      "followUpBooked": false
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/FgxAHxDv1jxmPrYxMycbatRgqqWZPbiF"
     },
     {
       "id": "g86emIwajvfCEIT9jArD",
@@ -1779,7 +1838,8 @@
       ],
       "status": "not_closed",
       "closer": "Max",
-      "followUpBooked": false
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/NkUm4JWGzMws1ResbQypeWDQ4vznVzgb"
     },
     {
       "id": "xgDH0fe5uFdmRqhWWK8D",
@@ -1869,7 +1929,8 @@
           "at": "2026-03-20T02:08:12.734Z"
         }
       ],
-      "status": "not_closed"
+      "status": "not_closed",
+      "fathomLink": "https://fathom.video/share/tSHkxrc8FVhDFWbr6fStNwuW8QywjbfE"
     },
     {
       "id": "9ogDKi1gUBAiGHP1dK0D",
@@ -1923,7 +1984,8 @@
           "at": "2026-03-20T02:08:12.734Z"
         }
       ],
-      "status": "not_closed"
+      "status": "not_closed",
+      "fathomLink": "https://fathom.video/share/iMihk-wTkJLHyd_9xrh79gKC-fugoM54"
     },
     {
       "id": "kdgaPMcKvaIBdubehNrY",
@@ -2825,7 +2887,7 @@
       "contractRevenue": null,
       "offerMade": null,
       "followUpBooked": false,
-      "fathomLink": null
+      "fathomLink": "https://fathom.video/share/Pis3K2AXHXBub8rQbK_e1hS8-s3xhhFF"
     },
     {
       "id": "xl_2026-02-18_ted_helton",
@@ -3345,7 +3407,7 @@
       "contractRevenue": 5000,
       "offerMade": null,
       "followUpBooked": true,
-      "fathomLink": null
+      "fathomLink": "https://fathom.video/share/cJPmyXrcqSgy_5tGojszCHi4-7kSt3xk"
     },
     {
       "id": "xl_2026-02-24_fabiana",
@@ -3424,7 +3486,8 @@
       "phone": "+17039394268",
       "email": "ljp26@hotmail.com",
       "statusHistory": [],
-      "status": "showed"
+      "status": "showed",
+      "fathomLink": "https://fathom.video/share/witjQ3uNRtJGHuc-dy7W3x1C9Siexa2g"
     },
     {
       "id": "XQ1lEbaXB4uzlpCHW3wH",
@@ -3955,7 +4018,8 @@
       "statusHistory": [],
       "status": "not_closed",
       "closer": "Max",
-      "followUpBooked": false
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/FM7eXh9Z5coAyg6_azyrgDHeyKAgEo8U"
     },
     {
       "id": "TmCtuWOKglVUUDJKpkpd",
@@ -4114,7 +4178,8 @@
       "statusHistory": [],
       "status": "not_closed",
       "closer": "Max",
-      "followUpBooked": false
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/-9dxTtDrY9SxTb7zYbpgKdysLoDJk6_B"
     },
     {
       "id": "y7AckbR1D7oIs8sV5yGZ",
@@ -4251,7 +4316,8 @@
       "phone": "+12626232720",
       "email": "dennis.h.kohlmeier@gmail.com",
       "statusHistory": [],
-      "status": "no_show"
+      "status": "no_show",
+      "fathomLink": "https://fathom.video/share/MCwdQ3f7KgzxDdyvupjeVpWTMCJtzLqS"
     },
     {
       "id": "inFgGZz9CKaJ2RraMCJj",
@@ -5288,7 +5354,8 @@
       "statusHistory": [],
       "status": "not_closed",
       "closer": "Max",
-      "followUpBooked": false
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/umdqrk2ueV7pbeejRLpWeHxahpZfgdF8"
     },
     {
       "id": "HgSKgEneQwXkvGlyLZfo",
@@ -5301,7 +5368,8 @@
       "phone": "+14807977876",
       "email": "steve@beachstudiodesignbuild.com",
       "statusHistory": [],
-      "status": "no_show"
+      "status": "no_show",
+      "fathomLink": "https://fathom.video/share/3Rq5hx1qyJEgqRxfumxaAzBL72JykHUz"
     },
     {
       "id": "YylFDXke2M2yVvSWVwOY",
