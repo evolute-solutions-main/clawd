@@ -16,7 +16,7 @@ const metricsBundle = `<script id="metrics-lib">
 // AUTO-GENERATED from lib/metrics.mjs — do not edit here
 ;(function(){
 ${metricsSource}
-window.Metrics={isColdSMS,isAds,parseDate,inWindow,filterAppts,filterExpenses,computeRevenue,computeShowRate,computeCAC,computeROAS,computePL,computeLTV,computeFunnel,computeSetters,computeMonthlyTrends,computePipeline}
+window.Metrics={isColdSMS,isAds,parseDate,inWindow,filterAppts,filterExpenses,computeRevenue,computeShowRate,computeCAC,computeROAS,computePL,computeLTV,computeFunnel,computeSetters,computeSetterTrends,computeMonthlyTrends,computePipeline}
 })()
 </script>`
 

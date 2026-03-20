@@ -21,25 +21,6 @@
       "closer": "Max"
     },
     {
-      "id": "P4i8t7592RfjMcmlzjtU",
-      "contactName": "(Follow Up w Sales Team)",
-      "calendarName": "Cold SMS",
-      "startTime": "2025-12-01T11:00:00-05:00",
-      "timeCreated": "2025-11-25T19:59:27.701Z",
-      "appointmentStatus": "confirmed",
-      "createdBy": "Max",
-      "phone": "+19209482855",
-      "email": "snaponscherer@gmail.com",
-      "statusHistory": [
-        {
-          "status": "confirmed",
-          "at": "2026-03-20T10:51:35.953Z"
-        }
-      ],
-      "status": "confirmed",
-      "closer": "Max"
-    },
-    {
       "id": "xbibOTTSEfcwznbb1KJS",
       "contactName": "Evolute Solutions AI Strategy Session: Matthew DiSousa",
       "calendarName": "Inbound Strategy Session",
@@ -194,7 +175,7 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "confirmed",
+      "status": "no_show",
       "closer": "Max"
     },
     {
@@ -270,7 +251,7 @@
           "at": "2026-03-20T10:56:55.013Z"
         }
       ],
-      "status": "showed",
+      "status": "not_closed",
       "fathomLink": "https://fathom.video/share/2BGhmcpkjDQC4B1fJECE9GXxv4ciKo2D",
       "closer": "Max"
     },
@@ -309,7 +290,7 @@
           "at": "2026-03-20T10:56:55.013Z"
         }
       ],
-      "status": "confirmed",
+      "status": "no_show",
       "closer": "Max"
     },
     {
@@ -328,7 +309,7 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "confirmed",
+      "status": "no_show",
       "closer": "Max"
     },
     {
@@ -347,7 +328,7 @@
           "at": "2026-03-20T10:56:55.013Z"
         }
       ],
-      "status": "showed",
+      "status": "not_closed",
       "fathomLink": "https://fathom.video/share/zgftVVTncBZqCtzoGx12Udx-87iy1X7y",
       "closer": "Max"
     },
@@ -405,7 +386,7 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "confirmed",
+      "status": "no_show",
       "closer": "Max"
     },
     {
@@ -443,7 +424,7 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "showed",
+      "status": "not_closed",
       "fathomLink": "https://fathom.video/share/KfjNx4NqU_JpV_Dnc6TDxZLNxgyK39Ha",
       "closer": "Max"
     },
@@ -596,7 +577,7 @@
           "at": "2026-03-20T10:51:35.953Z"
         }
       ],
-      "status": "showed",
+      "status": "not_closed",
       "fathomLink": "https://fathom.video/share/-NR7xuyxs59DHy37rnWk2KV3y_UwyyCi",
       "closer": "Max"
     },
