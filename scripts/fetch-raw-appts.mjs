@@ -29,8 +29,9 @@ const SETTER_MAP = {
 }
 
 const CALENDAR_NAMES = {
-  [CALENDARS.COLD_SMS]:     'Cold SMS',
-  [CALENDARS.META_INBOUND]: 'AI Strategy Session (Meta Inbound)',
+  [CALENDARS.COLD_SMS]:          'Cold SMS',
+  [CALENDARS.META_INBOUND]:      'AI Strategy Session (Meta Inbound)',
+  [CALENDARS.INBOUND_STRATEGY]:  'Inbound Strategy Session',
 }
 
 // Fields set manually (outcome data) — never overwrite these from GHL
@@ -72,10 +73,10 @@ async function main() {
   const data = loadData()
   const existingById = Object.fromEntries(data.appointments.map(a => [a.id, a]))
 
-  const [coldAppts, metaAppts] = await Promise.all(
-    [CALENDARS.COLD_SMS, CALENDARS.META_INBOUND].map(id => fetchAppointments(id, fromIso, toIso))
+  const [coldAppts, metaAppts, inboundAppts] = await Promise.all(
+    [CALENDARS.COLD_SMS, CALENDARS.META_INBOUND, CALENDARS.INBOUND_STRATEGY].map(id => fetchAppointments(id, fromIso, toIso))
   )
-  const allAppts = [...coldAppts, ...metaAppts].filter(a => a.startTime >= fromIso)
+  const allAppts = [...coldAppts, ...metaAppts, ...inboundAppts].filter(a => a.startTime >= fromIso)
 
   const now = new Date().toISOString()
   const fresh = []

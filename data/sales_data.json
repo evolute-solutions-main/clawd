@@ -37,6 +37,24 @@
       "status": "confirmed"
     },
     {
+      "id": "xbibOTTSEfcwznbb1KJS",
+      "contactName": "Evolute Solutions AI Strategy Session: Matthew DiSousa",
+      "calendarName": "Inbound Strategy Session",
+      "startTime": "2025-12-02T10:00:00-05:00",
+      "timeCreated": "2025-11-30T11:20:46.747Z",
+      "appointmentStatus": "cancelled",
+      "createdBy": "",
+      "phone": "+19739084884",
+      "email": "mdisousa@disousacontracting.com",
+      "statusHistory": [
+        {
+          "status": "cancelled",
+          "at": "2026-03-20T10:56:55.013Z"
+        }
+      ],
+      "status": "cancelled"
+    },
+    {
       "id": "zqy0U5PTq4Aelrf5tnFw",
       "contactName": "DMello Design Association LLC",
       "calendarName": "Cold SMS",
@@ -55,6 +73,60 @@
       "status": "new"
     },
     {
+      "id": "lS9lhuZyou4LmBQYQM6I",
+      "contactName": "Evolute Solutions AI Strategy Session: Ross Pino",
+      "calendarName": "Inbound Strategy Session",
+      "startTime": "2025-12-02T12:00:00-05:00",
+      "timeCreated": "2025-11-29T20:33:53.619Z",
+      "appointmentStatus": "cancelled",
+      "createdBy": "",
+      "phone": "+15857031419",
+      "email": "ross@concept-ii.com",
+      "statusHistory": [
+        {
+          "status": "cancelled",
+          "at": "2026-03-20T10:56:55.013Z"
+        }
+      ],
+      "status": "cancelled"
+    },
+    {
+      "id": "mM1HNsX0Fctf4PjB6G8u",
+      "contactName": "Evolute Solutions AI Strategy Session: Phillip Yarbrough",
+      "calendarName": "Inbound Strategy Session",
+      "startTime": "2025-12-02T15:00:00-05:00",
+      "timeCreated": "2025-12-02T18:20:16.897Z",
+      "appointmentStatus": "confirmed",
+      "createdBy": "",
+      "phone": "+19105232682",
+      "email": "phillipy1984@gmail.com",
+      "statusHistory": [
+        {
+          "status": "confirmed",
+          "at": "2026-03-20T10:56:55.013Z"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "XWbprsKAdYHwzJSumfGA",
+      "contactName": "Evolute Solutions AI Strategy Session: Ross Pino",
+      "calendarName": "Inbound Strategy Session",
+      "startTime": "2025-12-02T16:00:00-05:00",
+      "timeCreated": "2025-12-01T20:02:56.190Z",
+      "appointmentStatus": "confirmed",
+      "createdBy": "",
+      "phone": "+15857031419",
+      "email": "ross@concept-ii.com",
+      "statusHistory": [
+        {
+          "status": "confirmed",
+          "at": "2026-03-20T10:56:55.013Z"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
       "id": "tMUZd9UKg8RewEfU2zhC",
       "contactName": "Chris Home Projects",
       "calendarName": "Cold SMS",
@@ -71,6 +143,24 @@
         }
       ],
       "status": "confirmed"
+    },
+    {
+      "id": "WCga7JrmcD8XICxJrX2g",
+      "contactName": "Evolute Solutions AI Strategy Session: Cliff Browning",
+      "calendarName": "Inbound Strategy Session",
+      "startTime": "2025-12-03T09:00:00-05:00",
+      "timeCreated": "2025-12-02T12:48:01.673Z",
+      "appointmentStatus": "cancelled",
+      "createdBy": "",
+      "phone": "+16143139596",
+      "email": "choicereno2@gmail.com",
+      "statusHistory": [
+        {
+          "status": "cancelled",
+          "at": "2026-03-20T10:56:55.013Z"
+        }
+      ],
+      "status": "cancelled"
     },
     {
       "id": "2jdmug50xJ1DRnG89pcS",
@@ -109,6 +199,24 @@
       "status": "new"
     },
     {
+      "id": "3Fa5MVXwei2Wp1iD4Ywo",
+      "contactName": "Evolute Solutions AI Strategy Session: Ernie Cerneskie",
+      "calendarName": "Inbound Strategy Session",
+      "startTime": "2025-12-03T18:00:00-05:00",
+      "timeCreated": "2025-12-02T20:08:47.210Z",
+      "appointmentStatus": "cancelled",
+      "createdBy": "",
+      "phone": "+17244070228",
+      "email": "e.cerneskia@360customremodeling.com",
+      "statusHistory": [
+        {
+          "status": "cancelled",
+          "at": "2026-03-20T10:56:55.013Z"
+        }
+      ],
+      "status": "cancelled"
+    },
+    {
       "id": "JM9qa0AOh0iT4uKD4Eo7",
       "contactName": "Scott Stone Construction",
       "calendarName": "Cold SMS",
@@ -125,6 +233,24 @@
         }
       ],
       "status": "new"
+    },
+    {
+      "id": "0lluMvS2kP5HXlzZrwDs",
+      "contactName": "Evolute Solutions AI Strategy Session: Marc Greene",
+      "calendarName": "Inbound Strategy Session",
+      "startTime": "2025-12-04T14:00:00-05:00",
+      "timeCreated": "2025-12-02T21:02:29.039Z",
+      "appointmentStatus": "confirmed",
+      "createdBy": "",
+      "phone": "+12062517377",
+      "email": "marc@ghr.design",
+      "statusHistory": [
+        {
+          "status": "confirmed",
+          "at": "2026-03-20T10:56:55.013Z"
+        }
+      ],
+      "status": "confirmed"
     },
     {
       "id": "7YBo9boIX0aUV6nE651M",
@@ -145,6 +271,24 @@
       "status": "new"
     },
     {
+      "id": "EprIBc7kiV6Lb9O0YWpv",
+      "contactName": "Evolute Solutions AI Strategy Session: Jesse Milkovic",
+      "calendarName": "Inbound Strategy Session",
+      "startTime": "2025-12-04T16:00:00-05:00",
+      "timeCreated": "2025-12-04T16:18:16.171Z",
+      "appointmentStatus": "confirmed",
+      "createdBy": "",
+      "phone": "+12532311337",
+      "email": "jessemilkovic@gmail.com",
+      "statusHistory": [
+        {
+          "status": "confirmed",
+          "at": "2026-03-20T10:56:55.013Z"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
       "id": "Ppf2YivnJ4q8tlZvFi24",
       "contactName": "Robert Tiles And Stone LLC",
       "calendarName": "Cold SMS",
@@ -163,6 +307,24 @@
       "status": "confirmed"
     },
     {
+      "id": "rjoKUiwO3SrzBuigaAPz",
+      "contactName": "Evolute Solutions AI Strategy Session: Craig Chappell",
+      "calendarName": "Inbound Strategy Session",
+      "startTime": "2025-12-05T10:00:00-05:00",
+      "timeCreated": "2025-12-04T15:02:19.882Z",
+      "appointmentStatus": "confirmed",
+      "createdBy": "",
+      "phone": "+17179757293",
+      "email": "cchappell@leadgenadv.com",
+      "statusHistory": [
+        {
+          "status": "confirmed",
+          "at": "2026-03-20T10:56:55.013Z"
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
       "id": "R9KUFk622UevQcWMIKfz",
       "contactName": "Jacob GC & Restoration Of NH",
       "calendarName": "Cold SMS",
@@ -176,6 +338,24 @@
         {
           "status": "cancelled",
           "at": "2026-03-20T10:51:35.953Z"
+        }
+      ],
+      "status": "cancelled"
+    },
+    {
+      "id": "4OkS0eK4VJ1pb28R8HN4",
+      "contactName": "Evolute Solutions AI Strategy Session: Roni Wilson",
+      "calendarName": "Inbound Strategy Session",
+      "startTime": "2025-12-05T15:00:00-05:00",
+      "timeCreated": "2025-12-05T14:11:04.003Z",
+      "appointmentStatus": "cancelled",
+      "createdBy": "",
+      "phone": "+19406319579",
+      "email": "rwilsonj@icloud.com",
+      "statusHistory": [
+        {
+          "status": "cancelled",
+          "at": "2026-03-20T10:56:55.013Z"
         }
       ],
       "status": "cancelled"
