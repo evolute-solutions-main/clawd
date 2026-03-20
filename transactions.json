@@ -1,1249 +1,1379 @@
 [
   {
-    "email": "FPOWELL4780@GMAIL.COM",
-    "name": "FABIAN POWELL",
-    "amount": "$750.00",
-    "net": "$728.25",
-    "fee": null,
-    "date": "2025-12-12"
-  },
-  {
-    "email": "FPOWELL4780@GMAIL.COM",
-    "name": "FABIAN POWELL",
-    "amount": "$750.00",
-    "net": "$728.25",
-    "fee": null,
-    "date": "2025-12-10"
-  },
-  {
-    "email": "jamzapata02@gmail.com",
-    "name": "Juan Andres Marulanda",
-    "amount": "$100.00",
-    "net": "$97.10",
-    "fee": null,
-    "date": "2025-12-09"
-  },
-  {
-    "email": "maxpressfoundation@gmail.com",
-    "name": "Max Press Foundation Repair  Donas",
-    "amount": "$600.00",
-    "net": "$582.60",
-    "fee": null,
-    "date": "2025-12-09"
-  },
-  {
-    "email": "aokeleye25@gmail.com",
-    "name": "Aderonke Okeleye",
-    "amount": "$1,000.00",
-    "net": "$971.00",
-    "fee": null,
-    "date": "2025-12-05"
-  },
-  {
-    "email": "ross@concept-ii.com",
-    "name": "Ross Pino",
-    "amount": "$6,000.00",
-    "net": "$5,826.00",
-    "fee": null,
-    "date": "2025-12-05"
-  },
-  {
-    "email": "CHHomeProject@aol.con",
-    "name": "Christopher  Mullin",
-    "amount": "$375.00",
-    "net": "$364.13",
-    "fee": null,
-    "date": "2025-12-04"
-  },
-  {
-    "email": "Andrew@hdsfloors.com",
-    "name": "Andrew Bursler",
-    "amount": "$2,000.00",
-    "net": "$1,942.00",
-    "fee": null,
-    "date": "2025-11-26"
-  },
-  {
-    "email": "julian@masterdesignconstruction.com",
-    "name": "Julian Bedoya",
-    "amount": "$2,000.00",
-    "net": "$1,942.00",
-    "fee": null,
-    "date": "2025-11-19"
-  },
-  {
-    "email": "troy.denversight@gmail.com",
-    "name": "Troy Springston",
-    "amount": "$100.00",
-    "net": "$97.10",
-    "fee": null,
-    "date": "2025-11-19"
-  },
-  {
-    "email": "caponiti@gmail.com",
-    "name": "Christopher Caponiti",
-    "amount": "$3,000.00",
-    "net": "$2,913.00",
-    "fee": null,
-    "date": "2025-11-17"
-  },
-  {
-    "email": "marklewiscorp@gmail.com",
-    "name": "Mark Lewis",
-    "amount": "$900.00",
-    "net": "$873.90",
-    "fee": null,
-    "date": "2025-11-17"
-  },
-  {
-    "email": "marklewiscorp@gmail.com",
-    "name": "Mark Lewis",
-    "amount": "$100.00",
-    "net": "$97.10",
-    "fee": null,
-    "date": "2025-11-17"
-  },
-  {
-    "email": "souza_nike@yahoo.com",
-    "name": "Alfredo Souza",
-    "amount": "$1,400.00",
-    "net": "$1,359.40",
-    "fee": null,
-    "date": "2025-11-15"
-  },
-  {
-    "email": "nick@velentoelectricnj.com",
-    "name": "Nicholas Benevento",
-    "amount": "$6,000.00",
-    "net": "$5,826.00",
-    "fee": null,
-    "date": "2025-11-14"
-  },
-  {
-    "email": "souza_nike@yahoo.com",
-    "name": "Alfredo Souza",
-    "amount": "$100.00",
-    "net": "$97.10",
-    "fee": null,
-    "date": "2025-11-14"
-  },
-  {
-    "email": "purselstephen@gmail.com",
-    "name": "Stephen Pursel",
-    "amount": "$2,000.00",
-    "net": "$1,942.00",
-    "fee": null,
-    "date": "2025-11-13"
-  },
-  {
-    "email": "purselstephen@gmail.com",
-    "name": "Stephen Pursel",
-    "amount": "$4,000.00",
-    "net": "$3,884.00",
-    "fee": null,
-    "date": "2025-11-13"
-  },
-  {
-    "email": "aokeleye25@gmail.com",
-    "name": "Aderonke Okeleye",
-    "amount": "$1,000.00",
-    "net": "$971.00",
-    "fee": null,
-    "date": "2025-11-07"
-  },
-  {
-    "email": "FPOWELL4780@GMAIL.COM",
-    "name": "FABIAN POWELL",
-    "amount": "$750.00",
-    "net": "$728.25",
-    "fee": null,
-    "date": "2025-10-30"
-  },
-  {
-    "email": "peter@cstonerestorations.com",
-    "name": "Peter Marmorato",
-    "amount": "$4,500.00",
-    "net": "$4,369.50",
-    "fee": null,
-    "date": "2025-10-29"
-  },
-  {
-    "email": "Andrew@hdsfloors.com",
-    "name": "Andrew Bursler",
-    "amount": "$2,000.00",
-    "net": "$1,942.00",
-    "fee": null,
-    "date": "2025-10-27"
-  },
-  {
-    "email": "erniek.shs@gmail.com",
-    "name": "Ernie Karmasek",
-    "amount": "$1,500.00",
-    "net": "$1,456.50",
-    "fee": null,
-    "date": "2025-10-24"
-  },
-  {
-    "email": "mreilly@reillymgt.com",
-    "name": "MATTHEW REILLY",
-    "amount": "$1,200.00",
-    "net": "$1,165.20",
-    "fee": null,
-    "date": "2025-10-23"
-  },
-  {
-    "email": "jtshook889@gmail.com",
-    "name": "Justin Shook",
-    "amount": "$250.00",
-    "net": "$242.75",
-    "fee": null,
-    "date": "2025-10-22"
-  },
-  {
-    "email": "brad@granitesouth.com",
-    "name": "BradLey Rush",
-    "amount": "$250.00",
-    "net": "$242.75",
-    "fee": null,
-    "date": "2025-10-22"
-  },
-  {
-    "email": "FPOWELL4780@GMAIL.COM",
-    "name": "FABIAN POWELL",
-    "amount": "$750.00",
-    "net": "$728.25",
-    "fee": null,
-    "date": "2025-10-16"
-  },
-  {
-    "email": "aokeleye25@gmail.com",
-    "name": "Aderonke Okeleye",
-    "amount": "$1,000.00",
-    "net": "$971.00",
-    "fee": null,
-    "date": "2025-10-10"
-  },
-  {
-    "email": "info@BORestoration-northokc.com",
-    "name": "Dustin Pierce",
-    "amount": "$2,400.00",
-    "net": "$2,330.40",
-    "fee": null,
-    "date": "2025-10-06"
-  },
-  {
-    "email": "candles@sweetbeeswax.com",
-    "name": "Isaiah Wielenta",
-    "amount": "$250.00",
-    "net": "$242.75",
-    "fee": null,
-    "date": "2025-10-04"
-  },
-  {
-    "email": "Andrew@hdsfloors.com",
-    "name": "Andrew Bursler",
-    "amount": "$2,000.00",
-    "net": "$1,942.00",
-    "fee": null,
-    "date": "2025-09-27"
-  },
-  {
-    "email": "info@gctiledesign.com",
-    "name": "Stevie Curry",
-    "amount": "$2,400.00",
-    "net": "$2,330.40",
-    "fee": null,
-    "date": "2025-09-25"
-  },
-  {
-    "email": "brandon@517handyman.com",
-    "name": "Brandon Smith",
-    "amount": "$6,038.73",
-    "net": "$5,863.61",
-    "fee": null,
-    "date": "2025-09-24"
-  },
-  {
-    "email": "mreilly@reillymgt.com",
-    "name": "MATTHEW REILLY",
-    "amount": "$1,200.00",
-    "net": "$1,165.20",
-    "fee": null,
-    "date": "2025-09-23"
-  },
-  {
-    "email": "creativesolutionslongisland@gmail.com",
-    "name": "Matthew Mustakas",
-    "amount": "$1,200.00",
-    "net": "$1,165.20",
-    "fee": null,
-    "date": "2025-09-13"
-  },
-  {
-    "email": "aokeleye25@gmail.com",
-    "name": "Aderonke Okeleye",
-    "amount": "$1,000.00",
-    "net": "$971.00",
-    "fee": null,
-    "date": "2025-09-12"
-  },
-  {
-    "email": "b.englerconstructionllc@gmail.com",
-    "name": "Brian Engler",
-    "amount": "$3,000.00",
-    "net": "$2,913.00",
-    "fee": null,
-    "date": "2025-09-12"
-  },
-  {
-    "email": "moses@zacariasenterprises.net",
-    "name": "Moises Trujillo",
-    "amount": "$2,800.00",
-    "net": "$2,718.80",
-    "fee": null,
-    "date": "2025-09-10"
-  },
-  {
-    "email": "ccaballero@legacyhomestx.com",
-    "name": "Carlos Caballero",
-    "amount": "$1,200.00",
-    "net": "$1,165.20",
-    "fee": null,
-    "date": "2025-09-09"
-  },
-  {
-    "email": "Dichiaraconstruction@gmail.com",
-    "name": "Christopher DiChiara",
-    "amount": "$6,000.00",
-    "net": "$5,826.00",
-    "fee": null,
-    "date": "2025-09-09"
-  },
-  {
-    "email": "danielsevilla090905@gmail.com",
-    "name": "Daniel Sevilla",
-    "amount": "$3,875.00",
-    "net": "$3,762.63",
-    "fee": null,
-    "date": "2025-09-06"
-  },
-  {
-    "email": "info@BORestoration-northokc.com",
-    "name": "Dustin Pierce",
-    "amount": "$2,400.00",
-    "net": "$2,330.40",
-    "fee": null,
-    "date": "2025-09-05"
-  },
-  {
-    "email": "pureremodelingllc@gmail.com",
-    "name": "Jihurenn  Ramirez",
-    "amount": "$1,500.00",
-    "net": "$1,456.50",
-    "fee": null,
-    "date": "2025-09-04"
-  },
-  {
-    "email": "moses@zacariasenterprises.net",
-    "name": "Moises Trujillo",
-    "amount": "$1,000.00",
-    "net": "$971.00",
-    "fee": null,
-    "date": "2025-09-04"
-  },
-  {
-    "email": "ricardoserious203@gmail.com",
-    "name": "Ricardo Corona",
-    "amount": "$1,200.00",
-    "net": "$1,165.20",
-    "fee": null,
-    "date": "2025-09-03"
-  },
-  {
-    "email": "mark@flooringfriend.net",
-    "name": "Mark Holick",
-    "amount": "$1,000.00",
-    "net": "$971.00",
-    "fee": null,
-    "date": "2025-08-29"
-  },
-  {
-    "email": "Andrew@hdsfloors.com",
-    "name": "Andrew Bursler",
-    "amount": "$2,000.00",
-    "net": "$1,942.00",
-    "fee": null,
-    "date": "2025-08-28"
-  },
-  {
-    "email": "learyz@yahoo.com",
-    "name": "Zachary Leary",
-    "amount": "$1,000.00",
-    "net": "$971.00",
-    "fee": null,
-    "date": "2025-08-28"
-  },
-  {
-    "email": "mwellhastings@gmail.com",
-    "name": "Maxwell Hastings",
-    "amount": "$1.00",
-    "net": "$0.97",
-    "fee": null,
-    "date": "2025-08-27"
-  },
-  {
-    "email": "aletagrace@icloud.com",
-    "name": "Aleta Klein",
-    "amount": "$250.00",
-    "net": "$242.75",
-    "fee": null,
-    "date": "2025-08-27"
-  },
-  {
-    "email": "mreilly@reillymgt.com",
-    "name": "MATTHEW REILLY",
-    "amount": "$1,200.00",
-    "net": "$1,165.20",
-    "fee": null,
-    "date": "2025-08-24"
-  },
-  {
-    "email": "mjames.invest@yahoo.com",
-    "name": "Maurice  James",
-    "amount": "$125.00",
-    "net": "$121.38",
-    "fee": null,
-    "date": "2025-08-22"
-  },
-  {
-    "email": "mjames.invest@yahoo.com",
-    "name": "Maurice  James",
-    "amount": "$125.00",
-    "net": "$121.38",
-    "fee": null,
-    "date": "2025-08-15"
-  },
-  {
-    "email": "scott.blomgren@fcifloors.com",
-    "name": "Mikel Blomgren",
-    "amount": "$2,400.00",
-    "net": "$2,330.40",
-    "fee": null,
-    "date": "2025-08-14"
-  },
-  {
-    "email": "ccaballero@legacyhomestx.com",
-    "name": "Carlos Caballero",
-    "amount": "$1,200.00",
-    "net": "$1,165.20",
-    "fee": null,
-    "date": "2025-08-10"
-  },
-  {
-    "email": "mjames.invest@yahoo.com",
-    "name": "Maurice  James",
-    "amount": "$125.00",
-    "net": "$121.38",
-    "fee": null,
-    "date": "2025-08-08"
-  },
-  {
-    "email": "danielsevilla090905@gmail.com",
-    "name": "Daniel Sevilla",
-    "amount": "$3,875.00",
-    "net": "$3,762.63",
-    "fee": null,
-    "date": "2025-08-07"
-  },
-  {
-    "email": "vvalek007@gmail.com",
-    "name": "Vaclav Valek",
-    "amount": "$250.00",
-    "net": "$242.75",
-    "fee": null,
-    "date": "2025-08-06"
-  },
-  {
-    "email": "iriverdaleconstruction@gmail.com",
-    "name": "Raquel  Diamond",
-    "amount": "$2,400.00",
-    "net": "$2,330.40",
-    "fee": null,
-    "date": "2025-08-04"
-  },
-  {
-    "email": "rfcarpentryllc@gmail.com",
-    "name": "Steven Flak",
-    "amount": "$3,600.00",
-    "net": "$3,495.60",
-    "fee": null,
-    "date": "2025-08-02"
-  },
-  {
-    "email": "mjames.invest@yahoo.com",
-    "name": "Maurice  James",
-    "amount": "$125.00",
-    "net": "$121.38",
-    "fee": null,
-    "date": "2025-08-01"
-  },
-  {
-    "email": "rfcarpentryllc@gmail.com",
-    "name": "Steven Flak",
-    "amount": "$1,200.00",
-    "net": "$1,165.20",
-    "fee": null,
-    "date": "2025-08-01"
-  },
-  {
-    "email": "turk@innavik.com",
-    "name": "Nicholas Turk",
-    "amount": "$4,800.00",
-    "net": "$4,660.80",
-    "fee": null,
-    "date": "2025-07-30"
-  },
-  {
-    "email": "mark@flooringfriend.net",
-    "name": "Mark Holick",
-    "amount": "$1,000.00",
-    "net": "$971.00",
-    "fee": null,
-    "date": "2025-07-30"
-  },
-  {
-    "email": "Andrew@hdsfloors.com",
-    "name": "Andrew Bursler",
-    "amount": "$2,000.00",
-    "net": "$1,942.00",
-    "fee": null,
-    "date": "2025-07-29"
-  },
-  {
-    "email": "mreilly@reillymgt.com",
-    "name": "MATTHEW REILLY",
-    "amount": "$1,200.00",
-    "net": "$1,165.20",
-    "fee": null,
-    "date": "2025-07-25"
-  },
-  {
-    "email": "mjames.invest@yahoo.com",
-    "name": "Maurice  James",
-    "amount": "$125.00",
-    "net": "$121.38",
-    "fee": null,
-    "date": "2025-07-25"
-  },
-  {
-    "email": "creativesolutionslongisland@gmail.com",
-    "name": "Matthew Mustakas",
-    "amount": "$2,400.00",
-    "net": "$2,330.40",
-    "fee": null,
-    "date": "2025-07-24"
-  },
-  {
-    "email": "maxpressfoundation@gmail.com",
-    "name": "Max Press Foundation Repair  Donas",
-    "amount": "$2,400.00",
-    "net": "$2,330.40",
-    "fee": null,
-    "date": "2025-07-24"
-  },
-  {
-    "email": "shahzad.shahid02@gmail.com",
-    "name": "shahzad shahid",
-    "amount": "$50.00",
-    "net": "$48.55",
-    "fee": null,
-    "date": "2025-07-15"
-  },
-  {
-    "email": "ccaballero@legacyhomestx.com",
-    "name": "Carlos Caballero",
-    "amount": "$1,200.00",
-    "net": "$1,165.20",
-    "fee": null,
-    "date": "2025-07-11"
-  },
-  {
-    "email": "b.englerconstructionllc@gmail.com",
-    "name": "Brian Engler",
-    "amount": "$3,000.00",
-    "net": "$2,913.00",
-    "fee": null,
-    "date": "2025-07-09"
-  },
-  {
-    "email": "stormyiskyikruscke@gmail.com",
-    "name": "Stormyi Kruscke",
-    "amount": "$1,200.00",
-    "net": "$1,165.20",
-    "fee": null,
-    "date": "2025-07-06"
-  },
-  {
-    "email": "brandon@517handyman.com",
-    "name": "Brandon Smith",
-    "amount": "$5,000.00",
-    "net": "$4,855.00",
-    "fee": null,
-    "date": "2025-07-04"
-  },
-  {
-    "email": "brandon@517handyman.com",
-    "name": "Brandon Smith",
-    "amount": "$1,750.00",
-    "net": "$1,699.25",
-    "fee": null,
-    "date": "2025-07-04"
-  },
-  {
-    "email": "antonioc@corzallc.com",
-    "name": "Antonio  Corza",
-    "amount": "$1,000.00",
-    "net": "$971.00",
-    "fee": null,
-    "date": "2025-07-02"
-  },
-  {
-    "email": "ccaballero@legacyhomestx.com",
-    "name": "Carlos Caballero",
-    "amount": "$1,200.00",
-    "net": "$1,165.20",
-    "fee": null,
-    "date": "2025-06-11"
-  },
-  {
-    "email": "MIKEDVY@YAHOO.COM",
-    "name": "MICHAEL DAVEY",
-    "amount": "$4,000.00",
-    "net": "$3,884.00",
-    "fee": null,
-    "date": "2025-06-09"
-  },
-  {
-    "email": "trepicllc@gmail.com",
-    "name": "ADERONKE OKELEYE",
-    "amount": "$3,000.00",
-    "net": "$2,913.00",
-    "fee": null,
-    "date": "2025-06-05"
-  },
-  {
-    "email": "antonioc@corzallc.com",
-    "name": "Antonio  Corza",
-    "amount": "$1,000.00",
-    "net": "$971.00",
-    "fee": null,
-    "date": "2025-06-04"
-  },
-  {
-    "email": "luellv42@gmail.com",
-    "name": "Vance luell",
-    "amount": "$2,400.00",
-    "net": "$2,330.40",
-    "fee": null,
-    "date": "2025-06-03"
-  },
-  {
-    "email": "l.aconstrucionllc23@gmail.com",
-    "name": "Luis  Diaz",
-    "amount": "$2,000.00",
-    "net": "$1,942.00",
-    "fee": null,
-    "date": "2025-06-01"
-  },
-  {
-    "email": "mark@flooringfriend.net",
-    "name": "Mark Holick",
-    "amount": "$1,000.00",
-    "net": "$971.00",
-    "fee": null,
-    "date": "2025-05-31"
-  },
-  {
-    "email": "info@artsoconcepts.com",
-    "name": "Yuriy  Artymovych",
-    "amount": "$4,800.00",
-    "net": "$4,660.80",
-    "fee": null,
-    "date": "2025-05-26"
+    "email": "fischer2282@gmail.com",
+    "name": "",
+    "amount": 5000,
+    "net": 4854.7,
+    "fee": 145.3,
+    "date": "2025-01-11",
+    "source": "stripe"
+  },
+  {
+    "email": "mikej.mj12@gmail.com",
+    "name": "",
+    "amount": 1,
+    "net": 0.67,
+    "fee": 0.33,
+    "date": "2025-01-22",
+    "source": "stripe"
+  },
+  {
+    "email": "ahcorza1@gmail.com",
+    "name": "",
+    "amount": 250,
+    "net": 242.45,
+    "fee": 7.55,
+    "date": "2025-01-27",
+    "source": "stripe"
   },
   {
     "email": "elliot.lavinder@gmail.com",
-    "name": "Elliot  Lavinder",
-    "amount": "$3,500.00",
-    "net": "$3,398.50",
-    "fee": null,
-    "date": "2025-05-21"
-  },
-  {
-    "email": "lsrmaintenance24@gmail.com",
-    "name": "Clayton Johnson",
-    "amount": "$250.00",
-    "net": "$242.75",
-    "fee": null,
-    "date": "2025-05-20"
-  },
-  {
-    "email": "hightechepoxy@gmail.com",
-    "name": "Anthony  Zatarain",
-    "amount": "$1,000.00",
-    "net": "$920.00",
-    "fee": null,
-    "date": "2025-05-13"
-  },
-  {
-    "email": "brandon@517handyman.com",
-    "name": "Brandon Smith",
-    "amount": "$2,000.00",
-    "net": "$1,942.00",
-    "fee": null,
-    "date": "2025-05-08"
-  },
-  {
-    "email": "l.and.s.stucco@gmail.com",
-    "name": "Logan Dekeado",
-    "amount": "$250.00",
-    "net": "$242.75",
-    "fee": null,
-    "date": "2025-05-06"
-  },
-  {
-    "email": "vjconstructioninfo@gmail.com",
-    "name": "Vinicius Charpinel",
-    "amount": "$1,000.00",
-    "net": "$971.00",
-    "fee": null,
-    "date": "2025-05-02"
-  },
-  {
-    "email": "l.aconstrucionllc23@gmail.com",
-    "name": "Luis  Diaz",
-    "amount": "$2,000.00",
-    "net": "$1,942.00",
-    "fee": null,
-    "date": "2025-05-02"
-  },
-  {
-    "email": "bill@billkopainting.com",
-    "name": "William Myrie",
-    "amount": "$250.00",
-    "net": "$242.75",
-    "fee": null,
-    "date": "2025-05-02"
-  },
-  {
-    "email": "coolservices.nate@outlook.com",
-    "name": "Nathan Cooling",
-    "amount": "$3,000.00",
-    "net": "$2,913.00",
-    "fee": null,
-    "date": "2025-04-30"
-  },
-  {
-    "email": "rockymountainhs25@gmail.com",
-    "name": "Miles Gerdes",
-    "amount": "$50.00",
-    "net": "$48.55",
-    "fee": null,
-    "date": "2025-04-28"
-  },
-  {
-    "email": "rhentsch325@aol.com",
-    "name": "Rudy Hentschel",
-    "amount": "$2,000.00",
-    "net": "$1,942.00",
-    "fee": null,
-    "date": "2025-04-21"
-  },
-  {
-    "email": "brandon@517handyman.com",
-    "name": "Brandon Smith",
-    "amount": "$2,000.00",
-    "net": "$1,942.00",
-    "fee": null,
-    "date": "2025-04-16"
-  },
-  {
-    "email": "OSCAR@SUNDRYWALL.COM",
-    "name": "OSCAR BENITEZ",
-    "amount": "$1,000.00",
-    "net": "$920.00",
-    "fee": null,
-    "date": "2025-04-07"
-  },
-  {
-    "email": "sales@ashtonkb.com",
-    "name": "Christopher  Caponiti",
-    "amount": "$6,000.00",
-    "net": "$5,826.00",
-    "fee": null,
-    "date": "2025-04-05"
-  },
-  {
-    "email": "coolservices.nate@outlook.com",
-    "name": "Nathan Cooling",
-    "amount": "$3,000.00",
-    "net": "$2,913.00",
-    "fee": null,
-    "date": "2025-04-04"
-  },
-  {
-    "email": "l.aconstrucionllc23@gmail.com",
-    "name": "Luis  Diaz",
-    "amount": "$2,000.00",
-    "net": "$1,942.00",
-    "fee": null,
-    "date": "2025-04-02"
-  },
-  {
-    "email": "fghouston@hotmail.com",
-    "name": "Forrest Houston",
-    "amount": "$2,000.00",
-    "net": "$1,942.00",
-    "fee": null,
-    "date": "2025-03-26"
-  },
-  {
-    "email": "the.redwood.exotics@gmail.com",
-    "name": "Daniel Sevilla",
-    "amount": "$250.00",
-    "net": "$242.75",
-    "fee": null,
-    "date": "2025-03-26"
-  },
-  {
-    "email": "ronieldar@yahoo.com",
-    "name": "Roni Eldar",
-    "amount": "$200.00",
-    "net": "$194.20",
-    "fee": null,
-    "date": "2025-03-23"
-  },
-  {
-    "email": "brandon@517handyman.com",
-    "name": "Brandon Smith",
-    "amount": "$2,000.00",
-    "net": "$1,942.00",
-    "fee": null,
-    "date": "2025-03-19"
-  },
-  {
-    "email": "longm24@gmail.com",
-    "name": "Mike Long",
-    "amount": "$1,000.00",
-    "net": "$971.00",
-    "fee": null,
-    "date": "2025-03-15"
-  },
-  {
-    "email": "antonioc@corzallc.com",
-    "name": "Antonio  Corza",
-    "amount": "$1,000.00",
-    "net": "$971.00",
-    "fee": null,
-    "date": "2025-03-14"
-  },
-  {
-    "email": "MIKEDVY@YAHOO.COM",
-    "name": "MICHAEL DAVEY",
-    "amount": "$4,000.00",
-    "net": "$3,884.00",
-    "fee": null,
-    "date": "2025-03-11"
-  },
-  {
-    "email": "brandon@517handyman.com",
-    "name": "Brandon Smith",
-    "amount": "$250.00",
-    "net": "$242.75",
-    "fee": null,
-    "date": "2025-03-08"
-  },
-  {
-    "email": "antonioc@corzallc.com",
-    "name": "Antonio  Corza",
-    "amount": "$1,000.00",
-    "net": "$971.00",
-    "fee": null,
-    "date": "2025-03-04"
-  },
-  {
-    "email": "josh@hannumbr.com",
-    "name": "Joshua Hannum",
-    "amount": "$500.00",
-    "net": "$485.50",
-    "fee": null,
-    "date": "2025-02-28"
-  },
-  {
-    "email": "williamallen1981@gmail.com",
-    "name": "William Allen",
-    "amount": "$1,000.00",
-    "net": "$971.00",
-    "fee": null,
-    "date": "2025-02-13"
+    "name": "Elliot Lavinder",
+    "amount": 4000,
+    "net": 3883.7,
+    "fee": 116.3,
+    "date": "2025-01-29",
+    "source": "stripe"
   },
   {
     "email": "ahcorza1@gmail.com",
     "name": "Antonio Corza",
-    "amount": "$500.00",
-    "net": "$460.00",
+    "amount": 500,
+    "net": 460,
     "fee": null,
-    "date": "2025-01-31"
+    "date": "2025-01-30",
+    "source": "fanbasis"
+  },
+  {
+    "email": "antonioc@corzallc.com",
+    "name": "",
+    "amount": 250,
+    "net": 242.45,
+    "fee": 7.55,
+    "date": "2025-02-04",
+    "source": "stripe"
+  },
+  {
+    "email": "patricioenterprisesllc@gmail.com",
+    "name": "",
+    "amount": 2000,
+    "net": 1941.7,
+    "fee": 58.3,
+    "date": "2025-02-06",
+    "source": "stripe"
+  },
+  {
+    "email": "smcmanus.inc@gmail.com",
+    "name": "",
+    "amount": 500,
+    "net": 485.2,
+    "fee": 14.8,
+    "date": "2025-02-10",
+    "source": "stripe"
+  },
+  {
+    "email": "lhrtexas@gmail.com",
+    "name": "Ashton Fulgham",
+    "amount": 4000,
+    "net": 3883.7,
+    "fee": 116.3,
+    "date": "2025-02-10",
+    "source": "stripe"
+  },
+  {
+    "email": "leisurehomesllc@yahoo.com",
+    "name": "",
+    "amount": 4000,
+    "net": 3868.7,
+    "fee": 131.3,
+    "date": "2025-02-11",
+    "source": "stripe"
+  },
+  {
+    "email": "l.aconstructionllc23@gmail.com",
+    "name": "LAC Construction",
+    "amount": 2000,
+    "net": 1941.7,
+    "fee": 58.3,
+    "date": "2025-02-11",
+    "source": "stripe"
+  },
+  {
+    "email": "williamallen1981@gmail.com",
+    "name": "William Allen",
+    "amount": 1000,
+    "net": 971,
+    "fee": null,
+    "date": "2025-02-13",
+    "source": "fanbasis"
+  },
+  {
+    "email": "josh@hannumbr.com",
+    "name": "Joshua Hannum",
+    "amount": 500,
+    "net": 485.5,
+    "fee": null,
+    "date": "2025-02-28",
+    "source": "fanbasis"
+  },
+  {
+    "email": "antonioc@corzallc.com",
+    "name": "Antonio  Corza",
+    "amount": 1000,
+    "net": 971,
+    "fee": null,
+    "date": "2025-03-04",
+    "source": "fanbasis"
+  },
+  {
+    "email": "brandon@517handyman.com",
+    "name": "Brandon Smith",
+    "amount": 250,
+    "net": 242.75,
+    "fee": null,
+    "date": "2025-03-08",
+    "source": "fanbasis"
+  },
+  {
+    "email": "mikedvy@yahoo.com",
+    "name": "MICHAEL DAVEY",
+    "amount": 4000,
+    "net": 3884,
+    "fee": null,
+    "date": "2025-03-11",
+    "source": "fanbasis"
+  },
+  {
+    "email": "antonioc@corzallc.com",
+    "name": "Antonio  Corza",
+    "amount": 1000,
+    "net": 971,
+    "fee": null,
+    "date": "2025-03-14",
+    "source": "fanbasis"
+  },
+  {
+    "email": "longm24@gmail.com",
+    "name": "Mike Long",
+    "amount": 1000,
+    "net": 971,
+    "fee": null,
+    "date": "2025-03-15",
+    "source": "fanbasis"
+  },
+  {
+    "email": "brandon@517handyman.com",
+    "name": "Brandon Smith",
+    "amount": 2000,
+    "net": 1942,
+    "fee": null,
+    "date": "2025-03-19",
+    "source": "fanbasis"
+  },
+  {
+    "email": "ronieldar@yahoo.com",
+    "name": "Roni Eldar",
+    "amount": 200,
+    "net": 194.2,
+    "fee": null,
+    "date": "2025-03-23",
+    "source": "fanbasis"
+  },
+  {
+    "email": "the.redwood.exotics@gmail.com",
+    "name": "Daniel Sevilla",
+    "amount": 250,
+    "net": 242.75,
+    "fee": null,
+    "date": "2025-03-25",
+    "source": "fanbasis"
+  },
+  {
+    "email": "fghouston@hotmail.com",
+    "name": "Forrest Houston",
+    "amount": 2000,
+    "net": 1942,
+    "fee": null,
+    "date": "2025-03-26",
+    "source": "fanbasis"
+  },
+  {
+    "email": "l.aconstrucionllc23@gmail.com",
+    "name": "Luis  Diaz",
+    "amount": 2000,
+    "net": 1942,
+    "fee": null,
+    "date": "2025-04-02",
+    "source": "fanbasis"
+  },
+  {
+    "email": "coolservices.nate@outlook.com",
+    "name": "Nathan Cooling",
+    "amount": 3000,
+    "net": 2913,
+    "fee": null,
+    "date": "2025-04-04",
+    "source": "fanbasis"
+  },
+  {
+    "email": "sales@ashtonkb.com",
+    "name": "Christopher  Caponiti",
+    "amount": 6000,
+    "net": 5826,
+    "fee": null,
+    "date": "2025-04-05",
+    "source": "fanbasis"
+  },
+  {
+    "email": "oscar@sundrywall.com",
+    "name": "OSCAR BENITEZ",
+    "amount": 1000,
+    "net": 920,
+    "fee": null,
+    "date": "2025-04-07",
+    "source": "fanbasis"
+  },
+  {
+    "email": "brandon@517handyman.com",
+    "name": "Brandon Smith",
+    "amount": 2000,
+    "net": 1942,
+    "fee": null,
+    "date": "2025-04-16",
+    "source": "fanbasis"
+  },
+  {
+    "email": "rhentsch325@aol.com",
+    "name": "Rudy Hentschel",
+    "amount": 2000,
+    "net": 1942,
+    "fee": null,
+    "date": "2025-04-21",
+    "source": "fanbasis"
+  },
+  {
+    "email": "rockymountainhs25@gmail.com",
+    "name": "Miles Gerdes",
+    "amount": 50,
+    "net": 48.55,
+    "fee": null,
+    "date": "2025-04-28",
+    "source": "fanbasis"
+  },
+  {
+    "email": "coolservices.nate@outlook.com",
+    "name": "Nathan Cooling",
+    "amount": 3000,
+    "net": 2913,
+    "fee": null,
+    "date": "2025-04-30",
+    "source": "fanbasis"
+  },
+  {
+    "email": "vjconstructioninfo@gmail.com",
+    "name": "Vinicius Charpinel",
+    "amount": 1000,
+    "net": 971,
+    "fee": null,
+    "date": "2025-05-02",
+    "source": "fanbasis"
+  },
+  {
+    "email": "l.aconstrucionllc23@gmail.com",
+    "name": "Luis  Diaz",
+    "amount": 2000,
+    "net": 1942,
+    "fee": null,
+    "date": "2025-05-02",
+    "source": "fanbasis"
+  },
+  {
+    "email": "bill@billkopainting.com",
+    "name": "William Myrie",
+    "amount": 250,
+    "net": 242.75,
+    "fee": null,
+    "date": "2025-05-02",
+    "source": "fanbasis"
+  },
+  {
+    "email": "l.and.s.stucco@gmail.com",
+    "name": "Logan Dekeado",
+    "amount": 250,
+    "net": 242.75,
+    "fee": null,
+    "date": "2025-05-06",
+    "source": "fanbasis"
+  },
+  {
+    "email": "brandon@517handyman.com",
+    "name": "Brandon Smith",
+    "amount": 2000,
+    "net": 1942,
+    "fee": null,
+    "date": "2025-05-08",
+    "source": "fanbasis"
+  },
+  {
+    "email": "hightechepoxy@gmail.com",
+    "name": "Anthony  Zatarain",
+    "amount": 1000,
+    "net": 920,
+    "fee": null,
+    "date": "2025-05-13",
+    "source": "fanbasis"
+  },
+  {
+    "email": "lsrmaintenance24@gmail.com",
+    "name": "Clayton Johnson",
+    "amount": 250,
+    "net": 242.75,
+    "fee": null,
+    "date": "2025-05-20",
+    "source": "fanbasis"
+  },
+  {
+    "email": "elliot.lavinder@gmail.com",
+    "name": "Elliot  Lavinder",
+    "amount": 3500,
+    "net": 3398.5,
+    "fee": null,
+    "date": "2025-05-21",
+    "source": "fanbasis"
+  },
+  {
+    "email": "info@artsoconcepts.com",
+    "name": "Yuriy  Artymovych",
+    "amount": 4800,
+    "net": 4660.8,
+    "fee": null,
+    "date": "2025-05-26",
+    "source": "fanbasis"
+  },
+  {
+    "email": "mark@flooringfriend.net",
+    "name": "Mark Holick",
+    "amount": 1000,
+    "net": 971,
+    "fee": null,
+    "date": "2025-05-31",
+    "source": "fanbasis"
+  },
+  {
+    "email": "l.aconstrucionllc23@gmail.com",
+    "name": "Luis  Diaz",
+    "amount": 2000,
+    "net": 1942,
+    "fee": null,
+    "date": "2025-06-01",
+    "source": "fanbasis"
+  },
+  {
+    "email": "luellv42@gmail.com",
+    "name": "Vance luell",
+    "amount": 2400,
+    "net": 2330.4,
+    "fee": null,
+    "date": "2025-06-03",
+    "source": "fanbasis"
+  },
+  {
+    "email": "trepicllc@gmail.com",
+    "name": "ADERONKE OKELEYE",
+    "amount": 3000,
+    "net": 2913,
+    "fee": null,
+    "date": "2025-06-04",
+    "source": "fanbasis"
+  },
+  {
+    "email": "antonioc@corzallc.com",
+    "name": "Antonio  Corza",
+    "amount": 1000,
+    "net": 971,
+    "fee": null,
+    "date": "2025-06-04",
+    "source": "fanbasis"
+  },
+  {
+    "email": "mikedvy@yahoo.com",
+    "name": "MICHAEL DAVEY",
+    "amount": 4000,
+    "net": 3884,
+    "fee": null,
+    "date": "2025-06-09",
+    "source": "fanbasis"
+  },
+  {
+    "email": "ccaballero@legacyhomestx.com",
+    "name": "Carlos Caballero",
+    "amount": 1200,
+    "net": 1165.2,
+    "fee": null,
+    "date": "2025-06-11",
+    "source": "fanbasis"
+  },
+  {
+    "email": "antonioc@corzallc.com",
+    "name": "Antonio  Corza",
+    "amount": 1000,
+    "net": 971,
+    "fee": null,
+    "date": "2025-07-02",
+    "source": "fanbasis"
+  },
+  {
+    "email": "brandon@517handyman.com",
+    "name": "Brandon Smith",
+    "amount": 5000,
+    "net": 4855,
+    "fee": null,
+    "date": "2025-07-04",
+    "source": "fanbasis"
+  },
+  {
+    "email": "brandon@517handyman.com",
+    "name": "Brandon Smith",
+    "amount": 1750,
+    "net": 1699.25,
+    "fee": null,
+    "date": "2025-07-04",
+    "source": "fanbasis"
+  },
+  {
+    "email": "stormyiskyikruscke@gmail.com",
+    "name": "Stormyi Kruscke",
+    "amount": 1200,
+    "net": 1165.2,
+    "fee": null,
+    "date": "2025-07-06",
+    "source": "fanbasis"
+  },
+  {
+    "email": "b.englerconstructionllc@gmail.com",
+    "name": "Brian Engler",
+    "amount": 3000,
+    "net": 2913,
+    "fee": null,
+    "date": "2025-07-09",
+    "source": "fanbasis"
+  },
+  {
+    "email": "ccaballero@legacyhomestx.com",
+    "name": "Carlos Caballero",
+    "amount": 1200,
+    "net": 1165.2,
+    "fee": null,
+    "date": "2025-07-11",
+    "source": "fanbasis"
+  },
+  {
+    "email": "shahzad.shahid02@gmail.com",
+    "name": "shahzad shahid",
+    "amount": 50,
+    "net": 48.55,
+    "fee": null,
+    "date": "2025-07-15",
+    "source": "fanbasis"
+  },
+  {
+    "email": "creativesolutionslongisland@gmail.com",
+    "name": "Matthew Mustakas",
+    "amount": 2400,
+    "net": 2330.4,
+    "fee": null,
+    "date": "2025-07-24",
+    "source": "fanbasis"
+  },
+  {
+    "email": "maxpressfoundation@gmail.com",
+    "name": "Max Press Foundation Repair  Donas",
+    "amount": 2400,
+    "net": 2330.4,
+    "fee": null,
+    "date": "2025-07-24",
+    "source": "fanbasis"
+  },
+  {
+    "email": "mreilly@reillymgt.com",
+    "name": "MATTHEW REILLY",
+    "amount": 1200,
+    "net": 1165.2,
+    "fee": null,
+    "date": "2025-07-25",
+    "source": "fanbasis"
+  },
+  {
+    "email": "mjames.invest@yahoo.com",
+    "name": "Maurice  James",
+    "amount": 125,
+    "net": 121.38,
+    "fee": null,
+    "date": "2025-07-25",
+    "source": "fanbasis"
+  },
+  {
+    "email": "andrew@hdsfloors.com",
+    "name": "Andrew Bursler",
+    "amount": 2000,
+    "net": 1942,
+    "fee": null,
+    "date": "2025-07-29",
+    "source": "fanbasis"
+  },
+  {
+    "email": "turk@innavik.com",
+    "name": "Nicholas Turk",
+    "amount": 4800,
+    "net": 4660.8,
+    "fee": null,
+    "date": "2025-07-30",
+    "source": "fanbasis"
+  },
+  {
+    "email": "mark@flooringfriend.net",
+    "name": "Mark Holick",
+    "amount": 1000,
+    "net": 971,
+    "fee": null,
+    "date": "2025-07-30",
+    "source": "fanbasis"
+  },
+  {
+    "email": "mjames.invest@yahoo.com",
+    "name": "Maurice  James",
+    "amount": 125,
+    "net": 121.38,
+    "fee": null,
+    "date": "2025-08-01",
+    "source": "fanbasis"
+  },
+  {
+    "email": "rfcarpentryllc@gmail.com",
+    "name": "Steven Flak",
+    "amount": 1200,
+    "net": 1165.2,
+    "fee": null,
+    "date": "2025-08-01",
+    "source": "fanbasis"
+  },
+  {
+    "email": "rfcarpentryllc@gmail.com",
+    "name": "Steven Flak",
+    "amount": 3600,
+    "net": 3495.6,
+    "fee": null,
+    "date": "2025-08-02",
+    "source": "fanbasis"
+  },
+  {
+    "email": "iriverdaleconstruction@gmail.com",
+    "name": "Raquel  Diamond",
+    "amount": 2400,
+    "net": 2330.4,
+    "fee": null,
+    "date": "2025-08-04",
+    "source": "fanbasis"
+  },
+  {
+    "email": "lhrtexas@gmail.com",
+    "name": "Ashton Fulgham",
+    "amount": 4000,
+    "net": 3884,
+    "fee": 116,
+    "date": "2025-08-04",
+    "source": "manual"
+  },
+  {
+    "email": "vvalek007@gmail.com",
+    "name": "Vaclav Valek",
+    "amount": 250,
+    "net": 242.75,
+    "fee": null,
+    "date": "2025-08-06",
+    "source": "fanbasis"
+  },
+  {
+    "email": "danielsevilla090905@gmail.com",
+    "name": "Daniel Sevilla",
+    "amount": 3875,
+    "net": 3762.63,
+    "fee": null,
+    "date": "2025-08-07",
+    "source": "fanbasis"
+  },
+  {
+    "email": "mjames.invest@yahoo.com",
+    "name": "Maurice  James",
+    "amount": 125,
+    "net": 121.38,
+    "fee": null,
+    "date": "2025-08-08",
+    "source": "fanbasis"
+  },
+  {
+    "email": "ccaballero@legacyhomestx.com",
+    "name": "Carlos Caballero",
+    "amount": 1200,
+    "net": 1165.2,
+    "fee": null,
+    "date": "2025-08-10",
+    "source": "fanbasis"
+  },
+  {
+    "email": "scott.blomgren@fcifloors.com",
+    "name": "Mikel Blomgren",
+    "amount": 2400,
+    "net": 2330.4,
+    "fee": null,
+    "date": "2025-08-14",
+    "source": "fanbasis"
+  },
+  {
+    "email": "mjames.invest@yahoo.com",
+    "name": "Maurice  James",
+    "amount": 125,
+    "net": 121.38,
+    "fee": null,
+    "date": "2025-08-15",
+    "source": "fanbasis"
+  },
+  {
+    "email": "mjames.invest@yahoo.com",
+    "name": "Maurice  James",
+    "amount": 125,
+    "net": 121.38,
+    "fee": null,
+    "date": "2025-08-22",
+    "source": "fanbasis"
+  },
+  {
+    "email": "mreilly@reillymgt.com",
+    "name": "MATTHEW REILLY",
+    "amount": 1200,
+    "net": 1165.2,
+    "fee": null,
+    "date": "2025-08-24",
+    "source": "fanbasis"
+  },
+  {
+    "email": "learyz@yahoo.com",
+    "name": "Zachary Leary",
+    "amount": 1000,
+    "net": 971,
+    "fee": null,
+    "date": "2025-08-27",
+    "source": "fanbasis"
+  },
+  {
+    "email": "mwellhastings@gmail.com",
+    "name": "Maxwell Hastings",
+    "amount": 1,
+    "net": 0.97,
+    "fee": null,
+    "date": "2025-08-27",
+    "source": "fanbasis"
+  },
+  {
+    "email": "aletagrace@icloud.com",
+    "name": "Aleta Klein",
+    "amount": 250,
+    "net": 242.75,
+    "fee": null,
+    "date": "2025-08-27",
+    "source": "fanbasis"
+  },
+  {
+    "email": "andrew@hdsfloors.com",
+    "name": "Andrew Bursler",
+    "amount": 2000,
+    "net": 1942,
+    "fee": null,
+    "date": "2025-08-28",
+    "source": "fanbasis"
+  },
+  {
+    "email": "mark@flooringfriend.net",
+    "name": "Mark Holick",
+    "amount": 1000,
+    "net": 971,
+    "fee": null,
+    "date": "2025-08-29",
+    "source": "fanbasis"
+  },
+  {
+    "email": "ricardoserious203@gmail.com",
+    "name": "Ricardo Corona",
+    "amount": 1200,
+    "net": 1165.2,
+    "fee": null,
+    "date": "2025-09-03",
+    "source": "fanbasis"
+  },
+  {
+    "email": "pureremodelingllc@gmail.com",
+    "name": "Jihurenn  Ramirez",
+    "amount": 1500,
+    "net": 1456.5,
+    "fee": null,
+    "date": "2025-09-04",
+    "source": "fanbasis"
+  },
+  {
+    "email": "moses@zacariasenterprises.net",
+    "name": "Moises Trujillo",
+    "amount": 1000,
+    "net": 971,
+    "fee": null,
+    "date": "2025-09-04",
+    "source": "fanbasis"
+  },
+  {
+    "email": "info@borestoration-northokc.com",
+    "name": "Dustin Pierce",
+    "amount": 2400,
+    "net": 2330.4,
+    "fee": null,
+    "date": "2025-09-05",
+    "source": "fanbasis"
+  },
+  {
+    "email": "danielsevilla090905@gmail.com",
+    "name": "Daniel Sevilla",
+    "amount": 3875,
+    "net": 3762.63,
+    "fee": null,
+    "date": "2025-09-06",
+    "source": "fanbasis"
+  },
+  {
+    "email": "ccaballero@legacyhomestx.com",
+    "name": "Carlos Caballero",
+    "amount": 1200,
+    "net": 1165.2,
+    "fee": null,
+    "date": "2025-09-09",
+    "source": "fanbasis"
+  },
+  {
+    "email": "dichiaraconstruction@gmail.com",
+    "name": "Christopher DiChiara",
+    "amount": 6000,
+    "net": 5826,
+    "fee": null,
+    "date": "2025-09-09",
+    "source": "fanbasis"
+  },
+  {
+    "email": "moses@zacariasenterprises.net",
+    "name": "Moises Trujillo",
+    "amount": 2800,
+    "net": 2718.8,
+    "fee": null,
+    "date": "2025-09-10",
+    "source": "fanbasis"
+  },
+  {
+    "email": "aokeleye25@gmail.com",
+    "name": "Aderonke Okeleye",
+    "amount": 1000,
+    "net": 971,
+    "fee": null,
+    "date": "2025-09-12",
+    "source": "fanbasis"
+  },
+  {
+    "email": "b.englerconstructionllc@gmail.com",
+    "name": "Brian Engler",
+    "amount": 3000,
+    "net": 2913,
+    "fee": null,
+    "date": "2025-09-12",
+    "source": "fanbasis"
+  },
+  {
+    "email": "creativesolutionslongisland@gmail.com",
+    "name": "Matthew Mustakas",
+    "amount": 1200,
+    "net": 1165.2,
+    "fee": null,
+    "date": "2025-09-13",
+    "source": "fanbasis"
+  },
+  {
+    "email": "brandon@517handyman.com",
+    "name": "Brandon Smith",
+    "amount": 6038.73,
+    "net": 5863.61,
+    "fee": null,
+    "date": "2025-09-23",
+    "source": "fanbasis"
+  },
+  {
+    "email": "mreilly@reillymgt.com",
+    "name": "MATTHEW REILLY",
+    "amount": 1200,
+    "net": 1165.2,
+    "fee": null,
+    "date": "2025-09-23",
+    "source": "fanbasis"
+  },
+  {
+    "email": "info@gctiledesign.com",
+    "name": "Stevie Curry",
+    "amount": 2400,
+    "net": 2330.4,
+    "fee": null,
+    "date": "2025-09-25",
+    "source": "fanbasis"
+  },
+  {
+    "email": "andrew@hdsfloors.com",
+    "name": "Andrew Bursler",
+    "amount": 2000,
+    "net": 1942,
+    "fee": null,
+    "date": "2025-09-27",
+    "source": "fanbasis"
+  },
+  {
+    "email": "candles@sweetbeeswax.com",
+    "name": "Isaiah Wielenta",
+    "amount": 250,
+    "net": 242.75,
+    "fee": null,
+    "date": "2025-10-04",
+    "source": "fanbasis"
+  },
+  {
+    "email": "info@borestoration-northokc.com",
+    "name": "Dustin Pierce",
+    "amount": 2400,
+    "net": 2330.4,
+    "fee": null,
+    "date": "2025-10-06",
+    "source": "fanbasis"
+  },
+  {
+    "email": "aokeleye25@gmail.com",
+    "name": "Aderonke Okeleye",
+    "amount": 1000,
+    "net": 971,
+    "fee": null,
+    "date": "2025-10-10",
+    "source": "fanbasis"
+  },
+  {
+    "email": "fpowell4780@gmail.com",
+    "name": "FABIAN POWELL",
+    "amount": 750,
+    "net": 728.25,
+    "fee": null,
+    "date": "2025-10-16",
+    "source": "fanbasis"
+  },
+  {
+    "email": "jtshook889@gmail.com",
+    "name": "Justin Shook",
+    "amount": 250,
+    "net": 242.75,
+    "fee": null,
+    "date": "2025-10-22",
+    "source": "fanbasis"
+  },
+  {
+    "email": "brad@granitesouth.com",
+    "name": "BradLey Rush",
+    "amount": 250,
+    "net": 242.75,
+    "fee": null,
+    "date": "2025-10-22",
+    "source": "fanbasis"
+  },
+  {
+    "email": "mreilly@reillymgt.com",
+    "name": "MATTHEW REILLY",
+    "amount": 1200,
+    "net": 1165.2,
+    "fee": null,
+    "date": "2025-10-23",
+    "source": "fanbasis"
+  },
+  {
+    "email": "erniek.shs@gmail.com",
+    "name": "Ernie Karmasek",
+    "amount": 1500,
+    "net": 1456.5,
+    "fee": null,
+    "date": "2025-10-24",
+    "source": "fanbasis"
+  },
+  {
+    "email": "andrew@hdsfloors.com",
+    "name": "Andrew Bursler",
+    "amount": 2000,
+    "net": 1942,
+    "fee": null,
+    "date": "2025-10-27",
+    "source": "fanbasis"
+  },
+  {
+    "email": "peter@cstonerestorations.com",
+    "name": "Peter Marmorato",
+    "amount": 4500,
+    "net": 4369.5,
+    "fee": null,
+    "date": "2025-10-29",
+    "source": "fanbasis"
+  },
+  {
+    "email": "fpowell4780@gmail.com",
+    "name": "FABIAN POWELL",
+    "amount": 750,
+    "net": 728.25,
+    "fee": null,
+    "date": "2025-10-30",
+    "source": "fanbasis"
+  },
+  {
+    "email": "aokeleye25@gmail.com",
+    "name": "Aderonke Okeleye",
+    "amount": 1000,
+    "net": 971,
+    "fee": null,
+    "date": "2025-11-07",
+    "source": "fanbasis"
+  },
+  {
+    "email": "purselstephen@gmail.com",
+    "name": "Stephen Pursel",
+    "amount": 2000,
+    "net": 1942,
+    "fee": null,
+    "date": "2025-11-13",
+    "source": "fanbasis"
+  },
+  {
+    "email": "purselstephen@gmail.com",
+    "name": "Stephen Pursel",
+    "amount": 4000,
+    "net": 3884,
+    "fee": null,
+    "date": "2025-11-13",
+    "source": "fanbasis"
+  },
+  {
+    "email": "nick@velentoelectricnj.com",
+    "name": "Nicholas Benevento",
+    "amount": 6000,
+    "net": 5826,
+    "fee": null,
+    "date": "2025-11-14",
+    "source": "fanbasis"
+  },
+  {
+    "email": "souza_nike@yahoo.com",
+    "name": "Alfredo Souza",
+    "amount": 100,
+    "net": 97.1,
+    "fee": null,
+    "date": "2025-11-14",
+    "source": "fanbasis"
+  },
+  {
+    "email": "souza_nike@yahoo.com",
+    "name": "Alfredo Souza",
+    "amount": 1400,
+    "net": 1359.4,
+    "fee": null,
+    "date": "2025-11-15",
+    "source": "fanbasis"
+  },
+  {
+    "email": "caponiti@gmail.com",
+    "name": "Christopher Caponiti",
+    "amount": 3000,
+    "net": 2913,
+    "fee": null,
+    "date": "2025-11-17",
+    "source": "fanbasis"
+  },
+  {
+    "email": "marklewiscorp@gmail.com",
+    "name": "Mark Lewis",
+    "amount": 900,
+    "net": 873.9,
+    "fee": null,
+    "date": "2025-11-17",
+    "source": "fanbasis"
+  },
+  {
+    "email": "marklewiscorp@gmail.com",
+    "name": "Mark Lewis",
+    "amount": 100,
+    "net": 97.1,
+    "fee": null,
+    "date": "2025-11-17",
+    "source": "fanbasis"
+  },
+  {
+    "email": "julian@masterdesignconstruction.com",
+    "name": "Julian Bedoya",
+    "amount": 2000,
+    "net": 1942,
+    "fee": null,
+    "date": "2025-11-19",
+    "source": "fanbasis"
+  },
+  {
+    "email": "troy.denversight@gmail.com",
+    "name": "Troy Springston",
+    "amount": 100,
+    "net": 97.1,
+    "fee": null,
+    "date": "2025-11-19",
+    "source": "fanbasis"
+  },
+  {
+    "email": "andrew@hdsfloors.com",
+    "name": "Andrew Bursler",
+    "amount": 2000,
+    "net": 1942,
+    "fee": null,
+    "date": "2025-11-26",
+    "source": "fanbasis"
+  },
+  {
+    "email": "chhomeproject@aol.con",
+    "name": "Christopher  Mullin",
+    "amount": 375,
+    "net": 364.13,
+    "fee": null,
+    "date": "2025-12-04",
+    "source": "fanbasis"
+  },
+  {
+    "email": "aokeleye25@gmail.com",
+    "name": "Aderonke Okeleye",
+    "amount": 1000,
+    "net": 971,
+    "fee": null,
+    "date": "2025-12-05",
+    "source": "fanbasis"
+  },
+  {
+    "email": "ross@concept-ii.com",
+    "name": "Ross Pino",
+    "amount": 6000,
+    "net": 5826,
+    "fee": null,
+    "date": "2025-12-05",
+    "source": "fanbasis"
+  },
+  {
+    "email": "fpowell4780@gmail.com",
+    "name": "FABIAN POWELL",
+    "amount": 750,
+    "net": 728.25,
+    "fee": null,
+    "date": "2025-12-09",
+    "source": "fanbasis"
+  },
+  {
+    "email": "jamzapata02@gmail.com",
+    "name": "Juan Andres Marulanda",
+    "amount": 100,
+    "net": 97.1,
+    "fee": null,
+    "date": "2025-12-09",
+    "source": "fanbasis"
+  },
+  {
+    "email": "maxpressfoundation@gmail.com",
+    "name": "Max Press Foundation Repair  Donas",
+    "amount": 600,
+    "net": 582.6,
+    "fee": null,
+    "date": "2025-12-09",
+    "source": "fanbasis"
+  },
+  {
+    "email": "fpowell4780@gmail.com",
+    "name": "FABIAN POWELL",
+    "amount": 750,
+    "net": 728.25,
+    "fee": null,
+    "date": "2025-12-12",
+    "source": "fanbasis"
+  },
+  {
+    "email": "mikewebster@braymillerbuilders.com",
+    "name": "",
+    "amount": 2000,
+    "net": 1941.7,
+    "fee": 58.3,
+    "date": "2026-01-12",
+    "source": "stripe"
+  },
+  {
+    "email": "ecoconcretedesign@gmail.com",
+    "name": "",
+    "amount": 500,
+    "net": 485.2,
+    "fee": 14.8,
+    "date": "2026-01-14",
+    "source": "stripe"
+  },
+  {
+    "email": "turk@innavik.com",
+    "name": "",
+    "amount": 4800,
+    "net": 4660.5,
+    "fee": 139.5,
+    "date": "2026-01-14",
+    "source": "stripe"
+  },
+  {
+    "email": "erniek.shs@gmail.com",
+    "name": "",
+    "amount": 1500,
+    "net": 1456.2,
+    "fee": 43.8,
+    "date": "2026-01-22",
+    "source": "stripe"
+  },
+  {
+    "email": "ecoconcretedesign@gmail.com",
+    "name": "",
+    "amount": 500,
+    "net": 485.2,
+    "fee": 14.8,
+    "date": "2026-01-22",
+    "source": "stripe"
+  },
+  {
+    "email": "mikewebster@braymillerbuilders.com",
+    "name": "",
+    "amount": 2000,
+    "net": 1941.7,
+    "fee": 58.3,
+    "date": "2026-01-26",
+    "source": "stripe"
+  },
+  {
+    "email": "georgemeyer0907@gmail.com",
+    "name": "",
+    "amount": 2000,
+    "net": 1941.7,
+    "fee": 58.3,
+    "date": "2026-02-03",
+    "source": "stripe"
+  },
+  {
+    "email": "kfir.segev@hotmail.com",
+    "name": "",
+    "amount": 1000,
+    "net": 970.7,
+    "fee": 29.3,
+    "date": "2026-02-03",
+    "source": "stripe"
+  },
+  {
+    "email": "tillupco@gmail.com",
+    "name": "",
+    "amount": 4800,
+    "net": 4660.5,
+    "fee": 139.5,
+    "date": "2026-02-04",
+    "source": "stripe"
+  },
+  {
+    "email": "bill@probuiltco.com",
+    "name": "",
+    "amount": 800,
+    "net": 776.5,
+    "fee": 23.5,
+    "date": "2026-02-05",
+    "source": "stripe"
   },
   {
     "email": "mike@prestigehomeremodeling.com",
-    "name": "Mike Aiello",
-    "amount": 500,
-    "net": 485.5,
-    "fee": 14.8,
-    "date": "2026-03-13"
-  },
-  {
-    "email": "flhservices4u@gmail.com",
-    "name": "Glenn Mullineaux",
-    "amount": 1200,
-    "net": 1165.2,
-    "fee": 35.1,
-    "date": "2026-03-10",
-    "nameSource": "ghl"
-  },
-  {
-    "email": "jjremodelingservicesaz@gmail.com",
-    "name": "Jesus",
+    "name": "",
     "amount": 2000,
-    "net": 1942,
+    "net": 1941.7,
     "fee": 58.3,
-    "date": "2026-03-07"
-  },
-  {
-    "email": "hectorgalfaro@hotmail.com",
-    "name": "Hector Alfaro",
-    "amount": 6000,
-    "net": 5826,
-    "fee": 359.7,
-    "date": "2026-03-04"
+    "date": "2026-02-10",
+    "source": "stripe"
   },
   {
     "email": "flhservices4u@gmail.com",
-    "name": "Glenn Mullineaux",
+    "name": "",
     "amount": 1200,
-    "net": 1165.2,
+    "net": 1164.9,
     "fee": 35.1,
-    "date": "2026-03-03",
-    "nameSource": "ghl"
+    "date": "2026-02-17",
+    "source": "stripe"
   },
   {
-    "email": "mikebaruh@gmail.com",
-    "name": "Mike Baruh",
+    "email": "fourseasonsdesignbuild@gmail.com",
+    "name": "",
+    "amount": 1300,
+    "net": 1262,
+    "fee": 38,
+    "date": "2026-02-19",
+    "source": "stripe"
+  },
+  {
+    "email": "chadlange@satintouch.us",
+    "name": "",
     "amount": 1000,
-    "net": 971,
+    "net": 970.7,
     "fee": 29.3,
-    "date": "2026-03-03"
+    "date": "2026-02-19",
+    "source": "stripe"
+  },
+  {
+    "email": "wlbaker.construction@gmail.com",
+    "name": "",
+    "amount": 100,
+    "net": 96.8,
+    "fee": 3.2,
+    "date": "2026-02-19",
+    "source": "stripe"
+  },
+  {
+    "email": "purselstephen@gmail.com",
+    "name": "Stephen Pursel",
+    "amount": 2000,
+    "net": 1941.7,
+    "fee": 58.3,
+    "date": "2026-02-20",
+    "source": "stripe"
+  },
+  {
+    "email": "theperfectionist401@gmail.com",
+    "name": "",
+    "amount": 3800,
+    "net": 3689.5,
+    "fee": 110.5,
+    "date": "2026-02-21",
+    "source": "stripe"
+  },
+  {
+    "email": "erniek.shs@gmail.com",
+    "name": "",
+    "amount": 1500,
+    "net": 1456.2,
+    "fee": 43.8,
+    "date": "2026-02-22",
+    "source": "stripe"
   },
   {
     "email": "info@clevelandpropainters.com",
-    "name": "Sean Youn",
+    "name": "",
     "amount": 1000,
-    "net": 971,
+    "net": 970.7,
     "fee": 29.3,
-    "date": "2026-02-24"
+    "date": "2026-02-24",
+    "source": "stripe"
   },
   {
     "email": "interiorredsignllc@gmail.com",
     "name": "Matt",
     "amount": 1200,
-    "net": 1165.2,
+    "net": 1164.9,
     "fee": 35.1,
     "date": "2026-02-24",
-    "nameSource": "manual"
+    "source": "stripe"
   },
   {
-    "email": "erniek.shs@gmail.com",
-    "name": "Ernie Karmasek",
-    "amount": 1500,
-    "net": 1456.5,
-    "fee": 43.8,
-    "date": "2026-02-22"
-  },
-  {
-    "email": "theperfectionist401@gmail.com",
-    "name": "Zachary Leary",
-    "amount": 3800,
-    "net": 3689.8,
-    "fee": 110.5,
-    "date": "2026-02-21",
-    "nameSource": "ghl"
-  },
-  {
-    "email": "purselstephen@gmail.com",
-    "name": "Stephen Pursel",
-    "amount": 2000,
-    "net": 1942,
-    "fee": 58.3,
-    "date": "2026-02-20",
-    "nameSource": "merged"
-  },
-  {
-    "email": "fourseasonsdesignbuild@gmail.com",
-    "name": "Four Seasons design build",
-    "amount": 1300,
-    "net": 1262.3,
-    "fee": 38,
-    "date": "2026-02-20",
-    "nameSource": "ghl"
-  },
-  {
-    "email": "chadlange@satintouch.us",
-    "name": "Chad Lange",
+    "email": "mikebaruh@gmail.com",
+    "name": "",
     "amount": 1000,
-    "net": 971,
+    "net": 970.7,
     "fee": 29.3,
-    "date": "2026-02-19",
-    "nameSource": "ghl"
-  },
-  {
-    "email": "wlbaker.construction@gmail.com",
-    "name": "William Baker",
-    "amount": 100,
-    "net": 97.1,
-    "fee": 3.2,
-    "date": "2026-02-19",
-    "nameSource": "ghl"
+    "date": "2026-03-02",
+    "source": "stripe"
   },
   {
     "email": "flhservices4u@gmail.com",
-    "name": "Glenn Mullineaux",
+    "name": "",
     "amount": 1200,
-    "net": 1165.2,
+    "net": 1164.9,
     "fee": 35.1,
-    "date": "2026-02-17",
-    "nameSource": "ghl"
+    "date": "2026-03-03",
+    "source": "stripe"
   },
   {
-    "email": "mike@prestigehomeremodeling.com",
-    "name": "Mike Aiello",
-    "amount": 2000,
-    "net": 1942,
-    "fee": 58.3,
-    "date": "2026-02-10"
-  },
-  {
-    "email": "bill@probuiltco.com",
-    "name": "Bill (Pro Built Co)",
-    "amount": 800,
-    "net": 776.8,
-    "fee": 23.5,
-    "date": "2026-02-05"
-  },
-  {
-    "email": "tillupco@gmail.com",
-    "name": "Cesar Grullon",
-    "amount": 4800,
-    "net": 4660.8,
-    "fee": 139.5,
-    "date": "2026-02-04",
-    "nameSource": "ghl"
-  },
-  {
-    "email": "georgemeyer0907@gmail.com",
-    "name": "George meyer",
-    "amount": 2000,
-    "net": 1942,
-    "fee": 58.3,
-    "date": "2026-02-04",
-    "nameSource": "ghl"
-  },
-  {
-    "email": "kfir.segev@hotmail.com",
-    "name": "Kfir Segev",
-    "amount": 1000,
-    "net": 971,
-    "fee": 29.3,
-    "date": "2026-02-03",
-    "nameSource": "ghl"
-  },
-  {
-    "email": "mikewebster@braymillerbuilders.com",
-    "name": "Mike Webster",
-    "amount": 2000,
-    "net": 1942,
-    "fee": 58.3,
-    "date": "2026-01-26"
-  },
-  {
-    "email": "erniek.shs@gmail.com",
-    "name": "Ernie Karmasek",
-    "amount": 1500,
-    "net": 1456.5,
-    "fee": 43.8,
-    "date": "2026-01-22"
-  },
-  {
-    "email": "Ecoconcretedesign@gmail.com",
-    "name": "Jake",
-    "amount": 500,
-    "net": 485.5,
-    "fee": 14.8,
-    "date": "2026-01-22"
-  },
-  {
-    "email": "Ecoconcretedesign@gmail.com",
-    "name": "Jake",
-    "amount": 500,
-    "net": 485.5,
-    "fee": 14.8,
-    "date": "2026-01-15"
-  },
-  {
-    "email": "turk@innavik.com",
-    "name": "Nicholas Turk",
-    "amount": 4800,
-    "net": 4660.8,
-    "fee": 139.5,
-    "date": "2026-01-14"
-  },
-  {
-    "email": "mikewebster@braymillerbuilders.com",
-    "name": "Mike Webster",
-    "amount": 2000,
-    "net": 1942,
-    "fee": 58.3,
-    "date": "2026-01-12"
-  },
-  {
-    "email": "leisurehomesllc@yahoo.com",
-    "name": "DE Renovations",
-    "amount": 4000,
-    "net": 3884,
-    "fee": 131.3,
-    "date": "2025-02-12",
-    "nameSource": "ghl"
-  },
-  {
-    "email": "l.aconstructionllc23@gmail.com",
-    "name": "Luis Diaz",
-    "amount": 2000,
-    "net": 1942,
-    "fee": 58.3,
-    "date": "2025-02-11",
-    "nameSource": "manual"
-  },
-  {
-    "email": "smcmanus.inc@gmail.com",
-    "name": "Sean Mcmanus",
-    "amount": 500,
-    "net": 485.5,
-    "fee": 14.8,
-    "date": "2025-02-10",
-    "nameSource": "ghl"
-  },
-  {
-    "email": "patricioenterprisesllc@gmail.com",
-    "name": "Paulo Patricio",
-    "amount": 2000,
-    "net": 1942,
-    "fee": 58.3,
-    "date": "2025-02-06",
-    "nameSource": "ghl"
-  },
-  {
-    "email": "antonioc@corzallc.com",
-    "name": "Antonio  Corza",
-    "amount": 250,
-    "net": 242.75,
-    "fee": 7.55,
-    "date": "2025-02-04"
-  },
-  {
-    "email": "elliot.lavinder@gmail.com",
-    "name": "Eliot Lavinder",
-    "amount": 4000,
-    "net": 3884,
-    "fee": 116.3,
-    "date": "2025-01-29",
-    "nameSource": "merged"
-  },
-  {
-    "email": "ahcorza1@gmail.com",
-    "name": "Antonio Corza",
-    "amount": 250,
-    "net": 242.75,
-    "fee": 7.55,
-    "date": "2025-01-27"
-  },
-  {
-    "email": "mikej.mj12@gmail.com",
-    "name": "Jacques Custom Home Improvement, LLC",
-    "amount": 1,
-    "net": 0.97,
-    "fee": 0.33,
-    "date": "2025-01-22",
-    "nameSource": "ghl"
-  },
-  {
-    "email": "fischer2282@gmail.com",
-    "name": "Connor Fischer",
-    "amount": 5000,
-    "net": 4855,
-    "fee": 145.3,
-    "date": "2025-01-11",
-    "nameSource": "ghl"
-  },
-  {
-    "email": "jasmintmail@gmail.com",
-    "name": "Jasmin Bergsgaard",
-    "amount": 2500,
-    "net": 2427.5,
-    "fee": 72.8,
-    "date": "2023-12-22",
-    "nameSource": "ghl"
-  },
-  {
-    "email": "Andrew@hdsfloors.com",
-    "name": "Andrew Bursler",
-    "amount": 2000,
-    "net": 2000,
-    "fee": null,
-    "date": null,
-    "source": "venmo"
+    "email": "hectorgalfaro@hotmail.com",
+    "name": "",
+    "amount": 6000,
+    "net": 5640.3,
+    "fee": 359.7,
+    "date": "2026-03-04",
+    "source": "stripe"
   },
   {
     "email": "knhewitt@yahoo.com",
-    "name": "Kenneth Hewitt",
-    "amount": 2700,
-    "net": 2700,
-    "fee": null,
-    "date": "2026-03-07",
-    "source": "consolidated"
+    "name": "",
+    "amount": 1100,
+    "net": 1067.8,
+    "fee": 32.2,
+    "date": "2026-03-06",
+    "source": "stripe"
+  },
+  {
+    "email": "knhewitt@yahoo.com",
+    "name": "",
+    "amount": 1600,
+    "net": 1553.3,
+    "fee": 46.7,
+    "date": "2026-03-06",
+    "source": "stripe"
   },
   {
     "email": "knhewitt@yahoo.com",
     "name": "Kenneth Hewitt",
     "amount": 1300,
-    "net": 1300,
-    "fee": null,
-    "date": null,
+    "net": 1262.3,
+    "fee": 37.7,
+    "date": "2026-03-06",
     "source": "manual"
   },
   {
-    "email": "lhrtexas@gmail.com",
-    "name": "Ashton Fulgham",
-    "amount": 4000,
-    "net": 4000,
-    "fee": null,
-    "date": "2025-02-10"
+    "email": "jjremodelingservicesaz@gmail.com",
+    "name": "",
+    "amount": 2000,
+    "net": 1941.7,
+    "fee": 58.3,
+    "date": "2026-03-07",
+    "source": "stripe"
   },
   {
-    "email": "lhrtexas@gmail.com",
-    "name": "Ashton Fulgham",
-    "amount": 4000,
-    "net": 4000,
-    "fee": null,
-    "date": "2025-08-04"
+    "email": "flhservices4u@gmail.com",
+    "name": "",
+    "amount": 1200,
+    "net": 1164.9,
+    "fee": 35.1,
+    "date": "2026-03-10",
+    "source": "stripe"
+  },
+  {
+    "email": "mike@prestigehomeremodeling.com",
+    "name": "",
+    "amount": 500,
+    "net": 485.2,
+    "fee": 14.8,
+    "date": "2026-03-12",
+    "source": "stripe"
+  },
+  {
+    "email": "andrew@hdsfloors.com",
+    "name": "Andrew Bursler",
+    "amount": 2000,
+    "net": 1942,
+    "fee": 58,
+    "date": null,
+    "source": "venmo"
   }
 ]
