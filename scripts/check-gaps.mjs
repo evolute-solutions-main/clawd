@@ -79,9 +79,10 @@ const noSetter = past.filter(a =>
 
 // ── Gap type 6: showed or closed but no Fathom link ──────────────────────────
 // Every show should have a recording — missing link means fathom-match didn't find it
-// or the call happened outside Fathom and needs manual entry
+// Fathom link only needed when the call actually happened (closed or not_closed)
+// no_show/cancelled = call didn't happen, so no recording exists
 const noFathom = past.filter(a =>
-  ['showed', 'closed', 'not_closed'].includes(a.status) &&
+  ['closed', 'not_closed'].includes(a.status) &&
   !a.fathomLink
 )
 
@@ -118,7 +119,7 @@ if (closedNoCash.length) {
 }
 
 if (staleStatus.length) {
-  console.log(`── ${staleStatus.length} still new/confirmed past their date (no-show? cancel? reschedule?) ──`)
+  console.log(`── ${staleStatus.length} confirmed past their date with no outcome (no-show? cancel? reschedule?) ──`)
   staleStatus.forEach(a => console.log(fmtAppt(a)))
   console.log()
 }

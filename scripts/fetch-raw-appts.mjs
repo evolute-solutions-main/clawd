@@ -42,11 +42,13 @@ const OUTCOME_FIELDS = [
 
 // Map GHL's appointmentStatus → our unified status enum for new records.
 // 'showed' is intentionally omitted — needs a manual close/not_closed outcome.
+// Both 'noshow' and 'no_show' handled in case GHL changes casing.
 const GHL_STATUS_MAP = {
   new:       'new',
   confirmed: 'confirmed',
   cancelled: 'cancelled',
   noshow:    'no_show',
+  no_show:   'no_show',
 }
 
 const args    = process.argv.slice(2)
@@ -143,10 +145,17 @@ async function main() {
     return false
   })
 
-  // Validate: 'showed' is never a valid final status — migrate to 'confirmed' so it surfaces in Needs Review
+  // Validate status integrity:
+  // - 'showed' is never a valid final status → migrate to 'confirmed'
+  // - undefined status on a GHL-showed appointment → migrate to 'confirmed'
+  //   (GHL_STATUS_MAP intentionally omits 'showed'; without this guard these records
+  //    are permanently invisible to staleStatus and gap reports)
   for (const a of merged) {
     if (a.status === 'showed') {
       console.warn(`  ⚠ Invalid status='showed' on ${a.contactName} (${a.startTime?.slice(0,10)}) — migrated to 'confirmed'`)
+      a.status = 'confirmed'
+    } else if (a.status === undefined && a.appointmentStatus === 'showed') {
+      console.warn(`  ⚠ status=undefined on GHL-showed record ${a.contactName} (${a.startTime?.slice(0,10)}) — migrated to 'confirmed'`)
       a.status = 'confirmed'
     }
   }
