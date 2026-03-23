@@ -845,7 +845,8 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "confirmed",
+      "fathomLink": "https://fathom.video/share/bx4rzczUyGdtdS9xgP1oJzQzXzyreVVc"
     },
     {
       "id": "v0Vf1mn7prD1cosKofkB",
@@ -1009,7 +1010,8 @@
           "status": "showed",
           "at": "2026-03-23T18:45:18.494Z"
         }
-      ]
+      ],
+      "fathomLink": "https://fathom.video/share/ZTgHzKogjrBkQxA5bMxx4L7-YyFDfrAu"
     },
     {
       "id": "nKX4I0CzpBjFc5HcGnL5",
@@ -1066,26 +1068,6 @@
       "status": "new"
     },
     {
-      "id": "xl_manual_mike_webster",
-      "contactName": "Mike Webster",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-01-12T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "showed",
-      "createdBy": "",
-      "phone": "",
-      "email": "mikewebster@braymillerbuilders.com",
-      "statusHistory": [],
-      "status": "closed",
-      "closer": "Max",
-      "cashCollected": 2000,
-      "cashCollectedAfterFirstCall": 2000,
-      "contractRevenue": 4000,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": "https://fathom.video/share/kAjrnq4M2x1zgj_WBSVZtmUhxHB51ig3"
-    },
-    {
       "id": "oeI4cogYsS0Vqk79Dv90",
       "contactName": "Marino - Instant New Homes",
       "calendarName": "Cold SMS",
@@ -1118,7 +1100,8 @@
           "status": "showed",
           "at": "2026-03-23T18:45:18.494Z"
         }
-      ]
+      ],
+      "fathomLink": "https://fathom.video/share/Ppc6_dDRfxreuC-GLjwBd8smviCNVZJF"
     },
     {
       "id": "UltVut6rNyPS68Ycsns3",
@@ -1153,7 +1136,14 @@
           "status": "showed",
           "at": "2026-03-23T18:45:18.494Z"
         }
-      ]
+      ],
+      "status": "closed",
+      "closer": "Max",
+      "cashCollected": 2000,
+      "cashCollectedAfterFirstCall": 2000,
+      "contractRevenue": 4000,
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/kAjrnq4M2x1zgj_WBSVZtmUhxHB51ig3"
     },
     {
       "id": "FFlrzcby7H9bdPeA2Omd",
@@ -1188,7 +1178,8 @@
           "status": "showed",
           "at": "2026-03-23T18:45:18.494Z"
         }
-      ]
+      ],
+      "fathomLink": "https://fathom.video/share/sTdyXDc8PBNd6TpyFcL_EyDwhBSW4Las"
     },
     {
       "id": "uCadJLYlMVWRP5wlpWeQ",
@@ -1263,26 +1254,6 @@
       "status": "new"
     },
     {
-      "id": "xl_manual_jake_eco_concrete",
-      "contactName": "Jake",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-01-14T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "showed",
-      "createdBy": "",
-      "phone": "",
-      "email": "Ecoconcretedesign@gmail.com",
-      "statusHistory": [],
-      "status": "closed",
-      "closer": "Max",
-      "cashCollected": 500,
-      "cashCollectedAfterFirstCall": 500,
-      "contractRevenue": 1000,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": "https://fathom.video/share/diGfqm3EYizskoqTn4-5kNrRSUshT_tX"
-    },
-    {
       "id": "PfeJABo11ilYf7EfKd2l",
       "contactName": "Evolute Solutions AI Strategy Session: Jack",
       "calendarName": "Inbound Strategy Session",
@@ -1297,7 +1268,8 @@
           "status": "showed",
           "at": "2026-03-23T18:45:18.494Z"
         }
-      ]
+      ],
+      "fathomLink": "https://fathom.video/share/qjZ7dg7XDiPs9DMFrnPmsFrxYREmW1ve"
     },
     {
       "id": "2crdutxyI3FGcgSvS7yS",
@@ -1350,7 +1322,14 @@
           "status": "showed",
           "at": "2026-03-23T18:45:18.494Z"
         }
-      ]
+      ],
+      "status": "closed",
+      "closer": "Max",
+      "cashCollected": 500,
+      "cashCollectedAfterFirstCall": 500,
+      "contractRevenue": 1000,
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/diGfqm3EYizskoqTn4-5kNrRSUshT_tX"
     },
     {
       "id": "cJKqxwt2HRRt3AU2jbDQ",
@@ -2494,7 +2473,8 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "confirmed",
+      "fathomLink": "https://fathom.video/share/GsB1jzgTSgU5ZTBkdM2pgkYXJSVTqycj"
     },
     {
       "id": "VtEM1uFGhw6mxpT2Zvui",
@@ -2731,106 +2711,6 @@
       "status": "new"
     },
     {
-      "id": "xl_2026-02-02_adolfo_solutions",
-      "contactName": "Adolfo Solutions",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-02T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "No-Show",
-      "createdBy": "Eddie",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "no_show",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": null
-    },
-    {
-      "id": "xl_2026-02-02_nate_plus",
-      "contactName": "Nate Plus",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-02T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Showed",
-      "createdBy": "Eddie",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "not_closed",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": true,
-      "fathomLink": "https://fathom.video/share/nrSzCCtMNLMLNyL1ymLNqCNnXefDc6no"
-    },
-    {
-      "id": "xl_2026-02-02_mario_design",
-      "contactName": "Mario Design",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-02T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "No-Show",
-      "createdBy": "Randy",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "no_show",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": null
-    },
-    {
-      "id": "xl_2026-02-02_sheldon_renovation",
-      "contactName": "Sheldon Renovation",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-02T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "No-Show",
-      "createdBy": "Daniel",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "no_show",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": null
-    },
-    {
-      "id": "xl_manual_mike_aiello",
-      "contactName": "Mike Aiello",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-02T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "showed",
-      "createdBy": "",
-      "phone": "",
-      "email": "mike@prestigehomeremodeling.com",
-      "statusHistory": [],
-      "status": "closed",
-      "closer": "Max",
-      "cashCollected": 2000,
-      "cashCollectedAfterFirstCall": 500,
-      "contractRevenue": 4000,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": "https://fathom.video/share/LCkk45kjSAond8o45MbDUF3_61a-EZF2"
-    },
-    {
       "id": "26IPUW7AwbZJMZOycAYJ",
       "contactName": "Adolfo Solutions",
       "calendarName": "Cold SMS",
@@ -2881,7 +2761,14 @@
           "status": "showed",
           "at": "2026-03-23T18:45:18.494Z"
         }
-      ]
+      ],
+      "status": "closed",
+      "closer": "Max",
+      "cashCollected": 2000,
+      "cashCollectedAfterFirstCall": 500,
+      "contractRevenue": 4000,
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/LCkk45kjSAond8o45MbDUF3_61a-EZF2"
     },
     {
       "id": "dZsGQyZxRf4LnO7xXl2u",
@@ -2899,7 +2786,9 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "new"
+      "status": "no_show",
+      "closer": "Max",
+      "followUpBooked": false
     },
     {
       "id": "UYZBlnMzLhLtlwtIRPX5",
@@ -2971,7 +2860,9 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "no_show"
+      "status": "no_show",
+      "closer": "Max",
+      "followUpBooked": false
     },
     {
       "id": "Zb6gzTjqxmZvj0KiBtEn",
@@ -2988,7 +2879,11 @@
           "status": "showed",
           "at": "2026-03-23T18:45:18.494Z"
         }
-      ]
+      ],
+      "status": "not_closed",
+      "closer": "Max",
+      "followUpBooked": true,
+      "fathomLink": "https://fathom.video/share/nrSzCCtMNLMLNyL1ymLNqCNnXefDc6no"
     },
     {
       "id": "PunU0RpLta7uOSYaymfo",
@@ -3042,7 +2937,9 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "no_show"
+      "status": "no_show",
+      "closer": "Max",
+      "followUpBooked": false
     },
     {
       "id": "qymdvga8zdMPAlos3xxw",
@@ -3061,46 +2958,6 @@
         }
       ],
       "status": "new"
-    },
-    {
-      "id": "xl_2026-02-03_justin",
-      "contactName": "Justin",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-03T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Cancelled/Rejected",
-      "createdBy": "Randy",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "cancelled",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": null
-    },
-    {
-      "id": "xl_2026-02-03_george_designer",
-      "contactName": "George Designer",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-03T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Showed",
-      "createdBy": "Eddie",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "closed",
-      "closer": "Max",
-      "cashCollected": 2000,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": 8000,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": "https://fathom.video/share/MB9gi8hzZYyLKiyPtTPNMY5rGqCwDovk"
     },
     {
       "id": "xl_2026-02-03_kfir_segev",
@@ -3123,46 +2980,6 @@
       "fathomLink": null
     },
     {
-      "id": "xl_2026-02-03_pedro_inc",
-      "contactName": "Pedro Inc",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-03T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Showed",
-      "createdBy": "Randy",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "not_closed",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": true,
-      "fathomLink": "https://fathom.video/share/pZNyDsoeojkQYb7jj3y49akPDyJLbPxU"
-    },
-    {
-      "id": "xl_2026-02-03_tim_home_repair",
-      "contactName": "Tim Home Repair",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-03T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Cancelled/Rejected",
-      "createdBy": "Daniel",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "cancelled",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": null
-    },
-    {
       "id": "1lcYkFLe56RtpC1lCGlc",
       "contactName": "George Designer Homes",
       "calendarName": "Cold SMS",
@@ -3177,7 +2994,13 @@
           "status": "showed",
           "at": "2026-03-23T18:45:18.494Z"
         }
-      ]
+      ],
+      "status": "closed",
+      "closer": "Max",
+      "cashCollected": 2000,
+      "contractRevenue": 8000,
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/MB9gi8hzZYyLKiyPtTPNMY5rGqCwDovk"
     },
     {
       "id": "Chac68YwZcqeVIJRPvk2",
@@ -3195,7 +3018,9 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "cancelled"
+      "status": "cancelled",
+      "closer": "Max",
+      "followUpBooked": false
     },
     {
       "id": "NP124KNqmuYhLPloYbVw",
@@ -3213,7 +3038,9 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "cancelled"
+      "status": "cancelled",
+      "closer": "Max",
+      "followUpBooked": false
     },
     {
       "id": "HZL7W9qi7PZ5o9CPcDFD",
@@ -3248,67 +3075,11 @@
           "status": "showed",
           "at": "2026-03-23T18:45:18.494Z"
         }
-      ]
-    },
-    {
-      "id": "xl_2026-02-04_fenelon",
-      "contactName": "Fenelon",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-04T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Showed",
-      "createdBy": "Eddie",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
+      ],
       "status": "not_closed",
       "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": "https://fathom.video/share/DD_P43FsbefQmsbauuACPz-c7_U9x_r_"
-    },
-    {
-      "id": "xl_2026-02-04_cesar",
-      "contactName": "Cesar",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-04T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Showed",
-      "createdBy": "Eddie",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "closed",
-      "closer": "Max",
-      "cashCollected": 4800,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": 4800,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": "https://fathom.video/share/Sy6LcFeoacsyzC5_PgsPVemj_puW-63V"
-    },
-    {
-      "id": "xl_2026-02-04_jordan",
-      "contactName": "Jordan",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-04T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "No-Show",
-      "createdBy": "Daniel",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "no_show",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": null
+      "followUpBooked": true,
+      "fathomLink": "https://fathom.video/share/pZNyDsoeojkQYb7jj3y49akPDyJLbPxU"
     },
     {
       "id": "Ls848orU1pw2Au8IEMFY",
@@ -3326,7 +3097,12 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "closed",
+      "closer": "Max",
+      "cashCollected": 4800,
+      "contractRevenue": 4800,
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/Sy6LcFeoacsyzC5_PgsPVemj_puW-63V"
     },
     {
       "id": "5u4zVO6zcwoudlxXYv4V",
@@ -3344,7 +3120,9 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "no_show"
+      "status": "no_show",
+      "closer": "Max",
+      "followUpBooked": false
     },
     {
       "id": "dfRMJGsU7QlgCGiQv06D",
@@ -3415,7 +3193,11 @@
           "status": "showed",
           "at": "2026-03-23T18:45:18.494Z"
         }
-      ]
+      ],
+      "status": "not_closed",
+      "closer": "Max",
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/DD_P43FsbefQmsbauuACPz-c7_U9x_r_"
     },
     {
       "id": "6367TvygbVhKTMrX3iZ8",
@@ -3474,86 +3256,6 @@
       "fathomLink": null
     },
     {
-      "id": "xl_2026-02-05_willy_romero",
-      "contactName": "Willy Romero",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-05T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Showed",
-      "createdBy": "Eddie",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "not_closed",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": "https://fathom.video/share/XVusBoCQuAZvx8MT-ikgy9SfmyuL5G2j"
-    },
-    {
-      "id": "xl_2026-02-05_oscar",
-      "contactName": "Oscar ",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-05T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Showed",
-      "createdBy": "Daniel",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "not_closed",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": "https://fathom.video/share/uszCGtwYPuz7s18d97P5ghRf_9gdkrgE"
-    },
-    {
-      "id": "xl_2026-02-05_kevin",
-      "contactName": "Kevin",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-05T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Rescheduled",
-      "createdBy": "Daniel",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "cancelled",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": "https://fathom.video/share/P_hGKVQUb8yPjRbjsm3RE6Resrn7s2zC"
-    },
-    {
-      "id": "xl_2026-02-05_bill@probuiltco.com",
-      "contactName": "Bill (Pro Built Co)",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-05T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Showed",
-      "createdBy": "Randy",
-      "phone": "",
-      "email": "bill@probuiltco.com",
-      "statusHistory": [],
-      "status": "closed",
-      "closer": "Max",
-      "cashCollected": 800,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": 4800,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": "https://fathom.video/share/GjBBq22pLqtfpbikM5RdtjyN12mLz-4L"
-    },
-    {
       "id": "ecIWck5KfWbjSCQbHwu8",
       "contactName": "Kevin",
       "calendarName": "Cold SMS",
@@ -3569,7 +3271,10 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "cancelled"
+      "status": "cancelled",
+      "closer": "Max",
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/P_hGKVQUb8yPjRbjsm3RE6Resrn7s2zC"
     },
     {
       "id": "SR8ehrmV5YUdMoYVXFXQ",
@@ -3604,7 +3309,13 @@
           "status": "showed",
           "at": "2026-03-23T18:45:18.494Z"
         }
-      ]
+      ],
+      "status": "closed",
+      "closer": "Max",
+      "cashCollected": 800,
+      "contractRevenue": 4800,
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/GjBBq22pLqtfpbikM5RdtjyN12mLz-4L"
     },
     {
       "id": "XeT4JNUu0UEmslh9VDfx",
@@ -3640,7 +3351,10 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "not_closed",
+      "closer": "Max",
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/XVusBoCQuAZvx8MT-ikgy9SfmyuL5G2j"
     },
     {
       "id": "mXDOUazSSZLvga3rkPFp",
@@ -3693,7 +3407,11 @@
           "status": "showed",
           "at": "2026-03-23T18:45:18.494Z"
         }
-      ]
+      ],
+      "status": "not_closed",
+      "closer": "Max",
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/uszCGtwYPuz7s18d97P5ghRf_9gdkrgE"
     },
     {
       "id": "QPZAtOJOOHBy4kzKLwQ3",
@@ -3712,46 +3430,6 @@
         }
       ],
       "status": "cancelled"
-    },
-    {
-      "id": "xl_2026-02-06_john",
-      "contactName": "John",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-06T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Cancelled/Rejected",
-      "createdBy": "Eddie",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "cancelled",
-      "closer": null,
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": null
-    },
-    {
-      "id": "xl_2026-02-06_max_construction_ser",
-      "contactName": "Max Construction Services",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-06T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Cancelled/Rejected",
-      "createdBy": "Randy",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "cancelled",
-      "closer": null,
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": null
     },
     {
       "id": "xl_2026-02-06_kennedy",
@@ -3825,7 +3503,8 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "cancelled"
+      "status": "cancelled",
+      "followUpBooked": false
     },
     {
       "id": "9wQdwJLnp3JcE2xni52x",
@@ -3879,7 +3558,8 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "cancelled"
+      "status": "cancelled",
+      "followUpBooked": false
     },
     {
       "id": "xl_2026-02-07_jodie",
@@ -3889,26 +3569,6 @@
       "timeCreated": null,
       "appointmentStatus": "No-Show",
       "createdBy": "Randy",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "no_show",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": null
-    },
-    {
-      "id": "xl_2026-02-07_gary",
-      "contactName": "Gary ",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-07T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "No-Show",
-      "createdBy": "Daniel",
       "phone": "",
       "email": "",
       "statusHistory": [],
@@ -4045,67 +3705,9 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
-    },
-    {
-      "id": "xl_2026-02-09_alex",
-      "contactName": "ALex",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-09T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "No-Show",
-      "createdBy": "Daniel",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
       "status": "no_show",
       "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": null
-    },
-    {
-      "id": "xl_2026-02-09_kennedy",
-      "contactName": "Kennedy ",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-09T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Showed",
-      "createdBy": "Randy",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "not_closed",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": "https://fathom.video/share/TpXfNEJh-ywb5WxAzzV_X_sz97y4BWsZ"
-    },
-    {
-      "id": "xl_2026-02-09_lacy",
-      "contactName": "Lacy ",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-09T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "No-Show",
-      "createdBy": "Daniel",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "no_show",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": null
+      "followUpBooked": false
     },
     {
       "id": "Ca2tbh9Wym1OLbpSyini",
@@ -4195,7 +3797,10 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "not_closed",
+      "closer": "Max",
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/TpXfNEJh-ywb5WxAzzV_X_sz97y4BWsZ"
     },
     {
       "id": "wileed4sdPHiWXUoPx2X",
@@ -4213,7 +3818,9 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "no_show",
+      "closer": "Max",
+      "followUpBooked": false
     },
     {
       "id": "bI6k0zgkt650yEg5Z6e0",
@@ -4303,7 +3910,9 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "no_show",
+      "closer": "Max",
+      "followUpBooked": false
     },
     {
       "id": "S0kXiM26kmaiGV0O2PVl",
@@ -4396,26 +4005,6 @@
       "status": "new"
     },
     {
-      "id": "xl_2026-02-11_sean_mabrey_roofing",
-      "contactName": "Sean Mabrey Roofing",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-11T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Showed",
-      "createdBy": "Randy",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "not_closed",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": "https://fathom.video/share/3HzQGmge72Jp6LqyzH1mRWNESZsdMB9y"
-    },
-    {
       "id": "iRRAA2OeKa2Cpq5XfZ7T",
       "contactName": "Tony",
       "calendarName": "Cold SMS",
@@ -4485,7 +4074,10 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "not_closed",
+      "closer": "Max",
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/3HzQGmge72Jp6LqyzH1mRWNESZsdMB9y"
     },
     {
       "id": "yGWZoZPCDEhNr9ee6bbl",
@@ -4539,7 +4131,8 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "cancelled"
+      "status": "cancelled",
+      "fathomLink": "https://fathom.video/share/Fz8soGiTFpyrZFk-cXDkV1ztCW84TPcw"
     },
     {
       "id": "9ZzaGrjX3AEHRlePv16m",
@@ -4758,26 +4351,6 @@
       "status": "new"
     },
     {
-      "id": "xl_2026-02-12_rashad_construction",
-      "contactName": "Rashad Construction",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-12T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Showed",
-      "createdBy": "Daniel",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "not_closed",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": "https://fathom.video/share/jtQCdWQBziz8chLspa4KGoXNNX8ywzUz"
-    },
-    {
       "id": "JX4LSk3S3z1t8W5VLeXd",
       "contactName": "ALLAN Road Construction",
       "calendarName": "Cold SMS",
@@ -4883,7 +4456,10 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "not_closed",
+      "closer": "Max",
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/jtQCdWQBziz8chLspa4KGoXNNX8ywzUz"
     },
     {
       "id": "XmkvzEO0JircAqwfvn9q",
@@ -4902,46 +4478,6 @@
         }
       ],
       "status": "new"
-    },
-    {
-      "id": "xl_2026-02-13_grace_construction",
-      "contactName": "Grace Construction",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-13T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Showed",
-      "createdBy": "Randy",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "not_closed",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": "https://fathom.video/share/rhS69z4cV9sLeqsn2xS34sjyCQ-xYnYC"
-    },
-    {
-      "id": "xl_2026-02-13_epr_-_eladio_plumbin",
-      "contactName": "Epr - Eladio Plumbing&remodeling",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-13T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Showed",
-      "createdBy": "Randy",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "not_closed",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": "https://fathom.video/share/DzTasaayouyhyBswkhPRTTgqGdBzy6as"
     },
     {
       "id": "EO3xk03PGtxWix2EobtD",
@@ -4977,7 +4513,10 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "not_closed",
+      "closer": "Max",
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/DzTasaayouyhyBswkhPRTTgqGdBzy6as"
     },
     {
       "id": "bRoT4yP0XVGIEeA5ghBf",
@@ -5049,7 +4588,10 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "not_closed",
+      "closer": "Max",
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/rhS69z4cV9sLeqsn2xS34sjyCQ-xYnYC"
     },
     {
       "id": "zsAnY83ciWgipYMX4rtm",
@@ -5214,66 +4756,6 @@
       "status": "new"
     },
     {
-      "id": "xl_2026-02-14_edward",
-      "contactName": "Edward ",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-14T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Showed",
-      "createdBy": "Eddie",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "not_closed",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": "https://fathom.video/share/j3jNTYKjSqcy-Vixo6mzuHsk2V-yTyVh"
-    },
-    {
-      "id": "xl_2026-02-14_rafael_e81studio",
-      "contactName": "Rafael E81Studio",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-14T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Showed",
-      "createdBy": "Eddie",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "not_closed",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": "https://fathom.video/share/1jYfAs1mwYm11v6AP7chk7ACuyZVW5d8"
-    },
-    {
-      "id": "xl_2026-02-14_kenneth_hewitt",
-      "contactName": "Kenneth Hewitt",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-14T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Showed",
-      "createdBy": "Eddie",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "closed",
-      "closer": "Max",
-      "cashCollected": 1300,
-      "cashCollectedAfterFirstCall": 2700,
-      "contractRevenue": 8000,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": "https://fathom.video/share/waMKzkQ-xkQPbRzLJt5vfBADxdiUsSsx"
-    },
-    {
       "id": "oJmIdVkTqWYlkPjp3TRn",
       "contactName": "Kenneth Hewitt",
       "calendarName": "Cold SMS",
@@ -5289,7 +4771,13 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "closed",
+      "closer": "Max",
+      "cashCollected": 1300,
+      "cashCollectedAfterFirstCall": 2700,
+      "contractRevenue": 8000,
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/waMKzkQ-xkQPbRzLJt5vfBADxdiUsSsx"
     },
     {
       "id": "y2KxGSZnUowQsyVoKXsO",
@@ -5433,7 +4921,8 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "new"
+      "status": "new",
+      "fathomLink": "https://fathom.video/share/1jYfAs1mwYm11v6AP7chk7ACuyZVW5d8"
     },
     {
       "id": "tritiAYWVLnQN8vRDFfZ",
@@ -5451,7 +4940,10 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "not_closed",
+      "closer": "Max",
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/1jYfAs1mwYm11v6AP7chk7ACuyZVW5d8"
     },
     {
       "id": "y9gFfsYGq4ra275vAmr2",
@@ -5487,7 +4979,10 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "not_closed",
+      "closer": "Max",
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/j3jNTYKjSqcy-Vixo6mzuHsk2V-yTyVh"
     },
     {
       "id": "xl_2026-02-16_mullineaux_glenn",
@@ -5508,46 +5003,6 @@
       "offerMade": null,
       "followUpBooked": false,
       "fathomLink": null
-    },
-    {
-      "id": "xl_2026-02-16_derek_brigade",
-      "contactName": "Derek Brigade ",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-16T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Showed",
-      "createdBy": "Randy",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "not_closed",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": null
-    },
-    {
-      "id": "xl_2026-02-16_harold_howard",
-      "contactName": "Harold Howard",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-16T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Showed",
-      "createdBy": "Randy",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "not_closed",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": "https://fathom.video/share/wfosvDubMC3oWgSeweFnpy314KXtWhWo"
     },
     {
       "id": "F445mx6pU5XcBLwlbcGZ",
@@ -5655,7 +5110,9 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "not_closed",
+      "closer": "Max",
+      "followUpBooked": false
     },
     {
       "id": "v0gupMcq7ZjhdAcEpDFK",
@@ -5690,7 +5147,11 @@
           "status": "showed",
           "at": "2026-03-23T18:45:18.494Z"
         }
-      ]
+      ],
+      "status": "not_closed",
+      "closer": "Max",
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/wfosvDubMC3oWgSeweFnpy314KXtWhWo"
     },
     {
       "id": "EBbBkmliFVEg5qXeXpNs",
@@ -5707,7 +5168,8 @@
           "status": "showed",
           "at": "2026-03-23T18:45:18.494Z"
         }
-      ]
+      ],
+      "fathomLink": "https://fathom.video/share/ekfs4QsSvaY8ZxNG1rsK218pY9mmTd6o"
     },
     {
       "id": "DfZERBGpkBXINdg9p9Q8",
@@ -5818,106 +5280,6 @@
       "status": "new"
     },
     {
-      "id": "xl_2026-02-18_matthew",
-      "contactName": "Matthew ",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-18T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Showed",
-      "createdBy": "Randy",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "not_closed",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": "https://fathom.video/share/Pis3K2AXHXBub8rQbK_e1hS8-s3xhhFF"
-    },
-    {
-      "id": "xl_2026-02-18_ted_helton",
-      "contactName": "Ted Helton",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-18T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Showed",
-      "createdBy": "Eddie",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "not_closed",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": null
-    },
-    {
-      "id": "xl_2026-02-18_mr_ruggerio",
-      "contactName": "Mr Ruggerio",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-18T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Rescheduled",
-      "createdBy": "Eddie",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "cancelled",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": null
-    },
-    {
-      "id": "xl_2026-02-18_dmj_contractors",
-      "contactName": "Dmj Contractors",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-18T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Rescheduled",
-      "createdBy": "Eddie",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "cancelled",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": "https://fathom.video/share/qRuxmqty6QboJst3KF9Lxik4eZtZNAz4"
-    },
-    {
-      "id": "xl_2026-02-18_lewis",
-      "contactName": "Lewis ",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-18T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Cancelled/Rejected",
-      "createdBy": "Eddie",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "cancelled",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": null
-    },
-    {
       "id": "oF8yS3rc5Be6yziBEto2",
       "contactName": "",
       "calendarName": "Cold SMS",
@@ -5969,7 +5331,10 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "cancelled",
+      "closer": "Max",
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/qRuxmqty6QboJst3KF9Lxik4eZtZNAz4"
     },
     {
       "id": "ayPjl7liCIMmBiFM9Tct",
@@ -6023,7 +5388,9 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "not_closed",
+      "closer": "Max",
+      "followUpBooked": false
     },
     {
       "id": "NNPa3RxAIJ6v4GZMr6zy",
@@ -6041,7 +5408,9 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "cancelled"
+      "status": "cancelled",
+      "closer": "Max",
+      "followUpBooked": false
     },
     {
       "id": "ZN4MElk6I385xeUyzIpi",
@@ -6095,7 +5464,10 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "not_closed",
+      "closer": "Max",
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/Pis3K2AXHXBub8rQbK_e1hS8-s3xhhFF"
     },
     {
       "id": "ixZud6jcsCpaccYgcivc",
@@ -6113,127 +5485,9 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
-    },
-    {
-      "id": "xl_2026-02-19_stace",
-      "contactName": "Stace",
-      "calendarName": "AI Strategy Session (Meta Inbound)",
-      "startTime": "2026-02-19T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Showed",
-      "createdBy": "Ads - No Setter",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "not_closed",
+      "status": "cancelled",
       "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": "This was like a 2 second chat bc he was being a dickhead.",
-      "followUpBooked": false,
-      "fathomLink": "https://fathom.video/share/wA3k8ey5BUQ7R3kj-wwv8K1zRhPGUG9Q"
-    },
-    {
-      "id": "xl_2026-02-19_greg_cutting",
-      "contactName": "Greg Cutting",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-19T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Showed",
-      "createdBy": "Daniel",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "not_closed",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": true,
-      "fathomLink": "https://fathom.video/share/PVNsyR1EmpBCUDKx6omuUDpFdGH2V7-m"
-    },
-    {
-      "id": "xl_2026-02-19_doug",
-      "contactName": "Doug",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-19T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "No-Show",
-      "createdBy": "Randy",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "no_show",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": null
-    },
-    {
-      "id": "xl_2026-02-19_william_baker",
-      "contactName": "William Baker",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-19T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Showed",
-      "createdBy": "Randy",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "closed",
-      "closer": "Max",
-      "cashCollected": 100,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": 4800,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": "https://fathom.video/share/uXaKXFZBvB5uswqssvM2752snegYLfey"
-    },
-    {
-      "id": "xl_2026-02-19_isaac",
-      "contactName": "Isaac",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-19T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "No-Show",
-      "createdBy": "Eddie",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "no_show",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": "I think i missed this - my fault",
-      "followUpBooked": false,
-      "fathomLink": null
-    },
-    {
-      "id": "xl_2026-02-19_chad_lange",
-      "contactName": "Chad Lange",
-      "calendarName": "AI Strategy Session (Meta Inbound)",
-      "startTime": "2026-02-19T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Showed",
-      "createdBy": "Ads - No Setter",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "closed",
-      "closer": "Max",
-      "cashCollected": 1000,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": 1000,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": null
+      "followUpBooked": false
     },
     {
       "id": "OypoRm0gFbgyK2Zer3xW",
@@ -6269,7 +5523,12 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "closed",
+      "closer": "Max",
+      "cashCollected": 100,
+      "contractRevenue": 4800,
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/uXaKXFZBvB5uswqssvM2752snegYLfey"
     },
     {
       "id": "ciHie9vUm9Fo5tJHZfpT",
@@ -6287,7 +5546,11 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "closed",
+      "closer": "Max",
+      "cashCollected": 1000,
+      "contractRevenue": 1000,
+      "followUpBooked": false
     },
     {
       "id": "BhIkbpoyZ7gBYnTXiYWg",
@@ -6305,7 +5568,10 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "no_show",
+      "closer": "Max",
+      "followUpBooked": false,
+      "offerMade": "I think i missed this - my fault"
     },
     {
       "id": "BuALbHLTzI0QZiXRZI10",
@@ -6341,7 +5607,9 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "no_show",
+      "closer": "Max",
+      "followUpBooked": false
     },
     {
       "id": "rTkde6Wgm6GXcLyOhbX0",
@@ -6377,7 +5645,11 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "not_closed",
+      "closer": "Max",
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/wA3k8ey5BUQ7R3kj-wwv8K1zRhPGUG9Q",
+      "offerMade": "This was like a 2 second chat bc he was being a dickhead."
     },
     {
       "id": "2AYEd9UK2W9adyjMmMxS",
@@ -6395,7 +5667,10 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "not_closed",
+      "closer": "Max",
+      "followUpBooked": true,
+      "fathomLink": "https://fathom.video/share/PVNsyR1EmpBCUDKx6omuUDpFdGH2V7-m"
     },
     {
       "id": "XV61ciA0JcXy8wd5GASS",
@@ -6416,126 +5691,6 @@
       "status": "new"
     },
     {
-      "id": "xl_2026-02-20_shannon_swiscott",
-      "contactName": "Shannon Swiscott",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-20T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "No-Show",
-      "createdBy": "Daniel",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "no_show",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": "https://fathom.video/share/e7yvA4HCFtdA38vKDmnsxaSEfyUqRmN4"
-    },
-    {
-      "id": "xl_2026-02-20_rex_bridges",
-      "contactName": "Rex Bridges",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-20T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "No-Show",
-      "createdBy": "Daniel",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "no_show",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": null
-    },
-    {
-      "id": "xl_2026-02-20_ray_paterson",
-      "contactName": "Ray Paterson",
-      "calendarName": "AI Strategy Session (Meta Inbound)",
-      "startTime": "2026-02-20T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "No-Show",
-      "createdBy": "Ads - No Setter",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "no_show",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": null
-    },
-    {
-      "id": "xl_2026-02-20_john",
-      "contactName": "John ",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-20T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Cancelled/Rejected",
-      "createdBy": "Eddie",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "cancelled",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": null
-    },
-    {
-      "id": "xl_2026-02-20_bradley_cross",
-      "contactName": "Bradley Cross",
-      "calendarName": "AI Strategy Session (Meta Inbound)",
-      "startTime": "2026-02-20T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Cancelled/Rejected",
-      "createdBy": "Ads - No Setter",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "cancelled",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": null
-    },
-    {
-      "id": "xl_2026-02-20_donald",
-      "contactName": "Donald ",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-20T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "No-Show",
-      "createdBy": "Randy",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "no_show",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": null
-    },
-    {
       "id": "5ao294kcUtnDVtAfLzXd",
       "contactName": "Shannon Swiscott",
       "calendarName": "Cold SMS",
@@ -6551,7 +5706,10 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "no_show",
+      "closer": "Max",
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/e7yvA4HCFtdA38vKDmnsxaSEfyUqRmN4"
     },
     {
       "id": "tUHDsWNGXZ8fedQbAd5g",
@@ -6659,7 +5817,9 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "cancelled",
+      "closer": "Max",
+      "followUpBooked": false
     },
     {
       "id": "0GUQa3B9uvPsDMPoIuP7",
@@ -6713,7 +5873,9 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "cancelled"
+      "status": "no_show",
+      "closer": "Max",
+      "followUpBooked": false
     },
     {
       "id": "6lvrWFJWaFxlZS7kdgzI",
@@ -6731,7 +5893,9 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "no_show",
+      "closer": "Max",
+      "followUpBooked": false
     },
     {
       "id": "wnIXkGkJbdc7ZVhtrkL4",
@@ -6749,7 +5913,9 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "no_show",
+      "closer": "Max",
+      "followUpBooked": false
     },
     {
       "id": "cU5A6UEYaE60V4SsHHVL",
@@ -6785,7 +5951,9 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "cancelled"
+      "status": "cancelled",
+      "closer": "Max",
+      "followUpBooked": false
     },
     {
       "id": "TKvuZ9btS4qIRfk2ppH5",
@@ -6840,46 +6008,6 @@
         }
       ],
       "status": "new"
-    },
-    {
-      "id": "xl_2026-02-21_carlos_t",
-      "contactName": "Carlos T",
-      "calendarName": "AI Strategy Session (Meta Inbound)",
-      "startTime": "2026-02-21T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Cancelled/Rejected",
-      "createdBy": "Ads - No Setter",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "cancelled",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": null
-    },
-    {
-      "id": "xl_2026-02-21_ivan_davalos",
-      "contactName": "Ivan Davalos",
-      "calendarName": "AI Strategy Session (Meta Inbound)",
-      "startTime": "2026-02-21T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "No-Show",
-      "createdBy": "Ads - No Setter",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "no_show",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": null
     },
     {
       "id": "RxJwaU6zhw3wj9LWYJUo",
@@ -6969,7 +6097,9 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "cancelled"
+      "status": "cancelled",
+      "closer": "Max",
+      "followUpBooked": false
     },
     {
       "id": "PdQ9lK0Z0phNedttt0LZ",
@@ -7023,107 +6153,9 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
-    },
-    {
-      "id": "xl_2026-02-23_dan_sullivan",
-      "contactName": "Dan Sullivan",
-      "calendarName": "AI Strategy Session (Meta Inbound)",
-      "startTime": "2026-02-23T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Cancelled/Rejected",
-      "createdBy": "Ads - No Setter",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "cancelled",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": null
-    },
-    {
-      "id": "xl_2026-02-23_sio_fuentes",
-      "contactName": "Sio Fuentes",
-      "calendarName": "AI Strategy Session (Meta Inbound)",
-      "startTime": "2026-02-23T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "No-Show",
-      "createdBy": "Ads - No Setter",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
       "status": "no_show",
       "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": null
-    },
-    {
-      "id": "xl_2026-02-23_victor_rodrigues",
-      "contactName": "Victor Rodrigues",
-      "calendarName": "AI Strategy Session (Meta Inbound)",
-      "startTime": "2026-02-23T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "No-Show",
-      "createdBy": "Ads - No Setter",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "no_show",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": null
-    },
-    {
-      "id": "xl_2026-02-23_laszlo_development",
-      "contactName": "Laszlo Development",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-23T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Showed",
-      "createdBy": "Daniel",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "not_closed",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": "https://fathom.video/share/WiH5-cou8xvujoz8eAQ9B4cqXQkEttSB"
-    },
-    {
-      "id": "xl_2026-02-23_gene_campbell",
-      "contactName": "Gene Campbell",
-      "calendarName": "AI Strategy Session (Meta Inbound)",
-      "startTime": "2026-02-23T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Showed",
-      "createdBy": "Ads - No Setter",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "not_closed",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": null,
-      "followUpBooked": true,
-      "fathomLink": "https://fathom.video/share/cZhL8dPpQywBWXXmY7Gw8HMzw-8mWzrz"
+      "followUpBooked": false
     },
     {
       "id": "AQzxJZqiWA63rkpVhNlg",
@@ -7159,7 +6191,9 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "no_show"
+      "status": "cancelled",
+      "closer": "Max",
+      "followUpBooked": false
     },
     {
       "id": "mLvjKv5jFUOzxPkjzEbL",
@@ -7177,7 +6211,10 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "not_closed",
+      "closer": "Max",
+      "followUpBooked": true,
+      "fathomLink": "https://fathom.video/share/cZhL8dPpQywBWXXmY7Gw8HMzw-8mWzrz"
     },
     {
       "id": "sRGiMKhWDmaiJwsC8XRF",
@@ -7194,7 +6231,11 @@
           "status": "showed",
           "at": "2026-03-23T18:45:18.494Z"
         }
-      ]
+      ],
+      "status": "not_closed",
+      "closer": "Max",
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/WiH5-cou8xvujoz8eAQ9B4cqXQkEttSB"
     },
     {
       "id": "uMJaK99KubKxCT9Z7Jdb",
@@ -7248,7 +6289,9 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "no_show",
+      "closer": "Max",
+      "followUpBooked": false
     },
     {
       "id": "kTvRJ4GW5v7irHG6NNZE",
@@ -7266,47 +6309,9 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
-    },
-    {
-      "id": "xl_2026-02-24_chris",
-      "contactName": "Chris",
-      "calendarName": "AI Strategy Session (Meta Inbound)",
-      "startTime": "2026-02-24T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "No-Show",
-      "createdBy": "Ads - No Setter",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
       "status": "no_show",
       "closer": "Max",
-      "cashCollected": 2000,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": 8000,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": null
-    },
-    {
-      "id": "xl_2026-02-24_matt_interior",
-      "contactName": "Matt Interior",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-24T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Showed",
-      "createdBy": "Randy",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "closed",
-      "closer": "Max",
-      "cashCollected": 1200,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": 4800,
-      "offerMade": null,
-      "followUpBooked": false,
-      "fathomLink": "https://fathom.video/share/pwEyxj2eHsq7mw73yQQzDoygBgZcW1B_"
+      "followUpBooked": false
     },
     {
       "id": "xl_2026-02-24_sean",
@@ -7327,26 +6332,6 @@
       "offerMade": null,
       "followUpBooked": true,
       "fathomLink": "https://fathom.video/share/cJPmyXrcqSgy_5tGojszCHi4-7kSt3xk"
-    },
-    {
-      "id": "xl_2026-02-24_fabiana",
-      "contactName": "Fabiana",
-      "calendarName": "AI Strategy Session (Meta Inbound)",
-      "startTime": "2026-02-24T09:00:00-05:00",
-      "timeCreated": null,
-      "appointmentStatus": "Showed",
-      "createdBy": "Ads - No Setter",
-      "phone": "",
-      "email": "",
-      "statusHistory": [],
-      "status": "not_closed",
-      "closer": "Max",
-      "cashCollected": null,
-      "cashCollectedAfterFirstCall": null,
-      "contractRevenue": null,
-      "offerMade": "she was already spending a lot on ads i didnt know how to close",
-      "followUpBooked": false,
-      "fathomLink": "https://fathom.video/share/LX-wxS8Yjxwj6S33Y1egFjVygvwor91m"
     },
     {
       "id": "xl_manual_sean_youn",
@@ -7384,7 +6369,12 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "closed",
+      "closer": "Max",
+      "cashCollected": 1200,
+      "contractRevenue": 4800,
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/pwEyxj2eHsq7mw73yQQzDoygBgZcW1B_"
     },
     {
       "id": "FNxgNnxswDAWHo8d9yve",
@@ -7420,7 +6410,11 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "not_closed",
+      "closer": "Max",
+      "followUpBooked": false,
+      "fathomLink": "https://fathom.video/share/LX-wxS8Yjxwj6S33Y1egFjVygvwor91m",
+      "offerMade": "she was already spending a lot on ads i didnt know how to close"
     },
     {
       "id": "gCilDd8avtWKbDma0gsh",
@@ -7438,7 +6432,11 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "no_show"
+      "status": "no_show",
+      "closer": "Max",
+      "cashCollected": 2000,
+      "contractRevenue": 8000,
+      "followUpBooked": false
     },
     {
       "id": "Cqi5elDQqrxRiPAkx9u1",
@@ -7528,7 +6526,8 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "confirmed",
+      "fathomLink": "https://fathom.video/share/6kPKZtbxDmQ4d5ufv73Ki1hNcAY22BPy"
     },
     {
       "id": "mUyfTPKJ30RQrxztJJny",
@@ -7546,7 +6545,8 @@
           "at": "2026-03-23T18:41:15.232Z"
         }
       ],
-      "status": "confirmed"
+      "status": "confirmed",
+      "fathomLink": "https://fathom.video/share/uzMxCw5oWqzMcAkqZ5UosGZxq8py4tvz"
     },
     {
       "id": "KEPNWpCRcVBbHCI0axgo",
@@ -7672,7 +6672,8 @@
           "at": "2026-03-23T18:41:15.232Z"
         }
       ],
-      "status": "new"
+      "status": "new",
+      "fathomLink": "https://fathom.video/share/pwcFsBcftsKSpMp8cxtf3z61oU4xrsjt"
     },
     {
       "id": "mKfNMClWKb2qdgKElTLe",
@@ -7707,7 +6708,8 @@
           "status": "showed",
           "at": "2026-03-23T18:41:15.232Z"
         }
-      ]
+      ],
+      "fathomLink": "https://fathom.video/share/y3mmAEtrqpvV7g2zT-oc6x8W6AAU3ts3"
     },
     {
       "id": "ru61hkVnUy1FMCaYDBsl",
@@ -7905,7 +6907,8 @@
           "at": "2026-03-23T18:39:45.646Z"
         }
       ],
-      "status": "confirmed"
+      "status": "confirmed",
+      "fathomLink": "https://fathom.video/share/rwjcHFzQ3YUEyZ_D3kBXG3_pybf1skoe"
     },
     {
       "id": "RwoIYSKAjH3WGUf2Gz5u",

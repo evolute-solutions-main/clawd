@@ -98,13 +98,15 @@ for await (const m of iterateMeetings({ pageSize: 50, maxPages: 200 })) {
 console.log(`Found ${calls.length} sales calls in range.\n`)
 
 // ── Match ─────────────────────────────────────────────────────────────────────
-let matched = 0, alreadyHad = 0, markedShowed = 0, unmatched = 0
+let matched = 0, alreadyHad = 0, unmatched = 0
 
 for (const call of calls) {
   const fName = externalName(call)
   const candidates = byDate[call._date] || []
 
-  let appt = candidates.find(a => fuzzyMatch(fName, a.contactName))
+  // Prefer exact normalized match over fuzzy to avoid false positives on common words
+  const exactMatch = c => normName(fName) === normName(c.contactName)
+  let appt = candidates.find(exactMatch) || candidates.find(a => fuzzyMatch(fName, a.contactName))
 
   // ±1 day fallback (call recorded day after scheduled)
   if (!appt) {
@@ -112,8 +114,8 @@ for (const call of calls) {
     const next = new Date(call._date); next.setDate(next.getDate() + 1)
     const prevD = prev.toISOString().slice(0, 10)
     const nextD = next.toISOString().slice(0, 10)
-    appt = [...(byDate[prevD]||[]), ...(byDate[nextD]||[])]
-      .find(a => fuzzyMatch(fName, a.contactName))
+    const nearby = [...(byDate[prevD]||[]), ...(byDate[nextD]||[])]
+    appt = nearby.find(exactMatch) || nearby.find(a => fuzzyMatch(fName, a.contactName))
   }
 
   if (!appt) {
@@ -127,12 +129,9 @@ for (const call of calls) {
   // Always set fathomLink if missing or different
   const link = call.share_url || call.url
   if (link && appt.fathomLink !== link) updates.fathomLink = link
-
-  // Mark showed only if no outcome set yet
-  if (!['closed','not_closed','no_show','cancelled'].includes(appt.status)) {
-    updates.status = 'showed'
-    markedShowed++
-  }
+  // Note: we do NOT set status='showed' — 'showed' is not a valid final status.
+  // The appointment will surface in Needs Review via appointmentStatus='showed' (GHL field)
+  // for the user to resolve to closed/not_closed.
 
   if (Object.keys(updates).length === 0) {
     alreadyHad++
@@ -140,13 +139,13 @@ for (const call of calls) {
   }
 
   matched++
-  console.log(`[match] ${call._date} — "${fName}" → "${appt.contactName}"${updates.status ? ' → showed' : ''}${updates.fathomLink ? ' + link' : ''}`)
+  console.log(`[match] ${call._date} — "${fName}" → "${appt.contactName}"${updates.fathomLink ? ' + fathomLink' : ''}`)
 
   if (!dryRun) Object.assign(appt, updates)
 }
 
 // ── Save ──────────────────────────────────────────────────────────────────────
-if (!dryRun && matched + markedShowed > 0) {
+if (!dryRun && matched > 0) {
   fs.writeFileSync(DATA_FILE, JSON.stringify(raw, null, 2))
   console.log('\nSaved.')
 }
@@ -156,6 +155,5 @@ console.log(`
   Sales calls found:   ${calls.length}
   Matched + updated:   ${matched}
   Already up to date:  ${alreadyHad}
-  Marked showed:       ${markedShowed}
   Unmatched:           ${unmatched}
 ${dryRun ? '\n  (dry run — no changes written)' : ''}`)
