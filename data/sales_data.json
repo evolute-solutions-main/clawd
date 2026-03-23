@@ -9064,19 +9064,9 @@
   ],
   "dials": [
     {
-      "setter": "Randy Ray Nadera",
+      "setter": "Juan Melo",
       "date": "2026-01-01",
-      "dials": 1831
-    },
-    {
-      "setter": "Daniel Franco",
-      "date": "2026-01-01",
-      "dials": 423
-    },
-    {
-      "setter": "Eddie Stiwar Murillo Becerra",
-      "date": "2026-01-01",
-      "dials": 264
+      "dials": 3
     },
     {
       "setter": "Maxwell Hastings",
@@ -9084,29 +9074,46 @@
       "dials": 100
     },
     {
-      "setter": "Juan Melo",
-      "date": "2026-01-01",
-      "dials": 3
-    },
-    {
-      "setter": "Daniel Franco",
-      "date": "2026-02-01",
-      "dials": 1841
+      "setter": "Randy Ray Nadera",
+      "date": "2026-01-04",
+      "dials": 367,
+      "uniqueLeads": 166,
+      "avgDurationSec": 47
     },
     {
       "setter": "Randy Ray Nadera",
-      "date": "2026-02-01",
-      "dials": 1822
+      "date": "2026-01-11",
+      "dials": 464,
+      "uniqueLeads": 220,
+      "avgDurationSec": 50
+    },
+    {
+      "setter": "Randy Ray Nadera",
+      "date": "2026-01-18",
+      "dials": 520,
+      "uniqueLeads": 265,
+      "avgDurationSec": 48
+    },
+    {
+      "setter": "Daniel Franco",
+      "date": "2026-01-25",
+      "dials": 423,
+      "uniqueLeads": 364,
+      "avgDurationSec": 58
     },
     {
       "setter": "Eddie Stiwar Murillo Becerra",
-      "date": "2026-02-01",
-      "dials": 1734
+      "date": "2026-01-25",
+      "dials": 264,
+      "uniqueLeads": 212,
+      "avgDurationSec": 58
     },
     {
-      "setter": "Maxwell Hastings",
-      "date": "2026-02-01",
-      "dials": 85
+      "setter": "Randy Ray Nadera",
+      "date": "2026-01-25",
+      "dials": 480,
+      "uniqueLeads": 231,
+      "avgDurationSec": 55
     },
     {
       "setter": "Alan Corona",
@@ -9114,9 +9121,11 @@
       "dials": 38
     },
     {
-      "setter": "Desiree Mae Unana",
+      "setter": "Daniel Franco",
       "date": "2026-02-01",
-      "dials": 11
+      "dials": 357,
+      "uniqueLeads": 301,
+      "avgDurationSec": 70
     },
     {
       "setter": "Davi Dela Marta",
@@ -9124,24 +9133,110 @@
       "dials": 3
     },
     {
+      "setter": "Desiree Mae Unana",
+      "date": "2026-02-01",
+      "dials": 11
+    },
+    {
       "setter": "Eddie Stiwar Murillo Becerra",
-      "date": "2026-03-01",
-      "dials": 1452
+      "date": "2026-02-01",
+      "dials": 214,
+      "uniqueLeads": 176,
+      "avgDurationSec": 98
+    },
+    {
+      "setter": "Maxwell Hastings",
+      "date": "2026-02-01",
+      "dials": 85
+    },
+    {
+      "setter": "Randy Ray Nadera",
+      "date": "2026-02-01",
+      "dials": 411,
+      "uniqueLeads": 177,
+      "avgDurationSec": 57
+    },
+    {
+      "setter": "Daniel Franco",
+      "date": "2026-02-08",
+      "dials": 468,
+      "uniqueLeads": 353,
+      "avgDurationSec": 56
+    },
+    {
+      "setter": "Eddie Stiwar Murillo Becerra",
+      "date": "2026-02-08",
+      "dials": 490,
+      "uniqueLeads": 407,
+      "avgDurationSec": 58
+    },
+    {
+      "setter": "Randy Ray Nadera",
+      "date": "2026-02-08",
+      "dials": 435,
+      "uniqueLeads": 200,
+      "avgDurationSec": 52
+    },
+    {
+      "setter": "Daniel Franco",
+      "date": "2026-02-15",
+      "dials": 510,
+      "uniqueLeads": 321,
+      "avgDurationSec": 38
+    },
+    {
+      "setter": "Eddie Stiwar Murillo Becerra",
+      "date": "2026-02-15",
+      "dials": 526,
+      "uniqueLeads": 451,
+      "avgDurationSec": 45
+    },
+    {
+      "setter": "Randy Ray Nadera",
+      "date": "2026-02-15",
+      "dials": 491,
+      "uniqueLeads": 207,
+      "avgDurationSec": 59
+    },
+    {
+      "setter": "Daniel Franco",
+      "date": "2026-02-22",
+      "dials": 506,
+      "uniqueLeads": 268,
+      "avgDurationSec": 48
+    },
+    {
+      "setter": "Eddie Stiwar Murillo Becerra",
+      "date": "2026-02-22",
+      "dials": 504,
+      "uniqueLeads": 440,
+      "avgDurationSec": 40
+    },
+    {
+      "setter": "Randy Ray Nadera",
+      "date": "2026-02-22",
+      "dials": 485,
+      "uniqueLeads": 237,
+      "avgDurationSec": 57
     },
     {
       "setter": "Daniel Franco",
       "date": "2026-03-01",
-      "dials": 1421
+      "dials": 507,
+      "uniqueLeads": 285,
+      "avgDurationSec": 33
     },
     {
-      "setter": "Richard Ramilo",
+      "setter": "Davi Dela Marta",
       "date": "2026-03-01",
-      "dials": 1258
+      "dials": 1
     },
     {
-      "setter": "Randy Ray Nadera",
+      "setter": "Eddie Stiwar Murillo Becerra",
       "date": "2026-03-01",
-      "dials": 1234
+      "dials": 529,
+      "uniqueLeads": 365,
+      "avgDurationSec": 52
     },
     {
       "setter": "Maxwell Hastings",
@@ -9149,9 +9244,67 @@
       "dials": 89
     },
     {
-      "setter": "Davi Dela Marta",
+      "setter": "Randy Ray Nadera",
       "date": "2026-03-01",
-      "dials": 1
+      "dials": 523,
+      "uniqueLeads": 259,
+      "avgDurationSec": 43
+    },
+    {
+      "setter": "Richard Ramilo",
+      "date": "2026-03-01",
+      "dials": 218,
+      "uniqueLeads": 126,
+      "avgDurationSec": 29
+    },
+    {
+      "setter": "Daniel Franco",
+      "date": "2026-03-08",
+      "dials": 507,
+      "uniqueLeads": 259,
+      "avgDurationSec": 38
+    },
+    {
+      "setter": "Eddie Stiwar Murillo Becerra",
+      "date": "2026-03-08",
+      "dials": 523,
+      "uniqueLeads": 337,
+      "avgDurationSec": 57
+    },
+    {
+      "setter": "Randy Ray Nadera",
+      "date": "2026-03-08",
+      "dials": 493,
+      "uniqueLeads": 255,
+      "avgDurationSec": 39
+    },
+    {
+      "setter": "Daniel Franco",
+      "date": "2026-03-15",
+      "dials": 412,
+      "uniqueLeads": 141,
+      "avgDurationSec": 30
+    },
+    {
+      "setter": "Eddie Stiwar Murillo Becerra",
+      "date": "2026-03-15",
+      "dials": 491,
+      "uniqueLeads": 238,
+      "avgDurationSec": 31
+    },
+    {
+      "setter": "Randy Ray Nadera",
+      "date": "2026-03-15",
+      "dials": 281,
+      "uniqueLeads": 125,
+      "avgDurationSec": 37
+    },
+    {
+      "setter": "Richard Ramilo",
+      "date": "2026-03-15",
+      "dials": 555,
+      "uniqueLeads": 181,
+      "avgDurationSec": 24
     }
   ]
 }
