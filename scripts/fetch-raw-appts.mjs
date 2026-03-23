@@ -42,13 +42,21 @@ const OUTCOME_FIELDS = [
 
 // Map GHL's appointmentStatus → our unified status enum for new records.
 // 'showed' is intentionally omitted — needs a manual close/not_closed outcome.
-// Both 'noshow' and 'no_show' handled in case GHL changes casing.
+// Normalize input before lookup: lowercase + collapse dashes/spaces to underscore.
+// Unknown statuses fall back to 'confirmed' so they surface in Needs Review.
 const GHL_STATUS_MAP = {
-  new:       'new',
-  confirmed: 'confirmed',
-  cancelled: 'cancelled',
-  noshow:    'no_show',
-  no_show:   'no_show',
+  new:           'new',
+  confirmed:     'confirmed',
+  cancelled:     'cancelled',
+  noshow:        'no_show',
+  no_show:       'no_show',
+  rescheduled:   'confirmed',   // treat as confirmed — user must log outcome
+}
+
+function normalizeGHLStatus(raw) {
+  if (!raw) return null
+  const key = raw.toLowerCase().replace(/[\s-]+/g, '_').replace(/_+/g, '_').trim()
+  return GHL_STATUS_MAP[key] ?? 'confirmed'  // anything unrecognized → confirmed (Needs Review)
 }
 
 const args    = process.argv.slice(2)
@@ -123,8 +131,7 @@ async function main() {
       }
     }
     if (!record.status) {
-      const derived = GHL_STATUS_MAP[appt.appointmentStatus]
-      if (derived) record.status = derived
+      record.status = normalizeGHLStatus(appt.appointmentStatus)
     }
 
     fresh.push(record)
@@ -145,18 +152,15 @@ async function main() {
     return false
   })
 
-  // Validate status integrity:
-  // - 'showed' is never a valid final status → migrate to 'confirmed'
-  // - undefined status on a GHL-showed appointment → migrate to 'confirmed'
-  //   (GHL_STATUS_MAP intentionally omits 'showed'; without this guard these records
-  //    are permanently invisible to staleStatus and gap reports)
+  // Validate status integrity — canonicalize any bad values so they surface in Needs Review.
+  // 'showed' is never a valid final status (needs closed/not_closed resolution).
+  // Any unrecognized status value is also normalized to 'confirmed'.
+  const VALID_STATUSES = new Set(['new','confirmed','closed','not_closed','no_show','cancelled'])
   for (const a of merged) {
-    if (a.status === 'showed') {
-      console.warn(`  ⚠ Invalid status='showed' on ${a.contactName} (${a.startTime?.slice(0,10)}) — migrated to 'confirmed'`)
-      a.status = 'confirmed'
-    } else if (a.status === undefined && a.appointmentStatus === 'showed') {
-      console.warn(`  ⚠ status=undefined on GHL-showed record ${a.contactName} (${a.startTime?.slice(0,10)}) — migrated to 'confirmed'`)
-      a.status = 'confirmed'
+    if (!a.status || !VALID_STATUSES.has(a.status)) {
+      const orig = a.status
+      a.status = normalizeGHLStatus(a.appointmentStatus) || 'confirmed'
+      console.warn(`  ⚠ Invalid/missing status '${orig}' on ${a.contactName} (${a.startTime?.slice(0,10)}) — migrated to '${a.status}'`)
     }
   }
 

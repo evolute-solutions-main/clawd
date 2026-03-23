@@ -39,8 +39,12 @@ function inWindow(dateStr) {
 // Only look at past appointments (call has already happened or been missed)
 const past = appts.filter(a => {
   const d = a.startTime?.slice(0, 10)
-  return d && d <= yesterday && (!fromArg || inWindow(a.startTime))
+  return d && d <= yesterday && !a.excluded && (!fromArg || inWindow(a.startTime))
 })
+
+// ── Gap type 0: missing contact name ─────────────────────────────────────────
+// Any past non-new appointment with no contactName needs to be identified
+const noName = past.filter(a => !a.contactName && a.status !== 'new')
 
 // ── Gap type 1: No outcome recorded ──────────────────────────────────────────
 // Covers two cases that require the same action (log what happened):
@@ -75,7 +79,14 @@ const noSetter = past.filter(a =>
   !a.createdBy
 )
 
-// ── Gap type 6: showed or closed but no Fathom link ──────────────────────────
+// ── Gap type 6b: has Fathom link but marked no_show or cancelled ─────────────
+// Call didn't happen per our status, yet a recording exists — either the status
+// is wrong (they actually showed) or the Fathom link is a false-positive match.
+const fathomConflict = past.filter(a =>
+  ['no_show','cancelled'].includes(a.status) && a.fathomLink
+)
+
+// ── Gap type 7: showed or closed but no Fathom link ──────────────────────────
 // Every show should have a recording — missing link means fathom-match didn't find it
 // Fathom link only needed when the call actually happened (closed or not_closed)
 // no_show/cancelled = call didn't happen, so no recording exists
@@ -91,11 +102,11 @@ function fmtAppt(a) {
 }
 
 if (jsonOut) {
-  console.log(JSON.stringify({ needsOutcome, closedNoCash, staleStatus, noCloser, noSetter, noFathom }, null, 2))
+  console.log(JSON.stringify({ noName, needsOutcome, closedNoCash, noCloser, noSetter, noFathom, fathomConflict }, null, 2))
   process.exit(0)
 }
 
-const total = needsOutcome.length + closedNoCash.length + noCloser.length + noSetter.length + noFathom.length
+const total = noName.length + needsOutcome.length + closedNoCash.length + noCloser.length + noSetter.length + noFathom.length + fathomConflict.length
 
 if (total === 0) {
   console.log('✅ No gaps found — all past appointments have complete outcome data.')
@@ -103,6 +114,12 @@ if (total === 0) {
 }
 
 console.log(`\n⚠️  ${total} appointment(s) need your input:\n`)
+
+if (noName.length) {
+  console.log(`── ${noName.length} appointment(s) with no contact name ──`)
+  noName.forEach(a => console.log(fmtAppt(a)))
+  console.log()
+}
 
 if (needsOutcome.length) {
   console.log(`── ${needsOutcome.length} missing outcome (showed/confirmed past date — needs closed/not_closed/no_show/cancelled) ──`)
@@ -131,6 +148,12 @@ if (noSetter.length) {
 if (noFathom.length) {
   console.log(`── ${noFathom.length} showed/closed with no Fathom link (run fathom-match or add manually) ──`)
   noFathom.forEach(a => console.log(fmtAppt(a)))
+  console.log()
+}
+
+if (fathomConflict.length) {
+  console.log(`── ${fathomConflict.length} have a Fathom recording but are marked no_show/cancelled — status wrong or false-positive match? ──`)
+  fathomConflict.forEach(a => console.log(fmtAppt(a)))
   console.log()
 }
 

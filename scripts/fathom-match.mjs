@@ -212,7 +212,18 @@ for (const call of calls) {
 
   const updates = {}
 
-  // Always set fathomLink if missing or different
+  // Never set fathomLink on a no_show or cancelled appointment.
+  // The call didn't happen, so no recording should exist.
+  // If one does, it's a false-positive match — log it as unmatched instead.
+  if (['no_show','cancelled'].includes(appt.status)) {
+    const link = call.share_url || call.url
+    console.log(`[conflict] ${call._date} — "${fName}" matched "${appt.contactName}" but status=${appt.status}; skipping fathomLink (${link})`)
+    unmatchedRecords.push({ name: fName, date: call._date, fathomLink: link, note: `matched to ${appt.contactName} (${appt.status}) — verify status or false-positive` })
+    unmatched++
+    continue
+  }
+
+  // Set fathomLink if missing or different
   const link = call.share_url || call.url
   if (link && appt.fathomLink !== link) updates.fathomLink = link
   // Note: we do NOT set status='showed' — 'showed' is not a valid final status.

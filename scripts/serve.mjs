@@ -76,6 +76,31 @@ const server = http.createServer(async (req, res) => {
       if (idx === -1) return json(res, 404, { error: 'appointment not found' })
 
       const allowed = ['status','source','closer','cashCollected','cashCollectedAfterFirstCall','contractRevenue','followUpBooked','fathomLink','offerMade','excluded']
+      const VALID_STATUSES = ['new','confirmed','closed','not_closed','no_show','cancelled']
+      const VALID_SOURCES  = ['Cold SMS','Ads','Referral','Organic']
+      const NUM_FIELDS     = ['cashCollected','cashCollectedAfterFirstCall','contractRevenue']
+
+      // Field-level validation
+      if (fields.status !== undefined && !VALID_STATUSES.includes(fields.status))
+        return json(res, 400, { error: `invalid status '${fields.status}' — must be one of: ${VALID_STATUSES.join(', ')}` })
+      if (fields.source !== undefined && !VALID_SOURCES.includes(fields.source))
+        return json(res, 400, { error: `invalid source '${fields.source}' — must be one of: ${VALID_SOURCES.join(', ')}` })
+      for (const f of NUM_FIELDS) {
+        if (fields[f] !== undefined && fields[f] !== null && fields[f] !== '') {
+          const n = Number(fields[f])
+          if (isNaN(n) || n < 0) return json(res, 400, { error: `${f} must be a non-negative number` })
+          fields[f] = n  // coerce to number
+        }
+      }
+
+      // If status is being set to no_show/cancelled but appointment has a fathomLink,
+      // flag it — don't block the save, but mark it so it surfaces in Needs Review.
+      const appt = data.appointments[idx]
+      const newStatus = fields.status ?? appt.status
+      if (['no_show','cancelled'].includes(newStatus) && (fields.fathomLink || appt.fathomLink)) {
+        console.warn(`  ⚠ ${appt.contactName}: status set to ${newStatus} but fathomLink exists — flagged for review`)
+      }
+
       for (const [k, v] of Object.entries(fields)) {
         if (allowed.includes(k)) data.appointments[idx][k] = v
       }
