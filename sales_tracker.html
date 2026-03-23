@@ -29712,15 +29712,20 @@ function renderReview(){
         <span style="color:var(--muted);font-size:0.77rem">appointment exists but no name — edit JSON to add contactName</span>
       </div>
       <div class="tbl-wrap"><table style="border-collapse:collapse;width:100%">
-        <thead><tr style="border-bottom:1px solid var(--border2)"><th>Date</th><th>ID</th><th>Status</th><th>GHL Status</th><th>Cash</th><th>Revenue</th></tr></thead>
-        <tbody>${nameless.map(a=>`<tr style="border-bottom:1px solid var(--border)">
+        <thead><tr style="border-bottom:1px solid var(--border2)"><th>Date</th><th>Phone</th><th>Email</th><th>Status</th><th>GHL Status</th><th>GHL</th></tr></thead>
+        <tbody>${nameless.map(a=>{
+          const GHL_LOC = 'RCq1KbPbbCqoPolTIh0J'
+          const ghlLink = a.contactId
+            ? `<a href="https://app.evolutesolutions.io/v2/location/${GHL_LOC}/contacts/detail/${a.contactId}" target="_blank" style="color:#6366f1;font-size:0.75rem">Open ↗</a>`
+            : `<span style="color:var(--muted);font-size:0.72rem">re-sync to get link</span>`
+          return `<tr style="border-bottom:1px solid var(--border)">
           <td style="padding:8px 6px;font-size:0.78rem;white-space:nowrap">${a.startTime?.slice(0,10)||'?'}</td>
-          <td style="padding:8px 6px;font-size:0.72rem;color:var(--muted)">${a.id}</td>
+          <td style="padding:8px 6px;font-size:0.78rem">${a.phone||'—'}</td>
+          <td style="padding:8px 6px;font-size:0.78rem">${a.email||'—'}</td>
           <td style="padding:8px 6px">${a.status||'—'}</td>
           <td style="padding:8px 6px;color:var(--muted)">${a.appointmentStatus||'—'}</td>
-          <td style="padding:8px 6px">${a.cashCollected?'$'+a.cashCollected:''}</td>
-          <td style="padding:8px 6px">${a.contractRevenue?'$'+a.contractRevenue:''}</td>
-        </tr>`).join('')}</tbody>
+          <td style="padding:8px 6px">${ghlLink}</td>
+        </tr>`}).join('')}</tbody>
       </table></div>
     </div>` : ''}
     ${section('Missing outcome','#f59e0b', needsOutcome, 'showed, confirmed past date, or unresolved — log closed / not_closed / no_show / cancelled', 'outcome')}
@@ -29740,7 +29745,7 @@ function renderReview(){
           <td style="padding:8px 6px;font-weight:500">${a.contactName||'Unknown'}</td>
           <td style="padding:8px 6px"><select data-field="status" style="background:var(--bg2);border:1px solid var(--border2);color:var(--text);border-radius:4px;padding:3px 5px;font-size:0.75rem">${['','closed','not_closed','no_show','cancelled','confirmed'].map(o=>`<option value="${o}" ${o===a.status?'selected':''}>${o||'—'}</option>`).join('')}</select></td>
           <td style="padding:8px 6px"><a href="${a.fathomLink}" target="_blank" style="color:#6366f1;font-size:0.78rem;word-break:break-all">${a.fathomLink}</a></td>
-          <td style="padding:8px 6px"><button onclick="saveRow('${a.id}')" style="background:var(--indigo);color:#fff;border:none;border-radius:4px;padding:4px 12px;font-size:0.75rem;cursor:pointer;font-weight:600">Save</button><span id="rv-msg-${a.id}" style="font-size:0.72rem;margin-left:6px;color:var(--green)"></span></td>
+          <td style="padding:8px 6px;white-space:nowrap"><button onclick="saveRow('${a.id}')" style="background:var(--indigo);color:#fff;border:none;border-radius:4px;padding:4px 12px;font-size:0.75rem;cursor:pointer;font-weight:600">Save</button><button onclick="acknowledgeConflict('${a.id}')" style="background:transparent;border:1px solid #b45309;color:#b45309;border-radius:4px;padding:4px 10px;font-size:0.72rem;cursor:pointer;margin-left:6px" title="Mark as intentionally OK — removes from this list">✓ Mark OK</button><span id="rv-msg-${a.id}" style="font-size:0.72rem;margin-left:6px;color:var(--green)"></span></td>
         </tr>`).join('')}</tbody>
       </table></div>
     </div>` : ''}
@@ -29819,6 +29824,19 @@ window.unexcludeRow = async function(id){
     const msg = document.getElementById('rv-msg-'+id)
     if(msg) msg.textContent = 'Restored'
     setTimeout(()=>{ tabRendered.delete('review'); renderReview() }, 600)
+  }
+}
+
+window.acknowledgeConflict = async function(id){
+  const msg = document.getElementById('rv-msg-'+id)
+  if(msg) msg.textContent = 'Saving…'
+  const ok = await saveAppt(id, { fathomConflictNote: 'Acknowledged' })
+  if(ok){
+    const appt = RAW.find(a=>a.id===id)
+    if(appt) appt.fathomConflictNote = 'Acknowledged'
+    const row = document.querySelector(`tr[data-id="${id}"]`)
+    if(row){ row.style.transition='opacity 0.3s'; row.style.opacity='0' }
+    setTimeout(()=>{ tabRendered.delete('review'); renderReview() }, 300)
   }
 }
 

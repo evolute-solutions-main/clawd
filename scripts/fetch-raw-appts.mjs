@@ -112,6 +112,7 @@ async function main() {
     // Build updated record — GHL fields only
     const record = {
       id:                appt.id,
+      contactId:         appt.contactId || '',
       contactName:       appt.contactName,
       calendarName:      CALENDAR_NAMES[appt.calendarId] || appt.calendarId,
       startTime:         appt.startTime,

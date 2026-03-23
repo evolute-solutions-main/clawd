@@ -4885,7 +4885,7 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "cancelled",
+      "status": "not_closed",
       "closer": "Max",
       "followUpBooked": false,
       "fathomLink": "https://fathom.video/share/qRuxmqty6QboJst3KF9Lxik4eZtZNAz4"
@@ -5265,7 +5265,7 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "no_show",
+      "status": "not_closed",
       "closer": "Max",
       "followUpBooked": false,
       "fathomLink": "https://fathom.video/share/e7yvA4HCFtdA38vKDmnsxaSEfyUqRmN4"
@@ -6223,7 +6223,7 @@
           "source": "manual"
         }
       ],
-      "status": "no_show",
+      "status": "not_closed",
       "fathomLink": "https://fathom.video/share/pwcFsBcftsKSpMp8cxtf3z61oU4xrsjt"
     },
     {
@@ -7563,7 +7563,7 @@
       "phone": "+12626232720",
       "email": "dennis.h.kohlmeier@gmail.com",
       "statusHistory": [],
-      "status": "no_show",
+      "status": "not_closed",
       "fathomLink": "https://fathom.video/share/MCwdQ3f7KgzxDdyvupjeVpWTMCJtzLqS"
     },
     {
@@ -8653,7 +8653,7 @@
       "phone": "+14807977876",
       "email": "steve@beachstudiodesignbuild.com",
       "statusHistory": [],
-      "status": "no_show",
+      "status": "not_closed",
       "fathomLink": "https://fathom.video/share/3Rq5hx1qyJEgqRxfumxaAzBL72JykHUz"
     },
     {
