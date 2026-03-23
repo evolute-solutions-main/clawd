@@ -2453,7 +2453,7 @@
           "at": "2026-03-20T02:08:12.734Z"
         }
       ],
-      "status": "new"
+      "status": "not_closed"
     },
     {
       "id": "lUqLG0WisjQlBsjTnt7x",
@@ -4638,6 +4638,11 @@
         {
           "status": "confirmed",
           "at": "2026-03-23T18:45:18.494Z"
+        },
+        {
+          "status": "no_show",
+          "at": "2026-03-23T22:07:46.671Z",
+          "source": "manual"
         }
       ],
       "status": "no_show",
@@ -4932,9 +4937,14 @@
         {
           "status": "confirmed",
           "at": "2026-03-23T18:45:18.494Z"
+        },
+        {
+          "status": "no_show",
+          "at": "2026-03-23T22:07:46.671Z",
+          "source": "manual"
         }
       ],
-      "status": "not_closed",
+      "status": "no_show",
       "closer": "Max",
       "followUpBooked": false
     },
@@ -6203,9 +6213,14 @@
         {
           "status": "new",
           "at": "2026-03-23T18:41:15.232Z"
+        },
+        {
+          "status": "no_show",
+          "at": "2026-03-23T22:07:46.671Z",
+          "source": "manual"
         }
       ],
-      "status": "new",
+      "status": "no_show",
       "fathomLink": "https://fathom.video/share/pwcFsBcftsKSpMp8cxtf3z61oU4xrsjt"
     },
     {
@@ -6913,9 +6928,16 @@
       "createdBy": "Daniel",
       "phone": "+17343558663",
       "email": "brkrajeshkumar@gmail.com",
-      "statusHistory": [],
+      "statusHistory": [
+        {
+          "status": "not_closed",
+          "at": "2026-03-23T22:07:59.442Z",
+          "source": "manual"
+        }
+      ],
       "status": "not_closed",
-      "closer": "Max"
+      "closer": "Max",
+      "fathomLink": "https://fathom.video/share/Z2zxqgknBXZmoEzBzfs4azyyVDPyJ5Q9"
     },
     {
       "id": "bKLPobNkCRjbJggm5NPa",
