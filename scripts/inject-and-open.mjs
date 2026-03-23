@@ -49,11 +49,11 @@ const monthOpts = [...new Set(rawMonths.map(m => parseInt(m.slice(5))))].sort((a
   .map(n => `<option value="${String(n).padStart(2,'0')}">${MONTH_NAMES[n]}</option>`).join('')
 html = html.replace(
   /<select id="selYear"[^>]*>[\s\S]*?<\/select>/,
-  `<select id="selYear" style="background:var(--bg2);border:1px solid var(--border2);color:var(--text);border-radius:6px;padding:3px 8px;font-size:0.8rem;cursor:pointer"><option value="">Year</option>${yearOpts}</select>`
+  `<select id="selYear"><option value="">Year</option>${yearOpts}</select>`
 )
 html = html.replace(
   /<select id="selMonth"[^>]*>[\s\S]*?<\/select>/,
-  `<select id="selMonth" style="background:var(--bg2);border:1px solid var(--border2);color:var(--text);border-radius:6px;padding:3px 8px;font-size:0.8rem;cursor:pointer"><option value="">Month</option>${monthOpts}</select>`
+  `<select id="selMonth"><option value="">Month</option>${monthOpts}</select>`
 )
 fs.writeFileSync(htmlFile, html)
 execSync(`open "${htmlFile}"`)
