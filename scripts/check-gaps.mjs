@@ -44,10 +44,10 @@ const past = appts.filter(a => {
 
 // ── Gap type 1: GHL says "showed" but no outcome recorded ────────────────────
 // appointmentStatus=showed OR status=showed but not yet resolved to closed/not_closed
+// no_show and cancelled mean the call didn't happen — closed/not_closed don't apply
 const needsOutcome = past.filter(a =>
   (a.appointmentStatus === 'showed' || a.status === 'showed') &&
-  a.status !== 'closed' &&
-  a.status !== 'not_closed'
+  !['closed','not_closed','no_show','cancelled'].includes(a.status)
 )
 
 // ── Gap type 2: GHL says "showed", outcome recorded, but cash/revenue missing ─
