@@ -130,10 +130,26 @@ async function main() {
 
   // Merge: keep existing records outside this date range, upsert fetched ones
   const freshById = Object.fromEntries(fresh.map(a => [a.id, a]))
-  const merged = [
+  let merged = [
     ...data.appointments.filter(a => !freshById[a.id]),
     ...fresh,
   ].sort((a, b) => new Date(a.startTime) - new Date(b.startTime))
+
+  // Dedup by ID — concurrent runs can produce same-ID duplicates; keep most complete record
+  const seenIds = {}
+  merged = merged.filter(a => {
+    if (!seenIds[a.id]) { seenIds[a.id] = true; return true }
+    console.warn(`  ⚠ Duplicate ID removed: ${a.id} (${a.contactName})`)
+    return false
+  })
+
+  // Validate: 'showed' is never a valid final status — migrate to 'confirmed' so it surfaces in Needs Review
+  for (const a of merged) {
+    if (a.status === 'showed') {
+      console.warn(`  ⚠ Invalid status='showed' on ${a.contactName} (${a.startTime?.slice(0,10)}) — migrated to 'confirmed'`)
+      a.status = 'confirmed'
+    }
+  }
 
   fs.writeFileSync(DATA_FILE, JSON.stringify({ appointments: merged, dials: data.dials }, null, 2))
   console.log(`\nDone. ${fresh.length} fetched, ${merged.length} total appointments in file.`)

@@ -58,12 +58,10 @@ const closedNoCash = past.filter(a =>
   !a.contractRevenue
 )
 
-// ── Gap type 3: Still "new" or "confirmed" past their date ───────────────────
-// Appointment date passed but GHL still shows new/confirmed — likely no-show or cancel not logged
-const staleStatus = past.filter(a =>
-  ['new', 'confirmed'].includes(a.appointmentStatus) &&
-  !['cancelled', 'no_show', 'closed', 'not_closed'].includes(a.status)
-)
+// ── Gap type 3: Confirmed past their date with no outcome ────────────────────
+// 'new' = unconfirmed placeholder, never needs outcome (not a real committed appointment)
+// Only 'confirmed' (our status field) past-date means a real appointment with missing outcome
+const staleStatus = past.filter(a => a.status === 'confirmed')
 
 // ── Gap type 4: closed/not_closed but no closer recorded ────────────────────
 const noCloser = past.filter(a =>

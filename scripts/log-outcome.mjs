@@ -55,9 +55,12 @@ let gaps = appts.filter(a => {
     if (!a.contactName?.toLowerCase().includes(nameArg.toLowerCase())) return false
   }
 
-  const needsOutcome = a.appointmentStatus === 'showed' && a.status !== 'closed' && a.status !== 'not_closed'
+  // showed = GHL or legacy status; no_show/cancelled = call didn't happen, closed/not_closed don't apply
+  const needsOutcome = (a.appointmentStatus === 'showed' || a.status === 'showed') &&
+                       !['closed','not_closed','no_show','cancelled'].includes(a.status)
   const closedNoCash = a.status === 'closed' && !a.cashCollected && !a.contractRevenue
-  const stale        = ['new','confirmed'].includes(a.appointmentStatus) && !['cancelled','no_show','closed','not_closed'].includes(a.status)
+  // new = unconfirmed placeholder, never needs outcome; only confirmed past-date appts are stale
+  const stale        = a.status === 'confirmed'
   const noCloser     = ['closed','not_closed'].includes(a.status) && !a.closer
 
   return needsOutcome || closedNoCash || stale || noCloser
@@ -76,12 +79,13 @@ const ask = q => new Promise(resolve => rl.question(q, resolve))
 
 function describeGap(a) {
   const issues = []
-  if (a.appointmentStatus === 'showed' && a.status !== 'closed' && a.status !== 'not_closed')
-    issues.push('outcome unknown')
+  if ((a.appointmentStatus === 'showed' || a.status === 'showed') &&
+      !['closed','not_closed','no_show','cancelled'].includes(a.status))
+    issues.push('showed but outcome unknown (closed or not_closed?)')
   if (a.status === 'closed' && !a.cashCollected && !a.contractRevenue)
     issues.push('closed but no cash/revenue')
-  if (['new','confirmed'].includes(a.appointmentStatus) && !['cancelled','no_show','closed','not_closed'].includes(a.status))
-    issues.push('still new/confirmed past date')
+  if (a.status === 'confirmed')
+    issues.push('confirmed past date — needs outcome')
   if (['closed','not_closed'].includes(a.status) && !a.closer)
     issues.push('no closer recorded')
   return issues.join(', ')
@@ -108,8 +112,9 @@ for (let i = 0; i < gaps.length; i++) {
 
   // Status
   const statusNeedsUpdate =
-    a.appointmentStatus === 'showed' && a.status !== 'closed' && a.status !== 'not_closed' ||
-    ['new','confirmed'].includes(a.appointmentStatus) && !['cancelled','no_show','closed','not_closed'].includes(a.status)
+    ((a.appointmentStatus === 'showed' || a.status === 'showed') &&
+     !['closed','not_closed','no_show','cancelled'].includes(a.status)) ||
+    a.status === 'confirmed'
 
   if (statusNeedsUpdate) {
     const st = await ask('  Status (c=closed, n=not_closed, ns=no_show, x=cancelled, skip=Enter): ')
