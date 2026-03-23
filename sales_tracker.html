@@ -1166,8 +1166,8 @@ function computePipeline(appointments, { from, to } = {}) {
   const avgDeal  = closed.length ? Math.round(totalRev / closed.length) : 0
   const closeRate = hadCall.length > 0 ? closed.length / hadCall.length : 0
 
-  const upcoming = appointments.filter(a => a.status === 'confirmed' && (a.startTime?.slice(0,10)||'') >= today)
-  const followUps = appointments.filter(a => a.status === 'not_closed' && a.followUpBooked)
+  const upcoming = appointments.filter(a => !a.excluded && a.status === 'confirmed' && (a.startTime?.slice(0,10)||'') >= today)
+  const followUps = appointments.filter(a => !a.excluded && a.status === 'not_closed' && a.followUpBooked)
   const unresolved = appts.filter(a => a.status === 'showed')
 
   return {
@@ -29067,18 +29067,10 @@ function renderCosts(){
     document.querySelectorAll('#costChTabs .ch-tab').forEach(b=>b.classList.toggle('on',b.dataset.ch===costsChannel))
   }
 
-  // Filter expenses to date range
-  const expInRange = EXPENSES.filter(e => {
-    const d = e.date || e.dateFrom
-    if(!d) return true
-    if(dateFrom && d < dateFrom) return false
-    if(dateTo   && d > dateTo)   return false
-    return true
-  })
-
-  const cacExp = expInRange.filter(e => !e.excludeFromCAC)
-  const adsExp = cacExp.filter(e => e.channel === 'ads')
-  const smsExp = cacExp.filter(e => e.channel === 'cold_sms')
+  // Filter expenses via canonical filterExpenses — dateless expenses are excluded (not silently included)
+  const cacExp = Metrics.filterExpenses(EXPENSES, { from: dateFrom, to: dateTo, excludeCAC: true })
+  const adsExp = Metrics.filterExpenses(EXPENSES, { from: dateFrom, to: dateTo, excludeCAC: true, source: 'ads' })
+  const smsExp = Metrics.filterExpenses(EXPENSES, { from: dateFrom, to: dateTo, excludeCAC: true, source: 'cold_sms' })
   const sum    = arr => arr.reduce((s,e) => s + (e.amount||0), 0)
 
   // Appointment splits by channel
@@ -29609,7 +29601,10 @@ function renderReview(){
   // Excluded appointments — hidden from all metrics; shown here so they can be un-excluded
   const excludedAppts = RAW.filter(a => a.excluded)
 
-  const total = nameless.length + needsOutcome.length + closedNoCash.length + noCloser.length + noFathom.length + fathomConflict.length + unmatchedFathom.length + noSetter.length
+  // Expenses with no date — excluded from all calculations, need a date added
+  const datelessExp = EXPENSES.filter(e => !e.date && !e.dateFrom)
+
+  const total = nameless.length + needsOutcome.length + closedNoCash.length + noCloser.length + noFathom.length + fathomConflict.length + unmatchedFathom.length + noSetter.length + datelessExp.length
   const inp = (t,v,p,w)=>`<input type="${t}" value="${v||''}" placeholder="${p||''}" style="background:var(--bg2);border:1px solid var(--border2);color:var(--text);border-radius:4px;padding:3px 6px;font-size:0.75rem;width:${w||'80px'}">`
   const sel = (name,cur,opts)=>`<select style="background:var(--bg2);border:1px solid var(--border2);color:var(--text);border-radius:4px;padding:3px 5px;font-size:0.75rem">${opts.map(o=>`<option value="${o}" ${o===cur?'selected':''}>${o||'—'}</option>`).join('')}</select>`
 
@@ -29732,6 +29727,23 @@ function renderReview(){
       </table></div>
     </div>` : ''}
     ${section('Missing setter — Cold SMS','#f97316', noSetter, 'setter not identified; re-run fetch-raw-appts or edit JSON directly', 'nosetter')}
+    ${datelessExp.length ? `<div style="margin-bottom:28px">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap">
+        <span style="background:#dc2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px">${datelessExp.length}</span>
+        <span style="font-weight:600;font-size:0.9rem">Expenses missing a date</span>
+        <span style="color:var(--muted);font-size:0.77rem">excluded from all calculations — add a date to expenses.json</span>
+      </div>
+      <div class="tbl-wrap"><table style="border-collapse:collapse;width:100%">
+        <thead><tr style="border-bottom:1px solid var(--border2)"><th>Vendor</th><th>Amount</th><th>Category</th><th>Channel</th><th>Notes</th></tr></thead>
+        <tbody>${datelessExp.map(e=>`<tr style="border-bottom:1px solid var(--border)">
+          <td style="padding:8px 6px;font-weight:500">${e.vendor||'<em style="color:var(--muted)">Unknown</em>'}</td>
+          <td style="padding:8px 6px;color:#f87171">$${(e.amount||0).toLocaleString()}</td>
+          <td style="padding:8px 6px;color:var(--muted)">${e.category||'—'}</td>
+          <td style="padding:8px 6px;color:var(--muted)">${e.channel||'—'}</td>
+          <td style="padding:8px 6px;color:var(--muted);font-size:0.75rem">${e.description||e.notes||'—'}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>
+    </div>` : ''}
     ${excludedAppts.length ? `<div style="margin-bottom:28px">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap">
         <span style="background:#475569;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px">${excludedAppts.length}</span>
