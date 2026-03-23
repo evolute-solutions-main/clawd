@@ -28612,12 +28612,16 @@ function renderOverview(){
 
   // Funnel
   const tot=VIEW.length, cal=hadCall.length, cl=closed.length
+  const unconf=VIEW.filter(a=>a.status==='new').length
+  const conf=tot-unconf
   const rows=[
-    {label:'All Bookings', n:tot, pct:100,            color:'#6366f1'},
-    {label:'Had a Call',   n:cal, pct:pct(cal,tot),   color:'#0ea5e9'},
-    {label:'Closed',       n:cl,  pct:pct(cl,tot),    color:'#34d399'},
+    {label:'Unconfirmed', n:unconf, pct:pct(unconf,tot), color:'#475569'},
+    {label:'Confirmed',   n:conf,   pct:pct(conf,tot),   color:'#6366f1'},
+    {label:'Had a Call',  n:cal,    pct:pct(cal,tot),    color:'#0ea5e9'},
+    {label:'Closed',      n:cl,     pct:pct(cl,tot),     color:'#34d399'},
   ]
   const arrows=[
+    null,
     `${pct(cal,cal+noShow.length+canc.length)}% show rate`,
     `${pct(cl,cal)}% close rate on calls`,
   ]
