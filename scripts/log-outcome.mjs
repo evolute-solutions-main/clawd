@@ -55,15 +55,13 @@ let gaps = appts.filter(a => {
     if (!a.contactName?.toLowerCase().includes(nameArg.toLowerCase())) return false
   }
 
-  // showed = GHL or legacy status; no_show/cancelled = call didn't happen, closed/not_closed don't apply
-  const needsOutcome = (a.appointmentStatus === 'showed' || a.status === 'showed') &&
-                       !['closed','not_closed','no_show','cancelled'].includes(a.status)
+  const needsOutcome = (((a.appointmentStatus === 'showed' || a.status === 'showed') &&
+                        !['closed','not_closed','no_show','cancelled'].includes(a.status)) ||
+                        a.status === 'confirmed')
   const closedNoCash = a.status === 'closed' && !a.cashCollected && !a.contractRevenue
-  // new = unconfirmed placeholder, never needs outcome; only confirmed past-date appts are stale
-  const stale        = a.status === 'confirmed'
   const noCloser     = ['closed','not_closed'].includes(a.status) && !a.closer
 
-  return needsOutcome || closedNoCash || stale || noCloser
+  return needsOutcome || closedNoCash || noCloser
 }).sort((a, b) => new Date(a.startTime) - new Date(b.startTime))
 
 if (gaps.length === 0) {
@@ -79,13 +77,12 @@ const ask = q => new Promise(resolve => rl.question(q, resolve))
 
 function describeGap(a) {
   const issues = []
-  if ((a.appointmentStatus === 'showed' || a.status === 'showed') &&
-      !['closed','not_closed','no_show','cancelled'].includes(a.status))
-    issues.push('showed but outcome unknown (closed or not_closed?)')
+  if (((a.appointmentStatus === 'showed' || a.status === 'showed') &&
+      !['closed','not_closed','no_show','cancelled'].includes(a.status)) ||
+      a.status === 'confirmed')
+    issues.push('missing outcome — log closed / not_closed / no_show / cancelled')
   if (a.status === 'closed' && !a.cashCollected && !a.contractRevenue)
     issues.push('closed but no cash/revenue')
-  if (a.status === 'confirmed')
-    issues.push('confirmed past date — needs outcome')
   if (['closed','not_closed'].includes(a.status) && !a.closer)
     issues.push('no closer recorded')
   return issues.join(', ')
@@ -114,7 +111,7 @@ for (let i = 0; i < gaps.length; i++) {
   const statusNeedsUpdate =
     ((a.appointmentStatus === 'showed' || a.status === 'showed') &&
      !['closed','not_closed','no_show','cancelled'].includes(a.status)) ||
-    a.status === 'confirmed'
+    a.status === 'confirmed'  // confirmed past date = same action needed
 
   if (statusNeedsUpdate) {
     const st = await ask('  Status (c=closed, n=not_closed, ns=no_show, x=cancelled, skip=Enter): ')

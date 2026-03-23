@@ -29581,13 +29581,13 @@ function renderReview(){
   })
 
   const needsOutcome = past.filter(a =>
-    (a.appointmentStatus === 'showed' || a.status === 'showed') &&
-    !['closed','not_closed','no_show','cancelled'].includes(a.status)
+    ((a.appointmentStatus === 'showed' || a.status === 'showed') &&
+     !['closed','not_closed','no_show','cancelled'].includes(a.status)) ||
+    a.status === 'confirmed'
   )
   const closedNoCash = past.filter(a =>
     a.status === 'closed' && !a.cashCollected && !a.contractRevenue
   )
-  const staleStatus = past.filter(a => a.status === 'confirmed')
   const noCloser = past.filter(a =>
     ['closed','not_closed'].includes(a.status) && !a.closer
   )
@@ -29608,7 +29608,7 @@ function renderReview(){
       ['closed','not_closed'].includes(a.status)
   })
 
-  const total = needsOutcome.length + closedNoCash.length + staleStatus.length + noCloser.length + noFathom.length + unmatchedFathom.length + nameless.length + noSetter.length
+  const total = needsOutcome.length + closedNoCash.length + noCloser.length + noFathom.length + unmatchedFathom.length + nameless.length + noSetter.length
   const inp = (t,v,p,w)=>`<input type="${t}" value="${v||''}" placeholder="${p||''}" style="background:var(--bg2);border:1px solid var(--border2);color:var(--text);border-radius:4px;padding:3px 6px;font-size:0.75rem;width:${w||'80px'}">`
   const sel = (name,cur,opts)=>`<select style="background:var(--bg2);border:1px solid var(--border2);color:var(--text);border-radius:4px;padding:3px 5px;font-size:0.75rem">${opts.map(o=>`<option value="${o}" ${o===cur?'selected':''}>${o||'—'}</option>`).join('')}</select>`
 
@@ -29676,8 +29676,7 @@ function renderReview(){
       </div>
       ${serverNote}
     </div>
-    ${section('No close','#f59e0b', needsOutcome, 'showed but no outcome recorded', 'outcome')}
-    ${section('Confirmed calls that need update','#64748b', staleStatus, 'likely no-show, cancel, or reschedule', 'stale')}
+    ${section('Missing outcome','#f59e0b', needsOutcome, 'showed, confirmed past date, or unresolved — log closed / not_closed / no_show / cancelled', 'outcome')}
     ${section('Closed — no cash or revenue recorded','#ef4444', closedNoCash, '', 'nocash')}
     ${section('No closer recorded','#8b5cf6', noCloser, '', 'nocloser')}
     ${section('Missing Fathom recording link','#0ea5e9', noFathom, 'showed/closed but no Fathom URL logged — add link or paste manually', 'fathom')}

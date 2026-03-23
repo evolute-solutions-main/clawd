@@ -42,12 +42,14 @@ const past = appts.filter(a => {
   return d && d <= yesterday && (!fromArg || inWindow(a.startTime))
 })
 
-// ── Gap type 1: GHL says "showed" but no outcome recorded ────────────────────
-// appointmentStatus=showed OR status=showed but not yet resolved to closed/not_closed
-// no_show and cancelled mean the call didn't happen — closed/not_closed don't apply
+// ── Gap type 1: No outcome recorded ──────────────────────────────────────────
+// Covers two cases that require the same action (log what happened):
+//   a) GHL marked showed but no final outcome logged yet
+//   b) Confirmed past their date — we don't know if they showed, no-showed, or cancelled
 const needsOutcome = past.filter(a =>
-  (a.appointmentStatus === 'showed' || a.status === 'showed') &&
-  !['closed','not_closed','no_show','cancelled'].includes(a.status)
+  ((a.appointmentStatus === 'showed' || a.status === 'showed') &&
+   !['closed','not_closed','no_show','cancelled'].includes(a.status)) ||
+  a.status === 'confirmed'
 )
 
 // ── Gap type 2: GHL says "showed", outcome recorded, but cash/revenue missing ─
@@ -58,10 +60,6 @@ const closedNoCash = past.filter(a =>
   !a.contractRevenue
 )
 
-// ── Gap type 3: Confirmed past their date with no outcome ────────────────────
-// 'new' = unconfirmed placeholder, never needs outcome (not a real committed appointment)
-// Only 'confirmed' (our status field) past-date means a real appointment with missing outcome
-const staleStatus = past.filter(a => a.status === 'confirmed')
 
 // ── Gap type 4: closed/not_closed but no closer recorded ────────────────────
 const noCloser = past.filter(a =>
@@ -97,7 +95,7 @@ if (jsonOut) {
   process.exit(0)
 }
 
-const total = needsOutcome.length + closedNoCash.length + staleStatus.length + noCloser.length + noSetter.length + noFathom.length
+const total = needsOutcome.length + closedNoCash.length + noCloser.length + noSetter.length + noFathom.length
 
 if (total === 0) {
   console.log('✅ No gaps found — all past appointments have complete outcome data.')
@@ -107,7 +105,7 @@ if (total === 0) {
 console.log(`\n⚠️  ${total} appointment(s) need your input:\n`)
 
 if (needsOutcome.length) {
-  console.log(`── ${needsOutcome.length} showed but outcome unknown (closed or not_closed?) ──`)
+  console.log(`── ${needsOutcome.length} missing outcome (showed/confirmed past date — needs closed/not_closed/no_show/cancelled) ──`)
   needsOutcome.forEach(a => console.log(fmtAppt(a)))
   console.log()
 }
@@ -115,12 +113,6 @@ if (needsOutcome.length) {
 if (closedNoCash.length) {
   console.log(`── ${closedNoCash.length} marked closed but no cash or revenue recorded ──`)
   closedNoCash.forEach(a => console.log(fmtAppt(a)))
-  console.log()
-}
-
-if (staleStatus.length) {
-  console.log(`── ${staleStatus.length} confirmed past their date with no outcome (no-show? cancel? reschedule?) ──`)
-  staleStatus.forEach(a => console.log(fmtAppt(a)))
   console.log()
 }
 
