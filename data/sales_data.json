@@ -2453,7 +2453,9 @@
           "at": "2026-03-20T02:08:12.734Z"
         }
       ],
-      "status": "not_closed"
+      "status": "not_closed",
+      "source": "Cold SMS",
+      "closer": "Max"
     },
     {
       "id": "lUqLG0WisjQlBsjTnt7x",
@@ -3038,7 +3040,8 @@
       "status": "cancelled",
       "closer": "Max",
       "followUpBooked": false,
-      "fathomLink": "https://fathom.video/share/P_hGKVQUb8yPjRbjsm3RE6Resrn7s2zC"
+      "fathomLink": "https://fathom.video/share/P_hGKVQUb8yPjRbjsm3RE6Resrn7s2zC",
+      "fathomConflictNote": "Hopped on call to cancel in person — recording exists but call did not proceed"
     },
     {
       "id": "SR8ehrmV5YUdMoYVXFXQ",
