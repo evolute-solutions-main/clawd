@@ -9,9 +9,9 @@ const DISCORD = {
 }
 
 // Secrets already loaded and validated by env-loader.mjs
-const token = process.env.DISCORD_BOT_TOKEN
+const token = process.env.DISCORD_BOT_TOKEN || process.env.DISCORD_CHAT_BOT_TOKEN
 if (!token) {
-  console.error('Missing DISCORD_BOT_TOKEN')
+  console.error('Missing DISCORD_BOT_TOKEN and DISCORD_CHAT_BOT_TOKEN')
   process.exit(1)
 }
 

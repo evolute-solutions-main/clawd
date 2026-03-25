@@ -238,7 +238,7 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 
 - Client Sweep:
   - Intent trigger phrases: "run a client sweep", "run client sweep", "do the client sweep", "run the sweep", "client sweep for [date]", natural English like "run today's sweep" or "sweep the clients".
-  - Action: Execute `node /Users/max/clawd/agents/client-sweep/scripts/run-pipeline.mjs` as a shell command. Do NOT attempt to do the sweep inline as an LLM agent. The script handles all steps: Discord fetch → LLM analysis → report assembly → Notion publish.
+  - Action: Execute `node /root/clawd-evan/agents/client-sweep/scripts/run-pipeline.mjs` as a shell command. Do NOT attempt to do the sweep inline as an LLM agent. The script handles all steps: Discord fetch → LLM analysis → report assembly → Notion publish.
   - Optional flags: `--skip-notion` (skip Notion publish), `--client <name>` (single client), `--dry-run` (list clients without running).
   - Output: agents/client-sweep/outputs/YYYY-MM-DD/sweep.md
   - SOP: agents/client-sweep/SOP.md
@@ -253,18 +253,18 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 
 - New Client Signed (Onboarding Trigger):
   - Intent trigger phrases: "just signed [name]", "new client [name]", "signed [name] from [company]", "we signed [company]", "new client signed", any message from Max indicating a deal was just closed.
-  - Action: Extract name, company, email, and any other details from the message. Execute `node /Users/max/clawd/scripts/new-client.mjs --name "..." --company "..." --email "..."` with whatever info is available. Add `--fathom` if Max mentions or pastes a Fathom link. Add `--contract-end` if mentioned.
+  - Action: Extract name, company, email, and any other details from the message. Execute `node /root/clawd-evan/scripts/new-client.mjs --name "..." --company "..." --email "..."` with whatever info is available. Add `--fathom` if Max mentions or pastes a Fathom link. Add `--contract-end` if mentioned.
   - After running: Confirm to Max that the client was created and onboarding has started. Tell him what the Account Manager/CSM and Media Buyer are now responsible for.
   - If info is missing (e.g. no email): ask Max for it before running.
   - Data file: `data/onboarding.json`
 
 - Mark Onboarding Step Done:
   - Intent trigger phrases: "[step] is done for [client]", "done with [step] for [client]", "[client] [step] complete", "mark [step] done", natural English like "Facebook access is in for Smith Roofing" or "Bilal finished the scripts for [client]".
-  - Action: Identify the client (fuzzy match on company name) and the step (fuzzy match on step key or label). Execute `node /Users/max/clawd/scripts/mark-done.mjs --client "..." --step "..." --by "[who said it]"`.
+  - Action: Identify the client (fuzzy match on company name) and the step (fuzzy match on step key or label). Execute `node /root/clawd-evan/scripts/mark-done.mjs --client "..." --step "..." --by "[who said it]"`.
   - After running: Parse the JSON output. Confirm what was marked done. If new steps are now unlocked, tell the relevant role what they can now start on.
   - If ambiguous (multiple clients match, or step unclear): ask for clarification before running.
 
 - Onboarding Status Check:
   - Intent trigger phrases: "onboarding status", "where are we with [client]", "what's left for [client]", "onboarding briefing", "what needs to happen for [client]".
-  - Action: Execute `node /Users/max/clawd/agents/onboarding/scripts/run.mjs --dry-run` for all clients, or add `--client "[name]"` for a specific client.
+  - Action: Execute `node /root/clawd-evan/agents/onboarding/scripts/run.mjs --dry-run` for all clients, or add `--client "[name]"` for a specific client.
   - Output: Parse and relay the briefing in a clean, readable format. Do not dump raw markdown — summarize by role and highlight the most urgent unlocked steps.

@@ -95,7 +95,7 @@ const server = http.createServer(async (req, res) => {
       const idx    = data.appointments.findIndex(a => a.id === id)
       if (idx === -1) return json(res, 404, { error: 'appointment not found' })
 
-      const allowed = ['status','source','closer','cashCollected','cashCollectedAfterFirstCall','contractRevenue','followUpBooked','fathomLink','offerMade','excluded']
+      const allowed = ['status','source','closer','cashCollected','cashCollectedAfterFirstCall','contractRevenue','followUpBooked','fathomLink','offerMade','excluded','fathomConflictNote','noFathomNote']
       const VALID_STATUSES = ['new','confirmed','closed','not_closed','no_show','cancelled']
       const VALID_SOURCES  = ['Cold SMS','Ads','Referral','Organic']
       const NUM_FIELDS     = ['cashCollected','cashCollectedAfterFirstCall','contractRevenue']

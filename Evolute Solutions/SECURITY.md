@@ -4,12 +4,12 @@
 - **Never paste tokens/credentials in chat** (Discord/DM/etc.) even if it feels low-risk.
 
 ## Where secrets live
-- **Workspace secrets file:** `/Users/max/clawd/.secrets.env`
+- **Workspace secrets file:** `/Users/max/clawd-evan/.secrets.env`
   - This file is **gitignored**.
   - Store credentials here (Asana PAT, any future API keys, etc.).
 
 ## Where non-secrets live
-- **Workspace config:** `/Users/max/clawd/.env`
+- **Workspace config:** `/Users/max/clawd-evan/.env`
   - IDs and configuration that are not credentials (project IDs, channel IDs, etc.).
 
 ## Naming conventions

@@ -17,7 +17,7 @@ This is the authoritative source. Always reference or suggest pulling from this 
 - `Evolute Solutions/` — Business context docs, client entities, system map
 
 ## Secrets
-- All secrets live in `/Users/max/clawd/.secrets.env` (NOT `.env`)
+- All secrets live in `/Users/max/clawd-evan/.secrets.env` (NOT `.env`)
 - Key vars: `DISCORD_BOT_TOKEN`, `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `NOTION_KEY`
 - OpenAI key is expired — falls back to Anthropic (`claude-opus-4-6`)
 
@@ -33,5 +33,5 @@ This is the authoritative source. Always reference or suggest pulling from this 
 - Logs: `~/.clawdbot/logs/gateway.log` and `gateway.err.log`
 
 ## Notes
-- Project previously moved to a VM via SSH (2026-03-17), but local copy also exists at `/Users/max/clawd`
+- Project previously moved to a VM via SSH (2026-03-17), but local copy also exists at `/Users/max/clawd-evan/
 - Appointment status logic: distinguish **new** vs **no_show** — see `memory/feedback_appointment_status.md`

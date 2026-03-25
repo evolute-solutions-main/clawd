@@ -65,7 +65,7 @@ Rendering
 Execution
 Run this command — it handles all steps (preflight, fetch, analysis, assembly, Notion publish):
 
-  node /Users/max/clawd/agents/client-sweep/scripts/run-pipeline.mjs
+  node /Users/max/clawd-evan/agents/client-sweep/scripts/run-pipeline.mjs
 
 Flags:
   --skip-notion     skip Notion publish (useful for testing)

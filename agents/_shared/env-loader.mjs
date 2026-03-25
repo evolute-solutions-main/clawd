@@ -48,10 +48,9 @@ function loadSecrets() {
   
   const discordToken = process.env.DISCORD_BOT_TOKEN
   if (!discordToken || discordToken.length < 50 || discordToken.includes('PASTE') || discordToken.includes('YOUR')) {
-    console.error(`FATAL: DISCORD_BOT_TOKEN is invalid or placeholder`)
-    console.error(`  Length: ${discordToken?.length || 0}`)
-    console.error(`  Value preview: ${discordToken?.slice(0, 20)}...`)
-    process.exit(1)
+    // Degraded mode: fetcher bot token expired/missing — clear it so callers fall back to DISCORD_CHAT_BOT_TOKEN
+    console.warn(`[env-loader] DISCORD_BOT_TOKEN invalid or expired — clearing, will fall back to DISCORD_CHAT_BOT_TOKEN`)
+    process.env.DISCORD_BOT_TOKEN = ''
   }
   
   const chatToken = process.env.DISCORD_CHAT_BOT_TOKEN

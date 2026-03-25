@@ -37,7 +37,8 @@ const CALENDAR_NAMES = {
 // Fields set manually (outcome data) — never overwrite these from GHL
 const OUTCOME_FIELDS = [
   'status', 'source', 'excluded', 'closer', 'cashCollected', 'cashCollectedAfterFirstCall',
-  'contractRevenue', 'followUpBooked', 'fathomLink', 'offerMade',
+  'contractRevenue', 'followUpBooked', 'fathomLink', 'offerMade', 'fathomConflictNote', 'noFathomNote',
+  'contactName',  // protect manual name fixes (e.g. company-name GHL records)
 ]
 
 // Map GHL's appointmentStatus → our unified status enum for new records.
@@ -152,6 +153,34 @@ async function main() {
     console.warn(`  ⚠ Duplicate ID removed: ${a.id} (${a.contactName})`)
     return false
   })
+
+  // Dedup new vs confirmed: same contactName + same date → confirmed wins.
+  // When a setter books (new) and the lead later confirms (confirmed), GHL creates two separate
+  // appointment records. The confirmed one is the real record; the new one is stale.
+  // Transfer any outcome fields that landed on the new record to the confirmed one, then drop it.
+  const normN = s => (s || '').toLowerCase().replace(/\s+/g, ' ').trim()
+  const byNameDate = {}
+  for (const a of merged) {
+    const key = normN(a.contactName) + '|' + (a.startTime?.slice(0, 10) || '')
+    if (!byNameDate[key]) byNameDate[key] = []
+    byNameDate[key].push(a)
+  }
+  const toRemove = new Set()
+  for (const group of Object.values(byNameDate)) {
+    if (group.length < 2) continue
+    const confirmed = group.find(a => a.appointmentStatus === 'confirmed' || a.status === 'confirmed')
+    const newRec    = group.find(a => a.appointmentStatus === 'new' && a !== confirmed)
+    if (!confirmed || !newRec) continue
+    // Transfer any outcome fields from the stale new record that the confirmed one is missing
+    for (const field of OUTCOME_FIELDS) {
+      if (newRec[field] !== undefined && newRec[field] !== null && newRec[field] !== '' && confirmed[field] === undefined) {
+        confirmed[field] = newRec[field]
+      }
+    }
+    toRemove.add(newRec.id)
+    console.log(`  [dedup] dropped stale 'new' record for ${confirmed.contactName} (${confirmed.startTime?.slice(0,10)}) — confirmed record kept`)
+  }
+  if (toRemove.size) merged = merged.filter(a => !toRemove.has(a.id))
 
   // Validate status integrity — canonicalize any bad values so they surface in Needs Review.
   // 'showed' is never a valid final status (needs closed/not_closed resolution).

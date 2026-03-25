@@ -46,4 +46,4 @@ These connections + file setups are foundational to managing Max’s life + busi
 - **Discord** (client comms + sweeps)
 - **Google Calendar** (ICS feed currently configured in `.secrets.env`)
 - **Asana** (task/project operations)
-- Workspace file structure under `/Users/max/clawd` (procedures, scripts, memory)
+- Workspace file structure under `/Users/max/clawd-evan/ (procedures, scripts, memory)

@@ -31,6 +31,6 @@ This file documents what exists, why it exists, and what the AI should treat as 
 - Status: not yet connected for API reporting.
 
 ## Auth locations
-- Credentials: `/Users/max/clawd/.secrets.env`
-- Non-secret IDs/config: `/Users/max/clawd/.env`
+- Credentials: `/Users/max/clawd-evan/.secrets.env`
+- Non-secret IDs/config: `/Users/max/clawd-evan/.env`
 - Clawdbot provider auth store (internal): `/Users/max/.clawdbot/agents/main/agent/auth-profiles.json`

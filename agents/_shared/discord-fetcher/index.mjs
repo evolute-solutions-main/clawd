@@ -31,24 +31,37 @@ function toLocalDateISO(isoUtc, tz) {
 async function discordRequest(pathname, { token, query } = {}) {
   const url = new URL(`https://discord.com/api/v10${pathname}`)
   if (query) Object.entries(query).forEach(([k, v]) => v != null && url.searchParams.set(k, String(v)))
-  while (true) {
-    const res = await fetch(url, {
-      headers: {
-        Authorization: `Bot ${token}`,
-        'User-Agent': 'EvanFetcher/1.0 (+https://evolute.local)'
+  // Build token list to try: primary first, then DISCORD_CHAT_BOT_TOKEN as fallback on 401
+  const chatToken = process.env.DISCORD_CHAT_BOT_TOKEN
+  const tokensToTry = [token]
+  if (chatToken && chatToken !== token) tokensToTry.push(chatToken)
+  let lastErr
+  for (const t of tokensToTry) {
+    while (true) {
+      const res = await fetch(url, {
+        headers: {
+          Authorization: `Bot ${t}`,
+          'User-Agent': 'EvanFetcher/1.0 (+https://evolute.local)'
+        }
+      })
+      if (res.status === 429) {
+        const retry = Number(res.headers.get('retry-after')) || 1
+        await new Promise(r => setTimeout(r, (retry + 0.25) * 1000))
+        continue
       }
-    })
-    if (res.status === 429) {
-      const retry = Number(res.headers.get('retry-after')) || 1
-      await new Promise(r => setTimeout(r, (retry + 0.25) * 1000))
-      continue
+      if (res.status === 401) {
+        // Token expired/invalid — try next token
+        lastErr = new Error(`Discord API ${url.pathname} failed: 401 Unauthorized`)
+        break
+      }
+      if (!res.ok) {
+        const text = await res.text().catch(() => '')
+        throw new Error(`Discord API ${url.pathname} failed: ${res.status} ${res.statusText} ${text}`)
+      }
+      return res.json()
     }
-    if (!res.ok) {
-      const text = await res.text().catch(() => '')
-      throw new Error(`Discord API ${url.pathname} failed: ${res.status} ${res.statusText} ${text}`)
-    }
-    return res.json()
   }
+  throw lastErr
 }
 
 function buildPermalink({ guildId, channelId, messageId }) {
@@ -57,13 +70,15 @@ function buildPermalink({ guildId, channelId, messageId }) {
 }
 
 export async function listGuildChannels({ guildId, token }) {
-  if (!token) throw new Error('Missing DISCORD_BOT_TOKEN for listGuildChannels')
+  if (!token) token = process.env.DISCORD_BOT_TOKEN || process.env.DISCORD_CHAT_BOT_TOKEN
+  if (!token) throw new Error('Missing DISCORD_BOT_TOKEN or DISCORD_CHAT_BOT_TOKEN for listGuildChannels')
   if (!guildId) throw new Error('listGuildChannels requires guildId')
   return await discordRequest(`/guilds/${guildId}/channels`, { token })
 }
 
 export async function fetchRecentChannel({ channelId, limit = 50, token }) {
-  if (!token) throw new Error('Missing DISCORD_BOT_TOKEN for fetchRecentChannel')
+  if (!token) token = process.env.DISCORD_BOT_TOKEN || process.env.DISCORD_CHAT_BOT_TOKEN
+  if (!token) throw new Error('Missing DISCORD_BOT_TOKEN or DISCORD_CHAT_BOT_TOKEN for fetchRecentChannel')
   if (!channelId) throw new Error('fetchRecentChannel requires channelId')
   const capped = Math.max(1, Math.min(100, limit))
   const res = await discordRequest(`/channels/${channelId}/messages`, { token, query: { limit: capped } })
@@ -77,8 +92,8 @@ export async function fetchChannelWindow({
   guildId,
   repoRoot = process.cwd()
 } = {}) {
-  const token = process.env.DISCORD_BOT_TOKEN
-  if (!token) throw new Error('Missing DISCORD_BOT_TOKEN in environment')
+  const token = process.env.DISCORD_BOT_TOKEN || process.env.DISCORD_CHAT_BOT_TOKEN
+  if (!token) throw new Error('Missing DISCORD_BOT_TOKEN or DISCORD_CHAT_BOT_TOKEN in environment')
   if (!date) throw new Error('fetchChannelWindow requires date=YYYY-MM-DD')
   if (!Array.isArray(channelIds) || channelIds.length === 0) throw new Error('channelIds[] required')
   const tz = readTimezone(repoRoot)

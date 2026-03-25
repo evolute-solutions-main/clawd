@@ -763,7 +763,7 @@
       "startTime": "2026-01-08T10:00:00-05:00",
       "timeCreated": "2025-12-16T15:57:07.084Z",
       "appointmentStatus": "new",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+18023492661",
       "email": "tparkpainting@gmail.com",
       "statusHistory": [
@@ -781,7 +781,7 @@
       "startTime": "2026-01-08T12:00:00-05:00",
       "timeCreated": "2026-01-05T19:35:38.071Z",
       "appointmentStatus": "new",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+13023597861",
       "email": "lp2013_47@yahoo.com",
       "statusHistory": [
@@ -799,7 +799,7 @@
       "startTime": "2026-01-08T15:00:00-05:00",
       "timeCreated": "2026-01-05T16:25:35.262Z",
       "appointmentStatus": "showed",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+14843192125",
       "email": "leesmith.ra@gmail.com",
       "statusHistory": [
@@ -820,7 +820,7 @@
       "startTime": "2026-01-08T16:00:00-05:00",
       "timeCreated": "2026-01-08T19:49:49.599Z",
       "appointmentStatus": "noshow",
-      "createdBy": "",
+      "createdBy": "No Setter",
       "phone": "+16106366839",
       "email": "chrifalcone11121964@gmail.comgmail.com",
       "statusHistory": [
@@ -838,7 +838,7 @@
       "startTime": "2026-01-08T17:00:00-05:00",
       "timeCreated": "2026-01-08T17:47:02.904Z",
       "appointmentStatus": "confirmed",
-      "createdBy": "",
+      "createdBy": "No Setter",
       "phone": "+12144176390",
       "email": "todd@lonestarhomepro.com",
       "statusHistory": [
@@ -859,7 +859,7 @@
       "startTime": "2026-01-08T18:00:00-05:00",
       "timeCreated": "2026-01-05T17:04:48.174Z",
       "appointmentStatus": "showed",
-      "createdBy": "Max",
+      "createdBy": "Randy",
       "phone": "+14074314263",
       "email": "stephenvillard@yahoo.com",
       "statusHistory": [
@@ -868,10 +868,11 @@
           "at": "2026-03-20T02:08:12.734Z"
         }
       ],
-      "status": "no_show",
+      "status": "not_closed",
       "closer": "Max",
       "cashCollected": 0,
-      "contractRevenue": 0
+      "contractRevenue": 0,
+      "fathomLink": "https://fathom.video/share/Jx3mE5FzTac3zRLAyx1E83SzGPftV-R1"
     },
     {
       "id": "jRKSdtAFA7pICPRgivcD",
@@ -880,7 +881,7 @@
       "startTime": "2026-01-08T18:00:00-05:00",
       "timeCreated": "2026-01-08T20:11:36.378Z",
       "appointmentStatus": "confirmed",
-      "createdBy": "",
+      "createdBy": "No Setter",
       "phone": "+15512613523",
       "email": "dem68653@gmail.com",
       "statusHistory": [
@@ -899,7 +900,7 @@
       "startTime": "2026-01-09T10:00:00-05:00",
       "timeCreated": "2026-01-09T06:53:32.538Z",
       "appointmentStatus": "noshow",
-      "createdBy": "",
+      "createdBy": "No Setter",
       "phone": "+18106109294",
       "email": "devinesjjjj@yahoo.com",
       "statusHistory": [
@@ -917,7 +918,7 @@
       "startTime": "2026-01-09T15:00:00-05:00",
       "timeCreated": "2026-01-08T23:02:30.662Z",
       "appointmentStatus": "noshow",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+12165367026",
       "email": "pkelsch12@gmail.com",
       "statusHistory": [
@@ -935,7 +936,7 @@
       "startTime": "2026-01-09T16:00:00-05:00",
       "timeCreated": "2026-01-08T07:05:53.630Z",
       "appointmentStatus": "cancelled",
-      "createdBy": "",
+      "createdBy": "No Setter",
       "phone": "+15512613523",
       "email": "dem68653@gmail.com",
       "statusHistory": [
@@ -953,7 +954,7 @@
       "startTime": "2026-01-09T17:00:00-05:00",
       "timeCreated": "2026-01-08T22:18:52.801Z",
       "appointmentStatus": "cancelled",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+16095947200",
       "email": "609mt3@gmail.com",
       "statusHistory": [
@@ -971,7 +972,7 @@
       "startTime": "2026-01-09T18:00:00-05:00",
       "timeCreated": "2026-01-08T06:38:13.764Z",
       "appointmentStatus": "noshow",
-      "createdBy": "",
+      "createdBy": "No Setter",
       "phone": "+12532302615",
       "email": "nathanielmoraru@gmail.com",
       "statusHistory": [
@@ -989,7 +990,7 @@
       "startTime": "2026-01-10T09:00:00-05:00",
       "timeCreated": "2026-01-08T19:37:07.465Z",
       "appointmentStatus": "new",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+13124684094",
       "email": "sherwood@sherwoodshowersystems.com",
       "statusHistory": [
@@ -1007,7 +1008,7 @@
       "startTime": "2026-01-10T11:00:00-05:00",
       "timeCreated": "2026-01-08T05:12:04.069Z",
       "appointmentStatus": "showed",
-      "createdBy": "",
+      "createdBy": "No Setter",
       "phone": "+17202779016",
       "email": "luis@superiorcomfortpros.com",
       "statusHistory": [
@@ -1028,7 +1029,7 @@
       "startTime": "2026-01-10T13:00:00-05:00",
       "timeCreated": "2026-01-06T22:05:45.170Z",
       "appointmentStatus": "cancelled",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+13142977668",
       "email": "krazeesaith@sbcglobal.net",
       "statusHistory": [
@@ -1046,7 +1047,7 @@
       "startTime": "2026-01-10T14:30:00-05:00",
       "timeCreated": "2026-01-09T15:46:20.347Z",
       "appointmentStatus": "new",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+16102972924",
       "email": "diamondhomeimprovements@yahoo.com",
       "statusHistory": [
@@ -1064,7 +1065,7 @@
       "startTime": "2026-01-10T18:00:00-05:00",
       "timeCreated": "2026-01-09T19:39:30.128Z",
       "appointmentStatus": "new",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+15132832521",
       "email": "scottelam513@gmail.com",
       "statusHistory": [
@@ -1082,7 +1083,7 @@
       "startTime": "2026-01-12T11:00:00-05:00",
       "timeCreated": "2025-12-22T17:07:48.930Z",
       "appointmentStatus": "new",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+17743519600",
       "email": "instantnewhomes@gmail.com",
       "statusHistory": [
@@ -1100,7 +1101,7 @@
       "startTime": "2026-01-12T12:00:00-05:00",
       "timeCreated": "2026-01-11T20:01:47.502Z",
       "appointmentStatus": "showed",
-      "createdBy": "",
+      "createdBy": "No Setter",
       "phone": "+17206091016",
       "email": "sawaqedb@yahoo.com",
       "statusHistory": [
@@ -1121,7 +1122,7 @@
       "startTime": "2026-01-12T13:00:00-05:00",
       "timeCreated": "2026-01-09T22:56:08.617Z",
       "appointmentStatus": "new",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+13233177569",
       "email": "info@jspaintingdallas.com",
       "statusHistory": [
@@ -1139,7 +1140,7 @@
       "startTime": "2026-01-12T13:00:00-05:00",
       "timeCreated": "2026-01-05T21:05:06.696Z",
       "appointmentStatus": "showed",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+17169832274",
       "email": "mikewebster@braymillerbuilders.com",
       "statusHistory": [
@@ -1163,7 +1164,7 @@
       "startTime": "2026-01-12T15:00:00-05:00",
       "timeCreated": "2025-12-04T22:06:23.334Z",
       "appointmentStatus": "cancelled",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+16039180744",
       "email": "nauticalexteriors@gmail.com",
       "statusHistory": [
@@ -1181,7 +1182,7 @@
       "startTime": "2026-01-12T15:00:00-05:00",
       "timeCreated": "2026-01-12T15:21:48.592Z",
       "appointmentStatus": "showed",
-      "createdBy": "",
+      "createdBy": "No Setter",
       "phone": "+13304193688",
       "email": "jmexteriors27@gmail.com",
       "statusHistory": [
@@ -1202,7 +1203,7 @@
       "startTime": "2026-01-12T16:30:00-05:00",
       "timeCreated": "2026-01-12T20:33:09.621Z",
       "appointmentStatus": "noshow",
-      "createdBy": "",
+      "createdBy": "No Setter",
       "phone": "+17169361320",
       "email": "zakery@builtdifferentconstructionco.com",
       "statusHistory": [
@@ -1220,7 +1221,7 @@
       "startTime": "2026-01-12T17:30:00-05:00",
       "timeCreated": "2026-01-12T22:26:05.688Z",
       "appointmentStatus": "cancelled",
-      "createdBy": "",
+      "createdBy": "No Setter",
       "phone": "+12086999601",
       "email": "tompete310@gmail.com",
       "statusHistory": [
@@ -1238,7 +1239,7 @@
       "startTime": "2026-01-13T16:00:00-05:00",
       "timeCreated": "2026-01-10T18:35:02.149Z",
       "appointmentStatus": "noshow",
-      "createdBy": "",
+      "createdBy": "No Setter",
       "phone": "+12315340906",
       "email": "richstephen257@gmail.com",
       "statusHistory": [
@@ -1256,7 +1257,7 @@
       "startTime": "2026-01-13T17:00:00-05:00",
       "timeCreated": "2026-01-13T16:21:38.941Z",
       "appointmentStatus": "new",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+15187744136",
       "email": "darcangelis79@gmail.com",
       "statusHistory": [
@@ -1274,7 +1275,7 @@
       "startTime": "2026-01-14T11:00:00-05:00",
       "timeCreated": "2026-01-14T15:56:58.047Z",
       "appointmentStatus": "showed",
-      "createdBy": "",
+      "createdBy": "No Setter",
       "phone": "+14049935895",
       "email": "jkfconstruction1@gmail.com",
       "statusHistory": [
@@ -1295,7 +1296,7 @@
       "startTime": "2026-01-14T14:00:00-05:00",
       "timeCreated": "2026-01-12T15:35:46.594Z",
       "appointmentStatus": "new",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+14129169945",
       "email": "fredsims84@yahoo.com",
       "statusHistory": [
@@ -1313,7 +1314,7 @@
       "startTime": "2026-01-14T16:30:00-05:00",
       "timeCreated": "2026-01-11T15:31:50.897Z",
       "appointmentStatus": "cancelled",
-      "createdBy": "",
+      "createdBy": "No Setter",
       "phone": "+15862207418",
       "email": "quantumroofingmi@gmail.com",
       "statusHistory": [
@@ -1331,7 +1332,7 @@
       "startTime": "2026-01-14T18:00:00-05:00",
       "timeCreated": "2026-01-14T18:47:51.369Z",
       "appointmentStatus": "showed",
-      "createdBy": "",
+      "createdBy": "No Setter",
       "phone": "+15039950128",
       "email": "ecoconcretedesign@gmail.com",
       "statusHistory": [
@@ -1355,7 +1356,7 @@
       "startTime": "2026-01-15T18:00:00-05:00",
       "timeCreated": "2026-01-15T00:31:08.649Z",
       "appointmentStatus": "new",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+18645166432",
       "email": "rtjremodeling@gmail.com",
       "statusHistory": [
@@ -1373,7 +1374,7 @@
       "startTime": "2026-01-16T10:00:00-05:00",
       "timeCreated": "2026-01-13T05:57:20.996Z",
       "appointmentStatus": "noshow",
-      "createdBy": "",
+      "createdBy": "No Setter",
       "phone": "+19178412396",
       "email": "tony@donovanproperty.com",
       "statusHistory": [
@@ -1391,7 +1392,7 @@
       "startTime": "2026-01-16T13:00:00-05:00",
       "timeCreated": "2026-01-16T00:19:53.724Z",
       "appointmentStatus": "showed",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+12036401392",
       "email": "rhwcontractors@gmail.com",
       "statusHistory": [
@@ -1412,7 +1413,7 @@
       "startTime": "2026-01-16T18:00:00-05:00",
       "timeCreated": "2026-01-15T00:02:02.979Z",
       "appointmentStatus": "new",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+12403726085",
       "email": "landlfloors@rocketmail.com",
       "statusHistory": [
@@ -1430,7 +1431,7 @@
       "startTime": "2026-01-17T15:00:00-05:00",
       "timeCreated": "2026-01-14T19:39:47.412Z",
       "appointmentStatus": "new",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+17199670556",
       "email": "sofyellc78@gmail.com",
       "statusHistory": [
@@ -1448,7 +1449,7 @@
       "startTime": "2026-01-19T09:30:00-05:00",
       "timeCreated": "2026-01-17T02:54:28.874Z",
       "appointmentStatus": "noshow",
-      "createdBy": "",
+      "createdBy": "No Setter",
       "phone": "+15125755927",
       "email": "fortresspaul@gmail.com",
       "statusHistory": [
@@ -1466,7 +1467,7 @@
       "startTime": "2026-01-19T12:00:00-05:00",
       "timeCreated": "2026-01-15T22:35:16.467Z",
       "appointmentStatus": "cancelled",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+12029101414",
       "email": "deabreukeevin@gmail.com",
       "statusHistory": [
@@ -1484,7 +1485,7 @@
       "startTime": "2026-01-19T17:00:00-05:00",
       "timeCreated": "2026-01-14T22:54:07.539Z",
       "appointmentStatus": "new",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+16462425330",
       "email": "onemomentconstruction@gmail.com",
       "statusHistory": [
@@ -1502,7 +1503,7 @@
       "startTime": "2026-01-19T18:00:00-05:00",
       "timeCreated": "2026-01-16T23:58:32.456Z",
       "appointmentStatus": "new",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+13025107797",
       "email": "shawnwalters266@gmail.com",
       "statusHistory": [
@@ -1520,7 +1521,7 @@
       "startTime": "2026-01-19T18:00:00-05:00",
       "timeCreated": "2026-01-15T15:59:17.678Z",
       "appointmentStatus": "showed",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+15408303001",
       "email": "stoneworksfabrication@gmail.com",
       "statusHistory": [
@@ -1541,7 +1542,7 @@
       "startTime": "2026-01-19T19:00:00-05:00",
       "timeCreated": "2026-01-12T15:30:14.577Z",
       "appointmentStatus": "noshow",
-      "createdBy": "Max",
+      "createdBy": "Randy",
       "phone": "+13233177569",
       "email": "info@jspaintingdallas.com",
       "statusHistory": [
@@ -1559,7 +1560,7 @@
       "startTime": "2026-01-20T11:00:00-05:00",
       "timeCreated": "2026-01-16T22:25:56.701Z",
       "appointmentStatus": "showed",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+12679870931",
       "email": "peluchesflooring@gmail.com",
       "statusHistory": [
@@ -1580,7 +1581,7 @@
       "startTime": "2026-01-20T12:00:00-05:00",
       "timeCreated": "2026-01-19T17:43:17.810Z",
       "appointmentStatus": "showed",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+14044383964",
       "email": "jpeppers500@gmail.com",
       "statusHistory": [
@@ -1601,7 +1602,7 @@
       "startTime": "2026-01-21T11:00:00-05:00",
       "timeCreated": "2026-01-21T00:19:30.983Z",
       "appointmentStatus": "cancelled",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+19194412897",
       "email": "cansag122@yahoo.com",
       "statusHistory": [
@@ -1619,7 +1620,7 @@
       "startTime": "2026-01-21T12:00:00-05:00",
       "timeCreated": "2026-01-19T20:46:24.547Z",
       "appointmentStatus": "new",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+19105916599",
       "email": "rswroofs@gmail.com",
       "statusHistory": [
@@ -1637,7 +1638,7 @@
       "startTime": "2026-01-21T12:00:00-05:00",
       "timeCreated": "2026-01-20T16:48:29.031Z",
       "appointmentStatus": "cancelled",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+13023790131",
       "email": "jstilepros@gmail.com",
       "statusHistory": [
@@ -1655,7 +1656,7 @@
       "startTime": "2026-01-22T16:00:00-05:00",
       "timeCreated": "2026-01-22T18:31:50.438Z",
       "appointmentStatus": "cancelled",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+18605734311",
       "email": "earthsakeinitiatives@gmail.com",
       "statusHistory": [
@@ -1673,7 +1674,7 @@
       "startTime": "2026-01-23T12:00:00-05:00",
       "timeCreated": "2026-01-22T20:48:01.378Z",
       "appointmentStatus": "new",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+18032716924",
       "email": "cedricgallmanflooring@gmail.com",
       "statusHistory": [
@@ -1691,7 +1692,7 @@
       "startTime": "2026-01-23T13:30:00-05:00",
       "timeCreated": "2026-01-22T18:27:18.109Z",
       "appointmentStatus": "new",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+12404982713",
       "email": "luis70design@yahoo.com",
       "statusHistory": [
@@ -1709,7 +1710,7 @@
       "startTime": "2026-01-23T15:00:00-05:00",
       "timeCreated": "2026-01-22T14:16:47.378Z",
       "appointmentStatus": "cancelled",
-      "createdBy": "",
+      "createdBy": "Randy",
       "phone": "+17049131659",
       "email": "parksconstructioninc79@gmail.com",
       "statusHistory": [
@@ -2351,7 +2352,7 @@
       "startTime": "2026-01-31T13:00:00-05:00",
       "timeCreated": "2026-01-21T22:32:58.657Z",
       "appointmentStatus": "confirmed",
-      "createdBy": "",
+      "createdBy": "No Setter",
       "phone": "+16462425330",
       "email": "onemomentconstruction@gmail.com",
       "statusHistory": [
@@ -2453,7 +2454,7 @@
           "at": "2026-03-20T02:08:12.734Z"
         }
       ],
-      "status": "not_closed",
+      "status": "no_show",
       "source": "Cold SMS",
       "closer": "Max"
     },
@@ -3182,7 +3183,7 @@
     },
     {
       "id": "QPZAtOJOOHBy4kzKLwQ3",
-      "contactName": "",
+      "contactName": "Real Remodeling",
       "calendarName": "Cold SMS",
       "startTime": "2026-02-05T19:00:00-05:00",
       "timeCreated": "2026-02-04T18:50:03.964Z",
@@ -3196,7 +3197,8 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "cancelled"
+      "status": "new",
+      "contactId": "orO1L2VNOXMYYyQLfhfn"
     },
     {
       "id": "xl_2026-02-06_kennedy",
@@ -5109,7 +5111,9 @@
       "closer": "Max",
       "cashCollected": 1000,
       "contractRevenue": 1000,
-      "followUpBooked": false
+      "followUpBooked": false,
+      "source": "Ads",
+      "fathomLink": "blank.link"
     },
     {
       "id": "BhIkbpoyZ7gBYnTXiYWg",
@@ -6203,30 +6207,6 @@
       "status": "new"
     },
     {
-      "id": "JY82ZvaM1f2pQcOIU4xo",
-      "contactName": "Skyler Brucher",
-      "calendarName": "Cold SMS",
-      "startTime": "2026-02-25T17:00:00-05:00",
-      "timeCreated": "2026-02-25T05:16:14.410Z",
-      "appointmentStatus": "new",
-      "createdBy": "",
-      "phone": "+17192352828",
-      "email": "info@peak-west.com",
-      "statusHistory": [
-        {
-          "status": "new",
-          "at": "2026-03-23T18:41:15.232Z"
-        },
-        {
-          "status": "no_show",
-          "at": "2026-03-23T22:07:46.671Z",
-          "source": "manual"
-        }
-      ],
-      "status": "not_closed",
-      "fathomLink": "https://fathom.video/share/pwcFsBcftsKSpMp8cxtf3z61oU4xrsjt"
-    },
-    {
       "id": "mKfNMClWKb2qdgKElTLe",
       "contactName": "Skyler Brucher",
       "calendarName": "Cold SMS",
@@ -6244,7 +6224,8 @@
       ],
       "status": "not_closed",
       "source": "Cold SMS",
-      "closer": "Max"
+      "closer": "Max",
+      "fathomLink": "https://fathom.video/share/pwcFsBcftsKSpMp8cxtf3z61oU4xrsjt"
     },
     {
       "id": "Xpg91ECzeCCnoa1Vkttc",
@@ -7029,7 +7010,7 @@
     },
     {
       "id": "P4yxIruGCmNLWH4rB0PI",
-      "contactName": "",
+      "contactName": "Ricardo Martinez",
       "calendarName": "Cold SMS",
       "startTime": "2026-03-04T17:15:00-05:00",
       "timeCreated": "2026-03-04T18:03:26.488Z",
@@ -7038,7 +7019,8 @@
       "phone": "+16232064549",
       "email": "",
       "statusHistory": [],
-      "status": "cancelled"
+      "status": "cancelled",
+      "contactId": "i8tCEdpWpeggn5twtX7K"
     },
     {
       "id": "Z9IgwGFAsmvXFBj6qY8i",
@@ -7081,7 +7063,7 @@
     },
     {
       "id": "eAAaYtSv5UJ7S1DEEHj8",
-      "contactName": "",
+      "contactName": "Eddie",
       "calendarName": "Cold SMS",
       "startTime": "2026-03-05T13:00:00-05:00",
       "timeCreated": "2026-03-05T13:52:26.154Z",
@@ -7095,7 +7077,9 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "no_show",
+      "contactId": "kHzb6TriXSw4wHaMXZ6a",
+      "source": "Cold SMS"
     },
     {
       "id": "KF8sToWj8411SrF1FAd4",
@@ -7151,7 +7135,7 @@
     },
     {
       "id": "0mEDhtyeR6AlfLBq221N",
-      "contactName": "",
+      "contactName": "Antonio",
       "calendarName": "Cold SMS",
       "startTime": "2026-03-05T18:00:00-05:00",
       "timeCreated": "2026-03-04T18:44:22.007Z",
@@ -7160,7 +7144,8 @@
       "phone": "+14808196396",
       "email": "antoniomart298@icloud.com",
       "statusHistory": [],
-      "status": "cancelled"
+      "status": "cancelled",
+      "contactId": "l3CUp3QGnw44YuVGu4hX"
     },
     {
       "id": "56DeA4FJfHSyJg9S3oMP",
@@ -7350,7 +7335,7 @@
     },
     {
       "id": "zZ6Xm8DF3yVl5bhQqh6s",
-      "contactName": "",
+      "contactName": "JContractor",
       "calendarName": "Cold SMS",
       "startTime": "2026-03-09T12:00:00-04:00",
       "timeCreated": "2026-03-04T14:52:10.970Z",
@@ -7366,7 +7351,8 @@
       "contractRevenue": null,
       "followUpBooked": false,
       "fathomLink": "https://fathom.video/share/k6mzJ2BDqUbnf6b8p-kUF3BnFzRye3mS",
-      "offerMade": null
+      "offerMade": null,
+      "contactId": "pQwD5pwSu2PaeGBK6Hb0"
     },
     {
       "id": "6zvZ21FFklyEojP7vHPR",
@@ -7438,7 +7424,7 @@
     },
     {
       "id": "u1CKKVSjRigNhy18AWKR",
-      "contactName": "",
+      "contactName": "Acuity Builders",
       "calendarName": "Cold SMS",
       "startTime": "2026-03-09T16:00:00-04:00",
       "timeCreated": "2026-03-09T13:32:57.587Z",
@@ -7452,7 +7438,10 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "not_closed",
+      "contactId": "qhhfbSjGOxMKHcu6H8Az",
+      "closer": "Max",
+      "fathomLink": "https://fathom.video/share/tvcHyww-Ve_FV-yWJ_DS4vf-ywUKADqe"
     },
     {
       "id": "WXooqmZq7wgkQxNSfwrx",
@@ -7564,7 +7553,9 @@
       "email": "dennis.h.kohlmeier@gmail.com",
       "statusHistory": [],
       "status": "not_closed",
-      "fathomLink": "https://fathom.video/share/MCwdQ3f7KgzxDdyvupjeVpWTMCJtzLqS"
+      "fathomLink": "https://fathom.video/share/MCwdQ3f7KgzxDdyvupjeVpWTMCJtzLqS",
+      "source": "Ads",
+      "closer": "Max"
     },
     {
       "id": "inFgGZz9CKaJ2RraMCJj",
@@ -8075,7 +8066,7 @@
     },
     {
       "id": "uk6dTZIaRkuctpQ9wKn7",
-      "contactName": "",
+      "contactName": "Pabak Contractors",
       "calendarName": "Cold SMS",
       "startTime": "2026-03-13T15:00:00-04:00",
       "timeCreated": "2026-03-13T16:48:49.341Z",
@@ -8089,7 +8080,9 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "no_show",
+      "contactId": "ApWJ8uuMyzH0qTYUR2oi",
+      "source": "Cold SMS"
     },
     {
       "id": "9PuESupWlyveftgwDWoj",
@@ -8237,7 +8230,7 @@
     },
     {
       "id": "p2zG50reiRKDJZTtZpbY",
-      "contactName": "",
+      "contactName": "Dads Handyman Services",
       "calendarName": "Cold SMS",
       "startTime": "2026-03-14T13:00:00-04:00",
       "timeCreated": "2026-03-13T17:55:52.264Z",
@@ -8251,7 +8244,9 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "no_show",
+      "contactId": "oJidDEarEZzS9D8bAuuO",
+      "source": "Cold SMS"
     },
     {
       "id": "uE53cV6EJVuYAV6sVLAK",
@@ -8425,7 +8420,7 @@
     },
     {
       "id": "XtX8UkNG8abLVlF3gSTE",
-      "contactName": "",
+      "contactName": "Matthew Graber",
       "calendarName": "Cold SMS",
       "startTime": "2026-03-16T16:00:00-04:00",
       "timeCreated": "2026-03-16T17:33:35.225Z",
@@ -8434,7 +8429,8 @@
       "phone": "+12604176746",
       "email": "matthewgraber102@gmail.com",
       "statusHistory": [],
-      "status": "new"
+      "status": "new",
+      "contactId": "FPs9TKLtlkPn4TEDvAar"
     },
     {
       "id": "WkmN5QYJoDkOwRoEtS3y",
@@ -8654,7 +8650,9 @@
       "email": "steve@beachstudiodesignbuild.com",
       "statusHistory": [],
       "status": "not_closed",
-      "fathomLink": "https://fathom.video/share/3Rq5hx1qyJEgqRxfumxaAzBL72JykHUz"
+      "fathomLink": "https://fathom.video/share/3Rq5hx1qyJEgqRxfumxaAzBL72JykHUz",
+      "source": "Ads",
+      "closer": "Max"
     },
     {
       "id": "YylFDXke2M2yVvSWVwOY",
@@ -8844,7 +8842,7 @@
     },
     {
       "id": "8tHKhcFQNv24jZXP8oZB",
-      "contactName": "",
+      "contactName": "Matthew Graber",
       "calendarName": "Cold SMS",
       "startTime": "2026-03-19T16:30:00-04:00",
       "timeCreated": "2026-03-18T13:07:38.821Z",
@@ -8858,7 +8856,9 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "no_show",
+      "contactId": "FPs9TKLtlkPn4TEDvAar",
+      "source": "Cold SMS"
     },
     {
       "id": "va4p6vWCO4QrXveFSk7l",
@@ -9026,7 +9026,8 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "confirmed",
+      "excluded": true
     },
     {
       "id": "oIPr5v9FZq102I5fitDw",
@@ -9062,7 +9063,8 @@
           "at": "2026-03-23T18:45:18.494Z"
         }
       ],
-      "status": "confirmed"
+      "status": "no_show",
+      "source": "Cold SMS"
     }
   ],
   "dials": [
