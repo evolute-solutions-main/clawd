@@ -1,37 +1,72 @@
 # Clawdbot ("Evan") — Claude Code Context
 
 ## What This Project Is
-Clawdbot is Max's AI agent system for Evolute Solutions. It runs automated agents that read Discord, analyze data with LLMs, and publish reports to Notion. It tracks client health, appointment setting, and employee activity.
+Clawdbot is Max's AI agent system for Evolute Solutions. It runs automated agents that read Discord, analyze data with LLMs, and post reports to Discord/Notion. Goal: every business function systematized in AI — Max reviews and decides, doesn't execute.
 
 ## GitHub Repo
 ```
-https://github.com/evolute-solutions-main/clawd.git
+https://github.com/evolute-solutions-main/clawd-evan.git
 ```
-This is the authoritative source. Always reference or suggest pulling from this repo.
+
+## Environment
+- **Primary dev environment: VM** — `/root/clawd-evan` on DigitalOcean (134.209.34.97)
+- Local copy at `/Users/max/clawd-evan` exists but VM is authoritative
+- Secrets: `/root/clawd-evan/.secrets.env` on VM (NOT `.env`)
+- Key vars: `DISCORD_BOT_TOKEN`, `DISCORD_CHAT_BOT_TOKEN`, `ANTHROPIC_API_KEY`, `NOTION_KEY`, `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`
 
 ## Key Directories
-- `agents/appointment-tracking/` — Cold SMS appointment report (Discord Zapier messages → markdown)
-- `agents/client-sweep/` — Client health sweep (Discord channels → LLM analysis → Notion)
-- `agents/_shared/discord-fetcher/` — Shared Discord fetch utility
-- `agents/_shared/notion-publisher/` — Publishes markdown to Notion
-- `Evolute Solutions/` — Business context docs, client entities, system map
+- `agents/appointment-tracking/` — Cold SMS appointment report
+- `agents/client-sweep/` — Daily client health sweep (Discord → LLM → Notion)
+- `agents/onboarding/` — Onboarding briefing agent (reads `data/onboarding.json`, outputs per-role action lists)
+- `agents/webhooks/` — HTTP webhook server (Stripe, GHL) running on port 3001
+- `agents/_shared/` — Shared utilities (env-loader, discord-fetcher, notion-publisher)
+- `scripts/` — One-off scripts: `new-client.mjs`, `mark-done.mjs`, etc.
+- `data/` — All data: `onboarding.json`, `sales_data.json`, `expenses.json`, etc.
 
-## Secrets
-- All secrets live in `/Users/max/clawd-evan/.secrets.env` (NOT `.env`)
-- Key vars: `DISCORD_BOT_TOKEN`, `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `NOTION_KEY`
-- OpenAI key is expired — falls back to Anthropic (`claude-opus-4-6`)
+## Services on VM (systemd)
+- `clawdbot-gateway` — Discord gateway bot (reads messages, triggers agents)
+- `webhook-server` — Express HTTP server on port 3001, proxied via Caddy
+- Logs: `/root/.clawdbot/logs/`
+- Caddy proxies `https://webhooks.evolutesolutions.io` → port 3001
 
 ## Discord
 - Guild: Evolute HQ (`1164939432722440282`)
-- **Message Content Intent** must be enabled in Discord Developer Portal
-- Bot needs channel access — client channels require bot to be in the category
+- Two bots: `DISCORD_BOT_TOKEN` (read-only fetcher), `DISCORD_CHAT_BOT_TOKEN` (read+write chat bot)
+- Message Content Intent must be enabled in Discord Developer Portal
 
-## Clawdbot Gateway (launchd service)
-- Service name: `com.clawdbot.gateway`
-- Plist: `~/Library/LaunchAgents/com.clawdbot.gateway.plist`
-- Reload: `launchctl unload ~/Library/LaunchAgents/com.clawdbot.gateway.plist && launchctl load ~/Library/LaunchAgents/com.clawdbot.gateway.plist`
-- Logs: `~/.clawdbot/logs/gateway.log` and `gateway.err.log`
+## Onboarding System (built 2026-03-25)
+- Data: `data/onboarding.json` — one record per client, full step dependency graph
+- `scripts/new-client.mjs` — create onboarding record when Max signs a client
+- `scripts/mark-done.mjs` — mark a step complete (fuzzy matches client + step)
+- `agents/onboarding/scripts/run.mjs` — daily briefing, walks dependency graph, outputs per-role action lists
+- Webhook auto-detection: Stripe payment → marks `payment_collected`; GHL form → marks `onboarding_form_submitted`; Discord join → marks `client_joined_discord`
 
-## Notes
-- Project previously moved to a VM via SSH (2026-03-17), but local copy also exists at `/Users/max/clawd-evan/
-- Appointment status logic: distinguish **new** vs **no_show** — see `memory/feedback_appointment_status.md`
+**Still to build:**
+- `run.mjs` → post output to Discord (currently just prints to stdout)
+- Daily cron for onboarding briefing
+- Dashboard onboarding tab
+
+## AGENTS.md Routing Rules
+When Max says "just signed [client]" → run `new-client.mjs`
+When team says "[step] done for [client]" → run `mark-done.mjs`
+"onboarding status" → run `run.mjs`
+
+## Key Decisions & Principles
+- **UI is Discord or dashboard only** — no CLI for end users, no one needs to know how it works under the hood
+- **AI acts as ops manager** — pushes Account Manager/CSM and Media Buyer; does NOT communicate directly with clients
+- **Role-based ownership** — steps assigned to roles (accountManager, mediaBuyer, videoEditor), not people by name
+- **Data lives in `data/*.json`** — single source of truth, human-readable
+- **Max reviews, doesn't execute** — agents surface actions, Max approves or ignores
+
+## Appointment Status Logic
+- `status: 'new'` = tentative/unconfirmed. NOT a no-show. Never include in show rate denominators.
+- `status: 'no_show'` = was confirmed, didn't show. Only these count.
+- Show rate denominator: `showed + no_show + cancelled` only.
+
+## Build Roadmap
+See `MASTERPLAN.md` for full plan. See `TODO.md` for phased task list.
+
+Phase 1 (Foundation): Onboarding tracker ✅ (built, needs Discord + cron), Collections tracker, Payroll calculator
+Phase 2 (Intelligence): Morning briefing agent, CSM knowledge base, Dashboard ops tabs
+Phase 3 (Integrations): GHL webhooks (replace polling), Meta ads API
+Phase 4 (Automation): Auto-follow-up drafting, Fathom follow-up agent
