@@ -30764,7 +30764,7 @@ function renderOnboarding() {
       ondragover="obItemDragOver(event,this,'ob-donow-order')"
       ondrop="obItemDrop(event,this,'ob-donow-order')"
       ondragend="obItemDragEnd(this)"
-      ondragleave="obItemDragLeave(this)">
+      ondragleave="obItemDragLeave(event,this)">
       <span class="ob-drag-handle" title="Drag to reorder">⠿</span>
       <div class="ob-item-label">${label}</div>
       <div class="ob-item-client">${client.companyName}</div>
@@ -30797,7 +30797,7 @@ function renderOnboarding() {
         ondragover="obItemDragOver(event,this,'ob-followup-order')"
         ondrop="obItemDrop(event,this,'ob-followup-order')"
         ondragend="obItemDragEnd(this)"
-        ondragleave="obItemDragLeave(this)">
+        ondragleave="obItemDragLeave(event,this)">
         <span class="ob-drag-handle" title="Drag to reorder">⠿</span>
         <div class="ob-item-label">${label}</div>
         <div class="ob-item-client">${client.companyName}</div>
@@ -30859,8 +30859,8 @@ function renderOnboarding() {
       ondragover="obItemDragOver(event,this,'ob-card-order')"
       ondrop="obItemDrop(event,this,'ob-card-order')"
       ondragend="obItemDragEnd(this)"
-      ondragleave="obItemDragLeave(this)"
-      onclick="obOpenDrawer('${client.id}')">
+      ondragleave="obItemDragLeave(event,this)"
+      onclick="if(!_obDragJustEnded)obOpenDrawer('${client.id}')">
       <span class="ob-drag-handle" title="Drag to reorder">⠿</span>
       <div class="ob-client-name">${client.companyName}</div>
       <div class="ob-client-phase">${phase}</div>
@@ -31146,25 +31146,23 @@ function obSortItems(items, orderKey) {
     return ai - bi
   })
 }
-// Per-element drag handlers — avoids event delegation misfires
-let _obDragEl = null, _obDragOrderKey = null
+// Per-element drag handlers
+let _obDragEl = null, _obDragOrderKey = null, _obDragJustEnded = false
 function obItemDragStart(e, el, orderKey) {
-  if (!e.target.closest('.ob-drag-handle')) { e.preventDefault(); return }
   _obDragEl = el; _obDragOrderKey = orderKey
   el.classList.add('ob-dragging')
   e.dataTransfer.effectAllowed = 'move'
-  e.stopPropagation()
 }
 function obItemDragOver(e, el, orderKey) {
   if (!_obDragEl || _obDragEl === el || _obDragOrderKey !== orderKey) return
-  e.preventDefault(); e.stopPropagation()
+  e.preventDefault()
   const isItem = el.classList.contains('ob-item')
   const sel = isItem ? '.ob-item[data-item-id]' : '.ob-client-card[data-item-id]'
   el.parentElement?.querySelectorAll(sel).forEach(c => c.classList.remove('ob-drag-over'))
   el.classList.add('ob-drag-over')
 }
 function obItemDrop(e, el, orderKey) {
-  e.preventDefault(); e.stopPropagation()
+  e.preventDefault()
   if (!_obDragEl || _obDragEl === el || _obDragOrderKey !== orderKey) return
   el.classList.remove('ob-drag-over')
   const rect = el.getBoundingClientRect()
@@ -31179,8 +31177,12 @@ function obItemDragEnd(el) {
   const sel = isItem ? '.ob-item[data-item-id]' : '.ob-client-card[data-item-id]'
   el.parentElement?.querySelectorAll(sel).forEach(c => c.classList.remove('ob-drag-over', 'ob-dragging'))
   _obDragEl = null; _obDragOrderKey = null
+  _obDragJustEnded = true; setTimeout(() => { _obDragJustEnded = false }, 100)
 }
-function obItemDragLeave(el) { el.classList.remove('ob-drag-over') }
+function obItemDragLeave(e, el) {
+  if (el.contains(e.relatedTarget)) return
+  el.classList.remove('ob-drag-over')
+}
 
 function obToggleNewClientForm() {
   const f = document.getElementById('ob-new-client-form')
