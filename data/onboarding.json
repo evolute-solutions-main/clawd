@@ -57,11 +57,12 @@
         "discord_channel_created": {
           "status": "pending",
           "completedAt": null,
-          "autoDetected": true,
-          "trigger": "auto",
+          "autoDetected": false,
+          "owner": "accountManager",
           "dependsOn": [
             "client_joined_discord"
-          ]
+          ],
+          "note": "Create private Discord channel for client"
         },
         "ghl_subaccount_configured": {
           "status": "pending",

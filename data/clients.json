@@ -101,8 +101,8 @@
             "note": "Client sends photos/videos via Discord or onboarding funnel"
           },
           "ad_scripts_written": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": false,
             "owner": "mediaBuyer",
             "dependsOn": [
@@ -111,8 +111,8 @@
             "note": "Media buyer writes ad scripts (future: AI-assisted from Fathom call)"
           },
           "ad_scripts_sent_to_client": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": false,
             "owner": "mediaBuyer",
             "dependsOn": [
@@ -121,8 +121,8 @@
             "note": "Send to client via their Discord channel"
           },
           "ad_scripts_approved": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": false,
             "owner": "accountManager",
             "dependsOn": [
@@ -232,6 +232,24 @@
             "event": "step_completed",
             "step": "facebook_access_granted",
             "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T20:17:33.577Z",
+            "event": "step_completed",
+            "step": "ad_scripts_written",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T20:17:36.819Z",
+            "event": "step_completed",
+            "step": "ad_scripts_sent_to_client",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T20:17:37.339Z",
+            "event": "step_completed",
+            "step": "ad_scripts_approved",
+            "by": "dashboard"
           }
         ]
       }
@@ -300,12 +318,12 @@
           "discord_channel_created": {
             "status": "pending",
             "completedAt": null,
-            "autoDetected": true,
-            "trigger": "auto",
+            "autoDetected": false,
             "dependsOn": [
               "client_joined_discord"
             ],
-            "note": "Bot auto-creates channel and adds client on join"
+            "note": "Create private Discord channel for client",
+            "owner": "accountManager"
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -474,9 +492,9 @@
       "needsVideoEditor": false,
       "discordChannelId": null,
       "onboarding": {
-        "status": "onboarding",
-        "launchedDate": null,
-        "campaignsLaunchedAt": null,
+        "status": "launched",
+        "launchedDate": "2026-03-27",
+        "campaignsLaunchedAt": "2026-03-27T20:18:32.791Z",
         "readyToBookCallAt": null,
         "steps": {
           "payment_collected": {
@@ -505,8 +523,8 @@
             "trigger": "auto"
           },
           "onboarding_form_submitted": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": true,
             "trigger": "ghl_webhook",
             "dependsOn": [
@@ -514,8 +532,8 @@
             ]
           },
           "client_joined_discord": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": true,
             "trigger": "discord_event",
             "dependsOn": [
@@ -523,8 +541,8 @@
             ]
           },
           "discord_channel_created": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": true,
             "trigger": "auto",
             "dependsOn": [
@@ -533,8 +551,8 @@
             "note": "Bot auto-creates channel and adds client on join"
           },
           "ghl_subaccount_configured": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": false,
             "owner": "accountManager",
             "dependsOn": [
@@ -543,8 +561,8 @@
             "note": "Create GHL sub-account and configure settings"
           },
           "facebook_access_granted": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": false,
             "owner": "accountManager",
             "dependsOn": [
@@ -573,8 +591,8 @@
             "note": "Media buyer writes ad scripts (future: AI-assisted from Fathom call)"
           },
           "ad_scripts_sent_to_client": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": false,
             "owner": "mediaBuyer",
             "dependsOn": [
@@ -583,8 +601,8 @@
             "note": "Send to client via their Discord channel"
           },
           "ad_scripts_approved": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": false,
             "owner": "accountManager",
             "dependsOn": [
@@ -593,8 +611,8 @@
             "note": "Client reviews, revises if needed, then approves. Mark done when final approval received."
           },
           "meta_campaigns_built": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": false,
             "owner": "mediaBuyer",
             "dependsOn": [
@@ -605,8 +623,8 @@
             "note": "Build campaigns in Meta Ads Manager (no video editor)"
           },
           "onboarding_call_booked": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": false,
             "owner": "accountManager",
             "dependsOn": [
@@ -619,8 +637,8 @@
             "readyToBookTrigger": true
           },
           "onboarding_call_completed": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": false,
             "owner": "accountManager",
             "dependsOn": [
@@ -634,8 +652,8 @@
             "note": "Mark done after the call. Checklist: calendar connected, CRM access granted, test lead run."
           },
           "campaigns_launched": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": false,
             "owner": "accountManager",
             "dependsOn": [
@@ -644,8 +662,8 @@
             "note": "Account manager flips campaigns on in Meta Ads Manager"
           },
           "48hr_health_check": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": false,
             "owner": "accountManager",
             "dependsOn": [
@@ -655,8 +673,8 @@
             "note": "Verify leads are coming in and everything is running correctly. Not a performance review."
           },
           "post_launch_checkin_scheduled": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": false,
             "owner": "accountManager",
             "dependsOn": [
@@ -670,6 +688,84 @@
             "timestamp": "2026-03-27T16:08:07.636Z",
             "event": "client_created",
             "note": "Signed. Created via new-client.mjs."
+          },
+          {
+            "timestamp": "2026-03-27T20:18:14.410Z",
+            "event": "step_completed",
+            "step": "onboarding_form_submitted",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T20:18:15.151Z",
+            "event": "step_completed",
+            "step": "client_joined_discord",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T20:18:16.540Z",
+            "event": "step_completed",
+            "step": "discord_channel_created",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T20:18:17.868Z",
+            "event": "step_completed",
+            "step": "ghl_subaccount_configured",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T20:18:18.572Z",
+            "event": "step_completed",
+            "step": "facebook_access_granted",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T20:18:23.049Z",
+            "event": "step_completed",
+            "step": "ad_scripts_sent_to_client",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T20:18:25.969Z",
+            "event": "step_completed",
+            "step": "ad_scripts_approved",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T20:18:28.434Z",
+            "event": "step_completed",
+            "step": "meta_campaigns_built",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T20:18:32.049Z",
+            "event": "step_completed",
+            "step": "post_launch_checkin_scheduled",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T20:18:32.418Z",
+            "event": "step_completed",
+            "step": "48hr_health_check",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T20:18:32.791Z",
+            "event": "step_completed",
+            "step": "campaigns_launched",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T20:18:33.622Z",
+            "event": "step_completed",
+            "step": "onboarding_call_completed",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T20:18:34.789Z",
+            "event": "step_completed",
+            "step": "onboarding_call_booked",
+            "by": "dashboard"
           }
         ]
       }
@@ -738,12 +834,12 @@
           "discord_channel_created": {
             "status": "pending",
             "completedAt": null,
-            "autoDetected": true,
-            "trigger": "auto",
+            "autoDetected": false,
             "dependsOn": [
               "client_joined_discord"
             ],
-            "note": "Bot auto-creates channel and adds client on join"
+            "note": "Create private Discord channel for client",
+            "owner": "accountManager"
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -951,12 +1047,12 @@
           "discord_channel_created": {
             "status": "pending",
             "completedAt": null,
-            "autoDetected": true,
-            "trigger": "auto",
+            "autoDetected": false,
             "dependsOn": [
               "client_joined_discord"
             ],
-            "note": "Bot auto-creates channel and adds client on join"
+            "note": "Create private Discord channel for client",
+            "owner": "accountManager"
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -1164,12 +1260,12 @@
           "discord_channel_created": {
             "status": "pending",
             "completedAt": null,
-            "autoDetected": true,
-            "trigger": "auto",
+            "autoDetected": false,
             "dependsOn": [
               "client_joined_discord"
             ],
-            "note": "Bot auto-creates channel and adds client on join"
+            "note": "Create private Discord channel for client",
+            "owner": "accountManager"
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -1377,12 +1473,12 @@
           "discord_channel_created": {
             "status": "pending",
             "completedAt": null,
-            "autoDetected": true,
-            "trigger": "auto",
+            "autoDetected": false,
             "dependsOn": [
               "client_joined_discord"
             ],
-            "note": "Bot auto-creates channel and adds client on join"
+            "note": "Create private Discord channel for client",
+            "owner": "accountManager"
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -1590,12 +1686,12 @@
           "discord_channel_created": {
             "status": "pending",
             "completedAt": null,
-            "autoDetected": true,
-            "trigger": "auto",
+            "autoDetected": false,
             "dependsOn": [
               "client_joined_discord"
             ],
-            "note": "Bot auto-creates channel and adds client on join"
+            "note": "Create private Discord channel for client",
+            "owner": "accountManager"
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -1803,12 +1899,12 @@
           "discord_channel_created": {
             "status": "pending",
             "completedAt": null,
-            "autoDetected": true,
-            "trigger": "auto",
+            "autoDetected": false,
             "dependsOn": [
               "client_joined_discord"
             ],
-            "note": "Bot auto-creates channel and adds client on join"
+            "note": "Create private Discord channel for client",
+            "owner": "accountManager"
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -2016,12 +2112,12 @@
           "discord_channel_created": {
             "status": "pending",
             "completedAt": null,
-            "autoDetected": true,
-            "trigger": "auto",
+            "autoDetected": false,
             "dependsOn": [
               "client_joined_discord"
             ],
-            "note": "Bot auto-creates channel and adds client on join"
+            "note": "Create private Discord channel for client",
+            "owner": "accountManager"
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -2229,12 +2325,12 @@
           "discord_channel_created": {
             "status": "pending",
             "completedAt": null,
-            "autoDetected": true,
-            "trigger": "auto",
+            "autoDetected": false,
             "dependsOn": [
               "client_joined_discord"
             ],
-            "note": "Bot auto-creates channel and adds client on join"
+            "note": "Create private Discord channel for client",
+            "owner": "accountManager"
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -2442,12 +2538,12 @@
           "discord_channel_created": {
             "status": "pending",
             "completedAt": null,
-            "autoDetected": true,
-            "trigger": "auto",
+            "autoDetected": false,
             "dependsOn": [
               "client_joined_discord"
             ],
-            "note": "Bot auto-creates channel and adds client on join"
+            "note": "Create private Discord channel for client",
+            "owner": "accountManager"
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -2655,12 +2751,12 @@
           "discord_channel_created": {
             "status": "pending",
             "completedAt": null,
-            "autoDetected": true,
-            "trigger": "auto",
+            "autoDetected": false,
             "dependsOn": [
               "client_joined_discord"
             ],
-            "note": "Bot auto-creates channel and adds client on join"
+            "note": "Create private Discord channel for client",
+            "owner": "accountManager"
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -2868,12 +2964,12 @@
           "discord_channel_created": {
             "status": "pending",
             "completedAt": null,
-            "autoDetected": true,
-            "trigger": "auto",
+            "autoDetected": false,
             "dependsOn": [
               "client_joined_discord"
             ],
-            "note": "Bot auto-creates channel and adds client on join"
+            "note": "Create private Discord channel for client",
+            "owner": "accountManager"
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -3081,12 +3177,12 @@
           "discord_channel_created": {
             "status": "pending",
             "completedAt": null,
-            "autoDetected": true,
-            "trigger": "auto",
+            "autoDetected": false,
             "dependsOn": [
               "client_joined_discord"
             ],
-            "note": "Bot auto-creates channel and adds client on join"
+            "note": "Create private Discord channel for client",
+            "owner": "accountManager"
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -3300,12 +3396,12 @@
           "discord_channel_created": {
             "status": "pending",
             "completedAt": null,
-            "autoDetected": true,
-            "trigger": "auto",
+            "autoDetected": false,
             "dependsOn": [
               "client_joined_discord"
             ],
-            "note": "Bot auto-creates channel and adds client on join"
+            "note": "Create private Discord channel for client",
+            "owner": "accountManager"
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -3519,12 +3615,12 @@
           "discord_channel_created": {
             "status": "pending",
             "completedAt": null,
-            "autoDetected": true,
-            "trigger": "auto",
+            "autoDetected": false,
             "dependsOn": [
               "client_joined_discord"
             ],
-            "note": "Bot auto-creates channel and adds client on join"
+            "note": "Create private Discord channel for client",
+            "owner": "accountManager"
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -3738,12 +3834,12 @@
           "discord_channel_created": {
             "status": "pending",
             "completedAt": null,
-            "autoDetected": true,
-            "trigger": "auto",
+            "autoDetected": false,
             "dependsOn": [
               "client_joined_discord"
             ],
-            "note": "Bot auto-creates channel and adds client on join"
+            "note": "Create private Discord channel for client",
+            "owner": "accountManager"
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -3931,14 +4027,14 @@
         "readyToBookCallAt": null,
         "steps": {
           "payment_collected": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": true,
             "trigger": "manual"
           },
           "contract_signed": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": false
           },
           "welcome_email_sent": {
@@ -3954,8 +4050,8 @@
             "trigger": "auto"
           },
           "onboarding_form_submitted": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": true,
             "trigger": "ghl_webhook",
             "dependsOn": [
@@ -3963,8 +4059,8 @@
             ]
           },
           "client_joined_discord": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": true,
             "trigger": "discord_event",
             "dependsOn": [
@@ -3972,8 +4068,8 @@
             ]
           },
           "discord_channel_created": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": true,
             "trigger": "auto",
             "dependsOn": [
@@ -3981,8 +4077,8 @@
             ]
           },
           "ghl_subaccount_configured": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": false,
             "owner": "accountManager",
             "dependsOn": [
@@ -3990,8 +4086,8 @@
             ]
           },
           "facebook_access_granted": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": false,
             "owner": "accountManager",
             "dependsOn": [
@@ -3999,8 +4095,8 @@
             ]
           },
           "client_media_submitted": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": false,
             "owner": "accountManager",
             "dependsOn": [
@@ -4008,8 +4104,8 @@
             ]
           },
           "ad_scripts_written": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": false,
             "owner": "mediaBuyer",
             "dependsOn": [
@@ -4017,8 +4113,8 @@
             ]
           },
           "ad_scripts_sent_to_client": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": false,
             "owner": "mediaBuyer",
             "dependsOn": [
@@ -4026,8 +4122,8 @@
             ]
           },
           "ad_scripts_approved": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": false,
             "owner": "accountManager",
             "dependsOn": [
@@ -4035,8 +4131,8 @@
             ]
           },
           "video_editor_briefed": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": false,
             "owner": "mediaBuyer",
             "dependsOn": [
@@ -4045,8 +4141,8 @@
             ]
           },
           "ad_creatives_produced": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": false,
             "owner": "videoEditor",
             "dependsOn": [
@@ -4077,8 +4173,8 @@
             "readyToBookTrigger": true
           },
           "onboarding_call_completed": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": false,
             "owner": "accountManager",
             "dependsOn": [
@@ -4124,6 +4220,90 @@
             "timestamp": "2026-03-27T16:56:20.601Z",
             "event": "client_created",
             "note": "Added manually via dashboard."
+          },
+          {
+            "timestamp": "2026-03-27T20:18:43.560Z",
+            "event": "step_completed",
+            "step": "payment_collected",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T20:18:44.197Z",
+            "event": "step_completed",
+            "step": "contract_signed",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T20:19:48.516Z",
+            "event": "step_completed",
+            "step": "onboarding_form_submitted",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T20:19:50.098Z",
+            "event": "step_completed",
+            "step": "discord_channel_created",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T20:19:50.706Z",
+            "event": "step_completed",
+            "step": "client_joined_discord",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T20:19:56.011Z",
+            "event": "step_completed",
+            "step": "ad_creatives_produced",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T20:19:57.595Z",
+            "event": "step_completed",
+            "step": "video_editor_briefed",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T20:19:59.358Z",
+            "event": "step_completed",
+            "step": "ad_scripts_approved",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T20:19:59.810Z",
+            "event": "step_completed",
+            "step": "ad_scripts_sent_to_client",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T20:20:00.497Z",
+            "event": "step_completed",
+            "step": "ad_scripts_written",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T20:20:01.163Z",
+            "event": "step_completed",
+            "step": "client_media_submitted",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T20:20:01.652Z",
+            "event": "step_completed",
+            "step": "facebook_access_granted",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T20:20:02.451Z",
+            "event": "step_completed",
+            "step": "ghl_subaccount_configured",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T20:20:06.225Z",
+            "event": "step_completed",
+            "step": "onboarding_call_completed",
+            "by": "dashboard"
           }
         ]
       }

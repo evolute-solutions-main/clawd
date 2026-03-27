@@ -658,7 +658,7 @@ const server = http.createServer(async (req, res) => {
         added_to_daily_sweep:        pendingStep({ autoDetected: true,  trigger: 'auto' }),
         onboarding_form_submitted:   pendingStep({ autoDetected: true,  trigger: 'ghl_webhook',   dependsOn: ['contract_signed'] }),
         client_joined_discord:       pendingStep({ autoDetected: true,  trigger: 'discord_event', dependsOn: ['contract_signed'] }),
-        discord_channel_created:     pendingStep({ autoDetected: true,  trigger: 'auto',          dependsOn: ['client_joined_discord'] }),
+        discord_channel_created:     pendingStep({ autoDetected: false, owner: 'accountManager',  dependsOn: ['client_joined_discord'], note: 'Create private Discord channel for client' }),
         ghl_subaccount_configured:   pendingStep({ autoDetected: false, owner: 'accountManager',  dependsOn: ['onboarding_form_submitted'] }),
         facebook_access_granted:     pendingStep({ autoDetected: false, owner: 'accountManager',  dependsOn: ['onboarding_form_submitted'] }),
         client_media_submitted:      pendingStep({ autoDetected: false, owner: 'accountManager',  dependsOn: ['onboarding_form_submitted'] }),

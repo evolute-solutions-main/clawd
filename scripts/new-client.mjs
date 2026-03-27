@@ -83,9 +83,9 @@ function makeSteps(needsVideoEditor) {
     },
     discord_channel_created: {
       status: 'pending', completedAt: null,
-      autoDetected: true, trigger: 'auto',
+      autoDetected: false, owner: 'accountManager',
       dependsOn: ['client_joined_discord'],
-      note: 'Bot auto-creates channel and adds client on join'
+      note: 'Create private Discord channel for client'
     },
 
     // ── Account Manager — post-form ────────────────────────────────────────
