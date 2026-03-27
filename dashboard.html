@@ -30607,6 +30607,15 @@ function obEvaluateSteps(steps) {
     if (step.status === 'complete') { res.complete.push(key); continue }
     const deps = step.dependsOn || []
     const pendingDeps = deps.filter(d => steps[d]?.status !== 'complete')
+    // Time-gated steps: don't surface until N hours after the triggering dep completed
+    if (step.timeGatedHours) {
+      const triggerDep = (step.dependsOn || [])[0]
+      const triggerStep = triggerDep && steps[triggerDep]
+      if (triggerStep?.status === 'complete' && triggerStep.completedAt) {
+        const unlocksAt = new Date(triggerStep.completedAt + 'T00:00:00').getTime() + step.timeGatedHours * 3600000
+        if (Date.now() < unlocksAt) { res.blocked.push({ key, step, pendingDeps: [], timeGated: true, unlocksAt }); continue }
+      }
+    }
     if (pendingDeps.length > 0) {
       // Only surface as blocked if the immediate blockers are themselves actionable
       // (waiting on client, waiting auto, or do-now). If a dep is itself still waiting
@@ -30819,24 +30828,29 @@ function renderOnboarding() {
   // BLOCKED — show root cause, not just immediate dep
   if (blockedItems.length) {
     actHtml += `<div class="ob-section"><div class="ob-section-title">Blocked (${blockedItems.length})</div>`
-    for (const { client, key, step } of blockedItems) {
+    for (const { client, key, step, timeGated, unlocksAt } of blockedItems) {
       const label = OB_STEP_LABELS[key] || key
-      const rootKeys = getRootBlockers(client.steps, key)
-      let rootDesc
-      if (rootKeys.length === 0) {
-        rootDesc = 'Unknown blocker'
+      let noteText
+      if (timeGated) {
+        const hoursLeft = Math.ceil((unlocksAt - Date.now()) / 3600000)
+        noteText = `Time-gated — available in ~${hoursLeft}h`
       } else {
-        rootDesc = rootKeys.map(r => {
-          const rStep = client.steps[r]
-          const rLabel = OB_STEP_LABELS[r] || r
-          const rOwner = rStep?.owner ? ` (${OB_OWNER_LABELS[rStep.owner] || rStep.owner})` : rStep?.autoDetected ? ' (waiting on client)' : ''
-          return rLabel + rOwner
-        }).join(', ')
+        const rootKeys = getRootBlockers(client.steps, key)
+        if (rootKeys.length === 0) {
+          noteText = 'Blocked — unknown blocker'
+        } else {
+          noteText = 'Blocked — waiting on: ' + rootKeys.map(r => {
+            const rStep = client.steps[r]
+            const rLabel = OB_STEP_LABELS[r] || r
+            const rOwner = rStep?.owner ? ` (${OB_OWNER_LABELS[rStep.owner] || rStep.owner})` : rStep?.autoDetected ? ' (waiting on client)' : ''
+            return rLabel + rOwner
+          }).join(', ')
+        }
       }
       actHtml += `<div class="ob-item blocked">
         <div class="ob-item-label">${label}</div>
         <div class="ob-item-client">${client.companyName}</div>
-        <div class="ob-item-note">Blocked — waiting on: ${rootDesc}</div>
+        <div class="ob-item-note">${noteText}</div>
       </div>`
     }
     actHtml += '</div>'
