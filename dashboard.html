@@ -30631,7 +30631,7 @@ function obEvaluateSteps(steps) {
       // else: further downstream — skip, don't surface
       continue
     }
-    if (step.autoDetected && OB_CLIENT_STEPS.has(key)) {
+    if (OB_CLIENT_STEPS.has(key)) {
       res.waitingClient.push({ key, step })
     } else if (step.autoDetected) {
       res.waitingAuto.push({ key, step })
@@ -30819,6 +30819,7 @@ function renderOnboarding() {
         ${step.note ? `<div class="ob-item-note">${step.note}</div>` : ''}
         <div class="ob-item-actions">
           <button class="ob-btn primary" onclick="obFollowedUp(this,'${client.id}','${key}')">Log Follow-Up Sent</button>
+          <button class="ob-btn" onclick="obMarkDone(this,'${client.id}','${key}','','')">Mark Done</button>
         </div>
       </div>`
     }
