@@ -52,7 +52,7 @@ html = html.replace(/const TRANSACTIONS = \[[\s\S]*?\];/, 'const TRANSACTIONS = 
 html = html.replace(/const BUS_EXP = \[[\s\S]*?\];/,          'const BUS_EXP = '          + expenses     + ';')
 html = html.replace(/const WEEKLY_DIALS = \[[\s\S]*?\];/,      'const WEEKLY_DIALS = '      + weeklyDials      + ';')
 html = html.replace(/const UNMATCHED_FATHOM = \[[\s\S]*?\];/, 'const UNMATCHED_FATHOM = ' + unmatchedFathom + ';')
-html = html.replace(/const ONBOARDING_DATA = \{[\s\S]*?\};/, 'const ONBOARDING_DATA = ' + onboardingRaw + ';')
+html = html.replace(/var ONBOARDING_DATA = \{[\s\S]*?\};/, 'var ONBOARDING_DATA = ' + onboardingRaw + ';')
 
 // Bake year/month select options from data (avoids relying on runtime JS to populate them)
 const MONTH_NAMES = ['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']

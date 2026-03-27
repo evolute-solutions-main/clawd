@@ -141,7 +141,8 @@
       "closer": "Max",
       "cashCollected": 375,
       "fathomLink": "https://fathom.video/share/r9MRubiTBSuBEKv5scejPaoowiUpnEgP",
-      "onboardingClientId": "client_chris_home_projects_1774627774251"
+      "onboardingClientId": "client_chris_home_projects_1774627774251",
+      "contractRevenue": 375
     },
     {
       "id": "WCga7JrmcD8XICxJrX2g",
@@ -2854,7 +2855,8 @@
       "offerMade": null,
       "followUpBooked": false,
       "fathomLink": "https://fathom.video/share/n5FF2xMCBJKHBndRsCqLyexQhhWxUQkx",
-      "source": "Cold SMS"
+      "source": "Cold SMS",
+      "onboardingClientId": "client_kfir_segev_1774630580607"
     },
     {
       "id": "1lcYkFLe56RtpC1lCGlc",
@@ -10239,7 +10241,8 @@
       "status": "closed",
       "closer": "Max",
       "cashCollected": 2000,
-      "onboardingClientId": "client_ben_beever_1774626528575"
+      "onboardingClientId": "client_ben_beever_1774626528575",
+      "contractRevenue": 6000
     },
     {
       "id": "yXnctSoClPiVQmDtiHSF",

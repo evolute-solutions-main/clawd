@@ -96,24 +96,25 @@ function loadOnboarding() {
   try {
     const clientsData = JSON.parse(fs.readFileSync(path.join(dataDir, 'clients.json'), 'utf8'))
     const alerts      = JSON.parse(fs.readFileSync(path.join(dataDir, 'alerts.json'),  'utf8'))
-    const clients = clientsData.clients.map(c => ({
-      ...c,
-      status:              c.onboarding?.status             ?? null,
-      steps:               c.onboarding?.steps              ?? {},
-      log:                 c.onboarding?.log                ?? [],
-      launchedDate:        c.onboarding?.launchedDate       ?? null,
-      campaignsLaunchedAt: c.onboarding?.campaignsLaunchedAt ?? null,
-      readyToBookCallAt:   c.onboarding?.readyToBookCallAt  ?? null,
-    }))
+    const clients = clientsData.clients.map(c => ({ ...c }))
     return { clients, alerts: alerts.alerts }
   } catch {
     return { clients: [], alerts: [] }
   }
 }
 
+const LOAD_EXTRA_KEYS = new Set(['status','steps','log','launchedDate','campaignsLaunchedAt','readyToBookCallAt'])
 function saveOnboarding(data) {
-  fs.writeFileSync(path.join(dataDir, 'clients.json'), JSON.stringify({ clients: data.clients }, null, 2))
-  fs.writeFileSync(path.join(dataDir, 'alerts.json'),  JSON.stringify({ alerts:  data.alerts  }, null, 2))
+  // Strip the extra top-level keys that loadOnboarding adds for convenience
+  const clients = data.clients.map(c => {
+    const out = {}
+    for (const [k, v] of Object.entries(c)) {
+      if (!LOAD_EXTRA_KEYS.has(k)) out[k] = v
+    }
+    return out
+  })
+  fs.writeFileSync(path.join(dataDir, 'clients.json'), JSON.stringify({ clients }, null, 2))
+  fs.writeFileSync(path.join(dataDir, 'alerts.json'),  JSON.stringify({ alerts: data.alerts }, null, 2))
 }
 
 function readBody(req) {
@@ -205,7 +206,12 @@ const server = http.createServer(async (req, res) => {
         `location.reload();` +
       `});` +
       `es.addEventListener("onboarding-update",function(e){` +
-        `try{window.ONBOARDING_DATA=JSON.parse(e.data);}catch(err){}` +
+        `try{` +
+          `window.ONBOARDING_DATA=JSON.parse(e.data);` +
+          `if(typeof renderOnboarding==="function"&&document.getElementById("onboarding")?.classList.contains("on"))renderOnboarding();` +
+          `if(typeof renderDeposits==="function"&&document.getElementById("obdeposits")?.classList.contains("on"))renderDeposits();` +
+          `if(typeof renderOpsHistory==="function"&&document.getElementById("obhistory")?.classList.contains("on"))renderOpsHistory();` +
+        `}catch(err){}` +
       `});` +
       `})()</script></head>`)
     res.writeHead(200, { 'Content-Type': 'text/html' })
@@ -492,7 +498,7 @@ const server = http.createServer(async (req, res) => {
   if (req.method === 'POST' && req.url === '/api/onboarding/update-client') {
     try {
       const body = JSON.parse(await readBody(req))
-      const { clientId, companyName: searchName, fields } = body
+      const { clientId, companyName: searchName, fields, quiet } = body
       if (!fields) return json(res, 400, { error: 'fields required' })
 
       const data = loadOnboarding()
@@ -519,8 +525,10 @@ const server = http.createServer(async (req, res) => {
 
       saveOnboarding(data)
       console.log(`[onboarding] ${client.companyName} — client record updated`)
-      execSync('node scripts/inject-and-open.mjs --no-open', { cwd: root, stdio: 'ignore' })
-      broadcastOnboardingUpdate()
+      if (!quiet) {
+        execSync('node scripts/inject-and-open.mjs --no-open', { cwd: root, stdio: 'ignore' })
+        broadcastOnboardingUpdate()
+      }
       return json(res, 200, { ok: true, clientId: client.id })
     } catch (e) {
       return json(res, 500, { error: e.message })
@@ -531,7 +539,7 @@ const server = http.createServer(async (req, res) => {
   if (req.method === 'POST' && req.url === '/api/sales/update-appointment') {
     try {
       const body = JSON.parse(await readBody(req))
-      const { appointmentId, fields } = body
+      const { appointmentId, fields, quiet } = body
       if (!appointmentId || !fields) return json(res, 400, { error: 'appointmentId and fields required' })
 
       const raw          = JSON.parse(fs.readFileSync(SALES_FILE, 'utf8'))
@@ -546,8 +554,10 @@ const server = http.createServer(async (req, res) => {
       const out = Array.isArray(raw) ? appointments : { ...raw, appointments }
       fs.writeFileSync(SALES_FILE, JSON.stringify(out, null, 2))
       console.log(`[sales] Appointment ${appointmentId} updated`)
-      execSync('node scripts/inject-and-open.mjs --no-open', { cwd: root, stdio: 'ignore' })
-      broadcastReload()
+      if (!quiet) {
+        execSync('node scripts/inject-and-open.mjs --no-open', { cwd: root, stdio: 'ignore' })
+        broadcastReload()
+      }
       return json(res, 200, { ok: true })
     } catch (e) {
       return json(res, 500, { error: e.message })
@@ -582,7 +592,7 @@ const server = http.createServer(async (req, res) => {
   if (req.method === 'POST' && req.url === '/api/onboarding/new-client') {
     try {
       const body = JSON.parse(await readBody(req))
-      const { name, company, email } = body
+      const { name, company, email, appointmentId } = body
       if (!name || !email) return json(res, 400, { error: 'name and email required' })
 
       const data = loadOnboarding()
@@ -631,7 +641,7 @@ const server = http.createServer(async (req, res) => {
         name,
         companyName,
         email,
-        appointmentId: null,
+        appointmentId: appointmentId || null,
         contractSignedDate: today,
         contractEndDate: null,
         stripeCustomerId: null,
@@ -777,3 +787,41 @@ server.listen(PORT, () => {
 })
 
 process.on('SIGINT', () => { server.close(); process.exit() })
+
+// ── Dev file watcher — auto-inject + browser reload on save ──────────────────
+let reloadTimer = null
+let injecting = false
+function scheduleReload(changed) {
+  if (injecting) return  // don't re-trigger from inject writing dashboard.html
+  clearTimeout(reloadTimer)
+  reloadTimer = setTimeout(() => {
+    injecting = true
+    console.log(`[watch] ${changed} changed — re-injecting…`)
+    try {
+      execSync('node scripts/inject-and-open.mjs --no-open', { cwd: root, stdio: 'ignore' })
+      broadcastReload()
+      console.log('[watch] Reloaded.')
+    } catch (e) {
+      console.error('[watch] Inject failed:', e.message)
+    } finally {
+      setTimeout(() => { injecting = false }, 300)
+    }
+  }, 150)
+}
+
+// Watch dashboard source files (debounced — fs.watch can fire twice per save)
+const watchFiles = ['lib/metrics.mjs']
+for (const f of watchFiles) {
+  const full = path.join(root, f)
+  try {
+    fs.watch(full, () => scheduleReload(f))
+  } catch {}
+}
+
+// Watch serve.mjs itself — restart the process on change
+try {
+  fs.watch(path.join(root, 'scripts/serve.mjs'), () => {
+    console.log('[watch] serve.mjs changed — restarting…')
+    server.close(() => process.exit(0))
+  })
+} catch {}

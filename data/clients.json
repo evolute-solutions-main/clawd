@@ -234,229 +234,7 @@
             "by": "dashboard"
           }
         ]
-      },
-      "status": "onboarding",
-      "steps": {
-        "payment_collected": {
-          "status": "complete",
-          "completedAt": "2026-03-26",
-          "autoDetected": true,
-          "trigger": "manual",
-          "note": "Collected on closing call"
-        },
-        "contract_signed": {
-          "status": "complete",
-          "completedAt": "2026-03-26",
-          "autoDetected": false,
-          "trigger": "manual"
-        },
-        "welcome_email_sent": {
-          "status": "complete",
-          "completedAt": "2026-03-26",
-          "autoDetected": true,
-          "trigger": "auto"
-        },
-        "added_to_daily_sweep": {
-          "status": "complete",
-          "completedAt": "2026-03-26",
-          "autoDetected": true,
-          "trigger": "auto"
-        },
-        "onboarding_form_submitted": {
-          "status": "complete",
-          "completedAt": "2026-03-27",
-          "autoDetected": true,
-          "trigger": "ghl_webhook",
-          "dependsOn": [
-            "contract_signed"
-          ]
-        },
-        "client_joined_discord": {
-          "status": "complete",
-          "completedAt": "2026-03-27",
-          "autoDetected": true,
-          "trigger": "discord_event",
-          "dependsOn": [
-            "contract_signed"
-          ]
-        },
-        "discord_channel_created": {
-          "status": "complete",
-          "completedAt": "2026-03-27",
-          "autoDetected": true,
-          "trigger": "auto",
-          "dependsOn": [
-            "client_joined_discord"
-          ],
-          "note": "Bot auto-creates channel and adds client on join"
-        },
-        "ghl_subaccount_configured": {
-          "status": "pending",
-          "completedAt": null,
-          "autoDetected": false,
-          "owner": "accountManager",
-          "dependsOn": [
-            "onboarding_form_submitted"
-          ],
-          "note": "Create GHL sub-account and configure settings"
-        },
-        "facebook_access_granted": {
-          "status": "complete",
-          "completedAt": "2026-03-27",
-          "autoDetected": false,
-          "owner": "accountManager",
-          "dependsOn": [
-            "onboarding_form_submitted"
-          ],
-          "note": "Client grants access to Meta Business Manager"
-        },
-        "client_media_submitted": {
-          "status": "pending",
-          "completedAt": null,
-          "autoDetected": false,
-          "owner": "accountManager",
-          "dependsOn": [
-            "onboarding_form_submitted"
-          ],
-          "note": "Client sends photos/videos via Discord or onboarding funnel"
-        },
-        "ad_scripts_written": {
-          "status": "pending",
-          "completedAt": null,
-          "autoDetected": false,
-          "owner": "mediaBuyer",
-          "dependsOn": [
-            "onboarding_form_submitted"
-          ],
-          "note": "Media buyer writes ad scripts (future: AI-assisted from Fathom call)"
-        },
-        "ad_scripts_sent_to_client": {
-          "status": "pending",
-          "completedAt": null,
-          "autoDetected": false,
-          "owner": "mediaBuyer",
-          "dependsOn": [
-            "ad_scripts_written"
-          ],
-          "note": "Send to client via their Discord channel"
-        },
-        "ad_scripts_approved": {
-          "status": "pending",
-          "completedAt": null,
-          "autoDetected": false,
-          "owner": "accountManager",
-          "dependsOn": [
-            "ad_scripts_sent_to_client"
-          ],
-          "note": "Client reviews, revises if needed, then approves. Mark done when final approval received."
-        },
-        "meta_campaigns_built": {
-          "status": "pending",
-          "completedAt": null,
-          "autoDetected": false,
-          "owner": "mediaBuyer",
-          "dependsOn": [
-            "ad_scripts_approved",
-            "client_media_submitted",
-            "facebook_access_granted"
-          ],
-          "note": "Build campaigns in Meta Ads Manager"
-        },
-        "onboarding_call_booked": {
-          "status": "pending",
-          "completedAt": null,
-          "autoDetected": false,
-          "owner": "accountManager",
-          "dependsOn": [
-            "ghl_subaccount_configured",
-            "meta_campaigns_built",
-            "onboarding_form_submitted",
-            "client_joined_discord"
-          ],
-          "note": "Send booking link to client in their Discord channel. Bot sends message automatically when all deps are met.",
-          "readyToBookTrigger": true
-        },
-        "onboarding_call_completed": {
-          "status": "pending",
-          "completedAt": null,
-          "autoDetected": false,
-          "owner": "accountManager",
-          "dependsOn": [
-            "onboarding_call_booked"
-          ],
-          "checklist": [
-            "calendar_connected",
-            "crm_access_granted",
-            "test_lead_run"
-          ],
-          "note": "Mark done after the call. Checklist: calendar connected, CRM access granted, test lead run."
-        },
-        "campaigns_launched": {
-          "status": "pending",
-          "completedAt": null,
-          "autoDetected": false,
-          "owner": "accountManager",
-          "dependsOn": [
-            "onboarding_call_completed"
-          ],
-          "note": "Account manager flips campaigns on in Meta Ads Manager"
-        },
-        "48hr_health_check": {
-          "status": "pending",
-          "completedAt": null,
-          "autoDetected": false,
-          "owner": "accountManager",
-          "dependsOn": [
-            "campaigns_launched"
-          ],
-          "timeGatedHours": 48,
-          "note": "Verify leads are coming in and everything is running correctly. Not a performance review."
-        },
-        "post_launch_checkin_scheduled": {
-          "status": "pending",
-          "completedAt": null,
-          "autoDetected": false,
-          "owner": "accountManager",
-          "dependsOn": [
-            "campaigns_launched"
-          ],
-          "note": "~2 week performance review"
-        }
-      },
-      "log": [
-        {
-          "timestamp": "2026-03-26T21:09:31.483Z",
-          "event": "client_created",
-          "note": "Signed. Created via new-client.mjs."
-        },
-        {
-          "timestamp": "2026-03-27T14:39:34.661Z",
-          "event": "step_completed",
-          "step": "onboarding_form_submitted",
-          "by": "dashboard"
-        },
-        {
-          "timestamp": "2026-03-27T14:39:36.661Z",
-          "event": "step_completed",
-          "step": "client_joined_discord",
-          "by": "dashboard"
-        },
-        {
-          "timestamp": "2026-03-27T14:39:37.829Z",
-          "event": "step_completed",
-          "step": "discord_channel_created",
-          "by": "dashboard"
-        },
-        {
-          "timestamp": "2026-03-27T14:39:43.589Z",
-          "event": "step_completed",
-          "step": "facebook_access_granted",
-          "by": "dashboard"
-        }
-      ],
-      "launchedDate": null,
-      "campaignsLaunchedAt": null,
-      "readyToBookCallAt": null
+      }
     },
     {
       "id": "client_ben_beever_1774626528575",
@@ -502,8 +280,8 @@
             "trigger": "auto"
           },
           "onboarding_form_submitted": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": true,
             "trigger": "ghl_webhook",
             "dependsOn": [
@@ -511,8 +289,8 @@
             ]
           },
           "client_joined_discord": {
-            "status": "pending",
-            "completedAt": null,
+            "status": "complete",
+            "completedAt": "2026-03-27",
             "autoDetected": true,
             "trigger": "discord_event",
             "dependsOn": [
@@ -667,6 +445,18 @@
             "timestamp": "2026-03-27T15:48:48.574Z",
             "event": "client_created",
             "note": "Signed. Created via new-client.mjs."
+          },
+          {
+            "timestamp": "2026-03-27T19:32:48.403Z",
+            "event": "step_completed",
+            "step": "onboarding_form_submitted",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T19:32:50.460Z",
+            "event": "step_completed",
+            "step": "client_joined_discord",
+            "by": "dashboard"
           }
         ]
       }
@@ -1100,7 +890,7 @@
     {
       "id": "client_cesar_grullon_1774627688189",
       "name": "Cesar Grullon",
-      "companyName": "Cesar Grullon",
+      "companyName": "Tillup Co",
       "email": "tillupco@gmail.com",
       "appointmentId": "Ls848orU1pw2Au8IEMFY",
       "contractSignedDate": "2026-02-04",
@@ -1526,7 +1316,7 @@
     {
       "id": "client_kenneth_hewitt_1774627716032",
       "name": "Kenneth Hewitt",
-      "companyName": "Kenneth Hewitt",
+      "companyName": "Four Seasons Design Build",
       "email": "knhewitt@yahoo.com",
       "appointmentId": "oJmIdVkTqWYlkPjp3TRn",
       "contractSignedDate": "2026-02-14",
@@ -2591,7 +2381,7 @@
     {
       "id": "client_mike_baruh_1774627772601",
       "name": "Mike Baruh",
-      "companyName": "Mike Baruh",
+      "companyName": "MIBH Construction",
       "email": "mikebaruh@gmail.com",
       "appointmentId": "okXIUeB2jYr34FELkxC2",
       "contractSignedDate": "2026-03-02",
@@ -2804,7 +2594,7 @@
     {
       "id": "client_hector_alfaro_1774627772940",
       "name": "Hector Alfaro",
-      "companyName": "Hector Alfaro",
+      "companyName": "Lone Star Garage Repair",
       "email": "hectorgalfaro@hotmail.com",
       "appointmentId": "bKLPobNkCRjbJggm5NPa",
       "contractSignedDate": "2026-03-04",
@@ -3240,7 +3030,7 @@
       "needsVideoEditor": false,
       "discordChannelId": null,
       "onboarding": {
-        "status": "onboarding",
+        "status": "churned",
         "launchedDate": null,
         "campaignsLaunchedAt": null,
         "readyToBookCallAt": null,
@@ -3436,6 +3226,12 @@
             "timestamp": "2026-03-27T16:09:33.637Z",
             "event": "client_created",
             "note": "Signed. Created via new-client.mjs."
+          },
+          {
+            "timestamp": "2026-03-27T17:04:55.593Z",
+            "event": "status_updated",
+            "status": "churned",
+            "by": "dashboard"
           }
         ]
       }
@@ -3453,7 +3249,7 @@
       "needsVideoEditor": false,
       "discordChannelId": null,
       "onboarding": {
-        "status": "onboarding",
+        "status": "churned",
         "launchedDate": null,
         "campaignsLaunchedAt": null,
         "readyToBookCallAt": null,
@@ -3649,6 +3445,12 @@
             "timestamp": "2026-03-27T16:09:33.996Z",
             "event": "client_created",
             "note": "Signed. Created via new-client.mjs."
+          },
+          {
+            "timestamp": "2026-03-27T17:05:02.103Z",
+            "event": "status_updated",
+            "status": "churned",
+            "by": "dashboard"
           }
         ]
       }
@@ -3666,7 +3468,7 @@
       "needsVideoEditor": false,
       "discordChannelId": null,
       "onboarding": {
-        "status": "onboarding",
+        "status": "churned",
         "launchedDate": null,
         "campaignsLaunchedAt": null,
         "readyToBookCallAt": null,
@@ -3862,6 +3664,12 @@
             "timestamp": "2026-03-27T16:09:34.250Z",
             "event": "client_created",
             "note": "Signed. Created via new-client.mjs."
+          },
+          {
+            "timestamp": "2026-03-27T17:04:52.769Z",
+            "event": "status_updated",
+            "status": "churned",
+            "by": "dashboard"
           }
         ]
       }
@@ -3879,7 +3687,7 @@
       "needsVideoEditor": false,
       "discordChannelId": null,
       "onboarding": {
-        "status": "onboarding",
+        "status": "churned",
         "launchedDate": null,
         "campaignsLaunchedAt": null,
         "readyToBookCallAt": null,
@@ -4075,6 +3883,247 @@
             "timestamp": "2026-03-27T16:09:34.500Z",
             "event": "client_created",
             "note": "Signed. Created via new-client.mjs."
+          },
+          {
+            "timestamp": "2026-03-27T17:04:39.251Z",
+            "event": "status_updated",
+            "status": "churned",
+            "by": "dashboard"
+          }
+        ]
+      }
+    },
+    {
+      "id": "deposit_tony_hall_1774630507813",
+      "name": "Tony Hall",
+      "companyName": "Tony Hall",
+      "email": "primetym01@gmail.com",
+      "depositAmount": 100,
+      "depositDate": "2026-03-27",
+      "notes": null,
+      "onboarding": {
+        "status": "deposit",
+        "log": [
+          {
+            "timestamp": "2026-03-27T16:55:07.808Z",
+            "event": "deposit_saved",
+            "note": "Saved as deposit — not yet fully signed."
+          }
+        ]
+      }
+    },
+    {
+      "id": "client_kfir_segev_1774630580607",
+      "name": "Kfir Segev",
+      "companyName": "Kfir Segev",
+      "email": "kfir.segev@hotmail.com",
+      "appointmentId": "xl_2026-02-03_kfir_segev",
+      "contractSignedDate": "2026-03-27",
+      "contractEndDate": null,
+      "stripeCustomerId": null,
+      "fathomSalesCallLink": null,
+      "needsVideoEditor": true,
+      "discordChannelId": null,
+      "onboarding": {
+        "status": "onboarding",
+        "launchedDate": null,
+        "campaignsLaunchedAt": null,
+        "readyToBookCallAt": null,
+        "steps": {
+          "payment_collected": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "manual"
+          },
+          "contract_signed": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false
+          },
+          "welcome_email_sent": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "added_to_daily_sweep": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "onboarding_form_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "ghl_webhook",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "client_joined_discord": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "discord_event",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "discord_channel_created": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "auto",
+            "dependsOn": [
+              "client_joined_discord"
+            ]
+          },
+          "ghl_subaccount_configured": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ]
+          },
+          "facebook_access_granted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ]
+          },
+          "client_media_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ]
+          },
+          "ad_scripts_written": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ]
+          },
+          "ad_scripts_sent_to_client": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_written"
+            ]
+          },
+          "ad_scripts_approved": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ad_scripts_sent_to_client"
+            ]
+          },
+          "video_editor_briefed": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_approved",
+              "client_media_submitted"
+            ]
+          },
+          "ad_creatives_produced": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "videoEditor",
+            "dependsOn": [
+              "video_editor_briefed"
+            ]
+          },
+          "meta_campaigns_built": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_creatives_produced",
+              "facebook_access_granted"
+            ]
+          },
+          "onboarding_call_booked": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ghl_subaccount_configured",
+              "meta_campaigns_built",
+              "onboarding_form_submitted",
+              "client_joined_discord"
+            ],
+            "readyToBookTrigger": true
+          },
+          "onboarding_call_completed": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_booked"
+            ],
+            "checklist": [
+              "calendar_connected",
+              "crm_access_granted",
+              "test_lead_run"
+            ]
+          },
+          "campaigns_launched": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_completed"
+            ]
+          },
+          "48hr_health_check": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "timeGatedHours": 48
+          },
+          "post_launch_checkin_scheduled": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ]
+          }
+        },
+        "log": [
+          {
+            "timestamp": "2026-03-27T16:56:20.601Z",
+            "event": "client_created",
+            "note": "Added manually via dashboard."
           }
         ]
       }
