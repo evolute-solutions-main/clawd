@@ -68,7 +68,8 @@
             "dependsOn": [
               "client_joined_discord"
             ],
-            "note": "Bot auto-creates channel and adds client on join"
+            "note": "Bot auto-creates channel and adds client on join",
+            "priority": 1
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -78,7 +79,8 @@
             "dependsOn": [
               "onboarding_form_submitted"
             ],
-            "note": "Create GHL sub-account and configure settings"
+            "note": "Create GHL sub-account and configure settings",
+            "priority": 2
           },
           "facebook_access_granted": {
             "status": "complete",
@@ -323,7 +325,8 @@
               "client_joined_discord"
             ],
             "note": "Create private Discord channel for client",
-            "owner": "accountManager"
+            "owner": "accountManager",
+            "priority": 1
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -333,7 +336,8 @@
             "dependsOn": [
               "onboarding_form_submitted"
             ],
-            "note": "Create GHL sub-account and configure settings"
+            "note": "Create GHL sub-account and configure settings",
+            "priority": 2
           },
           "facebook_access_granted": {
             "status": "pending",
@@ -548,7 +552,8 @@
             "dependsOn": [
               "client_joined_discord"
             ],
-            "note": "Bot auto-creates channel and adds client on join"
+            "note": "Bot auto-creates channel and adds client on join",
+            "priority": 1
           },
           "ghl_subaccount_configured": {
             "status": "complete",
@@ -558,7 +563,8 @@
             "dependsOn": [
               "onboarding_form_submitted"
             ],
-            "note": "Create GHL sub-account and configure settings"
+            "note": "Create GHL sub-account and configure settings",
+            "priority": 2
           },
           "facebook_access_granted": {
             "status": "complete",
@@ -839,7 +845,8 @@
               "client_joined_discord"
             ],
             "note": "Create private Discord channel for client",
-            "owner": "accountManager"
+            "owner": "accountManager",
+            "priority": 1
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -849,7 +856,8 @@
             "dependsOn": [
               "onboarding_form_submitted"
             ],
-            "note": "Create GHL sub-account and configure settings"
+            "note": "Create GHL sub-account and configure settings",
+            "priority": 2
           },
           "facebook_access_granted": {
             "status": "pending",
@@ -1052,7 +1060,8 @@
               "client_joined_discord"
             ],
             "note": "Create private Discord channel for client",
-            "owner": "accountManager"
+            "owner": "accountManager",
+            "priority": 1
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -1062,7 +1071,8 @@
             "dependsOn": [
               "onboarding_form_submitted"
             ],
-            "note": "Create GHL sub-account and configure settings"
+            "note": "Create GHL sub-account and configure settings",
+            "priority": 2
           },
           "facebook_access_granted": {
             "status": "pending",
@@ -1265,7 +1275,8 @@
               "client_joined_discord"
             ],
             "note": "Create private Discord channel for client",
-            "owner": "accountManager"
+            "owner": "accountManager",
+            "priority": 1
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -1275,7 +1286,8 @@
             "dependsOn": [
               "onboarding_form_submitted"
             ],
-            "note": "Create GHL sub-account and configure settings"
+            "note": "Create GHL sub-account and configure settings",
+            "priority": 2
           },
           "facebook_access_granted": {
             "status": "pending",
@@ -1478,7 +1490,8 @@
               "client_joined_discord"
             ],
             "note": "Create private Discord channel for client",
-            "owner": "accountManager"
+            "owner": "accountManager",
+            "priority": 1
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -1488,7 +1501,8 @@
             "dependsOn": [
               "onboarding_form_submitted"
             ],
-            "note": "Create GHL sub-account and configure settings"
+            "note": "Create GHL sub-account and configure settings",
+            "priority": 2
           },
           "facebook_access_granted": {
             "status": "pending",
@@ -1691,7 +1705,8 @@
               "client_joined_discord"
             ],
             "note": "Create private Discord channel for client",
-            "owner": "accountManager"
+            "owner": "accountManager",
+            "priority": 1
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -1701,7 +1716,8 @@
             "dependsOn": [
               "onboarding_form_submitted"
             ],
-            "note": "Create GHL sub-account and configure settings"
+            "note": "Create GHL sub-account and configure settings",
+            "priority": 2
           },
           "facebook_access_granted": {
             "status": "pending",
@@ -1904,7 +1920,8 @@
               "client_joined_discord"
             ],
             "note": "Create private Discord channel for client",
-            "owner": "accountManager"
+            "owner": "accountManager",
+            "priority": 1
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -1914,7 +1931,8 @@
             "dependsOn": [
               "onboarding_form_submitted"
             ],
-            "note": "Create GHL sub-account and configure settings"
+            "note": "Create GHL sub-account and configure settings",
+            "priority": 2
           },
           "facebook_access_granted": {
             "status": "pending",
@@ -2117,7 +2135,8 @@
               "client_joined_discord"
             ],
             "note": "Create private Discord channel for client",
-            "owner": "accountManager"
+            "owner": "accountManager",
+            "priority": 1
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -2127,7 +2146,8 @@
             "dependsOn": [
               "onboarding_form_submitted"
             ],
-            "note": "Create GHL sub-account and configure settings"
+            "note": "Create GHL sub-account and configure settings",
+            "priority": 2
           },
           "facebook_access_granted": {
             "status": "pending",
@@ -2330,7 +2350,8 @@
               "client_joined_discord"
             ],
             "note": "Create private Discord channel for client",
-            "owner": "accountManager"
+            "owner": "accountManager",
+            "priority": 1
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -2340,7 +2361,8 @@
             "dependsOn": [
               "onboarding_form_submitted"
             ],
-            "note": "Create GHL sub-account and configure settings"
+            "note": "Create GHL sub-account and configure settings",
+            "priority": 2
           },
           "facebook_access_granted": {
             "status": "pending",
@@ -2543,7 +2565,8 @@
               "client_joined_discord"
             ],
             "note": "Create private Discord channel for client",
-            "owner": "accountManager"
+            "owner": "accountManager",
+            "priority": 1
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -2553,7 +2576,8 @@
             "dependsOn": [
               "onboarding_form_submitted"
             ],
-            "note": "Create GHL sub-account and configure settings"
+            "note": "Create GHL sub-account and configure settings",
+            "priority": 2
           },
           "facebook_access_granted": {
             "status": "pending",
@@ -2756,7 +2780,8 @@
               "client_joined_discord"
             ],
             "note": "Create private Discord channel for client",
-            "owner": "accountManager"
+            "owner": "accountManager",
+            "priority": 1
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -2766,7 +2791,8 @@
             "dependsOn": [
               "onboarding_form_submitted"
             ],
-            "note": "Create GHL sub-account and configure settings"
+            "note": "Create GHL sub-account and configure settings",
+            "priority": 2
           },
           "facebook_access_granted": {
             "status": "pending",
@@ -2969,7 +2995,8 @@
               "client_joined_discord"
             ],
             "note": "Create private Discord channel for client",
-            "owner": "accountManager"
+            "owner": "accountManager",
+            "priority": 1
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -2979,7 +3006,8 @@
             "dependsOn": [
               "onboarding_form_submitted"
             ],
-            "note": "Create GHL sub-account and configure settings"
+            "note": "Create GHL sub-account and configure settings",
+            "priority": 2
           },
           "facebook_access_granted": {
             "status": "pending",
@@ -3182,7 +3210,8 @@
               "client_joined_discord"
             ],
             "note": "Create private Discord channel for client",
-            "owner": "accountManager"
+            "owner": "accountManager",
+            "priority": 1
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -3192,7 +3221,8 @@
             "dependsOn": [
               "onboarding_form_submitted"
             ],
-            "note": "Create GHL sub-account and configure settings"
+            "note": "Create GHL sub-account and configure settings",
+            "priority": 2
           },
           "facebook_access_granted": {
             "status": "pending",
@@ -3401,7 +3431,8 @@
               "client_joined_discord"
             ],
             "note": "Create private Discord channel for client",
-            "owner": "accountManager"
+            "owner": "accountManager",
+            "priority": 1
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -3411,7 +3442,8 @@
             "dependsOn": [
               "onboarding_form_submitted"
             ],
-            "note": "Create GHL sub-account and configure settings"
+            "note": "Create GHL sub-account and configure settings",
+            "priority": 2
           },
           "facebook_access_granted": {
             "status": "pending",
@@ -3620,7 +3652,8 @@
               "client_joined_discord"
             ],
             "note": "Create private Discord channel for client",
-            "owner": "accountManager"
+            "owner": "accountManager",
+            "priority": 1
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -3630,7 +3663,8 @@
             "dependsOn": [
               "onboarding_form_submitted"
             ],
-            "note": "Create GHL sub-account and configure settings"
+            "note": "Create GHL sub-account and configure settings",
+            "priority": 2
           },
           "facebook_access_granted": {
             "status": "pending",
@@ -3839,7 +3873,8 @@
               "client_joined_discord"
             ],
             "note": "Create private Discord channel for client",
-            "owner": "accountManager"
+            "owner": "accountManager",
+            "priority": 1
           },
           "ghl_subaccount_configured": {
             "status": "pending",
@@ -3849,7 +3884,8 @@
             "dependsOn": [
               "onboarding_form_submitted"
             ],
-            "note": "Create GHL sub-account and configure settings"
+            "note": "Create GHL sub-account and configure settings",
+            "priority": 2
           },
           "facebook_access_granted": {
             "status": "pending",
@@ -4074,7 +4110,8 @@
             "trigger": "auto",
             "dependsOn": [
               "client_joined_discord"
-            ]
+            ],
+            "priority": 1
           },
           "ghl_subaccount_configured": {
             "status": "complete",
@@ -4083,11 +4120,11 @@
             "owner": "accountManager",
             "dependsOn": [
               "onboarding_form_submitted"
-            ]
+            ],
+            "priority": 2
           },
           "facebook_access_granted": {
-            "status": "complete",
-            "completedAt": "2026-03-27",
+            "status": "pending",
             "autoDetected": false,
             "owner": "accountManager",
             "dependsOn": [
@@ -4303,6 +4340,12 @@
             "timestamp": "2026-03-27T20:20:06.225Z",
             "event": "step_completed",
             "step": "onboarding_call_completed",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T20:39:54.121Z",
+            "event": "step_unmarked",
+            "step": "facebook_access_granted",
             "by": "dashboard"
           }
         ]

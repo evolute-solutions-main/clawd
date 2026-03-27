@@ -83,7 +83,7 @@ function makeSteps(needsVideoEditor) {
     },
     discord_channel_created: {
       status: 'pending', completedAt: null,
-      autoDetected: false, owner: 'accountManager',
+      autoDetected: false, owner: 'accountManager', priority: 1,
       dependsOn: ['client_joined_discord'],
       note: 'Create private Discord channel for client'
     },
@@ -91,7 +91,7 @@ function makeSteps(needsVideoEditor) {
     // ── Account Manager — post-form ────────────────────────────────────────
     ghl_subaccount_configured: {
       status: 'pending', completedAt: null,
-      autoDetected: false, owner: 'accountManager',
+      autoDetected: false, owner: 'accountManager', priority: 2,
       dependsOn: ['onboarding_form_submitted'],
       note: 'Create GHL sub-account and configure settings'
     },
