@@ -29,6 +29,7 @@ import '../_shared/env-loader.mjs'
 import express    from 'express'
 import { handleGHLWebhook }    from './handlers/ghl.mjs'
 import { handleStripeWebhook } from './handlers/stripe.mjs'
+import { runStartupCatchup }   from './startup-catchup.mjs'
 
 const app  = express()
 const PORT = process.env.WEBHOOK_PORT || 3001
@@ -83,6 +84,12 @@ app.listen(PORT, () => {
   console.log(`   Health check:    GET  http://localhost:${PORT}/health`)
   console.log(`\n⚠️  Remember: this server needs to be publicly accessible for webhooks to reach it.`)
   console.log(`   On the VM, set up nginx or Caddy to proxy to this port.`)
+
+  // Run global catch-up after server is accepting requests
+  // Finds anything missed while the server was down (Stripe, GHL, Discord)
+  runStartupCatchup().catch(err => {
+    console.error('[startup-catchup] Uncaught error:', err.message)
+  })
 })
 
 process.on('unhandledRejection', (err) => {

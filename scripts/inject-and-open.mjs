@@ -31,10 +31,12 @@ const transactions = fs.readFileSync(path.join(data, 'transactions.json'), 'utf8
 const weeklyDials       = fs.readFileSync(path.join(data, 'weekly_dials.json'),    'utf8').trim()
 const unmatchedFathom   = fs.readFileSync(path.join(data, 'unmatched_fathom.json'), 'utf8').trim()
 
-// onboarding.json — injected into Ops > Onboarding tab
+// clients.json + alerts.json — combined and injected into Ops > Onboarding tab
 let onboardingRaw
 try {
-  onboardingRaw = fs.readFileSync(path.join(data, 'onboarding.json'), 'utf8').trim()
+  const clients = JSON.parse(fs.readFileSync(path.join(data, 'clients.json'), 'utf8'))
+  const alerts  = JSON.parse(fs.readFileSync(path.join(data, 'alerts.json'),  'utf8'))
+  onboardingRaw = JSON.stringify({ clients: clients.clients, alerts: alerts.alerts })
 } catch {
   onboardingRaw = '{"clients":[],"alerts":[]}'
 }

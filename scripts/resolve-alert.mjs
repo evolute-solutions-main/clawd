@@ -15,14 +15,14 @@ import { fileURLToPath } from 'url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const REPO_ROOT = path.resolve(__dirname, '..')
-const ONBOARDING_FILE = path.join(REPO_ROOT, 'data/onboarding.json')
+const ALERTS_FILE = path.join(REPO_ROOT, 'data/alerts.json')
 
 const args     = process.argv.slice(2)
 const get      = (flag) => { const i = args.indexOf(flag); return i !== -1 ? args[i + 1] : null }
 const listMode = args.includes('--list')
 const alertId  = get('--id')
 
-const data   = JSON.parse(fs.readFileSync(ONBOARDING_FILE, 'utf8'))
+const data   = JSON.parse(fs.readFileSync(ALERTS_FILE, 'utf8'))
 const alerts = data.alerts || []
 
 if (listMode) {
@@ -60,5 +60,5 @@ if (alert.status === 'resolved') {
 alert.status     = 'resolved'
 alert.resolvedAt = new Date().toISOString()
 
-fs.writeFileSync(ONBOARDING_FILE, JSON.stringify(data, null, 2))
+fs.writeFileSync(ALERTS_FILE, JSON.stringify(data, null, 2))
 console.log(`✅ Alert ${alertId} marked resolved.`)

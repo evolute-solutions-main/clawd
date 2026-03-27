@@ -6,6 +6,7 @@
  *   node cron-runner.mjs sweep          # Client sweep → post Notion link
  *   node cron-runner.mjs appt-report    # Appt setter report → post summary
  *   node cron-runner.mjs appt-collect   # Appt data collection (no post)
+ *   node cron-runner.mjs appt-sync      # Rolling GHL sync (90d back, 30d forward) — runs every 30min
  */
 
 // Load secrets first
@@ -35,6 +36,11 @@ function getYesterdayDate() {
 // Get today's date in global timezone
 function getTodayDate() {
   return new Intl.DateTimeFormat('en-CA', { timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date())
+}
+
+// Get a date offset by N days from today in global timezone
+function getDateOffset(days) {
+  return new Intl.DateTimeFormat('en-CA', { timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(Date.now() + days * 86400000))
 }
 
 // Run client sweep
@@ -157,6 +163,21 @@ async function runOnboarding() {
   console.log(`Posted ${chunks.length} message(s) to Discord`)
 }
 
+// Rolling GHL sync — fetches 90 days back through 30 days forward, upserts into sales_data.json
+async function runApptSync() {
+  const from = getDateOffset(-90)
+  const to   = getDateOffset(30)
+  console.log(`Syncing appointments from ${from} to ${to}...`)
+
+  const result = execSync(
+    `cd ${REPO_ROOT} && node scripts/fetch-raw-appts.mjs --from ${from} --to ${to} 2>&1`,
+    { encoding: 'utf8', timeout: 300000 }
+  )
+
+  console.log(result)
+  console.log('Appointment sync complete')
+}
+
 // Run appointment data collection (no Discord post)
 async function runApptCollect() {
   const today = getTodayDate()
@@ -189,8 +210,11 @@ async function main() {
     case 'onboarding':
       await runOnboarding()
       break
+    case 'appt-sync':
+      await runApptSync()
+      break
     default:
-      console.error('Usage: node cron-runner.mjs <sweep|appt-report|appt-collect|onboarding>')
+      console.error('Usage: node cron-runner.mjs <sweep|appt-report|appt-collect|appt-sync|onboarding>')
       process.exit(1)
   }
 }

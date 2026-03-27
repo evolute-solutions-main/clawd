@@ -16,7 +16,7 @@ import { fileURLToPath } from 'url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const REPO_ROOT = path.resolve(__dirname, '..')
-const ONBOARDING_FILE = path.join(REPO_ROOT, 'data/onboarding.json')
+const CLIENTS_FILE = path.join(REPO_ROOT, 'data/clients.json')
 
 // ── Args ──────────────────────────────────────────────────────────────────────
 
@@ -91,23 +91,23 @@ function getNewlyUnlocked(steps, justCompletedKey) {
 
 // ── Main ──────────────────────────────────────────────────────────────────────
 
-const data = JSON.parse(fs.readFileSync(ONBOARDING_FILE, 'utf8'))
+const data = JSON.parse(fs.readFileSync(CLIENTS_FILE, 'utf8'))
 
 const client = matchClient(data.clients, clientArg)
 if (!client) {
   console.error(`No onboarding client found matching "${clientArg}"`)
-  console.error(`Active clients: ${data.clients.filter(c => c.status === 'onboarding').map(c => c.companyName).join(', ')}`)
+  console.error(`Active clients: ${data.clients.filter(c => c.onboarding?.status === 'onboarding').map(c => c.companyName).join(', ')}`)
   process.exit(1)
 }
 
-const stepKey = matchStep(client.steps, stepArg)
+const stepKey = matchStep(client.onboarding.steps, stepArg)
 if (!stepKey) {
   console.error(`No step found matching "${stepArg}" for ${client.companyName}`)
-  console.error(`Available steps: ${Object.keys(client.steps).join(', ')}`)
+  console.error(`Available steps: ${Object.keys(client.onboarding.steps).join(', ')}`)
   process.exit(1)
 }
 
-const step = client.steps[stepKey]
+const step = client.onboarding.steps[stepKey]
 
 if (step.status === 'complete') {
   console.log(`⚠️  "${STEP_LABELS[stepKey] || stepKey}" is already marked complete for ${client.companyName} (${step.completedAt})`)
@@ -121,7 +121,7 @@ const today = now.split('T')[0]
 step.status      = 'complete'
 step.completedAt = today
 
-client.log.push({
+client.onboarding.log.push({
   timestamp: now,
   event:     'step_completed',
   step:      stepKey,
@@ -132,19 +132,19 @@ client.log.push({
 
 // Record launch timestamp for 48hr health check gating
 if (stepKey === 'campaigns_launched') {
-  client.status             = 'launched'
-  client.launchedDate       = today
-  client.campaignsLaunchedAt = now
+  client.onboarding.status             = 'launched'
+  client.onboarding.launchedDate       = today
+  client.onboarding.campaignsLaunchedAt = now
 }
 
 // Find newly unlocked steps
-const newlyUnlocked = getNewlyUnlocked(client.steps, stepKey)
+const newlyUnlocked = getNewlyUnlocked(client.onboarding.steps, stepKey)
 
 // Detect ready-to-book condition — fires when onboarding_call_booked is newly unlocked
 const readyToBook = newlyUnlocked.find(u => u.key === 'onboarding_call_booked' && u.readyToBookTrigger)
-if (readyToBook && !client.readyToBookCallAt) {
-  client.readyToBookCallAt = now
-  client.log.push({
+if (readyToBook && !client.onboarding.readyToBookCallAt) {
+  client.onboarding.readyToBookCallAt = now
+  client.onboarding.log.push({
     timestamp: now,
     event:     'ready_to_book_call',
     note:      'All pre-call deps met. Send booking link to client in Discord. Dashboard task created.'
@@ -152,7 +152,7 @@ if (readyToBook && !client.readyToBookCallAt) {
 }
 
 // Save
-fs.writeFileSync(ONBOARDING_FILE, JSON.stringify(data, null, 2))
+fs.writeFileSync(CLIENTS_FILE, JSON.stringify(data, null, 2))
 
 // ── Output ────────────────────────────────────────────────────────────────────
 

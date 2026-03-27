@@ -19,6 +19,12 @@ Before doing anything else:
    - Example: loadState('sweep-train') from state/session/sweep-train.json
    - Always write via saveState() (atomic) and appendEvent() for audit at state/events/<task>.jsonl
 
+## Source of Truth: TODO
+
+- When asked "what's in the TODO list", **only** read: `/root/clawd-evan/TODO.md`.
+- Do not grep recursively for other "TODO" files. Ignore derived session texts under `data/clawdbot-sessions/**`.
+- Utility: `node scripts/show-todo.mjs` prints the canonical TODO.
+
 ### Messaging Policy (global)
 - All sends MUST use the allowlist/denylist gate at agents/_shared/messaging/send.mjs
 - Allow POST: server 1475336170048065538, channel 1475336170916544524 (links-only by convention)
@@ -256,7 +262,7 @@ This is a starting point. Add your own conventions, style, and rules as you figu
   - Action: Extract name, company, email, and any other details from the message. Execute `node /root/clawd-evan/scripts/new-client.mjs --name "..." --company "..." --email "..."` with whatever info is available. Add `--fathom` if Max mentions or pastes a Fathom link. Add `--contract-end` if mentioned.
   - After running: Confirm to Max that the client was created and onboarding has started. Tell him what the Account Manager/CSM and Media Buyer are now responsible for.
   - If info is missing (e.g. no email): ask Max for it before running.
-  - Data file: `data/onboarding.json`
+  - Data files: `data/clients.json` (client + onboarding records), `data/alerts.json` (unmatched webhook events)
 
 - Mark Onboarding Step Done:
   - Intent trigger phrases: "[step] is done for [client]", "done with [step] for [client]", "[client] [step] complete", "mark [step] done", natural English like "Facebook access is in for Smith Roofing" or "Bilal finished the scripts for [client]".

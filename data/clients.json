@@ -1,0 +1,4083 @@
+{
+  "clients": [
+    {
+      "id": "client_flh_services_4_u_1774559371483",
+      "name": "Glenn Mullineaux",
+      "companyName": "FLH Services 4 U",
+      "email": "flhservices4u@gmail.com",
+      "appointmentId": "EBbBkmliFVEg5qXeXpNs",
+      "contractSignedDate": "2026-03-26",
+      "contractEndDate": null,
+      "stripeCustomerId": null,
+      "fathomSalesCallLink": "https://fathom.video/share/ekfs4QsSvaY8ZxNG1rsK218pY9mmTd6o",
+      "discordChannelId": null,
+      "onboarding": {
+        "status": "onboarding",
+        "launchedDate": null,
+        "campaignsLaunchedAt": null,
+        "readyToBookCallAt": null,
+        "steps": {
+          "payment_collected": {
+            "status": "complete",
+            "completedAt": "2026-03-26",
+            "autoDetected": true,
+            "trigger": "manual",
+            "note": "Collected on closing call"
+          },
+          "contract_signed": {
+            "status": "complete",
+            "completedAt": "2026-03-26",
+            "autoDetected": false,
+            "trigger": "manual"
+          },
+          "welcome_email_sent": {
+            "status": "complete",
+            "completedAt": "2026-03-26",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "added_to_daily_sweep": {
+            "status": "complete",
+            "completedAt": "2026-03-26",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "onboarding_form_submitted": {
+            "status": "complete",
+            "completedAt": "2026-03-27",
+            "autoDetected": true,
+            "trigger": "ghl_webhook",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "client_joined_discord": {
+            "status": "complete",
+            "completedAt": "2026-03-27",
+            "autoDetected": true,
+            "trigger": "discord_event",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "discord_channel_created": {
+            "status": "complete",
+            "completedAt": "2026-03-27",
+            "autoDetected": true,
+            "trigger": "auto",
+            "dependsOn": [
+              "client_joined_discord"
+            ],
+            "note": "Bot auto-creates channel and adds client on join"
+          },
+          "ghl_subaccount_configured": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Create GHL sub-account and configure settings"
+          },
+          "facebook_access_granted": {
+            "status": "complete",
+            "completedAt": "2026-03-27",
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client grants access to Meta Business Manager"
+          },
+          "client_media_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client sends photos/videos via Discord or onboarding funnel"
+          },
+          "ad_scripts_written": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Media buyer writes ad scripts (future: AI-assisted from Fathom call)"
+          },
+          "ad_scripts_sent_to_client": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_written"
+            ],
+            "note": "Send to client via their Discord channel"
+          },
+          "ad_scripts_approved": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ad_scripts_sent_to_client"
+            ],
+            "note": "Client reviews, revises if needed, then approves. Mark done when final approval received."
+          },
+          "meta_campaigns_built": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_approved",
+              "client_media_submitted",
+              "facebook_access_granted"
+            ],
+            "note": "Build campaigns in Meta Ads Manager"
+          },
+          "onboarding_call_booked": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ghl_subaccount_configured",
+              "meta_campaigns_built",
+              "onboarding_form_submitted",
+              "client_joined_discord"
+            ],
+            "note": "Send booking link to client in their Discord channel. Bot sends message automatically when all deps are met.",
+            "readyToBookTrigger": true
+          },
+          "onboarding_call_completed": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_booked"
+            ],
+            "checklist": [
+              "calendar_connected",
+              "crm_access_granted",
+              "test_lead_run"
+            ],
+            "note": "Mark done after the call. Checklist: calendar connected, CRM access granted, test lead run."
+          },
+          "campaigns_launched": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_completed"
+            ],
+            "note": "Account manager flips campaigns on in Meta Ads Manager"
+          },
+          "48hr_health_check": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "timeGatedHours": 48,
+            "note": "Verify leads are coming in and everything is running correctly. Not a performance review."
+          },
+          "post_launch_checkin_scheduled": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "note": "~2 week performance review"
+          }
+        },
+        "log": [
+          {
+            "timestamp": "2026-03-26T21:09:31.483Z",
+            "event": "client_created",
+            "note": "Signed. Created via new-client.mjs."
+          },
+          {
+            "timestamp": "2026-03-27T14:39:34.661Z",
+            "event": "step_completed",
+            "step": "onboarding_form_submitted",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T14:39:36.661Z",
+            "event": "step_completed",
+            "step": "client_joined_discord",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T14:39:37.829Z",
+            "event": "step_completed",
+            "step": "discord_channel_created",
+            "by": "dashboard"
+          },
+          {
+            "timestamp": "2026-03-27T14:39:43.589Z",
+            "event": "step_completed",
+            "step": "facebook_access_granted",
+            "by": "dashboard"
+          }
+        ]
+      },
+      "status": "onboarding",
+      "steps": {
+        "payment_collected": {
+          "status": "complete",
+          "completedAt": "2026-03-26",
+          "autoDetected": true,
+          "trigger": "manual",
+          "note": "Collected on closing call"
+        },
+        "contract_signed": {
+          "status": "complete",
+          "completedAt": "2026-03-26",
+          "autoDetected": false,
+          "trigger": "manual"
+        },
+        "welcome_email_sent": {
+          "status": "complete",
+          "completedAt": "2026-03-26",
+          "autoDetected": true,
+          "trigger": "auto"
+        },
+        "added_to_daily_sweep": {
+          "status": "complete",
+          "completedAt": "2026-03-26",
+          "autoDetected": true,
+          "trigger": "auto"
+        },
+        "onboarding_form_submitted": {
+          "status": "complete",
+          "completedAt": "2026-03-27",
+          "autoDetected": true,
+          "trigger": "ghl_webhook",
+          "dependsOn": [
+            "contract_signed"
+          ]
+        },
+        "client_joined_discord": {
+          "status": "complete",
+          "completedAt": "2026-03-27",
+          "autoDetected": true,
+          "trigger": "discord_event",
+          "dependsOn": [
+            "contract_signed"
+          ]
+        },
+        "discord_channel_created": {
+          "status": "complete",
+          "completedAt": "2026-03-27",
+          "autoDetected": true,
+          "trigger": "auto",
+          "dependsOn": [
+            "client_joined_discord"
+          ],
+          "note": "Bot auto-creates channel and adds client on join"
+        },
+        "ghl_subaccount_configured": {
+          "status": "pending",
+          "completedAt": null,
+          "autoDetected": false,
+          "owner": "accountManager",
+          "dependsOn": [
+            "onboarding_form_submitted"
+          ],
+          "note": "Create GHL sub-account and configure settings"
+        },
+        "facebook_access_granted": {
+          "status": "complete",
+          "completedAt": "2026-03-27",
+          "autoDetected": false,
+          "owner": "accountManager",
+          "dependsOn": [
+            "onboarding_form_submitted"
+          ],
+          "note": "Client grants access to Meta Business Manager"
+        },
+        "client_media_submitted": {
+          "status": "pending",
+          "completedAt": null,
+          "autoDetected": false,
+          "owner": "accountManager",
+          "dependsOn": [
+            "onboarding_form_submitted"
+          ],
+          "note": "Client sends photos/videos via Discord or onboarding funnel"
+        },
+        "ad_scripts_written": {
+          "status": "pending",
+          "completedAt": null,
+          "autoDetected": false,
+          "owner": "mediaBuyer",
+          "dependsOn": [
+            "onboarding_form_submitted"
+          ],
+          "note": "Media buyer writes ad scripts (future: AI-assisted from Fathom call)"
+        },
+        "ad_scripts_sent_to_client": {
+          "status": "pending",
+          "completedAt": null,
+          "autoDetected": false,
+          "owner": "mediaBuyer",
+          "dependsOn": [
+            "ad_scripts_written"
+          ],
+          "note": "Send to client via their Discord channel"
+        },
+        "ad_scripts_approved": {
+          "status": "pending",
+          "completedAt": null,
+          "autoDetected": false,
+          "owner": "accountManager",
+          "dependsOn": [
+            "ad_scripts_sent_to_client"
+          ],
+          "note": "Client reviews, revises if needed, then approves. Mark done when final approval received."
+        },
+        "meta_campaigns_built": {
+          "status": "pending",
+          "completedAt": null,
+          "autoDetected": false,
+          "owner": "mediaBuyer",
+          "dependsOn": [
+            "ad_scripts_approved",
+            "client_media_submitted",
+            "facebook_access_granted"
+          ],
+          "note": "Build campaigns in Meta Ads Manager"
+        },
+        "onboarding_call_booked": {
+          "status": "pending",
+          "completedAt": null,
+          "autoDetected": false,
+          "owner": "accountManager",
+          "dependsOn": [
+            "ghl_subaccount_configured",
+            "meta_campaigns_built",
+            "onboarding_form_submitted",
+            "client_joined_discord"
+          ],
+          "note": "Send booking link to client in their Discord channel. Bot sends message automatically when all deps are met.",
+          "readyToBookTrigger": true
+        },
+        "onboarding_call_completed": {
+          "status": "pending",
+          "completedAt": null,
+          "autoDetected": false,
+          "owner": "accountManager",
+          "dependsOn": [
+            "onboarding_call_booked"
+          ],
+          "checklist": [
+            "calendar_connected",
+            "crm_access_granted",
+            "test_lead_run"
+          ],
+          "note": "Mark done after the call. Checklist: calendar connected, CRM access granted, test lead run."
+        },
+        "campaigns_launched": {
+          "status": "pending",
+          "completedAt": null,
+          "autoDetected": false,
+          "owner": "accountManager",
+          "dependsOn": [
+            "onboarding_call_completed"
+          ],
+          "note": "Account manager flips campaigns on in Meta Ads Manager"
+        },
+        "48hr_health_check": {
+          "status": "pending",
+          "completedAt": null,
+          "autoDetected": false,
+          "owner": "accountManager",
+          "dependsOn": [
+            "campaigns_launched"
+          ],
+          "timeGatedHours": 48,
+          "note": "Verify leads are coming in and everything is running correctly. Not a performance review."
+        },
+        "post_launch_checkin_scheduled": {
+          "status": "pending",
+          "completedAt": null,
+          "autoDetected": false,
+          "owner": "accountManager",
+          "dependsOn": [
+            "campaigns_launched"
+          ],
+          "note": "~2 week performance review"
+        }
+      },
+      "log": [
+        {
+          "timestamp": "2026-03-26T21:09:31.483Z",
+          "event": "client_created",
+          "note": "Signed. Created via new-client.mjs."
+        },
+        {
+          "timestamp": "2026-03-27T14:39:34.661Z",
+          "event": "step_completed",
+          "step": "onboarding_form_submitted",
+          "by": "dashboard"
+        },
+        {
+          "timestamp": "2026-03-27T14:39:36.661Z",
+          "event": "step_completed",
+          "step": "client_joined_discord",
+          "by": "dashboard"
+        },
+        {
+          "timestamp": "2026-03-27T14:39:37.829Z",
+          "event": "step_completed",
+          "step": "discord_channel_created",
+          "by": "dashboard"
+        },
+        {
+          "timestamp": "2026-03-27T14:39:43.589Z",
+          "event": "step_completed",
+          "step": "facebook_access_granted",
+          "by": "dashboard"
+        }
+      ],
+      "launchedDate": null,
+      "campaignsLaunchedAt": null,
+      "readyToBookCallAt": null
+    },
+    {
+      "id": "client_ben_beever_1774626528575",
+      "name": "Ben Beever",
+      "companyName": "Ben Beever",
+      "email": "ben.beever@comcast.net",
+      "appointmentId": "77aigOAb360US1uMFsgP",
+      "contractSignedDate": "2026-03-27",
+      "contractEndDate": null,
+      "stripeCustomerId": null,
+      "fathomSalesCallLink": null,
+      "needsVideoEditor": false,
+      "discordChannelId": null,
+      "onboarding": {
+        "status": "onboarding",
+        "launchedDate": null,
+        "campaignsLaunchedAt": null,
+        "readyToBookCallAt": null,
+        "steps": {
+          "payment_collected": {
+            "status": "complete",
+            "completedAt": "2026-03-27",
+            "autoDetected": true,
+            "trigger": "manual",
+            "note": "Collected on closing call"
+          },
+          "contract_signed": {
+            "status": "complete",
+            "completedAt": "2026-03-27",
+            "autoDetected": false,
+            "trigger": "manual"
+          },
+          "welcome_email_sent": {
+            "status": "complete",
+            "completedAt": "2026-03-27",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "added_to_daily_sweep": {
+            "status": "complete",
+            "completedAt": "2026-03-27",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "onboarding_form_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "ghl_webhook",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "client_joined_discord": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "discord_event",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "discord_channel_created": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "auto",
+            "dependsOn": [
+              "client_joined_discord"
+            ],
+            "note": "Bot auto-creates channel and adds client on join"
+          },
+          "ghl_subaccount_configured": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Create GHL sub-account and configure settings"
+          },
+          "facebook_access_granted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client grants access to Meta Business Manager"
+          },
+          "client_media_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client sends photos/videos via Discord or onboarding funnel"
+          },
+          "ad_scripts_written": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Media buyer writes ad scripts (future: AI-assisted from Fathom call)"
+          },
+          "ad_scripts_sent_to_client": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_written"
+            ],
+            "note": "Send to client via their Discord channel"
+          },
+          "ad_scripts_approved": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ad_scripts_sent_to_client"
+            ],
+            "note": "Client reviews, revises if needed, then approves. Mark done when final approval received."
+          },
+          "meta_campaigns_built": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_approved",
+              "client_media_submitted",
+              "facebook_access_granted"
+            ],
+            "note": "Build campaigns in Meta Ads Manager (no video editor)"
+          },
+          "onboarding_call_booked": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ghl_subaccount_configured",
+              "meta_campaigns_built",
+              "onboarding_form_submitted",
+              "client_joined_discord"
+            ],
+            "note": "Send booking link to client in their Discord channel. Bot sends message automatically when all deps are met.",
+            "readyToBookTrigger": true
+          },
+          "onboarding_call_completed": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_booked"
+            ],
+            "checklist": [
+              "calendar_connected",
+              "crm_access_granted",
+              "test_lead_run"
+            ],
+            "note": "Mark done after the call. Checklist: calendar connected, CRM access granted, test lead run."
+          },
+          "campaigns_launched": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_completed"
+            ],
+            "note": "Account manager flips campaigns on in Meta Ads Manager"
+          },
+          "48hr_health_check": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "timeGatedHours": 48,
+            "note": "Verify leads are coming in and everything is running correctly. Not a performance review."
+          },
+          "post_launch_checkin_scheduled": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "note": "~2 week performance review"
+          }
+        },
+        "log": [
+          {
+            "timestamp": "2026-03-27T15:48:48.574Z",
+            "event": "client_created",
+            "note": "Signed. Created via new-client.mjs."
+          }
+        ]
+      }
+    },
+    {
+      "id": "client_prestige_home_remodeling_1774627687638",
+      "name": "Mike Aiello",
+      "companyName": "Prestige Home Remodeling",
+      "email": "mike@prestigehomeremodeling.com",
+      "appointmentId": "LocFKVHlEKsxDRT9NGzK",
+      "contractSignedDate": "2026-02-02",
+      "contractEndDate": null,
+      "stripeCustomerId": null,
+      "fathomSalesCallLink": "https://fathom.video/share/LCkk45kjSAond8o45MbDUF3_61a-EZF2",
+      "needsVideoEditor": false,
+      "discordChannelId": null,
+      "onboarding": {
+        "status": "onboarding",
+        "launchedDate": null,
+        "campaignsLaunchedAt": null,
+        "readyToBookCallAt": null,
+        "steps": {
+          "payment_collected": {
+            "status": "complete",
+            "completedAt": "2026-02-02",
+            "autoDetected": true,
+            "trigger": "manual",
+            "note": "Collected on closing call"
+          },
+          "contract_signed": {
+            "status": "complete",
+            "completedAt": "2026-02-02",
+            "autoDetected": false,
+            "trigger": "manual"
+          },
+          "welcome_email_sent": {
+            "status": "complete",
+            "completedAt": "2026-02-02",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "added_to_daily_sweep": {
+            "status": "complete",
+            "completedAt": "2026-02-02",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "onboarding_form_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "ghl_webhook",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "client_joined_discord": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "discord_event",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "discord_channel_created": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "auto",
+            "dependsOn": [
+              "client_joined_discord"
+            ],
+            "note": "Bot auto-creates channel and adds client on join"
+          },
+          "ghl_subaccount_configured": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Create GHL sub-account and configure settings"
+          },
+          "facebook_access_granted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client grants access to Meta Business Manager"
+          },
+          "client_media_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client sends photos/videos via Discord or onboarding funnel"
+          },
+          "ad_scripts_written": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Media buyer writes ad scripts (future: AI-assisted from Fathom call)"
+          },
+          "ad_scripts_sent_to_client": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_written"
+            ],
+            "note": "Send to client via their Discord channel"
+          },
+          "ad_scripts_approved": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ad_scripts_sent_to_client"
+            ],
+            "note": "Client reviews, revises if needed, then approves. Mark done when final approval received."
+          },
+          "meta_campaigns_built": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_approved",
+              "client_media_submitted",
+              "facebook_access_granted"
+            ],
+            "note": "Build campaigns in Meta Ads Manager (no video editor)"
+          },
+          "onboarding_call_booked": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ghl_subaccount_configured",
+              "meta_campaigns_built",
+              "onboarding_form_submitted",
+              "client_joined_discord"
+            ],
+            "note": "Send booking link to client in their Discord channel. Bot sends message automatically when all deps are met.",
+            "readyToBookTrigger": true
+          },
+          "onboarding_call_completed": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_booked"
+            ],
+            "checklist": [
+              "calendar_connected",
+              "crm_access_granted",
+              "test_lead_run"
+            ],
+            "note": "Mark done after the call. Checklist: calendar connected, CRM access granted, test lead run."
+          },
+          "campaigns_launched": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_completed"
+            ],
+            "note": "Account manager flips campaigns on in Meta Ads Manager"
+          },
+          "48hr_health_check": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "timeGatedHours": 48,
+            "note": "Verify leads are coming in and everything is running correctly. Not a performance review."
+          },
+          "post_launch_checkin_scheduled": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "note": "~2 week performance review"
+          }
+        },
+        "log": [
+          {
+            "timestamp": "2026-03-27T16:08:07.636Z",
+            "event": "client_created",
+            "note": "Signed. Created via new-client.mjs."
+          }
+        ]
+      }
+    },
+    {
+      "id": "client_george_designer_homes_1774627687926",
+      "name": "George Meyer",
+      "companyName": "George Designer Homes",
+      "email": "georgemeyer0907@gmail.com",
+      "appointmentId": "1lcYkFLe56RtpC1lCGlc",
+      "contractSignedDate": "2026-02-03",
+      "contractEndDate": null,
+      "stripeCustomerId": null,
+      "fathomSalesCallLink": "https://fathom.video/share/MB9gi8hzZYyLKiyPtTPNMY5rGqCwDovk",
+      "needsVideoEditor": false,
+      "discordChannelId": null,
+      "onboarding": {
+        "status": "onboarding",
+        "launchedDate": null,
+        "campaignsLaunchedAt": null,
+        "readyToBookCallAt": null,
+        "steps": {
+          "payment_collected": {
+            "status": "complete",
+            "completedAt": "2026-02-03",
+            "autoDetected": true,
+            "trigger": "manual",
+            "note": "Collected on closing call"
+          },
+          "contract_signed": {
+            "status": "complete",
+            "completedAt": "2026-02-03",
+            "autoDetected": false,
+            "trigger": "manual"
+          },
+          "welcome_email_sent": {
+            "status": "complete",
+            "completedAt": "2026-02-03",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "added_to_daily_sweep": {
+            "status": "complete",
+            "completedAt": "2026-02-03",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "onboarding_form_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "ghl_webhook",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "client_joined_discord": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "discord_event",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "discord_channel_created": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "auto",
+            "dependsOn": [
+              "client_joined_discord"
+            ],
+            "note": "Bot auto-creates channel and adds client on join"
+          },
+          "ghl_subaccount_configured": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Create GHL sub-account and configure settings"
+          },
+          "facebook_access_granted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client grants access to Meta Business Manager"
+          },
+          "client_media_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client sends photos/videos via Discord or onboarding funnel"
+          },
+          "ad_scripts_written": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Media buyer writes ad scripts (future: AI-assisted from Fathom call)"
+          },
+          "ad_scripts_sent_to_client": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_written"
+            ],
+            "note": "Send to client via their Discord channel"
+          },
+          "ad_scripts_approved": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ad_scripts_sent_to_client"
+            ],
+            "note": "Client reviews, revises if needed, then approves. Mark done when final approval received."
+          },
+          "meta_campaigns_built": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_approved",
+              "client_media_submitted",
+              "facebook_access_granted"
+            ],
+            "note": "Build campaigns in Meta Ads Manager (no video editor)"
+          },
+          "onboarding_call_booked": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ghl_subaccount_configured",
+              "meta_campaigns_built",
+              "onboarding_form_submitted",
+              "client_joined_discord"
+            ],
+            "note": "Send booking link to client in their Discord channel. Bot sends message automatically when all deps are met.",
+            "readyToBookTrigger": true
+          },
+          "onboarding_call_completed": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_booked"
+            ],
+            "checklist": [
+              "calendar_connected",
+              "crm_access_granted",
+              "test_lead_run"
+            ],
+            "note": "Mark done after the call. Checklist: calendar connected, CRM access granted, test lead run."
+          },
+          "campaigns_launched": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_completed"
+            ],
+            "note": "Account manager flips campaigns on in Meta Ads Manager"
+          },
+          "48hr_health_check": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "timeGatedHours": 48,
+            "note": "Verify leads are coming in and everything is running correctly. Not a performance review."
+          },
+          "post_launch_checkin_scheduled": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "note": "~2 week performance review"
+          }
+        },
+        "log": [
+          {
+            "timestamp": "2026-03-27T16:08:07.925Z",
+            "event": "client_created",
+            "note": "Signed. Created via new-client.mjs."
+          }
+        ]
+      }
+    },
+    {
+      "id": "client_cesar_grullon_1774627688189",
+      "name": "Cesar Grullon",
+      "companyName": "Cesar Grullon",
+      "email": "tillupco@gmail.com",
+      "appointmentId": "Ls848orU1pw2Au8IEMFY",
+      "contractSignedDate": "2026-02-04",
+      "contractEndDate": null,
+      "stripeCustomerId": null,
+      "fathomSalesCallLink": "https://fathom.video/share/Sy6LcFeoacsyzC5_PgsPVemj_puW-63V",
+      "needsVideoEditor": false,
+      "discordChannelId": null,
+      "onboarding": {
+        "status": "onboarding",
+        "launchedDate": null,
+        "campaignsLaunchedAt": null,
+        "readyToBookCallAt": null,
+        "steps": {
+          "payment_collected": {
+            "status": "complete",
+            "completedAt": "2026-02-04",
+            "autoDetected": true,
+            "trigger": "manual",
+            "note": "Collected on closing call"
+          },
+          "contract_signed": {
+            "status": "complete",
+            "completedAt": "2026-02-04",
+            "autoDetected": false,
+            "trigger": "manual"
+          },
+          "welcome_email_sent": {
+            "status": "complete",
+            "completedAt": "2026-02-04",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "added_to_daily_sweep": {
+            "status": "complete",
+            "completedAt": "2026-02-04",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "onboarding_form_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "ghl_webhook",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "client_joined_discord": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "discord_event",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "discord_channel_created": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "auto",
+            "dependsOn": [
+              "client_joined_discord"
+            ],
+            "note": "Bot auto-creates channel and adds client on join"
+          },
+          "ghl_subaccount_configured": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Create GHL sub-account and configure settings"
+          },
+          "facebook_access_granted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client grants access to Meta Business Manager"
+          },
+          "client_media_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client sends photos/videos via Discord or onboarding funnel"
+          },
+          "ad_scripts_written": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Media buyer writes ad scripts (future: AI-assisted from Fathom call)"
+          },
+          "ad_scripts_sent_to_client": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_written"
+            ],
+            "note": "Send to client via their Discord channel"
+          },
+          "ad_scripts_approved": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ad_scripts_sent_to_client"
+            ],
+            "note": "Client reviews, revises if needed, then approves. Mark done when final approval received."
+          },
+          "meta_campaigns_built": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_approved",
+              "client_media_submitted",
+              "facebook_access_granted"
+            ],
+            "note": "Build campaigns in Meta Ads Manager (no video editor)"
+          },
+          "onboarding_call_booked": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ghl_subaccount_configured",
+              "meta_campaigns_built",
+              "onboarding_form_submitted",
+              "client_joined_discord"
+            ],
+            "note": "Send booking link to client in their Discord channel. Bot sends message automatically when all deps are met.",
+            "readyToBookTrigger": true
+          },
+          "onboarding_call_completed": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_booked"
+            ],
+            "checklist": [
+              "calendar_connected",
+              "crm_access_granted",
+              "test_lead_run"
+            ],
+            "note": "Mark done after the call. Checklist: calendar connected, CRM access granted, test lead run."
+          },
+          "campaigns_launched": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_completed"
+            ],
+            "note": "Account manager flips campaigns on in Meta Ads Manager"
+          },
+          "48hr_health_check": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "timeGatedHours": 48,
+            "note": "Verify leads are coming in and everything is running correctly. Not a performance review."
+          },
+          "post_launch_checkin_scheduled": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "note": "~2 week performance review"
+          }
+        },
+        "log": [
+          {
+            "timestamp": "2026-03-27T16:08:08.185Z",
+            "event": "client_created",
+            "note": "Signed. Created via new-client.mjs."
+          }
+        ]
+      }
+    },
+    {
+      "id": "client_probuilt_co_1774627688516",
+      "name": "Bill",
+      "companyName": "ProBuilt Co",
+      "email": "bill@probuiltco.com",
+      "appointmentId": "e5CXYz4KaYFX95mxS5pk",
+      "contractSignedDate": "2026-02-05",
+      "contractEndDate": null,
+      "stripeCustomerId": null,
+      "fathomSalesCallLink": "https://fathom.video/share/GjBBq22pLqtfpbikM5RdtjyN12mLz-4L",
+      "needsVideoEditor": false,
+      "discordChannelId": null,
+      "onboarding": {
+        "status": "onboarding",
+        "launchedDate": null,
+        "campaignsLaunchedAt": null,
+        "readyToBookCallAt": null,
+        "steps": {
+          "payment_collected": {
+            "status": "complete",
+            "completedAt": "2026-02-05",
+            "autoDetected": true,
+            "trigger": "manual",
+            "note": "Collected on closing call"
+          },
+          "contract_signed": {
+            "status": "complete",
+            "completedAt": "2026-02-05",
+            "autoDetected": false,
+            "trigger": "manual"
+          },
+          "welcome_email_sent": {
+            "status": "complete",
+            "completedAt": "2026-02-05",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "added_to_daily_sweep": {
+            "status": "complete",
+            "completedAt": "2026-02-05",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "onboarding_form_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "ghl_webhook",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "client_joined_discord": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "discord_event",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "discord_channel_created": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "auto",
+            "dependsOn": [
+              "client_joined_discord"
+            ],
+            "note": "Bot auto-creates channel and adds client on join"
+          },
+          "ghl_subaccount_configured": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Create GHL sub-account and configure settings"
+          },
+          "facebook_access_granted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client grants access to Meta Business Manager"
+          },
+          "client_media_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client sends photos/videos via Discord or onboarding funnel"
+          },
+          "ad_scripts_written": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Media buyer writes ad scripts (future: AI-assisted from Fathom call)"
+          },
+          "ad_scripts_sent_to_client": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_written"
+            ],
+            "note": "Send to client via their Discord channel"
+          },
+          "ad_scripts_approved": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ad_scripts_sent_to_client"
+            ],
+            "note": "Client reviews, revises if needed, then approves. Mark done when final approval received."
+          },
+          "meta_campaigns_built": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_approved",
+              "client_media_submitted",
+              "facebook_access_granted"
+            ],
+            "note": "Build campaigns in Meta Ads Manager (no video editor)"
+          },
+          "onboarding_call_booked": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ghl_subaccount_configured",
+              "meta_campaigns_built",
+              "onboarding_form_submitted",
+              "client_joined_discord"
+            ],
+            "note": "Send booking link to client in their Discord channel. Bot sends message automatically when all deps are met.",
+            "readyToBookTrigger": true
+          },
+          "onboarding_call_completed": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_booked"
+            ],
+            "checklist": [
+              "calendar_connected",
+              "crm_access_granted",
+              "test_lead_run"
+            ],
+            "note": "Mark done after the call. Checklist: calendar connected, CRM access granted, test lead run."
+          },
+          "campaigns_launched": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_completed"
+            ],
+            "note": "Account manager flips campaigns on in Meta Ads Manager"
+          },
+          "48hr_health_check": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "timeGatedHours": 48,
+            "note": "Verify leads are coming in and everything is running correctly. Not a performance review."
+          },
+          "post_launch_checkin_scheduled": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "note": "~2 week performance review"
+          }
+        },
+        "log": [
+          {
+            "timestamp": "2026-03-27T16:08:08.515Z",
+            "event": "client_created",
+            "note": "Signed. Created via new-client.mjs."
+          }
+        ]
+      }
+    },
+    {
+      "id": "client_kenneth_hewitt_1774627716032",
+      "name": "Kenneth Hewitt",
+      "companyName": "Kenneth Hewitt",
+      "email": "knhewitt@yahoo.com",
+      "appointmentId": "oJmIdVkTqWYlkPjp3TRn",
+      "contractSignedDate": "2026-02-14",
+      "contractEndDate": null,
+      "stripeCustomerId": null,
+      "fathomSalesCallLink": "https://fathom.video/share/waMKzkQ-xkQPbRzLJt5vfBADxdiUsSsx",
+      "needsVideoEditor": false,
+      "discordChannelId": null,
+      "onboarding": {
+        "status": "onboarding",
+        "launchedDate": null,
+        "campaignsLaunchedAt": null,
+        "readyToBookCallAt": null,
+        "steps": {
+          "payment_collected": {
+            "status": "complete",
+            "completedAt": "2026-02-14",
+            "autoDetected": true,
+            "trigger": "manual",
+            "note": "Collected on closing call"
+          },
+          "contract_signed": {
+            "status": "complete",
+            "completedAt": "2026-02-14",
+            "autoDetected": false,
+            "trigger": "manual"
+          },
+          "welcome_email_sent": {
+            "status": "complete",
+            "completedAt": "2026-02-14",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "added_to_daily_sweep": {
+            "status": "complete",
+            "completedAt": "2026-02-14",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "onboarding_form_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "ghl_webhook",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "client_joined_discord": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "discord_event",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "discord_channel_created": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "auto",
+            "dependsOn": [
+              "client_joined_discord"
+            ],
+            "note": "Bot auto-creates channel and adds client on join"
+          },
+          "ghl_subaccount_configured": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Create GHL sub-account and configure settings"
+          },
+          "facebook_access_granted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client grants access to Meta Business Manager"
+          },
+          "client_media_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client sends photos/videos via Discord or onboarding funnel"
+          },
+          "ad_scripts_written": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Media buyer writes ad scripts (future: AI-assisted from Fathom call)"
+          },
+          "ad_scripts_sent_to_client": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_written"
+            ],
+            "note": "Send to client via their Discord channel"
+          },
+          "ad_scripts_approved": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ad_scripts_sent_to_client"
+            ],
+            "note": "Client reviews, revises if needed, then approves. Mark done when final approval received."
+          },
+          "meta_campaigns_built": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_approved",
+              "client_media_submitted",
+              "facebook_access_granted"
+            ],
+            "note": "Build campaigns in Meta Ads Manager (no video editor)"
+          },
+          "onboarding_call_booked": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ghl_subaccount_configured",
+              "meta_campaigns_built",
+              "onboarding_form_submitted",
+              "client_joined_discord"
+            ],
+            "note": "Send booking link to client in their Discord channel. Bot sends message automatically when all deps are met.",
+            "readyToBookTrigger": true
+          },
+          "onboarding_call_completed": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_booked"
+            ],
+            "checklist": [
+              "calendar_connected",
+              "crm_access_granted",
+              "test_lead_run"
+            ],
+            "note": "Mark done after the call. Checklist: calendar connected, CRM access granted, test lead run."
+          },
+          "campaigns_launched": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_completed"
+            ],
+            "note": "Account manager flips campaigns on in Meta Ads Manager"
+          },
+          "48hr_health_check": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "timeGatedHours": 48,
+            "note": "Verify leads are coming in and everything is running correctly. Not a performance review."
+          },
+          "post_launch_checkin_scheduled": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "note": "~2 week performance review"
+          }
+        },
+        "log": [
+          {
+            "timestamp": "2026-03-27T16:08:36.032Z",
+            "event": "client_created",
+            "note": "Signed. Created via new-client.mjs."
+          }
+        ]
+      }
+    },
+    {
+      "id": "client_william_baker_construction_1774627716273",
+      "name": "William Baker",
+      "companyName": "William Baker Construction",
+      "email": "wlbaker.construction@gmail.com",
+      "appointmentId": "jvLc8KvPNapLWYka6ww1",
+      "contractSignedDate": "2026-02-19",
+      "contractEndDate": null,
+      "stripeCustomerId": null,
+      "fathomSalesCallLink": "https://fathom.video/share/uXaKXFZBvB5uswqssvM2752snegYLfey",
+      "needsVideoEditor": false,
+      "discordChannelId": null,
+      "onboarding": {
+        "status": "onboarding",
+        "launchedDate": null,
+        "campaignsLaunchedAt": null,
+        "readyToBookCallAt": null,
+        "steps": {
+          "payment_collected": {
+            "status": "complete",
+            "completedAt": "2026-02-19",
+            "autoDetected": true,
+            "trigger": "manual",
+            "note": "Collected on closing call"
+          },
+          "contract_signed": {
+            "status": "complete",
+            "completedAt": "2026-02-19",
+            "autoDetected": false,
+            "trigger": "manual"
+          },
+          "welcome_email_sent": {
+            "status": "complete",
+            "completedAt": "2026-02-19",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "added_to_daily_sweep": {
+            "status": "complete",
+            "completedAt": "2026-02-19",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "onboarding_form_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "ghl_webhook",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "client_joined_discord": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "discord_event",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "discord_channel_created": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "auto",
+            "dependsOn": [
+              "client_joined_discord"
+            ],
+            "note": "Bot auto-creates channel and adds client on join"
+          },
+          "ghl_subaccount_configured": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Create GHL sub-account and configure settings"
+          },
+          "facebook_access_granted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client grants access to Meta Business Manager"
+          },
+          "client_media_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client sends photos/videos via Discord or onboarding funnel"
+          },
+          "ad_scripts_written": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Media buyer writes ad scripts (future: AI-assisted from Fathom call)"
+          },
+          "ad_scripts_sent_to_client": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_written"
+            ],
+            "note": "Send to client via their Discord channel"
+          },
+          "ad_scripts_approved": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ad_scripts_sent_to_client"
+            ],
+            "note": "Client reviews, revises if needed, then approves. Mark done when final approval received."
+          },
+          "meta_campaigns_built": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_approved",
+              "client_media_submitted",
+              "facebook_access_granted"
+            ],
+            "note": "Build campaigns in Meta Ads Manager (no video editor)"
+          },
+          "onboarding_call_booked": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ghl_subaccount_configured",
+              "meta_campaigns_built",
+              "onboarding_form_submitted",
+              "client_joined_discord"
+            ],
+            "note": "Send booking link to client in their Discord channel. Bot sends message automatically when all deps are met.",
+            "readyToBookTrigger": true
+          },
+          "onboarding_call_completed": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_booked"
+            ],
+            "checklist": [
+              "calendar_connected",
+              "crm_access_granted",
+              "test_lead_run"
+            ],
+            "note": "Mark done after the call. Checklist: calendar connected, CRM access granted, test lead run."
+          },
+          "campaigns_launched": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_completed"
+            ],
+            "note": "Account manager flips campaigns on in Meta Ads Manager"
+          },
+          "48hr_health_check": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "timeGatedHours": 48,
+            "note": "Verify leads are coming in and everything is running correctly. Not a performance review."
+          },
+          "post_launch_checkin_scheduled": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "note": "~2 week performance review"
+          }
+        },
+        "log": [
+          {
+            "timestamp": "2026-03-27T16:08:36.271Z",
+            "event": "client_created",
+            "note": "Signed. Created via new-client.mjs."
+          }
+        ]
+      }
+    },
+    {
+      "id": "client_satin_touch_1774627716638",
+      "name": "Chad Lange",
+      "companyName": "Satin Touch",
+      "email": "chadlange@satintouch.us",
+      "appointmentId": "ciHie9vUm9Fo5tJHZfpT",
+      "contractSignedDate": "2026-02-19",
+      "contractEndDate": null,
+      "stripeCustomerId": null,
+      "fathomSalesCallLink": "https://fathom.video/share/blank.link",
+      "needsVideoEditor": false,
+      "discordChannelId": null,
+      "onboarding": {
+        "status": "onboarding",
+        "launchedDate": null,
+        "campaignsLaunchedAt": null,
+        "readyToBookCallAt": null,
+        "steps": {
+          "payment_collected": {
+            "status": "complete",
+            "completedAt": "2026-02-19",
+            "autoDetected": true,
+            "trigger": "manual",
+            "note": "Collected on closing call"
+          },
+          "contract_signed": {
+            "status": "complete",
+            "completedAt": "2026-02-19",
+            "autoDetected": false,
+            "trigger": "manual"
+          },
+          "welcome_email_sent": {
+            "status": "complete",
+            "completedAt": "2026-02-19",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "added_to_daily_sweep": {
+            "status": "complete",
+            "completedAt": "2026-02-19",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "onboarding_form_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "ghl_webhook",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "client_joined_discord": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "discord_event",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "discord_channel_created": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "auto",
+            "dependsOn": [
+              "client_joined_discord"
+            ],
+            "note": "Bot auto-creates channel and adds client on join"
+          },
+          "ghl_subaccount_configured": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Create GHL sub-account and configure settings"
+          },
+          "facebook_access_granted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client grants access to Meta Business Manager"
+          },
+          "client_media_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client sends photos/videos via Discord or onboarding funnel"
+          },
+          "ad_scripts_written": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Media buyer writes ad scripts (future: AI-assisted from Fathom call)"
+          },
+          "ad_scripts_sent_to_client": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_written"
+            ],
+            "note": "Send to client via their Discord channel"
+          },
+          "ad_scripts_approved": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ad_scripts_sent_to_client"
+            ],
+            "note": "Client reviews, revises if needed, then approves. Mark done when final approval received."
+          },
+          "meta_campaigns_built": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_approved",
+              "client_media_submitted",
+              "facebook_access_granted"
+            ],
+            "note": "Build campaigns in Meta Ads Manager (no video editor)"
+          },
+          "onboarding_call_booked": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ghl_subaccount_configured",
+              "meta_campaigns_built",
+              "onboarding_form_submitted",
+              "client_joined_discord"
+            ],
+            "note": "Send booking link to client in their Discord channel. Bot sends message automatically when all deps are met.",
+            "readyToBookTrigger": true
+          },
+          "onboarding_call_completed": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_booked"
+            ],
+            "checklist": [
+              "calendar_connected",
+              "crm_access_granted",
+              "test_lead_run"
+            ],
+            "note": "Mark done after the call. Checklist: calendar connected, CRM access granted, test lead run."
+          },
+          "campaigns_launched": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_completed"
+            ],
+            "note": "Account manager flips campaigns on in Meta Ads Manager"
+          },
+          "48hr_health_check": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "timeGatedHours": 48,
+            "note": "Verify leads are coming in and everything is running correctly. Not a performance review."
+          },
+          "post_launch_checkin_scheduled": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "note": "~2 week performance review"
+          }
+        },
+        "log": [
+          {
+            "timestamp": "2026-03-27T16:08:36.636Z",
+            "event": "client_created",
+            "note": "Signed. Created via new-client.mjs."
+          }
+        ]
+      }
+    },
+    {
+      "id": "client_cleveland_pro_painters_1774627716990",
+      "name": "Sean Youn",
+      "companyName": "Cleveland Pro Painters",
+      "email": "info@clevelandpropainters.com",
+      "appointmentId": "xl_manual_sean_youn",
+      "contractSignedDate": "2026-02-24",
+      "contractEndDate": null,
+      "stripeCustomerId": null,
+      "fathomSalesCallLink": "https://fathom.video/share/cJPmyXrcqSgy_5tGojszCHi4-7kSt3xk",
+      "needsVideoEditor": false,
+      "discordChannelId": null,
+      "onboarding": {
+        "status": "onboarding",
+        "launchedDate": null,
+        "campaignsLaunchedAt": null,
+        "readyToBookCallAt": null,
+        "steps": {
+          "payment_collected": {
+            "status": "complete",
+            "completedAt": "2026-02-24",
+            "autoDetected": true,
+            "trigger": "manual",
+            "note": "Collected on closing call"
+          },
+          "contract_signed": {
+            "status": "complete",
+            "completedAt": "2026-02-24",
+            "autoDetected": false,
+            "trigger": "manual"
+          },
+          "welcome_email_sent": {
+            "status": "complete",
+            "completedAt": "2026-02-24",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "added_to_daily_sweep": {
+            "status": "complete",
+            "completedAt": "2026-02-24",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "onboarding_form_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "ghl_webhook",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "client_joined_discord": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "discord_event",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "discord_channel_created": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "auto",
+            "dependsOn": [
+              "client_joined_discord"
+            ],
+            "note": "Bot auto-creates channel and adds client on join"
+          },
+          "ghl_subaccount_configured": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Create GHL sub-account and configure settings"
+          },
+          "facebook_access_granted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client grants access to Meta Business Manager"
+          },
+          "client_media_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client sends photos/videos via Discord or onboarding funnel"
+          },
+          "ad_scripts_written": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Media buyer writes ad scripts (future: AI-assisted from Fathom call)"
+          },
+          "ad_scripts_sent_to_client": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_written"
+            ],
+            "note": "Send to client via their Discord channel"
+          },
+          "ad_scripts_approved": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ad_scripts_sent_to_client"
+            ],
+            "note": "Client reviews, revises if needed, then approves. Mark done when final approval received."
+          },
+          "meta_campaigns_built": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_approved",
+              "client_media_submitted",
+              "facebook_access_granted"
+            ],
+            "note": "Build campaigns in Meta Ads Manager (no video editor)"
+          },
+          "onboarding_call_booked": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ghl_subaccount_configured",
+              "meta_campaigns_built",
+              "onboarding_form_submitted",
+              "client_joined_discord"
+            ],
+            "note": "Send booking link to client in their Discord channel. Bot sends message automatically when all deps are met.",
+            "readyToBookTrigger": true
+          },
+          "onboarding_call_completed": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_booked"
+            ],
+            "checklist": [
+              "calendar_connected",
+              "crm_access_granted",
+              "test_lead_run"
+            ],
+            "note": "Mark done after the call. Checklist: calendar connected, CRM access granted, test lead run."
+          },
+          "campaigns_launched": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_completed"
+            ],
+            "note": "Account manager flips campaigns on in Meta Ads Manager"
+          },
+          "48hr_health_check": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "timeGatedHours": 48,
+            "note": "Verify leads are coming in and everything is running correctly. Not a performance review."
+          },
+          "post_launch_checkin_scheduled": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "note": "~2 week performance review"
+          }
+        },
+        "log": [
+          {
+            "timestamp": "2026-03-27T16:08:36.988Z",
+            "event": "client_created",
+            "note": "Signed. Created via new-client.mjs."
+          }
+        ]
+      }
+    },
+    {
+      "id": "client_interior_redesign_llc_1774627717386",
+      "name": "Matt",
+      "companyName": "Interior Redesign LLC",
+      "email": "interiorredesignllc@gmail.com",
+      "appointmentId": "ZvCJdFT5o2XpU0qV8Qxo",
+      "contractSignedDate": "2026-02-24",
+      "contractEndDate": null,
+      "stripeCustomerId": null,
+      "fathomSalesCallLink": "https://fathom.video/share/pwEyxj2eHsq7mw73yQQzDoygBgZcW1B_",
+      "needsVideoEditor": false,
+      "discordChannelId": null,
+      "onboarding": {
+        "status": "onboarding",
+        "launchedDate": null,
+        "campaignsLaunchedAt": null,
+        "readyToBookCallAt": null,
+        "steps": {
+          "payment_collected": {
+            "status": "complete",
+            "completedAt": "2026-02-24",
+            "autoDetected": true,
+            "trigger": "manual",
+            "note": "Collected on closing call"
+          },
+          "contract_signed": {
+            "status": "complete",
+            "completedAt": "2026-02-24",
+            "autoDetected": false,
+            "trigger": "manual"
+          },
+          "welcome_email_sent": {
+            "status": "complete",
+            "completedAt": "2026-02-24",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "added_to_daily_sweep": {
+            "status": "complete",
+            "completedAt": "2026-02-24",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "onboarding_form_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "ghl_webhook",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "client_joined_discord": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "discord_event",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "discord_channel_created": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "auto",
+            "dependsOn": [
+              "client_joined_discord"
+            ],
+            "note": "Bot auto-creates channel and adds client on join"
+          },
+          "ghl_subaccount_configured": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Create GHL sub-account and configure settings"
+          },
+          "facebook_access_granted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client grants access to Meta Business Manager"
+          },
+          "client_media_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client sends photos/videos via Discord or onboarding funnel"
+          },
+          "ad_scripts_written": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Media buyer writes ad scripts (future: AI-assisted from Fathom call)"
+          },
+          "ad_scripts_sent_to_client": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_written"
+            ],
+            "note": "Send to client via their Discord channel"
+          },
+          "ad_scripts_approved": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ad_scripts_sent_to_client"
+            ],
+            "note": "Client reviews, revises if needed, then approves. Mark done when final approval received."
+          },
+          "meta_campaigns_built": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_approved",
+              "client_media_submitted",
+              "facebook_access_granted"
+            ],
+            "note": "Build campaigns in Meta Ads Manager (no video editor)"
+          },
+          "onboarding_call_booked": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ghl_subaccount_configured",
+              "meta_campaigns_built",
+              "onboarding_form_submitted",
+              "client_joined_discord"
+            ],
+            "note": "Send booking link to client in their Discord channel. Bot sends message automatically when all deps are met.",
+            "readyToBookTrigger": true
+          },
+          "onboarding_call_completed": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_booked"
+            ],
+            "checklist": [
+              "calendar_connected",
+              "crm_access_granted",
+              "test_lead_run"
+            ],
+            "note": "Mark done after the call. Checklist: calendar connected, CRM access granted, test lead run."
+          },
+          "campaigns_launched": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_completed"
+            ],
+            "note": "Account manager flips campaigns on in Meta Ads Manager"
+          },
+          "48hr_health_check": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "timeGatedHours": 48,
+            "note": "Verify leads are coming in and everything is running correctly. Not a performance review."
+          },
+          "post_launch_checkin_scheduled": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "note": "~2 week performance review"
+          }
+        },
+        "log": [
+          {
+            "timestamp": "2026-03-27T16:08:37.384Z",
+            "event": "client_created",
+            "note": "Signed. Created via new-client.mjs."
+          }
+        ]
+      }
+    },
+    {
+      "id": "client_mike_baruh_1774627772601",
+      "name": "Mike Baruh",
+      "companyName": "Mike Baruh",
+      "email": "mikebaruh@gmail.com",
+      "appointmentId": "okXIUeB2jYr34FELkxC2",
+      "contractSignedDate": "2026-03-02",
+      "contractEndDate": null,
+      "stripeCustomerId": null,
+      "fathomSalesCallLink": "https://fathom.video/share/wNfmSM5DQxw5K62or9Ga9vEwzBxEjkzs",
+      "needsVideoEditor": false,
+      "discordChannelId": null,
+      "onboarding": {
+        "status": "onboarding",
+        "launchedDate": null,
+        "campaignsLaunchedAt": null,
+        "readyToBookCallAt": null,
+        "steps": {
+          "payment_collected": {
+            "status": "complete",
+            "completedAt": "2026-03-02",
+            "autoDetected": true,
+            "trigger": "manual",
+            "note": "Collected on closing call"
+          },
+          "contract_signed": {
+            "status": "complete",
+            "completedAt": "2026-03-02",
+            "autoDetected": false,
+            "trigger": "manual"
+          },
+          "welcome_email_sent": {
+            "status": "complete",
+            "completedAt": "2026-03-02",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "added_to_daily_sweep": {
+            "status": "complete",
+            "completedAt": "2026-03-02",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "onboarding_form_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "ghl_webhook",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "client_joined_discord": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "discord_event",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "discord_channel_created": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "auto",
+            "dependsOn": [
+              "client_joined_discord"
+            ],
+            "note": "Bot auto-creates channel and adds client on join"
+          },
+          "ghl_subaccount_configured": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Create GHL sub-account and configure settings"
+          },
+          "facebook_access_granted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client grants access to Meta Business Manager"
+          },
+          "client_media_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client sends photos/videos via Discord or onboarding funnel"
+          },
+          "ad_scripts_written": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Media buyer writes ad scripts (future: AI-assisted from Fathom call)"
+          },
+          "ad_scripts_sent_to_client": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_written"
+            ],
+            "note": "Send to client via their Discord channel"
+          },
+          "ad_scripts_approved": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ad_scripts_sent_to_client"
+            ],
+            "note": "Client reviews, revises if needed, then approves. Mark done when final approval received."
+          },
+          "meta_campaigns_built": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_approved",
+              "client_media_submitted",
+              "facebook_access_granted"
+            ],
+            "note": "Build campaigns in Meta Ads Manager (no video editor)"
+          },
+          "onboarding_call_booked": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ghl_subaccount_configured",
+              "meta_campaigns_built",
+              "onboarding_form_submitted",
+              "client_joined_discord"
+            ],
+            "note": "Send booking link to client in their Discord channel. Bot sends message automatically when all deps are met.",
+            "readyToBookTrigger": true
+          },
+          "onboarding_call_completed": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_booked"
+            ],
+            "checklist": [
+              "calendar_connected",
+              "crm_access_granted",
+              "test_lead_run"
+            ],
+            "note": "Mark done after the call. Checklist: calendar connected, CRM access granted, test lead run."
+          },
+          "campaigns_launched": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_completed"
+            ],
+            "note": "Account manager flips campaigns on in Meta Ads Manager"
+          },
+          "48hr_health_check": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "timeGatedHours": 48,
+            "note": "Verify leads are coming in and everything is running correctly. Not a performance review."
+          },
+          "post_launch_checkin_scheduled": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "note": "~2 week performance review"
+          }
+        },
+        "log": [
+          {
+            "timestamp": "2026-03-27T16:09:32.600Z",
+            "event": "client_created",
+            "note": "Signed. Created via new-client.mjs."
+          }
+        ]
+      }
+    },
+    {
+      "id": "client_hector_alfaro_1774627772940",
+      "name": "Hector Alfaro",
+      "companyName": "Hector Alfaro",
+      "email": "hectorgalfaro@hotmail.com",
+      "appointmentId": "bKLPobNkCRjbJggm5NPa",
+      "contractSignedDate": "2026-03-04",
+      "contractEndDate": null,
+      "stripeCustomerId": null,
+      "fathomSalesCallLink": "https://fathom.video/share/on47jqiHrKpEMT4HFuRAjM1z4-rnxjc5",
+      "needsVideoEditor": false,
+      "discordChannelId": null,
+      "onboarding": {
+        "status": "onboarding",
+        "launchedDate": null,
+        "campaignsLaunchedAt": null,
+        "readyToBookCallAt": null,
+        "steps": {
+          "payment_collected": {
+            "status": "complete",
+            "completedAt": "2026-03-04",
+            "autoDetected": true,
+            "trigger": "manual",
+            "note": "Collected on closing call"
+          },
+          "contract_signed": {
+            "status": "complete",
+            "completedAt": "2026-03-04",
+            "autoDetected": false,
+            "trigger": "manual"
+          },
+          "welcome_email_sent": {
+            "status": "complete",
+            "completedAt": "2026-03-04",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "added_to_daily_sweep": {
+            "status": "complete",
+            "completedAt": "2026-03-04",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "onboarding_form_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "ghl_webhook",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "client_joined_discord": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "discord_event",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "discord_channel_created": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "auto",
+            "dependsOn": [
+              "client_joined_discord"
+            ],
+            "note": "Bot auto-creates channel and adds client on join"
+          },
+          "ghl_subaccount_configured": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Create GHL sub-account and configure settings"
+          },
+          "facebook_access_granted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client grants access to Meta Business Manager"
+          },
+          "client_media_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client sends photos/videos via Discord or onboarding funnel"
+          },
+          "ad_scripts_written": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Media buyer writes ad scripts (future: AI-assisted from Fathom call)"
+          },
+          "ad_scripts_sent_to_client": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_written"
+            ],
+            "note": "Send to client via their Discord channel"
+          },
+          "ad_scripts_approved": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ad_scripts_sent_to_client"
+            ],
+            "note": "Client reviews, revises if needed, then approves. Mark done when final approval received."
+          },
+          "meta_campaigns_built": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_approved",
+              "client_media_submitted",
+              "facebook_access_granted"
+            ],
+            "note": "Build campaigns in Meta Ads Manager (no video editor)"
+          },
+          "onboarding_call_booked": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ghl_subaccount_configured",
+              "meta_campaigns_built",
+              "onboarding_form_submitted",
+              "client_joined_discord"
+            ],
+            "note": "Send booking link to client in their Discord channel. Bot sends message automatically when all deps are met.",
+            "readyToBookTrigger": true
+          },
+          "onboarding_call_completed": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_booked"
+            ],
+            "checklist": [
+              "calendar_connected",
+              "crm_access_granted",
+              "test_lead_run"
+            ],
+            "note": "Mark done after the call. Checklist: calendar connected, CRM access granted, test lead run."
+          },
+          "campaigns_launched": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_completed"
+            ],
+            "note": "Account manager flips campaigns on in Meta Ads Manager"
+          },
+          "48hr_health_check": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "timeGatedHours": 48,
+            "note": "Verify leads are coming in and everything is running correctly. Not a performance review."
+          },
+          "post_launch_checkin_scheduled": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "note": "~2 week performance review"
+          }
+        },
+        "log": [
+          {
+            "timestamp": "2026-03-27T16:09:32.932Z",
+            "event": "client_created",
+            "note": "Signed. Created via new-client.mjs."
+          }
+        ]
+      }
+    },
+    {
+      "id": "client_jj_remodeling_services_az_1774627773305",
+      "name": "Jesus",
+      "companyName": "JJ Remodeling Services AZ",
+      "email": "jjremodelingservicesaz@gmail.com",
+      "appointmentId": "vjaKYpBlY30Fy5UVoZXk",
+      "contractSignedDate": "2026-03-06",
+      "contractEndDate": null,
+      "stripeCustomerId": null,
+      "fathomSalesCallLink": "https://fathom.video/share/cjzp2QcrxquezX_2Py6VceEjC2ZofvDF",
+      "needsVideoEditor": false,
+      "discordChannelId": null,
+      "onboarding": {
+        "status": "onboarding",
+        "launchedDate": null,
+        "campaignsLaunchedAt": null,
+        "readyToBookCallAt": null,
+        "steps": {
+          "payment_collected": {
+            "status": "complete",
+            "completedAt": "2026-03-06",
+            "autoDetected": true,
+            "trigger": "manual",
+            "note": "Collected on closing call"
+          },
+          "contract_signed": {
+            "status": "complete",
+            "completedAt": "2026-03-06",
+            "autoDetected": false,
+            "trigger": "manual"
+          },
+          "welcome_email_sent": {
+            "status": "complete",
+            "completedAt": "2026-03-06",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "added_to_daily_sweep": {
+            "status": "complete",
+            "completedAt": "2026-03-06",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "onboarding_form_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "ghl_webhook",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "client_joined_discord": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "discord_event",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "discord_channel_created": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "auto",
+            "dependsOn": [
+              "client_joined_discord"
+            ],
+            "note": "Bot auto-creates channel and adds client on join"
+          },
+          "ghl_subaccount_configured": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Create GHL sub-account and configure settings"
+          },
+          "facebook_access_granted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client grants access to Meta Business Manager"
+          },
+          "client_media_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client sends photos/videos via Discord or onboarding funnel"
+          },
+          "ad_scripts_written": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Media buyer writes ad scripts (future: AI-assisted from Fathom call)"
+          },
+          "ad_scripts_sent_to_client": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_written"
+            ],
+            "note": "Send to client via their Discord channel"
+          },
+          "ad_scripts_approved": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ad_scripts_sent_to_client"
+            ],
+            "note": "Client reviews, revises if needed, then approves. Mark done when final approval received."
+          },
+          "meta_campaigns_built": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_approved",
+              "client_media_submitted",
+              "facebook_access_granted"
+            ],
+            "note": "Build campaigns in Meta Ads Manager (no video editor)"
+          },
+          "onboarding_call_booked": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ghl_subaccount_configured",
+              "meta_campaigns_built",
+              "onboarding_form_submitted",
+              "client_joined_discord"
+            ],
+            "note": "Send booking link to client in their Discord channel. Bot sends message automatically when all deps are met.",
+            "readyToBookTrigger": true
+          },
+          "onboarding_call_completed": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_booked"
+            ],
+            "checklist": [
+              "calendar_connected",
+              "crm_access_granted",
+              "test_lead_run"
+            ],
+            "note": "Mark done after the call. Checklist: calendar connected, CRM access granted, test lead run."
+          },
+          "campaigns_launched": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_completed"
+            ],
+            "note": "Account manager flips campaigns on in Meta Ads Manager"
+          },
+          "48hr_health_check": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "timeGatedHours": 48,
+            "note": "Verify leads are coming in and everything is running correctly. Not a performance review."
+          },
+          "post_launch_checkin_scheduled": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "note": "~2 week performance review"
+          }
+        },
+        "log": [
+          {
+            "timestamp": "2026-03-27T16:09:33.305Z",
+            "event": "client_created",
+            "note": "Signed. Created via new-client.mjs."
+          }
+        ]
+      }
+    },
+    {
+      "id": "client_bray_miller_builders_1774627773639",
+      "name": "Mike Webster",
+      "companyName": "Bray Miller Builders",
+      "email": "mikewebster@braymillerbuilders.com",
+      "appointmentId": "fjWuor3SUigRPzdCNJCI",
+      "contractSignedDate": "2026-01-12",
+      "contractEndDate": null,
+      "stripeCustomerId": null,
+      "fathomSalesCallLink": "https://fathom.video/share/kAjrnq4M2x1zgj_WBSVZtmUhxHB51ig3",
+      "needsVideoEditor": false,
+      "discordChannelId": null,
+      "onboarding": {
+        "status": "onboarding",
+        "launchedDate": null,
+        "campaignsLaunchedAt": null,
+        "readyToBookCallAt": null,
+        "steps": {
+          "payment_collected": {
+            "status": "complete",
+            "completedAt": "2026-01-12",
+            "autoDetected": true,
+            "trigger": "manual",
+            "note": "Collected on closing call"
+          },
+          "contract_signed": {
+            "status": "complete",
+            "completedAt": "2026-01-12",
+            "autoDetected": false,
+            "trigger": "manual"
+          },
+          "welcome_email_sent": {
+            "status": "complete",
+            "completedAt": "2026-01-12",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "added_to_daily_sweep": {
+            "status": "complete",
+            "completedAt": "2026-01-12",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "onboarding_form_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "ghl_webhook",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "client_joined_discord": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "discord_event",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "discord_channel_created": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "auto",
+            "dependsOn": [
+              "client_joined_discord"
+            ],
+            "note": "Bot auto-creates channel and adds client on join"
+          },
+          "ghl_subaccount_configured": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Create GHL sub-account and configure settings"
+          },
+          "facebook_access_granted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client grants access to Meta Business Manager"
+          },
+          "client_media_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client sends photos/videos via Discord or onboarding funnel"
+          },
+          "ad_scripts_written": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Media buyer writes ad scripts (future: AI-assisted from Fathom call)"
+          },
+          "ad_scripts_sent_to_client": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_written"
+            ],
+            "note": "Send to client via their Discord channel"
+          },
+          "ad_scripts_approved": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ad_scripts_sent_to_client"
+            ],
+            "note": "Client reviews, revises if needed, then approves. Mark done when final approval received."
+          },
+          "meta_campaigns_built": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_approved",
+              "client_media_submitted",
+              "facebook_access_granted"
+            ],
+            "note": "Build campaigns in Meta Ads Manager (no video editor)"
+          },
+          "onboarding_call_booked": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ghl_subaccount_configured",
+              "meta_campaigns_built",
+              "onboarding_form_submitted",
+              "client_joined_discord"
+            ],
+            "note": "Send booking link to client in their Discord channel. Bot sends message automatically when all deps are met.",
+            "readyToBookTrigger": true
+          },
+          "onboarding_call_completed": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_booked"
+            ],
+            "checklist": [
+              "calendar_connected",
+              "crm_access_granted",
+              "test_lead_run"
+            ],
+            "note": "Mark done after the call. Checklist: calendar connected, CRM access granted, test lead run."
+          },
+          "campaigns_launched": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_completed"
+            ],
+            "note": "Account manager flips campaigns on in Meta Ads Manager"
+          },
+          "48hr_health_check": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "timeGatedHours": 48,
+            "note": "Verify leads are coming in and everything is running correctly. Not a performance review."
+          },
+          "post_launch_checkin_scheduled": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "note": "~2 week performance review"
+          }
+        },
+        "log": [
+          {
+            "timestamp": "2026-03-27T16:09:33.637Z",
+            "event": "client_created",
+            "note": "Signed. Created via new-client.mjs."
+          }
+        ]
+      }
+    },
+    {
+      "id": "client_eco_concrete_design_1774627773996",
+      "name": "Jake Baker",
+      "companyName": "Eco Concrete Design",
+      "email": "ecoconcretedesign@gmail.com",
+      "appointmentId": "0wIGfLEmeaFs2aSBuEy6",
+      "contractSignedDate": "2026-01-14",
+      "contractEndDate": null,
+      "stripeCustomerId": null,
+      "fathomSalesCallLink": "https://fathom.video/share/diGfqm3EYizskoqTn4-5kNrRSUshT_tX",
+      "needsVideoEditor": false,
+      "discordChannelId": null,
+      "onboarding": {
+        "status": "onboarding",
+        "launchedDate": null,
+        "campaignsLaunchedAt": null,
+        "readyToBookCallAt": null,
+        "steps": {
+          "payment_collected": {
+            "status": "complete",
+            "completedAt": "2026-01-14",
+            "autoDetected": true,
+            "trigger": "manual",
+            "note": "Collected on closing call"
+          },
+          "contract_signed": {
+            "status": "complete",
+            "completedAt": "2026-01-14",
+            "autoDetected": false,
+            "trigger": "manual"
+          },
+          "welcome_email_sent": {
+            "status": "complete",
+            "completedAt": "2026-01-14",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "added_to_daily_sweep": {
+            "status": "complete",
+            "completedAt": "2026-01-14",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "onboarding_form_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "ghl_webhook",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "client_joined_discord": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "discord_event",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "discord_channel_created": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "auto",
+            "dependsOn": [
+              "client_joined_discord"
+            ],
+            "note": "Bot auto-creates channel and adds client on join"
+          },
+          "ghl_subaccount_configured": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Create GHL sub-account and configure settings"
+          },
+          "facebook_access_granted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client grants access to Meta Business Manager"
+          },
+          "client_media_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client sends photos/videos via Discord or onboarding funnel"
+          },
+          "ad_scripts_written": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Media buyer writes ad scripts (future: AI-assisted from Fathom call)"
+          },
+          "ad_scripts_sent_to_client": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_written"
+            ],
+            "note": "Send to client via their Discord channel"
+          },
+          "ad_scripts_approved": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ad_scripts_sent_to_client"
+            ],
+            "note": "Client reviews, revises if needed, then approves. Mark done when final approval received."
+          },
+          "meta_campaigns_built": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_approved",
+              "client_media_submitted",
+              "facebook_access_granted"
+            ],
+            "note": "Build campaigns in Meta Ads Manager (no video editor)"
+          },
+          "onboarding_call_booked": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ghl_subaccount_configured",
+              "meta_campaigns_built",
+              "onboarding_form_submitted",
+              "client_joined_discord"
+            ],
+            "note": "Send booking link to client in their Discord channel. Bot sends message automatically when all deps are met.",
+            "readyToBookTrigger": true
+          },
+          "onboarding_call_completed": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_booked"
+            ],
+            "checklist": [
+              "calendar_connected",
+              "crm_access_granted",
+              "test_lead_run"
+            ],
+            "note": "Mark done after the call. Checklist: calendar connected, CRM access granted, test lead run."
+          },
+          "campaigns_launched": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_completed"
+            ],
+            "note": "Account manager flips campaigns on in Meta Ads Manager"
+          },
+          "48hr_health_check": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "timeGatedHours": 48,
+            "note": "Verify leads are coming in and everything is running correctly. Not a performance review."
+          },
+          "post_launch_checkin_scheduled": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "note": "~2 week performance review"
+          }
+        },
+        "log": [
+          {
+            "timestamp": "2026-03-27T16:09:33.996Z",
+            "event": "client_created",
+            "note": "Signed. Created via new-client.mjs."
+          }
+        ]
+      }
+    },
+    {
+      "id": "client_chris_home_projects_1774627774251",
+      "name": "Chris",
+      "companyName": "Chris Home Projects",
+      "email": "cjhomeproject@aol.com",
+      "appointmentId": "tMUZd9UKg8RewEfU2zhC",
+      "contractSignedDate": "2025-12-02",
+      "contractEndDate": null,
+      "stripeCustomerId": null,
+      "fathomSalesCallLink": "https://fathom.video/share/r9MRubiTBSuBEKv5scejPaoowiUpnEgP",
+      "needsVideoEditor": false,
+      "discordChannelId": null,
+      "onboarding": {
+        "status": "onboarding",
+        "launchedDate": null,
+        "campaignsLaunchedAt": null,
+        "readyToBookCallAt": null,
+        "steps": {
+          "payment_collected": {
+            "status": "complete",
+            "completedAt": "2025-12-02",
+            "autoDetected": true,
+            "trigger": "manual",
+            "note": "Collected on closing call"
+          },
+          "contract_signed": {
+            "status": "complete",
+            "completedAt": "2025-12-02",
+            "autoDetected": false,
+            "trigger": "manual"
+          },
+          "welcome_email_sent": {
+            "status": "complete",
+            "completedAt": "2025-12-02",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "added_to_daily_sweep": {
+            "status": "complete",
+            "completedAt": "2025-12-02",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "onboarding_form_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "ghl_webhook",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "client_joined_discord": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "discord_event",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "discord_channel_created": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "auto",
+            "dependsOn": [
+              "client_joined_discord"
+            ],
+            "note": "Bot auto-creates channel and adds client on join"
+          },
+          "ghl_subaccount_configured": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Create GHL sub-account and configure settings"
+          },
+          "facebook_access_granted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client grants access to Meta Business Manager"
+          },
+          "client_media_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client sends photos/videos via Discord or onboarding funnel"
+          },
+          "ad_scripts_written": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Media buyer writes ad scripts (future: AI-assisted from Fathom call)"
+          },
+          "ad_scripts_sent_to_client": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_written"
+            ],
+            "note": "Send to client via their Discord channel"
+          },
+          "ad_scripts_approved": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ad_scripts_sent_to_client"
+            ],
+            "note": "Client reviews, revises if needed, then approves. Mark done when final approval received."
+          },
+          "meta_campaigns_built": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_approved",
+              "client_media_submitted",
+              "facebook_access_granted"
+            ],
+            "note": "Build campaigns in Meta Ads Manager (no video editor)"
+          },
+          "onboarding_call_booked": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ghl_subaccount_configured",
+              "meta_campaigns_built",
+              "onboarding_form_submitted",
+              "client_joined_discord"
+            ],
+            "note": "Send booking link to client in their Discord channel. Bot sends message automatically when all deps are met.",
+            "readyToBookTrigger": true
+          },
+          "onboarding_call_completed": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_booked"
+            ],
+            "checklist": [
+              "calendar_connected",
+              "crm_access_granted",
+              "test_lead_run"
+            ],
+            "note": "Mark done after the call. Checklist: calendar connected, CRM access granted, test lead run."
+          },
+          "campaigns_launched": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_completed"
+            ],
+            "note": "Account manager flips campaigns on in Meta Ads Manager"
+          },
+          "48hr_health_check": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "timeGatedHours": 48,
+            "note": "Verify leads are coming in and everything is running correctly. Not a performance review."
+          },
+          "post_launch_checkin_scheduled": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "note": "~2 week performance review"
+          }
+        },
+        "log": [
+          {
+            "timestamp": "2026-03-27T16:09:34.250Z",
+            "event": "client_created",
+            "note": "Signed. Created via new-client.mjs."
+          }
+        ]
+      }
+    },
+    {
+      "id": "client_concept_ii_1774627774501",
+      "name": "Ross Pino",
+      "companyName": "Concept II",
+      "email": "ross@concept-ii.com",
+      "appointmentId": "XWbprsKAdYHwzJSumfGA",
+      "contractSignedDate": "2025-12-02",
+      "contractEndDate": null,
+      "stripeCustomerId": null,
+      "fathomSalesCallLink": "https://fathom.video/share/dHdDgJMcWz9My2L-kDTUrmdDUM9dhi_t",
+      "needsVideoEditor": false,
+      "discordChannelId": null,
+      "onboarding": {
+        "status": "onboarding",
+        "launchedDate": null,
+        "campaignsLaunchedAt": null,
+        "readyToBookCallAt": null,
+        "steps": {
+          "payment_collected": {
+            "status": "complete",
+            "completedAt": "2025-12-02",
+            "autoDetected": true,
+            "trigger": "manual",
+            "note": "Collected on closing call"
+          },
+          "contract_signed": {
+            "status": "complete",
+            "completedAt": "2025-12-02",
+            "autoDetected": false,
+            "trigger": "manual"
+          },
+          "welcome_email_sent": {
+            "status": "complete",
+            "completedAt": "2025-12-02",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "added_to_daily_sweep": {
+            "status": "complete",
+            "completedAt": "2025-12-02",
+            "autoDetected": true,
+            "trigger": "auto"
+          },
+          "onboarding_form_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "ghl_webhook",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "client_joined_discord": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "discord_event",
+            "dependsOn": [
+              "contract_signed"
+            ]
+          },
+          "discord_channel_created": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": true,
+            "trigger": "auto",
+            "dependsOn": [
+              "client_joined_discord"
+            ],
+            "note": "Bot auto-creates channel and adds client on join"
+          },
+          "ghl_subaccount_configured": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Create GHL sub-account and configure settings"
+          },
+          "facebook_access_granted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client grants access to Meta Business Manager"
+          },
+          "client_media_submitted": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Client sends photos/videos via Discord or onboarding funnel"
+          },
+          "ad_scripts_written": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "onboarding_form_submitted"
+            ],
+            "note": "Media buyer writes ad scripts (future: AI-assisted from Fathom call)"
+          },
+          "ad_scripts_sent_to_client": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_written"
+            ],
+            "note": "Send to client via their Discord channel"
+          },
+          "ad_scripts_approved": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ad_scripts_sent_to_client"
+            ],
+            "note": "Client reviews, revises if needed, then approves. Mark done when final approval received."
+          },
+          "meta_campaigns_built": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "mediaBuyer",
+            "dependsOn": [
+              "ad_scripts_approved",
+              "client_media_submitted",
+              "facebook_access_granted"
+            ],
+            "note": "Build campaigns in Meta Ads Manager (no video editor)"
+          },
+          "onboarding_call_booked": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "ghl_subaccount_configured",
+              "meta_campaigns_built",
+              "onboarding_form_submitted",
+              "client_joined_discord"
+            ],
+            "note": "Send booking link to client in their Discord channel. Bot sends message automatically when all deps are met.",
+            "readyToBookTrigger": true
+          },
+          "onboarding_call_completed": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_booked"
+            ],
+            "checklist": [
+              "calendar_connected",
+              "crm_access_granted",
+              "test_lead_run"
+            ],
+            "note": "Mark done after the call. Checklist: calendar connected, CRM access granted, test lead run."
+          },
+          "campaigns_launched": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "onboarding_call_completed"
+            ],
+            "note": "Account manager flips campaigns on in Meta Ads Manager"
+          },
+          "48hr_health_check": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "timeGatedHours": 48,
+            "note": "Verify leads are coming in and everything is running correctly. Not a performance review."
+          },
+          "post_launch_checkin_scheduled": {
+            "status": "pending",
+            "completedAt": null,
+            "autoDetected": false,
+            "owner": "accountManager",
+            "dependsOn": [
+              "campaigns_launched"
+            ],
+            "note": "~2 week performance review"
+          }
+        },
+        "log": [
+          {
+            "timestamp": "2026-03-27T16:09:34.500Z",
+            "event": "client_created",
+            "note": "Signed. Created via new-client.mjs."
+          }
+        ]
+      }
+    }
+  ]
+}

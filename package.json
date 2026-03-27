@@ -7,7 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --watch scripts --watch agents --watch data --ext mjs,json scripts/serve.mjs -- --no-open"
   },
   "repository": {
     "type": "git",
@@ -25,5 +26,8 @@
     "express": "^5.2.1",
     "stripe": "^20.4.1",
     "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
   }
 }

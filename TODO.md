@@ -1,6 +1,6 @@
 # TODO
 
-Work tasks for Evolute Solutions. Updated 2026-03-26.
+Work tasks for Evolute Solutions. Updated 2026-03-26 (evening).
 
 ## Urgent / Infrastructure
 
@@ -28,6 +28,7 @@ Work tasks for Evolute Solutions. Updated 2026-03-26.
 
 - [ ] **Payment collections tracker** — `data/collections.json` per client (contracted, paid, due dates, overdue status); dashboard Collections tab; alerts for upcoming/overdue payments
 - [ ] **Payroll calculator** — `data/payroll-config.json` rules per person; calculate setter base + commissions, media buyer, contractors; output payroll report
+- [ ] **Expense tracking + reduction** — in-depth tracking of all software, subscriptions, and business expenses; identify unused/redundant spend; dashboard Expenses tab with categorized breakdown and reduction recommendations
 
 ## Phase 2 — Intelligence
 
@@ -36,14 +37,30 @@ Work tasks for Evolute Solutions. Updated 2026-03-26.
 ## Phase 3 — New Integrations
 
 - [ ] **GHL webhooks** — replace polling (fetch-raw-appts.mjs) with real-time GHL API webhooks for automatic appointment sync
-- [ ] **Meta integration** — Meta Marketing API: CPL by campaign, budget pacing, payment status, campaign health, week-over-week comparison
+- [ ] **Meta integration — ads health + CPL** — Meta Marketing API: pull CPL per client, cost per appointment, campaign active/paused status, budget pacing, week-over-week comparison; surface in dashboard per-client
+- [ ] **Meta ads pause alerting** — poll Meta API on a schedule; if any client's campaigns are paused or have delivery errors, fire an immediate Discord alert so team can fix ASAP
 
 ## Phase 4 — Full Automation
 
 - [ ] **Fathom follow-up agent** — AI scans Fathom calls, generates follow-up action plan per call
 - [ ] **Auto-follow-up drafting** — draft outreach messages for onboarding blockers + overdue collections for Max to review/send
+- [ ] **Post-appointment Discord follow-up** — after each appointment's scheduled time passes, bot automatically messages the relevant client's Discord channel asking what happened (showed? no-show? rescheduled?); response feeds back into appointment tracking
 - [ ] **CSM escalation detection** — flag distressed clients from sweep, draft response recommendations
 - [ ] **Fathom call knowledge base** — store all transcripts/summaries for searchable reference
+
+---
+
+## Client Hub (Major Feature)
+
+Single dashboard destination replacing Discord channels (communication) + Asana (status) for all active clients. Per-client card/page shows everything in one place.
+
+- [ ] **Client Hub — core layout** — top-level "Clients" view listing all active clients with at-a-glance health status (happy / at-risk / not responding / blocked)
+- [ ] **Client Hub — communication recap** — pull from Discord client channels via client-sweep; surface a 2–3 sentence AI-written status (are they happy, complaining, silent?), last message date, sentiment trend
+- [ ] **Client Hub — performance metrics** — per client: leads, cost per lead, appointments booked, cost per appointment, show rate; pulled from GHL + Meta API; no manual input
+- [ ] **Client Hub — ads status** — live indicator: are Meta campaigns active, paused, or in error? Pull from Meta API; flag if anything needs attention
+- [ ] **Client Hub — blockers + action items** — surface anything blocking delivery: onboarding incomplete, Meta access missing, ad account issues, overdue payments; one-click links to resolve
+- [ ] **Client Hub — campaign change requests** — lightweight field/log where team can note "client requested X change" and track if it's been done or is pending; replaces buried Discord threads
+- [ ] **Client Hub — backend aggregation job** — scheduled job that pulls all the above data sources (Discord, GHL, Meta, onboarding.json, collections.json) and writes to `data/client-hub.json` for fast dashboard reads
 
 ---
 
@@ -55,7 +72,9 @@ Work tasks for Evolute Solutions. Updated 2026-03-26.
 
 ---
 
-## Someday / Ideas
+## AI Expenses Audit (Priority)
+
+- [ ] **AI expenses audit + subscription purge** — feed `data/expenses.json` into an AI agent that categorizes all recurring charges, identifies unused/duplicate subscriptions, surfaces what to cancel, and outputs a prioritized action list. Goal: cut spend on tools Max isn't actively using.
 
 - [ ] Asana visibility — surface overdue/stalled tasks in sweeps
 - [ ] Calendar proactive alerts — flag upcoming meetings, prep reminders

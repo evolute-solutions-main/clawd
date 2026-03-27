@@ -18,11 +18,11 @@ https://github.com/evolute-solutions-main/clawd-evan.git
 ## Key Directories
 - `agents/appointment-tracking/` — Cold SMS appointment report
 - `agents/client-sweep/` — Daily client health sweep (Discord → LLM → Notion)
-- `agents/onboarding/` — Onboarding briefing agent (reads `data/onboarding.json`, outputs per-role action lists)
+- `agents/onboarding/` — Onboarding briefing agent (reads `data/clients.json`, outputs per-role action lists)
 - `agents/webhooks/` — HTTP webhook server (Stripe, GHL) running on port 3001
 - `agents/_shared/` — Shared utilities (env-loader, discord-fetcher, notion-publisher)
 - `scripts/` — One-off scripts: `new-client.mjs`, `mark-done.mjs`, etc.
-- `data/` — All data: `onboarding.json`, `sales_data.json`, `expenses.json`, etc.
+- `data/` — All data: `clients.json`, `alerts.json`, `sales_data.json`, `expenses.json`, etc.
 
 ## Services on VM (systemd)
 - `clawdbot-gateway` — Discord gateway bot (reads messages, triggers agents)
@@ -35,15 +35,20 @@ https://github.com/evolute-solutions-main/clawd-evan.git
 - Two bots: `DISCORD_BOT_TOKEN` (read-only fetcher), `DISCORD_CHAT_BOT_TOKEN` (read+write chat bot)
 - Message Content Intent must be enabled in Discord Developer Portal
 
-## Onboarding System (built 2026-03-25)
-- Data: `data/onboarding.json` — one record per client, full step dependency graph
-- `scripts/new-client.mjs` — create onboarding record when Max signs a client
-- `scripts/mark-done.mjs` — mark a step complete (fuzzy matches client + step)
+## Client & Onboarding System (built 2026-03-25, restructured 2026-03-26)
+- Data: `data/clients.json` — canonical client store; each client has an `onboarding` object with `status`, `steps`, `log`, and timing fields
+- Data: `data/alerts.json` — unmatched webhook events (payment/form/Discord join with no client match); separate from client records
+- Client shape: top-level fields (`id`, `name`, `companyName`, `email`, `appointmentId`, `contractSignedDate`, `stripeCustomerId`, etc.) + nested `onboarding: { status, steps, log, launchedDate, campaignsLaunchedAt, readyToBookCallAt }`
+- `appointmentId` links a client back to their closed appointment in `sales_data.json`
+- `scripts/new-client.mjs` — create client record when Max signs (supports `--appointment-id`)
+- `scripts/mark-done.mjs` — mark a step complete (fuzzy matches client + step, writes to `client.onboarding.steps`)
+- `scripts/resolve-alert.mjs` — resolve alerts in `data/alerts.json`
 - `agents/onboarding/scripts/run.mjs` — daily briefing, walks dependency graph, outputs per-role action lists
 - Webhook auto-detection: Stripe payment → marks `payment_collected`; GHL form → marks `onboarding_form_submitted`; Discord join → marks `client_joined_discord`
 
 **Still to build:**
 - Dashboard onboarding tab
+- Link new clients to closed appointments in sales_data (stamp `onboardingClientId` on appointment when client created)
 
 ## AGENTS.md Routing Rules
 When Max says "just signed [client]" → run `new-client.mjs`

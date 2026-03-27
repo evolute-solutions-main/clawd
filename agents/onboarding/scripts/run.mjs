@@ -24,8 +24,9 @@ import { getGlobalTimezone } from '../../_shared/formatters/index.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const REPO_ROOT  = path.resolve(__dirname, '../../..')
-const ONBOARDING_FILE = path.join(REPO_ROOT, 'data/onboarding.json')
-const TEAM_FILE       = path.join(REPO_ROOT, 'data/team.json')
+const CLIENTS_FILE = path.join(REPO_ROOT, 'data/clients.json')
+const ALERTS_FILE  = path.join(REPO_ROOT, 'data/alerts.json')
+const TEAM_FILE    = path.join(REPO_ROOT, 'data/team.json')
 const OUTPUTS_DIR     = path.join(__dirname, '../outputs')
 
 const args       = process.argv.slice(2)
@@ -63,8 +64,8 @@ const STEP_LABELS = {
 
 // ── Dependency + time-gate evaluator ─────────────────────────────────────────
 
-function evaluateSteps(steps, client) {
-  const results = { unlocked: [], blocked: [], complete: [], waiting_auto: [] }
+function evaluateSteps(steps, onboarding) {
+  const results = { unlocked: [], queued: [], blocked: [], complete: [], waiting_auto: [] }
 
   for (const [key, step] of Object.entries(steps)) {
     if (step.status === 'complete') {
@@ -77,13 +78,20 @@ function evaluateSteps(steps, client) {
 
     if (!depsComplete) {
       const pendingDeps = deps.filter(d => steps[d]?.status !== 'complete')
-      results.blocked.push({ key, pendingDeps })
+      // Truly blocked = waiting on an external/auto-detected step (webhook, client action)
+      // Queued = all pending deps are manual — someone just needs to do them first
+      const hasExternalDep = pendingDeps.some(d => steps[d]?.autoDetected === true)
+      if (hasExternalDep) {
+        results.blocked.push({ key, pendingDeps })
+      } else {
+        results.queued.push({ key, pendingDeps })
+      }
       continue
     }
 
     // Time-gated steps: check if enough time has passed
-    if (step.timeGatedHours && client.campaignsLaunchedAt) {
-      const launchedAt  = new Date(client.campaignsLaunchedAt)
+    if (step.timeGatedHours && onboarding.campaignsLaunchedAt) {
+      const launchedAt  = new Date(onboarding.campaignsLaunchedAt)
       const gatePassesAt = new Date(launchedAt.getTime() + step.timeGatedHours * 60 * 60 * 1000)
       if (now < gatePassesAt) {
         const hoursLeft = Math.ceil((gatePassesAt - now) / (60 * 60 * 1000))
@@ -120,8 +128,9 @@ function getPhase(steps) {
 
 // ── Main ──────────────────────────────────────────────────────────────────────
 
-const data = JSON.parse(fs.readFileSync(ONBOARDING_FILE, 'utf8'))
-const team = JSON.parse(fs.readFileSync(TEAM_FILE, 'utf8'))
+const clientData = JSON.parse(fs.readFileSync(CLIENTS_FILE, 'utf8'))
+const alertData  = JSON.parse(fs.readFileSync(ALERTS_FILE,  'utf8'))
+const team       = JSON.parse(fs.readFileSync(TEAM_FILE,    'utf8'))
 
 const ROLE_LABELS = {
   accountManager: 'Account Manager',
@@ -134,11 +143,11 @@ function resolveRole(roleKey) {
   return person ? `${person} (${label})` : label
 }
 
-const pendingAlerts = (data.alerts || []).filter(a => a.status === 'pending')
+const pendingAlerts = (alertData.alerts || []).filter(a => a.status === 'pending')
 
-let clients = data.clients.filter(c =>
-  c.status === 'onboarding' ||
-  (c.status === 'launched' && c.steps?.post_launch_checkin_scheduled?.status !== 'complete')
+let clients = clientData.clients.filter(c =>
+  c.onboarding?.status === 'onboarding' ||
+  (c.onboarding?.status === 'launched' && c.onboarding.steps?.post_launch_checkin_scheduled?.status !== 'complete')
 )
 if (filterName) clients = clients.filter(c => c.companyName.toLowerCase().includes(filterName))
 
@@ -157,12 +166,12 @@ const roleActions = {
 const clientSummaries = []
 
 for (const client of clients) {
-  const eval_  = evaluateSteps(client.steps, client)
-  const phase   = getPhase(client.steps)
+  const eval_  = evaluateSteps(client.onboarding.steps, client.onboarding)
+  const phase   = getPhase(client.onboarding.steps)
 
   // Flag ready-to-book clients that haven't been notified yet
-  const isReadyToBook = client.readyToBookCallAt &&
-    client.steps?.onboarding_call_booked?.status !== 'complete'
+  const isReadyToBook = client.onboarding.readyToBookCallAt &&
+    client.onboarding.steps?.onboarding_call_booked?.status !== 'complete'
 
   for (const item of eval_.unlocked) {
     const bucket = roleActions[item.owner] || roleActions.accountManager
@@ -185,9 +194,10 @@ for (const client of clients) {
     phase,
     isReadyToBook,
     unlocked:    eval_.unlocked.length,
+    queued:      eval_.queued.length,
     blocked:     blockedSummary,
     complete:    eval_.complete.length,
-    total:       Object.keys(client.steps).length
+    total:       Object.keys(client.onboarding.steps).length
   })
 }
 
@@ -212,8 +222,9 @@ for (const c of clientSummaries) {
   lines.push(`Phase: ${c.phase} | ${c.complete}/${c.total} steps complete`)
   if (c.isReadyToBook) lines.push(`🚀 READY TO BOOK — send booking link to client in Discord`)
   if (c.unlocked > 0)  lines.push(`${c.unlocked} step(s) ready to action`)
+  if (c.queued > 0)    lines.push(`${c.queued} step(s) queued behind current actions`)
   if (c.blocked.length > 0) {
-    lines.push(`Blocked steps:`)
+    lines.push(`Blocked (waiting on external):`)
     for (const b of c.blocked) {
       if (b.timeGated) {
         lines.push(`  - "${b.step}" → time-gated, available in ~${b.hoursLeft}h`)

@@ -1,0 +1,119 @@
+{
+  "alerts": [
+    {
+      "id": "alert_1774627815603",
+      "type": "deposit_pending",
+      "status": "pending",
+      "message": "Tony Hall (primetym01@gmail.com) paid a $100 deposit to lock in a deal — he needs a couple weeks to fully sign. Add as client when he's ready. Billing name confirmed from Stripe charge.",
+      "receivedAt": "2026-03-27T16:10:15.602Z",
+      "resolvedAt": null,
+      "payload": {
+        "name": "Tony Hall",
+        "email": "primetym01@gmail.com",
+        "depositAmount": 100
+      }
+    },
+    {
+      "id": "alert_1774627815604",
+      "type": "client_missing_email",
+      "status": "pending",
+      "message": "Kfir Segev — closed deal on 2026-02-03 ($1,000 cash / $4,000 contract) but no email on record. Cannot create onboarding entry without an email. Please add their email.",
+      "receivedAt": "2026-03-27T16:10:15.602Z",
+      "resolvedAt": null,
+      "payload": {
+        "name": "Kfir Segev",
+        "signedDate": "2026-02-03",
+        "cashCollected": 1000,
+        "contractRevenue": 4000,
+        "appointmentId": "xl_2026-02-03_kfir_segev",
+        "fathomLink": "https://fathom.video/share/n5FF2xMCBJKHBndRsCqLyexQhhWxUQkx"
+      }
+    },
+    {
+      "id": "alert_1774627815605",
+      "type": "client_status_clarification",
+      "status": "pending",
+      "message": "These clients signed 2–4 months ago and are likely launched. Please confirm their current status so the dashboard shows them correctly:\n• Ross Pino / Concept II (Dec 2025, $6k)\n• Chris Home Projects (Dec 2025, $375)\n• Mike Webster / Bray Miller Builders (Jan 2026, $2k)\n• Jake Baker / Eco Concrete Design (Jan 2026, $500)\nFor each: are they launched, still onboarding, or churned?",
+      "receivedAt": "2026-03-27T16:10:15.602Z",
+      "resolvedAt": null,
+      "payload": {
+        "clients": [
+          {
+            "name": "Ross Pino",
+            "company": "Concept II",
+            "signed": "2025-12-02",
+            "cash": 6000,
+            "revenue": 6000
+          },
+          {
+            "name": "Chris",
+            "company": "Chris Home Projects",
+            "signed": "2025-12-02",
+            "cash": 375,
+            "revenue": null
+          },
+          {
+            "name": "Mike Webster",
+            "company": "Bray Miller Builders",
+            "signed": "2026-01-12",
+            "cash": 2000,
+            "revenue": 4000
+          },
+          {
+            "name": "Jake Baker",
+            "company": "Eco Concrete Design",
+            "signed": "2026-01-14",
+            "cash": 500,
+            "revenue": 1000
+          }
+        ]
+      }
+    },
+    {
+      "id": "alert_1774627815606",
+      "type": "partial_payment",
+      "status": "pending",
+      "message": "William Baker Construction (wlbaker.construction@gmail.com) — only $100 collected on a $4,800 contract (signed 2026-02-19). Is this a deposit situation like Tony Hall, or is the remaining balance outstanding?",
+      "receivedAt": "2026-03-27T16:10:15.602Z",
+      "resolvedAt": null,
+      "payload": {
+        "clientCompany": "William Baker Construction",
+        "email": "wlbaker.construction@gmail.com",
+        "cashCollected": 100,
+        "contractRevenue": 4800
+      }
+    },
+    {
+      "id": "alert_1774627815607",
+      "type": "confirm_company_names",
+      "status": "pending",
+      "message": "These clients have personal emails so company names were inferred — please confirm or correct in the dashboard:\n• Kenneth Hewitt (knhewitt@yahoo.com) — listed as \"Kenneth Hewitt\"\n• Hector Alfaro (hectorgalfaro@hotmail.com) — listed as \"Hector Alfaro\"\n• Cesar Grullon (tillupco@gmail.com) — listed as \"Cesar Grullon\"\n• Mike Baruh (mikebaruh@gmail.com) — listed as \"Mike Baruh\"\n• Bill (bill@probuiltco.com) — company listed as \"ProBuilt Co\"\n• Ben Beever (ben.beever@comcast.net) — company listed as \"Ben Beever\"",
+      "receivedAt": "2026-03-27T16:10:15.602Z",
+      "resolvedAt": null,
+      "payload": {
+        "clients": [
+          "Kenneth Hewitt",
+          "Hector Alfaro",
+          "Cesar Grullon",
+          "Mike Baruh",
+          "Bill/ProBuilt Co",
+          "Ben Beever"
+        ]
+      }
+    },
+    {
+      "id": "alert_1774627815608",
+      "type": "missing_contract_revenue",
+      "status": "pending",
+      "message": "These clients have no contract revenue set:\n• Chris Home Projects — $375 cash collected, contract revenue unknown\n• Ben Beever — $2,000 cash collected, contract revenue not set\nPlease update in the dashboard.",
+      "receivedAt": "2026-03-27T16:10:15.602Z",
+      "resolvedAt": null,
+      "payload": {
+        "clients": [
+          "Chris Home Projects",
+          "Ben Beever"
+        ]
+      }
+    }
+  ]
+}

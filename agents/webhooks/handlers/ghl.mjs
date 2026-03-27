@@ -29,7 +29,8 @@ import { postMessage } from '../../_shared/discord/index.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const REPO_ROOT  = path.resolve(__dirname, '../../..')
-const ONBOARDING_FILE = path.join(REPO_ROOT, 'data/onboarding.json')
+const CLIENTS_FILE = path.join(REPO_ROOT, 'data/clients.json')
+const ALERTS_FILE  = path.join(REPO_ROOT, 'data/alerts.json')
 
 // The form ID of the onboarding form in GHL
 // Set GHL_ONBOARDING_FORM_ID in .secrets.env once you have it
@@ -37,8 +38,7 @@ const ONBOARDING_FORM_ID = process.env.GHL_ONBOARDING_FORM_ID || null
 const OPS_CHANNEL_ID     = process.env.DISCORD_OPS_CHANNEL_ID || '1475336170916544524'
 
 function saveAlert(type, message, payload) {
-  const data = JSON.parse(fs.readFileSync(ONBOARDING_FILE, 'utf8'))
-  if (!data.alerts) data.alerts = []
+  const data = JSON.parse(fs.readFileSync(ALERTS_FILE, 'utf8'))
   data.alerts.push({
     id:         `alert_${Date.now()}`,
     type,
@@ -48,7 +48,7 @@ function saveAlert(type, message, payload) {
     resolvedAt: null,
     payload
   })
-  fs.writeFileSync(ONBOARDING_FILE, JSON.stringify(data, null, 2))
+  fs.writeFileSync(ALERTS_FILE, JSON.stringify(data, null, 2))
   console.warn(`[ghl-webhook] Alert saved — type: ${type}`)
 }
 
@@ -58,6 +58,11 @@ async function alertOps(message) {
   } catch (err) {
     console.error('[ghl-webhook] Failed to post Discord alert:', err.message)
   }
+}
+
+// Exported for startup-catchup.mjs — process a form submission directly without HTTP context
+export async function processFormSubmission(payload) {
+  await handleFormSubmitted(payload)
 }
 
 export async function handleGHLWebhook(req, res) {
@@ -110,9 +115,9 @@ async function handleFormSubmitted(payload) {
   }
 
   // Find matching onboarding client by email
-  const data   = JSON.parse(fs.readFileSync(ONBOARDING_FILE, 'utf8'))
+  const data   = JSON.parse(fs.readFileSync(CLIENTS_FILE, 'utf8'))
   const client = data.clients.find(c =>
-    c.status === 'onboarding' &&
+    c.onboarding?.status === 'onboarding' &&
     c.email?.toLowerCase() === email
   )
 
@@ -123,7 +128,7 @@ async function handleFormSubmitted(payload) {
     return
   }
 
-  if (client.steps.onboarding_form_submitted?.status === 'complete') {
+  if (client.onboarding.steps.onboarding_form_submitted?.status === 'complete') {
     console.log(`[ghl-webhook] Onboarding form already marked complete for ${client.companyName} — skipping`)
     return
   }

@@ -15,11 +15,13 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'url'
+import { syncAllClients } from '../lib/client-sync.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const REPO_ROOT = path.resolve(__dirname, '..')
-const ONBOARDING_FILE = path.join(REPO_ROOT, 'data/onboarding.json')
-const TEAM_FILE       = path.join(REPO_ROOT, 'data/team.json')
+const REPO_ROOT    = path.resolve(__dirname, '..')
+const CLIENTS_FILE = path.join(REPO_ROOT, 'data/clients.json')
+const SALES_FILE   = path.join(REPO_ROOT, 'data/sales_data.json')
+const TEAM_FILE    = path.join(REPO_ROOT, 'data/team.json')
 
 // ── Args ──────────────────────────────────────────────────────────────────────
 
@@ -32,17 +34,19 @@ const email           = get('--email')
 const contractEnd     = get('--contract-end')
 const fathomLink      = get('--fathom')
 const stripeId        = get('--stripe')
+const appointmentId   = get('--appointment-id') || null
+const signedDate      = get('--signed') || null   // historical clients: pass actual sign date
 const needsVideoEditor = args.includes('--video-editor')
 
 if (!name || !email) {
-  console.error('Usage: node scripts/new-client.mjs --name "Name" --email "email@example.com" [--company "Co"] [--contract-end "YYYY-MM-DD"] [--fathom "url"] [--stripe "cus_xxx"] [--video-editor]')
+  console.error('Usage: node scripts/new-client.mjs --name "Name" --email "email@example.com" [--company "Co"] [--contract-end "YYYY-MM-DD"] [--fathom "url"] [--stripe "cus_xxx"] [--appointment-id "ghl_appt_xxx"] [--signed "YYYY-MM-DD"] [--video-editor]')
   process.exit(1)
 }
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
 const now   = new Date().toISOString()
-const today = now.split('T')[0]
+const today = signedDate || now.split('T')[0]  // use --signed if provided
 const id    = 'client_' + company.toLowerCase().replace(/[^a-z0-9]+/g, '_') + '_' + Date.now()
 
 function makeSteps(needsVideoEditor) {
@@ -197,13 +201,18 @@ function makeSteps(needsVideoEditor) {
 
 // ── Write ─────────────────────────────────────────────────────────────────────
 
-const data = JSON.parse(fs.readFileSync(ONBOARDING_FILE, 'utf8'))
+const data = JSON.parse(fs.readFileSync(CLIENTS_FILE, 'utf8'))
 
 data.clients = data.clients.filter(c => c.id !== 'client_example')
 
-if (data.clients.find(c => c.email === email)) {
-  console.warn(`⚠️  A client with email ${email} already exists. Aborting to avoid duplicate.`)
-  process.exit(1)
+const existingByEmail = data.clients.find(c => c.email === email)
+if (existingByEmail) {
+  if (existingByEmail.onboarding?.status === 'launched') {
+    console.warn(`⚠️  A client with email ${email} already exists and has been launched. Aborting.`)
+    process.exit(1)
+  }
+  console.log(`ℹ️  Email ${email} matched existing client ${existingByEmail.id} (${existingByEmail.name}) — already in onboarding. No new record needed.`)
+  process.exit(0)
 }
 
 const client = {
@@ -211,19 +220,45 @@ const client = {
   name,
   companyName: company,
   email,
+  appointmentId,
   contractSignedDate: today,
   contractEndDate:    contractEnd || null,
   stripeCustomerId:   stripeId   || null,
   fathomSalesCallLink: fathomLink || null,
   needsVideoEditor,
   discordChannelId: null,
-  status: 'onboarding',
-  steps: makeSteps(needsVideoEditor),
-  log: [{ timestamp: now, event: 'client_created', note: 'Signed. Created via new-client.mjs.' }]
+  onboarding: {
+    status: 'onboarding',
+    launchedDate:        null,
+    campaignsLaunchedAt: null,
+    readyToBookCallAt:   null,
+    steps: makeSteps(needsVideoEditor),
+    log: [{ timestamp: now, event: 'client_created', note: 'Signed. Created via new-client.mjs.' }]
+  }
 }
 
 data.clients.push(client)
-fs.writeFileSync(ONBOARDING_FILE, JSON.stringify(data, null, 2))
+fs.writeFileSync(CLIENTS_FILE, JSON.stringify(data, null, 2))
+
+// ── Auto-sync to sales_data ───────────────────────────────────────────────────
+
+const synced = syncAllClients(CLIENTS_FILE, SALES_FILE)
+let thisLink = synced.find(s => s.client.id === id)
+
+// If appointmentId was passed explicitly, syncAllClients skips this client
+// (because it already has an appointmentId). Stamp onboardingClientId on the
+// appointment directly so both sides stay in sync.
+if (!thisLink && appointmentId) {
+  const rawSales = JSON.parse(fs.readFileSync(SALES_FILE, 'utf8'))
+  const appointments = rawSales.appointments || rawSales
+  const appt = appointments.find(a => a.id === appointmentId)
+  if (appt && !appt.onboardingClientId) {
+    appt.onboardingClientId = id
+    const salesOut = Array.isArray(rawSales) ? appointments : { ...rawSales, appointments }
+    fs.writeFileSync(SALES_FILE, JSON.stringify(salesOut, null, 2))
+    thisLink = { appointment: appt, confidence: 'explicit' }
+  }
+}
 
 // ── Summary ───────────────────────────────────────────────────────────────────
 
@@ -234,6 +269,11 @@ console.log(`   Contract end:   ${contractEnd  || 'not set — add with --contra
 console.log(`   Fathom call:    ${fathomLink   || 'not set — add with --fathom'}`)
 console.log(`   Stripe ID:      ${stripeId     || 'not set — add with --stripe'}`)
 console.log(`   Video editor:   ${needsVideoEditor ? 'yes' : 'no — pass --video-editor if needed'}`)
+if (thisLink) {
+  console.log(`   Appointment:    ${thisLink.appointment.contactName} (${thisLink.confidence} match) → ${thisLink.appointment.id}`)
+} else {
+  console.log(`   Appointment:    no closed deal matched — run sync-clients.mjs if needed`)
+}
 console.log(`\n📋 Unlocked immediately:`)
 console.log(`   [Account Manager] Follow up — client needs to complete onboarding form + join Discord`)
 console.log(`   [Media Buyer]     Write ad scripts once form is submitted`)

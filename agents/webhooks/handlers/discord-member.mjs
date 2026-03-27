@@ -28,7 +28,8 @@ import { postMessage } from '../../_shared/discord/index.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const REPO_ROOT  = path.resolve(__dirname, '../../..')
-const ONBOARDING_FILE = path.join(REPO_ROOT, 'data/onboarding.json')
+const CLIENTS_FILE = path.join(REPO_ROOT, 'data/clients.json')
+const ALERTS_FILE  = path.join(REPO_ROOT, 'data/alerts.json')
 
 const GUILD_ID            = '1164939432722440282'  // Evolute HQ
 const CLIENTS_CATEGORY_ID = process.env.DISCORD_CLIENTS_CATEGORY_ID || null
@@ -45,14 +46,13 @@ export async function handleMemberJoin(member) {
   console.log(`[discord-member] New member joined: ${member.displayName} (${userId})`)
 
   // Try to match to an onboarding client
-  const data  = JSON.parse(fs.readFileSync(ONBOARDING_FILE, 'utf8'))
+  const data  = JSON.parse(fs.readFileSync(CLIENTS_FILE, 'utf8'))
   const match = findMatchingClient(data.clients, displayName, username)
 
   if (!match) {
     console.warn(`[discord-member] No onboarding client matched for ${member.displayName} (${userId})`)
-    const data2 = JSON.parse(fs.readFileSync(ONBOARDING_FILE, 'utf8'))
-    if (!data2.alerts) data2.alerts = []
-    data2.alerts.push({
+    const alertData = JSON.parse(fs.readFileSync(ALERTS_FILE, 'utf8'))
+    alertData.alerts.push({
       id:         `alert_${Date.now()}`,
       type:       'discord_join_no_match',
       status:     'pending',
@@ -61,7 +61,7 @@ export async function handleMemberJoin(member) {
       resolvedAt: null,
       payload:    { userId, displayName: member.displayName, username: member.user.username }
     })
-    fs.writeFileSync(ONBOARDING_FILE, JSON.stringify(data2, null, 2))
+    fs.writeFileSync(ALERTS_FILE, JSON.stringify(alertData, null, 2))
     try {
       await postMessage(OPS_CHANNEL_ID, `⚠️ **New Discord member — no onboarding match**\nDisplay name: ${member.displayName} | Username: ${member.user.username}\n\nIf this is a client, resolve with:\n\`node scripts/mark-done.mjs --client "Company Name" --step client_joined_discord\`\nThen manually create their channel if needed.`)
     } catch (err) {
@@ -75,9 +75,8 @@ export async function handleMemberJoin(member) {
   // Low-confidence match: one expecting client but no name match — save as pending and ask for manual confirmation
   if (lowConfidence) {
     console.warn(`[discord-member] Low-confidence match: ${member.displayName} → ${client.companyName}`)
-    const data2 = JSON.parse(fs.readFileSync(ONBOARDING_FILE, 'utf8'))
-    if (!data2.alerts) data2.alerts = []
-    data2.alerts.push({
+    const alertData = JSON.parse(fs.readFileSync(ALERTS_FILE, 'utf8'))
+    alertData.alerts.push({
       id:         `alert_${Date.now()}`,
       type:       'discord_join_pending_match',
       status:     'pending',
@@ -86,7 +85,7 @@ export async function handleMemberJoin(member) {
       resolvedAt: null,
       payload:    { userId, displayName: member.displayName, username: member.user.username, suggestedClientId: client.id, suggestedClientName: client.companyName }
     })
-    fs.writeFileSync(ONBOARDING_FILE, JSON.stringify(data2, null, 2))
+    fs.writeFileSync(ALERTS_FILE, JSON.stringify(alertData, null, 2))
     try {
       await postMessage(OPS_CHANNEL_ID, `❓ **New Discord member — confirm match**\nDisplay name: ${member.displayName} | Username: ${member.user.username}\n\nPossible match: **${client.companyName}** (submitted form but no name match)\n\nConfirm with:\n\`node scripts/mark-done.mjs --client "${client.companyName}" --step client_joined_discord\`\nThen create their channel if confirmed.`)
     } catch (err) {
@@ -115,15 +114,15 @@ function findMatchingClient(clients, displayName, username) {
   // Priority 1: clients who submitted the form but haven't joined Discord yet
   // These are the most likely candidates for a new join
   const expecting = clients.filter(c =>
-    c.status === 'onboarding' &&
-    c.steps?.onboarding_form_submitted?.status === 'complete' &&
-    c.steps?.client_joined_discord?.status !== 'complete'
+    c.onboarding?.status === 'onboarding' &&
+    c.onboarding.steps?.onboarding_form_submitted?.status === 'complete' &&
+    c.onboarding.steps?.client_joined_discord?.status !== 'complete'
   )
 
   // Priority 2: all other onboarding clients (signed but form not yet submitted)
   const others = clients.filter(c =>
-    c.status === 'onboarding' &&
-    c.steps?.client_joined_discord?.status !== 'complete' &&
+    c.onboarding?.status === 'onboarding' &&
+    c.onboarding.steps?.client_joined_discord?.status !== 'complete' &&
     !expecting.find(e => e.id === c.id)
   )
 
@@ -188,12 +187,12 @@ async function createClientChannel(member, client, userId) {
   const channel = await createRes.json()
   console.log(`[discord-member] ✅ Created channel #${channelName} (${channel.id}) for ${client.companyName}`)
 
-  // Save channel ID to onboarding record
-  const data   = JSON.parse(fs.readFileSync(ONBOARDING_FILE, 'utf8'))
-  const record = data.clients.find(c => c.id === client.id)
+  // Save channel ID to client record
+  const clientsData = JSON.parse(fs.readFileSync(CLIENTS_FILE, 'utf8'))
+  const record = clientsData.clients.find(c => c.id === client.id)
   if (record) {
     record.discordChannelId = channel.id
-    fs.writeFileSync(ONBOARDING_FILE, JSON.stringify(data, null, 2))
+    fs.writeFileSync(CLIENTS_FILE, JSON.stringify(clientsData, null, 2))
   }
 
   // Mark discord_channel_created
