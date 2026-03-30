@@ -5494,6 +5494,7 @@
       "closer": "Max",
       "cashCollected": 100,
       "contractRevenue": 4800,
+      "depositOnly": true,
       "followUpBooked": false,
       "fathomLink": "https://fathom.video/share/uXaKXFZBvB5uswqssvM2752snegYLfey",
       "onboardingClientId": "client_william_baker_construction_1774627716273"

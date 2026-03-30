@@ -198,13 +198,7 @@ const server = http.createServer(async (req, res) => {
     const patched = html.replace('</head>',
       `<script>window.API_BASE="";` +
       `(function(){const es=new EventSource("/api/events");` +
-      `es.addEventListener("reload",function(){` +
-        `try{` +
-          `sessionStorage.setItem("__dv",document.body.classList.contains("ops-mode")?"ops":"sales");` +
-          `sessionStorage.setItem("__dt",document.querySelector(".tab.on")?.dataset?.tab||"");` +
-        `}catch(e){}` +
-        `location.reload();` +
-      `});` +
+      `es.addEventListener("reload",function(){location.reload();});` +
       `es.addEventListener("onboarding-update",function(e){` +
         `try{` +
           `window.ONBOARDING_DATA=JSON.parse(e.data);` +

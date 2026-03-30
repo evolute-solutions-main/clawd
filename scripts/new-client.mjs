@@ -179,8 +179,8 @@ function makeSteps(needsVideoEditor) {
   steps.campaigns_launched = {
     status: 'pending', completedAt: null,
     autoDetected: false, owner: 'accountManager',
-    dependsOn: ['onboarding_call_completed'],
-    note: 'Account manager flips campaigns on in Meta Ads Manager'
+    dependsOn: ['onboarding_call_completed', 'facebook_access_granted'],
+    note: 'Account manager flips campaigns on in Meta Ads Manager. Cannot launch until Meta/Facebook access is granted.'
   }
   steps['48hr_health_check'] = {
     status: 'pending', completedAt: null,
