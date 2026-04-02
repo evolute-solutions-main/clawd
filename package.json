@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/evolute-solutions-main/clawd#readme",
   "dependencies": {
+    "@supabase/supabase-js": "^2.101.1",
     "discord.js": "^14.25.1",
     "express": "^5.2.1",
     "stripe": "^20.4.1",

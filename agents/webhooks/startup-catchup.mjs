@@ -28,16 +28,13 @@ import path   from 'node:path'
 import { fileURLToPath } from 'url'
 import { processPaymentIntent }  from './handlers/stripe.mjs'
 import { processFormSubmission } from './handlers/ghl.mjs'
-import { postMessage }           from '../_shared/discord/index.mjs'
-import { execFileSync }          from 'node:child_process'
+import { getClients, updateClient } from '../_shared/db.mjs'
 
 const __dirname  = path.dirname(fileURLToPath(import.meta.url))
 const REPO_ROOT  = path.resolve(__dirname, '../..')
 const STATE_FILE = path.join(REPO_ROOT, 'state/catchup-state.json')
-const CLIENTS_FILE = path.join(REPO_ROOT, 'data/clients.json')
 
 const DEFAULT_LOOKBACK_HOURS = 72
-const OPS_CHANNEL_ID = process.env.DISCORD_OPS_CHANNEL_ID || '1475336170916544524'
 
 // ── State helpers ─────────────────────────────────────────────────────────────
 
@@ -193,8 +190,8 @@ async function catchupDiscord(state) {
 
   try {
     // Find clients waiting for Discord join
-    const clientsData = JSON.parse(fs.readFileSync(CLIENTS_FILE, 'utf8'))
-    const pending = clientsData.clients.filter(c =>
+    const allClients = await getClients()
+    const pending = allClients.filter(c =>
       c.onboarding?.status === 'onboarding' &&
       c.onboarding.steps?.client_joined_discord?.status !== 'complete'
     )
@@ -249,18 +246,20 @@ async function catchupDiscord(state) {
       console.log(`[catchup:discord] Found ${client.companyName} in guild as "${match.nick || match.user.username}" — marking joined`)
 
       try {
-        execFileSync('node', [
-          path.join(REPO_ROOT, 'scripts/mark-done.mjs'),
-          '--client', client.companyName,
-          '--step',   'client_joined_discord',
-          '--by',     'discord_catchup'
-        ], { encoding: 'utf8' })
+        // Mark client_joined_discord complete directly in Supabase
+        const onboarding = client.onboarding
+        const step = onboarding.steps?.client_joined_discord
+        if (step && step.status !== 'complete') {
+          const now   = new Date().toISOString()
+          const today = now.split('T')[0]
+          step.status      = 'complete'
+          step.completedAt = today
+          onboarding.log = onboarding.log || []
+          onboarding.log.push({ timestamp: now, event: 'step_completed', step: 'client_joined_discord', by: 'discord_catchup' })
+          await updateClient(client.id, { onboarding })
+        }
 
-        // Alert ops so they know this was auto-detected on catchup
-        await postMessage(OPS_CHANNEL_ID,
-          `🔄 **Discord catch-up** — ${client.companyName} was already in the server\nMarked \`client_joined_discord\` complete. Discord name: ${match.nick || match.user.username}\n\nNote: channel may still need to be created if the bot missed the join event.`
-        )
-
+        console.log(`[catchup:discord] ✅ Marked client_joined_discord for ${client.companyName} (Discord: ${match.nick || match.user.username})`)
         processed++
       } catch (err) {
         console.error(`[catchup:discord] Error marking ${client.companyName}:`, err.message)
@@ -295,11 +294,6 @@ export async function runStartupCatchup() {
   const total = stripeCount + ghlCount + discordCount
   if (total > 0) {
     console.log(`[startup-catchup] ✅ Catch-up complete — ${stripeCount} Stripe, ${ghlCount} GHL, ${discordCount} Discord events processed`)
-    try {
-      await postMessage(OPS_CHANNEL_ID,
-        `🔄 **Webhook server restarted — catch-up complete**\nProcessed during downtime: ${stripeCount} Stripe payment(s), ${ghlCount} GHL form(s), ${discordCount} Discord join(s)`
-      )
-    } catch {}
   } else {
     console.log('[startup-catchup] ✅ Catch-up complete — nothing missed')
   }

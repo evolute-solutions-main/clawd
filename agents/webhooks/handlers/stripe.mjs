@@ -6,28 +6,22 @@
  *   - payment_intent.succeeded → mark payment_collected, create client record if needed
  *   - customer.created         → log new customer for cross-referencing
  *
- * Set up in Stripe: Developers → Webhooks → Add endpoint
- * URL: https://[your-server]/webhooks/stripe
- * Events: payment_intent.succeeded, customer.created
- *
- * Add STRIPE_WEBHOOK_SECRET to .secrets.env (from Stripe webhook dashboard)
- * Add STRIPE_SECRET_KEY to .secrets.env
+ * Data written directly to Supabase (same DB as evolute-dashboard).
  */
 
 import Stripe from 'stripe'
-import { execFileSync } from 'node:child_process'
 import path from 'node:path'
-import { fileURLToPath } from 'url'
 import fs from 'node:fs'
-import { postMessage } from '../../_shared/discord/index.mjs'
-import { findAppointmentMatch, findUnclaimedAppointment } from '../../../lib/client-sync.mjs'
+import { fileURLToPath } from 'url'
+import { findUnclaimedAppointment } from '../../../lib/client-sync.mjs'
+import {
+  getClients, updateClient, upsertClient,
+  upsertAlert, getAppointments, updateAppointment,
+} from '../../_shared/db.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const REPO_ROOT    = path.resolve(__dirname, '../../..')
-const CLIENTS_FILE = path.join(REPO_ROOT, 'data/clients.json')
-const SALES_FILE   = path.join(REPO_ROOT, 'data/sales_data.json')
-const ALERTS_FILE  = path.join(REPO_ROOT, 'data/alerts.json')
-const STATE_FILE   = path.join(REPO_ROOT, 'state/catchup-state.json')
+const REPO_ROOT  = path.resolve(__dirname, '../../..')
+const STATE_FILE = path.join(REPO_ROOT, 'state/catchup-state.json')
 
 function advanceStripeCheckpoint() {
   try {
@@ -40,29 +34,17 @@ function advanceStripeCheckpoint() {
   }
 }
 
-const OPS_CHANNEL_ID = process.env.DISCORD_OPS_CHANNEL_ID || '1475336170916544524'
-
-function saveAlert(type, message, payload) {
-  const data = JSON.parse(fs.readFileSync(ALERTS_FILE, 'utf8'))
-  data.alerts.push({
+async function saveAlert(type, message, payload) {
+  await upsertAlert({
     id:         `alert_${Date.now()}`,
     type,
-    status:     'pending',
+    status:     'open',
     message,
     receivedAt: new Date().toISOString(),
     resolvedAt: null,
     payload
   })
-  fs.writeFileSync(ALERTS_FILE, JSON.stringify(data, null, 2))
   console.warn(`[stripe-webhook] Alert saved — type: ${type}`)
-}
-
-async function alertOps(message) {
-  try {
-    await postMessage(OPS_CHANNEL_ID, `⚠️ **Stripe Payment — needs manual review**\n${message}`)
-  } catch (err) {
-    console.error('[stripe-webhook] Failed to post Discord alert:', err.message)
-  }
 }
 
 // Lazy init — Stripe key may not be set yet
@@ -91,7 +73,6 @@ export async function handleStripeWebhook(req, res) {
 
   let event
   try {
-    // req.rawBody is set by the server for Stripe signature verification
     event = getStripe().webhooks.constructEvent(req.rawBody, sig, secret)
   } catch (err) {
     console.error('[stripe-webhook] Signature verification failed:', err.message)
@@ -106,12 +87,11 @@ export async function handleStripeWebhook(req, res) {
         await handlePaymentSucceeded(event.data.object)
         break
       case 'customer.created':
-        handleCustomerCreated(event.data.object)
+        await handleCustomerCreated(event.data.object)
         break
       default:
         console.log(`[stripe-webhook] Unhandled event type: ${event.type} — ignoring`)
     }
-    // Advance catch-up checkpoint so next restart knows we were alive at this moment
     advanceStripeCheckpoint()
     return res.status(200).json({ received: true })
   } catch (err) {
@@ -122,11 +102,9 @@ export async function handleStripeWebhook(req, res) {
 
 async function handlePaymentSucceeded(paymentIntent) {
   let email      = paymentIntent.receipt_email?.toLowerCase()?.trim()
-  const amount   = paymentIntent.amount / 100  // Stripe amounts are in cents
+  const amount   = paymentIntent.amount / 100
   const stripeId = paymentIntent.customer
 
-  // Fallback: receipt_email is often null for manual/terminal payments.
-  // Always fetch the charge to get billing_details (email + name) as a fallback.
   let billingName = null
   if (!email || !stripeId) {
     try {
@@ -139,7 +117,6 @@ async function handlePaymentSucceeded(paymentIntent) {
           console.log(`[stripe-webhook] receipt_email was null — using charge billing_details.email: ${email}`)
         }
       }
-      // Always capture billing name as a fallback for auto-create
       billingName = charge?.billing_details?.name?.trim() || null
     } catch (err) {
       console.warn('[stripe-webhook] Could not fetch charge billing_details:', err.message)
@@ -149,14 +126,15 @@ async function handlePaymentSucceeded(paymentIntent) {
   console.log(`[stripe-webhook] Payment succeeded: $${amount} from ${email || 'unknown'}`)
 
   if (!email) {
-    const msg = `Payment of $${amount} received but no email on the payment intent or charge. Stripe customer: ${stripeId || 'unknown'}`
-    saveAlert('payment_no_email', msg, { amount, stripeId })
-    await alertOps(`${msg}\n\nResolve: link manually via \`mark-done.mjs\` once you identify the client.`)
+    await saveAlert('payment_no_email',
+      `Payment of $${amount} received but no email on the payment intent or charge. Stripe customer: ${stripeId || 'unknown'}`,
+      { amount, stripeId }
+    )
     return
   }
 
-  const data   = JSON.parse(fs.readFileSync(CLIENTS_FILE, 'utf8'))
-  const client = data.clients.find(c =>
+  const clients = await getClients()
+  const client  = clients.find(c =>
     c.onboarding?.status === 'onboarding' &&
     c.email?.toLowerCase() === email
   )
@@ -168,32 +146,102 @@ async function handlePaymentSucceeded(paymentIntent) {
 
   // Attach Stripe customer ID if we don't have it yet
   if (!client.stripeCustomerId && stripeId) {
+    await updateClient(client.id, { stripeCustomerId: stripeId })
     client.stripeCustomerId = stripeId
-    fs.writeFileSync(CLIENTS_FILE, JSON.stringify(data, null, 2))
     console.log(`[stripe-webhook] Linked Stripe customer ${stripeId} to ${client.companyName}`)
   }
 
   // Mark payment collected
-  if (client.onboarding.steps.payment_collected?.status !== 'complete') {
-    execFileSync('node', [
-      path.join(REPO_ROOT, 'scripts/mark-done.mjs'),
-      '--client', client.companyName,
-      '--step',   'payment_collected',
-      '--by',     'stripe_webhook'
-    ], { encoding: 'utf8' })
+  if (client.onboarding.steps?.payment_collected?.status !== 'complete') {
+    await markStepComplete(client, 'payment_collected', 'stripe_webhook')
     console.log(`[stripe-webhook] ✅ Marked payment_collected for ${client.companyName}`)
+  }
+
+  // Sync appointment
+  await syncAppointmentForExistingClient(client, amount)
+}
+
+async function markStepComplete(client, stepKey, actor) {
+  const onboarding = client.onboarding
+  const step = onboarding.steps?.[stepKey]
+  if (!step || step.status === 'complete') return
+
+  const now   = new Date().toISOString()
+  const today = now.split('T')[0]
+
+  step.status      = 'complete'
+  step.completedAt = today
+
+  onboarding.log = onboarding.log || []
+  onboarding.log.push({ timestamp: now, event: 'step_completed', step: stepKey, by: actor })
+
+  if (stepKey === 'campaigns_launched') {
+    onboarding.status             = 'launched'
+    onboarding.launchedDate       = today
+    onboarding.campaignsLaunchedAt = now
+  }
+
+  await updateClient(client.id, { onboarding })
+}
+
+async function syncAppointmentForExistingClient(client, amount) {
+  const appointments = await getAppointments()
+
+  if (!client.appointmentId) {
+    const result = findUnclaimedAppointment(client, appointments)
+
+    if (result) {
+      const { appointment, confidence } = result
+
+      if (confidence === 'email') {
+        const updates = { onboardingClientId: client.id }
+
+        if (appointment.status !== 'closed') {
+          updates.status = 'closed'
+          updates.closer = appointment.closer || 'Max'
+          console.log(`[stripe-webhook] ✅ Auto-closed appointment ${appointment.id} for ${client.companyName}`)
+        }
+
+        if (!appointment.cashCollected) {
+          updates.cashCollected = amount
+        } else if (appointment.cashCollected !== amount) {
+          await saveAlert('payment_amount_conflict',
+            `**${client.companyName}** paid $${amount} via Stripe but the matched appointment (${appointment.contactName}, ${appointment.startTime?.slice(0,10)}) already has $${appointment.cashCollected} recorded. Please verify which is correct.`,
+            { clientId: client.id, appointmentId: appointment.id, stripeAmount: amount, appointmentAmount: appointment.cashCollected }
+          )
+        }
+
+        await updateAppointment(appointment.id, updates)
+        await updateClient(client.id, { appointmentId: appointment.id })
+        console.log(`[stripe-webhook] ✅ Linked appointment ${appointment.id} ↔ ${client.companyName} (email match)`)
+
+      } else {
+        await saveAlert('appointment_match_uncertain',
+          `Stripe payment of $${amount} received for **${client.companyName}**.\nPossible appointment match (name only — not confirmed): **${appointment.contactName}** on ${appointment.startTime?.slice(0,10)}.\n\nIf correct, link it in the dashboard.`,
+          { clientId: client.id, candidateAppointmentId: appointment.id, candidateName: appointment.contactName, amount, confidence: 'name' }
+        )
+      }
+    }
+
+  } else {
+    const appt = appointments.find(a => a.id === client.appointmentId)
+    if (appt) {
+      if (!appt.cashCollected) {
+        await updateAppointment(appt.id, { cashCollected: amount })
+        console.log(`[stripe-webhook] ✅ Set cashCollected $${amount} on appointment for ${client.companyName}`)
+      } else if (appt.cashCollected !== amount) {
+        await saveAlert('payment_amount_conflict',
+          `Stripe payment of $${amount} for **${client.companyName}** doesn't match the appointment's recorded cashCollected ($${appt.cashCollected}). Please verify which is correct.`,
+          { clientId: client.id, appointmentId: appt.id, stripeAmount: amount, appointmentAmount: appt.cashCollected }
+        )
+      }
+    }
   }
 }
 
-/**
- * Auto-create a new client record from an unmatched Stripe payment.
- * Matches to a closed appointment if possible, stamps cashCollected,
- * and posts to Discord asking for contract revenue.
- */
 async function autoCreateClientFromPayment({ email, amount, stripeId, billingName = null }) {
   console.log(`[stripe-webhook] No existing client for ${email} — attempting auto-create`)
 
-  // Fetch customer name from Stripe customer record, then fall back to charge billing_details.name
   let name = null
   let company = null
   if (stripeId) {
@@ -206,116 +254,104 @@ async function autoCreateClientFromPayment({ email, amount, stripeId, billingNam
     }
   }
 
-  // Fall back to charge billing_details.name (available for manual/terminal payments)
   if (!name && billingName) {
     name = billingName
     console.log(`[stripe-webhook] No Stripe customer name — using charge billing_details.name: ${name}`)
   }
 
   if (!name) {
-    // Still no name — save alert for manual review
-    const msg = `Payment of $${amount} from \`${email}\` (Stripe: ${stripeId || 'unknown'}) — no customer name available anywhere, cannot auto-create. Please add manually.`
-    saveAlert('payment_no_name', msg, { amount, email, stripeId })
-    await alertOps(msg)
+    await saveAlert('payment_no_name',
+      `Payment of $${amount} from \`${email}\` (Stripe: ${stripeId || 'unknown'}) — no customer name found, cannot auto-create. Please add manually.`,
+      { amount, email, stripeId }
+    )
+    return
+  }
+
+  // Check for duplicate
+  const existing = await getClients()
+  const dupe = existing.find(c => c.email?.toLowerCase() === email)
+  if (dupe) {
+    if (dupe.onboarding?.status === 'launched') {
+      console.warn(`[stripe-webhook] ⚠️ Client ${email} already exists and is launched — skipping auto-create`)
+      return
+    }
+    console.log(`[stripe-webhook] Client ${email} already exists as ${dupe.companyName} — skipping auto-create`)
     return
   }
 
   const today = new Date().toISOString().split('T')[0]
+  const now   = new Date().toISOString()
+  const id    = 'client_' + (company || name).toLowerCase().replace(/[^a-z0-9]+/g, '_') + '_' + Date.now()
 
-  // Create the client via new-client.mjs
+  const newClient = {
+    id,
+    name,
+    companyName:         company || name,
+    email,
+    appointmentId:       null,
+    contractSignedDate:  today,
+    contractEndDate:     null,
+    stripeCustomerId:    stripeId || null,
+    fathomSalesCallLink: null,
+    discordChannelId:    null,
+    clientStatus:        'onboarding',
+    onboarding: {
+      status:             'onboarding',
+      launchedDate:       null,
+      campaignsLaunchedAt: null,
+      readyToBookCallAt:  null,
+      steps:              makeOnboardingSteps(false),
+      log: [{ timestamp: now, event: 'client_created', note: 'Auto-created via Stripe payment webhook.' }]
+    }
+  }
+
+  // Mark payment_collected already done since the payment just came in
+  newClient.onboarding.steps.payment_collected.status      = 'complete'
+  newClient.onboarding.steps.payment_collected.completedAt = today
+
   try {
-    const newClientArgs = [
-      path.join(REPO_ROOT, 'scripts/new-client.mjs'),
-      '--name',   name,
-      '--email',  email,
-      '--signed', today,
-    ]
-    if (company) newClientArgs.push('--company', company)
-    if (stripeId) newClientArgs.push('--stripe', stripeId)
-
-    execFileSync('node', newClientArgs, { encoding: 'utf8' })
+    await upsertClient(newClient)
     console.log(`[stripe-webhook] ✅ Auto-created client: ${name}`)
   } catch (err) {
-    const msg = `Payment of $${amount} from \`${email}\` — tried to auto-create client "${name}" but failed: ${err.message}`
-    saveAlert('payment_auto_create_failed', msg, { amount, email, stripeId, name })
-    await alertOps(msg)
+    await saveAlert('payment_auto_create_failed',
+      `Payment of $${amount} from \`${email}\` — tried to auto-create client "${name}" but failed: ${err.message}`,
+      { amount, email, stripeId, name }
+    )
     return
   }
 
-  // Re-read to get the newly created client
-  const data = JSON.parse(fs.readFileSync(CLIENTS_FILE, 'utf8'))
-  const newClient = data.clients.find(c => c.email?.toLowerCase() === email)
+  // Try to link to an appointment
+  const appointments = await getAppointments()
+  const result = findUnclaimedAppointment(newClient, appointments)
+  let appointmentNote = 'No matching sales appointment found yet.'
 
-  // Try to stamp cashCollected on matched appointment
-  let appointmentNote = 'No matching sales appointment found yet — will link when synced.'
+  if (result) {
+    const { appointment: appt, confidence } = result
 
-  if (newClient?.appointmentId) {
-    // Client was already linked to a closed appointment by syncAllClients
-    try {
-      const salesData = JSON.parse(fs.readFileSync(SALES_FILE, 'utf8'))
-      const appointments = salesData.appointments || salesData
-      const appt = appointments.find(a => a.id === newClient.appointmentId)
-      if (appt) {
-        if (!appt.cashCollected) {
-          appt.cashCollected = amount
-          fs.writeFileSync(SALES_FILE, JSON.stringify(salesData, null, 2))
-          appointmentNote = `Matched to closed appointment: ${appt.contactName} (${appt.startTime?.slice(0,10)}). cashCollected set to $${amount}.`
-        } else {
-          appointmentNote = `Matched to closed appointment: ${appt.contactName}. cashCollected already set ($${appt.cashCollected}) — not overwritten.`
-        }
+    if (confidence === 'email') {
+      const updates = {
+        status:             'closed',
+        closer:             appt.closer || 'Max',
+        cashCollected:      appt.cashCollected || amount,
+        onboardingClientId: id,
       }
-    } catch (err) {
-      console.warn('[stripe-webhook] Could not update appointment cashCollected:', err.message)
-    }
-  } else {
-    // No closed appointment found — search all appointments regardless of status
-    // (payment may have arrived before the deal was marked closed in our system)
-    try {
-      const salesData = JSON.parse(fs.readFileSync(SALES_FILE, 'utf8'))
-      const appointments = salesData.appointments || salesData
-      const result = findUnclaimedAppointment(newClient, appointments)
-
-      if (result) {
-        const { appointment: appt, confidence } = result
-
-        if (confidence === 'email') {
-          // 100% sure — auto-close the appointment and link
-          appt.status               = 'closed'
-          appt.closer               = appt.closer || 'Max'
-          appt.cashCollected        = appt.cashCollected || amount
-          appt.onboardingClientId   = newClient.id
-          newClient.appointmentId   = appt.id
-
-          fs.writeFileSync(SALES_FILE, JSON.stringify(salesData, null, 2))
-          fs.writeFileSync(CLIENTS_FILE, JSON.stringify(data, null, 2))
-
-          appointmentNote = `Auto-closed appointment (email match): ${appt.contactName} (${appt.startTime?.slice(0,10)}). cashCollected set to $${amount}. ✅`
-          console.log(`[stripe-webhook] ✅ Auto-closed appointment ${appt.id} for ${name} (email match)`)
-        } else {
-          // Name match only — not confident enough to auto-close; ask Max
-          const msg = `New client **${name}** paid $${amount} via Stripe.\nFound a possible appointment match (name only — not confirmed): **${appt.contactName}** on ${appt.startTime?.slice(0,10)}.\n\n**Is this the same person?**\nIf yes, mark their appointment closed in the dashboard and it will link automatically.`
-          saveAlert('appointment_match_uncertain', msg, {
-            amount, email, name,
-            candidateAppointmentId: appt.id,
-            candidateName: appt.contactName,
-            confidence: 'name'
-          })
-          await alertOps(msg)
-          appointmentNote = `Possible appointment match (name only): ${appt.contactName} (${appt.startTime?.slice(0,10)}) — **needs your confirmation before closing.** Check Discord.`
-        }
-      }
-    } catch (err) {
-      console.warn('[stripe-webhook] Could not search for unclaimed appointment:', err.message)
+      await updateAppointment(appt.id, updates)
+      await updateClient(id, { appointmentId: appt.id })
+      appointmentNote = `Auto-closed appointment (email match): ${appt.contactName} (${appt.startTime?.slice(0,10)}). cashCollected set to $${amount}. ✅`
+      console.log(`[stripe-webhook] ✅ Auto-closed appointment ${appt.id} for ${name} (email match)`)
+    } else {
+      await saveAlert('appointment_match_uncertain',
+        `New client **${name}** paid $${amount} via Stripe.\nPossible appointment match (name only — not confirmed): **${appt.contactName}** on ${appt.startTime?.slice(0,10)}.\n\nIf correct, mark their appointment closed in the dashboard.`,
+        { amount, email, name, candidateAppointmentId: appt.id, candidateName: appt.contactName, confidence: 'name' }
+      )
+      appointmentNote = `Possible appointment match (name only): ${appt.contactName} (${appt.startTime?.slice(0,10)}) — confirm in the dashboard.`
     }
   }
 
-  await postMessage(
-    process.env.DISCORD_OPS_CHANNEL_ID || '1475336170916544524',
-    `✅ **New client auto-created from Stripe payment**\n**${name}** — $${amount} via Stripe\nEmail: \`${email}\`\n${appointmentNote}\n\n⚠️ Contract revenue not set — please update in the dashboard.`
-  )
+  console.log(`[stripe-webhook] ✅ Auto-created client ${name} — ${appointmentNote}`)
 }
 
-function handleCustomerCreated(customer) {
+async function handleCustomerCreated(customer) {
   const email    = customer.email?.toLowerCase()?.trim()
   const stripeId = customer.id
   const name     = customer.name
@@ -324,16 +360,151 @@ function handleCustomerCreated(customer) {
 
   if (!email) return
 
-  // Attach Stripe ID to matching onboarding client if found
-  const data   = JSON.parse(fs.readFileSync(CLIENTS_FILE, 'utf8'))
-  const client = data.clients.find(c =>
+  const clients = await getClients()
+  const client  = clients.find(c =>
     c.onboarding?.status === 'onboarding' &&
     c.email?.toLowerCase() === email
   )
 
   if (client && !client.stripeCustomerId) {
-    client.stripeCustomerId = stripeId
-    fs.writeFileSync(CLIENTS_FILE, JSON.stringify(data, null, 2))
+    await updateClient(client.id, { stripeCustomerId: stripeId })
     console.log(`[stripe-webhook] Linked Stripe customer ${stripeId} to ${client.companyName}`)
   }
+}
+
+// Canonical onboarding step template (no video editor path by default for auto-create)
+function makeOnboardingSteps(needsVideoEditor) {
+  const steps = {
+    payment_collected: {
+      status: 'pending', completedAt: null,
+      autoDetected: true, trigger: 'manual',
+      note: 'Collected on closing call'
+    },
+    contract_signed: {
+      status: 'complete', completedAt: new Date().toISOString().split('T')[0],
+      autoDetected: false, trigger: 'manual'
+    },
+    welcome_email_sent: {
+      status: 'complete', completedAt: new Date().toISOString().split('T')[0],
+      autoDetected: true, trigger: 'auto'
+    },
+    added_to_daily_sweep: {
+      status: 'complete', completedAt: new Date().toISOString().split('T')[0],
+      autoDetected: true, trigger: 'auto'
+    },
+    onboarding_form_submitted: {
+      status: 'pending', completedAt: null,
+      autoDetected: true, trigger: 'ghl_webhook',
+      dependsOn: ['contract_signed']
+    },
+    client_joined_discord: {
+      status: 'pending', completedAt: null,
+      autoDetected: true, trigger: 'discord_event',
+      dependsOn: ['contract_signed']
+    },
+    discord_channel_created: {
+      status: 'pending', completedAt: null,
+      autoDetected: false, owner: 'accountManager', priority: 1,
+      dependsOn: ['client_joined_discord'],
+      note: 'Create private Discord channel for client'
+    },
+    ghl_subaccount_configured: {
+      status: 'pending', completedAt: null,
+      autoDetected: false, owner: 'accountManager', priority: 2,
+      dependsOn: ['onboarding_form_submitted'],
+      note: 'Create GHL sub-account and configure settings'
+    },
+    facebook_access_granted: {
+      status: 'pending', completedAt: null,
+      autoDetected: false, owner: 'accountManager',
+      dependsOn: ['onboarding_form_submitted'],
+      note: 'Client grants access to Meta Business Manager'
+    },
+    client_media_submitted: {
+      status: 'pending', completedAt: null,
+      autoDetected: false, owner: 'accountManager',
+      dependsOn: ['onboarding_form_submitted'],
+      note: 'Client sends photos/videos via Discord or onboarding funnel'
+    },
+    ad_scripts_written: {
+      status: 'pending', completedAt: null,
+      autoDetected: false, owner: 'mediaBuyer',
+      dependsOn: ['onboarding_form_submitted'],
+      note: 'Media buyer writes ad scripts'
+    },
+    ad_scripts_sent_to_client: {
+      status: 'pending', completedAt: null,
+      autoDetected: false, owner: 'mediaBuyer',
+      dependsOn: ['ad_scripts_written'],
+      note: 'Send to client via their Discord channel'
+    },
+    ad_scripts_approved: {
+      status: 'pending', completedAt: null,
+      autoDetected: false, owner: 'accountManager',
+      dependsOn: ['ad_scripts_sent_to_client'],
+      note: 'Client reviews and approves. Mark done when final approval received.'
+    },
+  }
+
+  if (needsVideoEditor) {
+    steps.video_editor_briefed = {
+      status: 'pending', completedAt: null,
+      autoDetected: false, owner: 'mediaBuyer',
+      dependsOn: ['ad_scripts_approved', 'client_media_submitted'],
+      note: 'Brief video editor with approved scripts + client media assets'
+    }
+    steps.ad_creatives_produced = {
+      status: 'pending', completedAt: null,
+      autoDetected: false, owner: 'videoEditor',
+      dependsOn: ['video_editor_briefed']
+    }
+    steps.meta_campaigns_built = {
+      status: 'pending', completedAt: null,
+      autoDetected: false, owner: 'mediaBuyer',
+      dependsOn: ['ad_creatives_produced', 'facebook_access_granted'],
+      note: 'Build campaigns in Meta Ads Manager'
+    }
+  } else {
+    steps.meta_campaigns_built = {
+      status: 'pending', completedAt: null,
+      autoDetected: false, owner: 'mediaBuyer',
+      dependsOn: ['ad_scripts_approved', 'client_media_submitted', 'facebook_access_granted'],
+      note: 'Build campaigns in Meta Ads Manager (no video editor)'
+    }
+  }
+
+  steps.onboarding_call_booked = {
+    status: 'pending', completedAt: null,
+    autoDetected: false, owner: 'accountManager',
+    dependsOn: ['ghl_subaccount_configured', 'meta_campaigns_built', 'onboarding_form_submitted', 'client_joined_discord'],
+    note: 'Send booking link to client in their Discord channel.',
+    readyToBookTrigger: true
+  }
+  steps.onboarding_call_completed = {
+    status: 'pending', completedAt: null,
+    autoDetected: false, owner: 'accountManager',
+    dependsOn: ['onboarding_call_booked'],
+    note: 'Mark done after the call.'
+  }
+  steps.campaigns_launched = {
+    status: 'pending', completedAt: null,
+    autoDetected: false, owner: 'accountManager',
+    dependsOn: ['onboarding_call_completed', 'facebook_access_granted'],
+    note: 'Account manager flips campaigns on in Meta Ads Manager.'
+  }
+  steps['48hr_health_check'] = {
+    status: 'pending', completedAt: null,
+    autoDetected: false, owner: 'accountManager',
+    dependsOn: ['campaigns_launched'],
+    timeGatedHours: 48,
+    note: 'Verify leads are coming in and everything is running correctly.'
+  }
+  steps.post_launch_checkin_scheduled = {
+    status: 'pending', completedAt: null,
+    autoDetected: false, owner: 'accountManager',
+    dependsOn: ['campaigns_launched'],
+    note: '~2 week performance review'
+  }
+
+  return steps
 }
